@@ -1,0 +1,46 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Тренеры", 
+		"/o-nas/trenery/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Спортсмены", 
+		"/o-nas/sportsmeny/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Для родителей", 
+		"/o-nas/dlya-roditeley/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Фото", 
+		"/o-nas/foto/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Видео", 
+		"/o-nas/video/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости", 
+		"/novosti/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Спортсмены";
+$arDirProperties = Array(
+
+);
+?>
