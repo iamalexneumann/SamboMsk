@@ -1,6 +1,96 @@
 body {
-  font-family: 'Open Sans', sans-serif;
-  color: #424242;
+  font-weight: 500;
   font-size: 1rem;
   line-height: 1.4;
+  font-family: 'Open Sans', sans-serif;
+  color: #424242;
+
+  background: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  font-weight: 700;
+  line-height: 1.2;
+  color: #313235;
+  letter-spacing: 0.025em;
+}
+
+h1,
+.h1 {
+  font-size: 3rem;
+}
+
+h2,
+.h2 {
+  font-size: 2rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.625rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.375rem;
+}
+
+.main-header {
+  background-color: #ffffff;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 14%);
+}
+
+.main-logo {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  color: #424242;
+}
+
+.main-logo__wrapper {
+  margin-left: 15px;
+}
+
+.main-logo__name {
+  display: block;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.main-logo__description {
+  display: block;
+  letter-spacing: 0.05em;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  text-transform: uppercase;
+  color: #424242;
+  font-weight: 700;
+  padding: 10px 15px;
 }

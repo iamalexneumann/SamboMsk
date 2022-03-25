@@ -25,10 +25,20 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <body>
     <?php $APPLICATION->ShowPanel(); ?>
     <header class="main-header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a<?php if (!($CurDir === '/')): ?> href="/" title="На главную"<?php endif; ?> class="navbar-brand">
-                    <img src="<?= $siteparam_main_logo; ?>" alt="<?= $siteparam_site_name; ?>" width="255" height="53">
+                <a<?php if (!($CurDir === '/')): ?> href="/" title="На главную"<?php endif; ?> class="main-logo">
+                    <img src="<?= $siteparam_main_logo; ?>" alt="<?= $siteparam_site_name; ?>" width="95">
+                    <?php if ($siteparam_main_logo_name || $siteparam_main_logo_description): ?>
+                    <span class="main-logo__wrapper">
+                        <?php if ($siteparam_main_logo_name): ?>
+                        <span class="main-logo__name"><?= $siteparam_main_logo_name; ?></span>
+                        <?php endif; ?>
+                        <?php if ($siteparam_main_logo_description): ?>
+                            <span class="main-logo__description"><?= $siteparam_main_logo_description; ?></span>
+                        <?php endif; ?>
+                    </span>
+                    <?php endif; ?>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
