@@ -5,6 +5,7 @@ $siteparam_main_logo = CFile::GetPath(\COption::GetOptionString( 'askaron.settin
 $siteparam_footer_logo = CFile::GetPath(\COption::GetOptionString( 'askaron.settings', 'UF_FOOTER_LOGO') ?? '');
 $siteparam_main_logo_name = \COption::GetOptionString( 'askaron.settings', 'UF_MAIN_LOGO_NAME') ?? '';
 $siteparam_main_logo_description = \COption::GetOptionString( 'askaron.settings', 'UF_MAIN_LOGO_DESCRIPTION') ?? '';
+$siteparam_site_name = $siteparam_main_logo_description . ' &#34;' . $siteparam_main_logo_name . '&#34;';
 $siteparam_main_phone = \COption::GetOptionString( 'askaron.settings', 'UF_MAIN_PHONE') ?? '';
 $siteparam_second_phone = \COption::GetOptionString( 'askaron.settings', 'UF_SECOND_PHONE') ?? '';
 $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main_phone), 1);

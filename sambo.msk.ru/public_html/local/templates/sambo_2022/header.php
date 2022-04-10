@@ -20,6 +20,15 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/safari-pinned-tab.svg" color="#0652dd">
+    <link rel="shortcut icon" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
     <title><?php $APPLICATION->ShowTitle(); ?></title>
 </head>
 <body>
@@ -27,15 +36,15 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     <header class="main-header">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a<?php if (!($CurDir === '/')): ?> href="/" title="На главную"<?php endif; ?> class="main-logo">
-                    <img src="<?= $siteparam_main_logo; ?>" alt="<?= $siteparam_site_name; ?>" width="95">
+                <a<?php if (!($CurDir === '/')): ?> href="/" title="На главную"<?php endif; ?> class="logo header-logo">
+                    <img src="<?= $siteparam_main_logo; ?>" alt="<?= $siteparam_site_name; ?>" width="75" height="75" class="logo__img">
                     <?php if ($siteparam_main_logo_name || $siteparam_main_logo_description): ?>
-                    <span class="main-logo__wrapper">
+                    <span class="logo__wrapper">
                         <?php if ($siteparam_main_logo_name): ?>
-                        <span class="main-logo__name"><?= $siteparam_main_logo_name; ?></span>
+                        <span class="logo__name"><?= $siteparam_main_logo_name; ?></span>
                         <?php endif; ?>
                         <?php if ($siteparam_main_logo_description): ?>
-                            <span class="main-logo__description"><?= $siteparam_main_logo_description; ?></span>
+                        <span class="logo__description"><?= $siteparam_main_logo_description; ?></span>
                         <?php endif; ?>
                     </span>
                     <?php endif; ?>
@@ -72,17 +81,21 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         
     </header>
     <main>
+        <header class="page-header">
+            <div class="container">
+                <?php
+                $APPLICATION->IncludeComponent(
+                    "bitrix:breadcrumb",
+                    "breadcrumb",
+                    Array(
+                        "START_FROM" => "0",
+                        "PATH" => "",
+                        "SITE_ID" => SITE_ID,
+                    ),
+                    false
+                );
+                ?>
+                <h1 class="page-header__title"><?php $APPLICATION->ShowTitle('h1', false); ?></h1>
+            </div>
+        </header>
         <div class="container">
-            <?php
-            $APPLICATION->IncludeComponent(
-                "bitrix:breadcrumb",
-                "breadcrumb",
-                Array(
-                    "START_FROM" => "0",
-                    "PATH" => "",
-                    "SITE_ID" => SITE_ID,
-                ),
-                false
-            );
-            ?>
-            <h1 class="main-title"><?php $APPLICATION->ShowTitle('h1', false); ?></h1>

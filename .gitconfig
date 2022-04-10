@@ -1,0 +1,5 @@
+[alias]
+	hist = log --pretty=format:\"%Cred%h %C(white)| %cD | %C(cyan)%s%d\" --graph --date=short --max-count=15
+[user]
+	name = /usr/bin/vim
+	email = support@beget.ru
