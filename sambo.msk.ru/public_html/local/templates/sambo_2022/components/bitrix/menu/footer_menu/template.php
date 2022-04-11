@@ -2,9 +2,9 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
-
+$param_class_name = $arParams["CLASS_NAME"] ?? '';
 if (!empty($arResult)):?>
-<ul class="footer-menu__list">
+<ul class="footer-menu__list<?php if ($param_class_name): echo " $param_class_name"; endif; ?>">
 <?php
 $previousLevel = 0;
 foreach($arResult as $arItem):
