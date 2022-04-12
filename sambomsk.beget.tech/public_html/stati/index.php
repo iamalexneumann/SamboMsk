@@ -86,6 +86,7 @@ $APPLICATION->SetTitle("Статьи");
 		"USE_SHARE" => "N",
 		"COMPONENT_TEMPLATE" => "articles",
 		"TAG_TITLE" => "2",
+		"TAG_LIST" => "main-articles",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",

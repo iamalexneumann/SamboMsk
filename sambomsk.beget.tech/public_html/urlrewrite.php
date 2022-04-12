@@ -56,7 +56,15 @@ $arUrlRewrite=array (
     'PATH' => '/stati/detail.php',
     'SORT' => 100,
   ),
-  8 => 
+  13 => 
+  array (
+    'CONDITION' => '#^/o-nas/video/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/o-nas/video/index.php',
+    'SORT' => 100,
+  ),
+  11 => 
   array (
     'CONDITION' => '#^/o-nas/foto/#',
     'RULE' => '',
@@ -64,7 +72,15 @@ $arUrlRewrite=array (
     'PATH' => '/o-nas/foto/index.php',
     'SORT' => 100,
   ),
-  7 => 
+  12 => 
+  array (
+    'CONDITION' => '#^/novosti/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/novosti/index.php',
+    'SORT' => 100,
+  ),
+  9 => 
   array (
     'CONDITION' => '#^/stati/#',
     'RULE' => '',

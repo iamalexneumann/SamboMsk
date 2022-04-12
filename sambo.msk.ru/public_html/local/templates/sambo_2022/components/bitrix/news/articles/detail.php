@@ -59,7 +59,6 @@ $APPLICATION->IncludeComponent(
 		'STRICT_SECTION_CHECK' => (isset($arParams['STRICT_SECTION_CHECK']) ? $arParams['STRICT_SECTION_CHECK'] : ''),
 	),
 	$component
-);?>
-<div>
-    <a href="<?=$arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"]; ?>"><?=GetMessage("T_NEWS_DETAIL_BACK")?></a>
-</div>
+);
+
+require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_detail_share_back.php');
