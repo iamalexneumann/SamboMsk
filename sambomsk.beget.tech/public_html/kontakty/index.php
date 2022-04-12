@@ -6,20 +6,25 @@ $APPLICATION->SetTitle("Контакты");
 		<div class="links-halls">
  <b>1Наши залы</b>
 			<?$APPLICATION->IncludeComponent(
-	"bitrix:menu",
-	"bottom_extra_menu",
-	Array(
+	"bitrix:menu", 
+	"bottom_extra_menu", 
+	array(
 		"ALLOW_MULTI_SELECT" => "N",
 		"CHILD_MENU_TYPE" => "bottom",
 		"DELAY" => "N",
 		"MAX_LEVEL" => "1",
-		"MENU_CACHE_GET_VARS" => array(0=>"",),
+		"MENU_CACHE_GET_VARS" => array(
+		),
 		"MENU_CACHE_TIME" => "3600",
 		"MENU_CACHE_TYPE" => "N",
 		"MENU_CACHE_USE_GROUPS" => "Y",
 		"ROOT_MENU_TYPE" => "bottom",
-		"USE_EXT" => "N"
-	)
+		"USE_EXT" => "Y",
+		"COMPONENT_TEMPLATE" => "bottom_extra_menu",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO"
+	),
+	false
 );?>
 		</div>
 		<div class="header-contacts">

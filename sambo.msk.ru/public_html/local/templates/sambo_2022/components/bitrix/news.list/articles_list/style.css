@@ -33,6 +33,7 @@
 .article__wrapper {
 	flex-grow: 1;
 	padding: 30px;
+	border-left: 1px solid #ececec;;
 }
 
 .article__header {
@@ -64,12 +65,18 @@
 	margin-bottom: 15px;
 }
 
+.article__btn-icon {
+	margin-left: 3px;
+}
+
 @media (max-width: 767.98px) {
 	.article {
 		flex-direction: column;
 	}
 	.article__wrapper {
 		padding: 20px;
+		border-left: none;
+		border-top: 1px solid #ececec;;
 	}
 	.article__header {
 		margin-bottom: 20px;

@@ -92,13 +92,6 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Самбо и дзюдо в Шишкином лесу", 
-		"https://sambo.msk.ru/nashi-zaly/sambo-i-dzyudo-v-shishkinom-lesu/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
 		"Самбо и дзюдо в Хорошёво", 
 		"https://sambo.msk.ru/nashi-zaly/sambo-i-dzyudo-v-khoroshyevo/", 
 		Array(), 

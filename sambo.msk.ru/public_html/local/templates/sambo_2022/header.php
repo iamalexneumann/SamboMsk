@@ -11,6 +11,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     //$Asset->addJs(SITE_TEMPLATE_PATH . '/libs/jquery/jquery-3.6.0.min.js');
     $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/bootstrap/css/bootstrap.min.css');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/bootstrap/js/bootstrap.min.js');
+//    $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
+//    $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
     //$Asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
     $APPLICATION->ShowHead();
     ?>

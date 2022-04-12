@@ -38,3 +38,4 @@ Allow: /bitrix/panel/
 Disallow: /*?view_result=
 Disallow: /*&view_result=
 Host: https://sambo.msk.ru
+Sitemap: https://sambo.msk.ru/sitemaps/sitemap.xml

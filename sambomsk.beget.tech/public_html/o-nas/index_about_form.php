@@ -1,1 +1,0 @@
-<? include $_SERVER["DOCUMENT_ROOT"].'/includes/wide_form.php' ?>

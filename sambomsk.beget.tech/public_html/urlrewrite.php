@@ -56,4 +56,20 @@ $arUrlRewrite=array (
     'PATH' => '/stati/detail.php',
     'SORT' => 100,
   ),
+  8 => 
+  array (
+    'CONDITION' => '#^/o-nas/foto/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/o-nas/foto/index.php',
+    'SORT' => 100,
+  ),
+  7 => 
+  array (
+    'CONDITION' => '#^/stati/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/stati/index.php',
+    'SORT' => 100,
+  ),
 );

@@ -4,8 +4,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 }
 $this->setFrameMode(true);
 $param_tag_title = $arParams["TAG_TITLE"] ?? '2';
+$param_list_tag = $arParams["TAG_LIST"] ?? '';
 ?>
-<div class="articles-list main-articles-list">
+<div class="articles-list<?php if ($param_list_tag): ?> <?= $param_list_tag; ?>-list<?php endif; ?>">
     <?php
     foreach($arResult["ITEMS"] as $arItem):
         $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -22,7 +23,7 @@ $param_tag_title = $arParams["TAG_TITLE"] ?? '2';
         );
         $att_preview_text = $arItem["DISPLAY_PROPERTIES"]["ATT_PREVIEW_TEXT"]["~VALUE"];
     ?>
-    <article class="article main-article" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+    <article class="article <?php if ($param_list_tag): ?> <?= $param_list_tag; ?>-article<?php endif; ?>" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
         <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="article__img-link" rel="nofollow">
             <img src="<?= $article_img["src"]; ?>"
                  class="article__img"
@@ -32,7 +33,9 @@ $param_tag_title = $arParams["TAG_TITLE"] ?? '2';
         </a>
         <div class="article__wrapper">
             <header class="article__header">
+                <?php if($arParams["DISPLAY_DATE"] !== "N" && $arItem["DISPLAY_ACTIVE_FROM"]): ?>
                 <time class="article__time" datetime="<?= FormatDate('Y-m-d', MakeTimeStamp($arItem["TIMESTAMP_X"])); ?>"><?= $arItem["DISPLAY_ACTIVE_FROM"]; ?> г.</time>
+                <?php endif; ?>
                 <h<?= $param_tag_title; ?> class="article__title">
                     <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="article__link"><?= $arItem["NAME"]; ?></a>
                 </h<?= $param_tag_title; ?>>
@@ -54,7 +57,9 @@ $param_tag_title = $arParams["TAG_TITLE"] ?? '2';
                 ?>
             </div>
             <?php endif; ?>
-            <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="btn btn-primary" rel="nofollow">Подробнее</a>
+            <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="btn btn-primary article__btn" rel="nofollow">
+                <?= GetMessage("btn_text"); ?> <i class="fa-solid fa-angle-right article__btn-icon"></i>
+            </a>
         </div>
     </article>
     <?php endforeach; ?>

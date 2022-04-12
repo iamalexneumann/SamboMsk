@@ -1,3 +1,3 @@
 <?php
-$MESS["nav_prev"]="&laquo";
-$MESS["nav_next"]="&raquo";
+$MESS["nav_prev"] = '<i class="fa-solid fa-angles-left"></i>';
+$MESS["nav_next"] = '<i class="fa-solid fa-angles-right"></i>';

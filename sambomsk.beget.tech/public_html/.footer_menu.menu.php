@@ -1,6 +1,13 @@
 <?
 $aMenuLinks = Array(
 	Array(
+		"Главная", 
+		"/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
 		"О нас", 
 		"/o-nas/", 
 		Array(), 
@@ -8,15 +15,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Наши залы", 
-		"/nashi-zaly/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Виды спорта", 
-		"/vidy-sporta/", 
+		"Наши тренеры", 
+		"/o-nas/trenery/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -24,6 +24,13 @@ $aMenuLinks = Array(
 	Array(
 		"Статьи", 
 		"/stati/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости", 
+		"/novosti/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -38,6 +45,13 @@ $aMenuLinks = Array(
 	Array(
 		"Контакты", 
 		"/kontakty/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Памятка для родителей", 
+		"/o-nas/dlya-roditeley/", 
 		Array(), 
 		Array(), 
 		"" 
