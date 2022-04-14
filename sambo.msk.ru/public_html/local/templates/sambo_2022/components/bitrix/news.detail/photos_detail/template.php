@@ -4,7 +4,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 }
 
 $this->setFrameMode(true);
-$att_photos = $arResult["DISPLAY_PROPERTIES"]["photos"] ?? '';
+$att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
 ?>
 <div class="photos-detail">
     <?php if($arResult["DETAIL_TEXT"] <> ''): ?>

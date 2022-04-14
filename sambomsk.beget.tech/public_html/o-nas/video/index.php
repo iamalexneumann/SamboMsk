@@ -34,7 +34,7 @@ $APPLICATION->SetTitle("Видео");
 			0 => "",
 			1 => "",
 		),
-		"DETAIL_SET_CANONICAL_URL" => "N",
+		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "N",

@@ -26,6 +26,12 @@
 	position: relative;
 	overflow: hidden;
 	flex: 1;
+	transition: all .25s ease-in-out;
+}
+
+.photos-list__item:hover {
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+	transform: translateY(-1px);
 }
 
 .photos-list__link {
@@ -35,14 +41,14 @@
 }
 
 .photos-list__img {
-	transition: transform 0.3s;
+	transition: transform 0.25s ease-in-out;
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
 }
 
 .photos-list__link:hover .photos-list__img {
-	transform: scale(1.025);
+	transform: scale(1.0125);
 }
 
 .photos-list__item-figcaption {

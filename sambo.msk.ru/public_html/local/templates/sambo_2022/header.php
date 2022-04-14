@@ -11,8 +11,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     //$Asset->addJs(SITE_TEMPLATE_PATH . '/libs/jquery/jquery-3.6.0.min.js');
     $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/bootstrap/css/bootstrap.min.css');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/bootstrap/js/bootstrap.min.js');
-//    $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
-//    $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
     //$Asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
     $APPLICATION->ShowHead();
     ?>
@@ -36,7 +34,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <body>
     <?php $APPLICATION->ShowPanel(); ?>
     <header class="main-header">
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-xl navbar-light">
             <div class="container-fluid">
                 <a<?php if (!($CurDir === '/')): ?> href="/" title="На главную"<?php endif; ?> class="logo header-logo">
                     <img src="<?= $siteparam_main_logo; ?>" alt="<?= $siteparam_site_name; ?>" width="75" height="75" class="logo__img">
@@ -52,7 +50,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                     <?php endif; ?>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler__text">меню</span>
+                    <span class="navbar-toggler__icon"><i class="fa-solid fa-bars"></i></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainMenu">
                     <?php
@@ -77,7 +76,52 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                     	),
                     	false
                     );?>
-<!--                    .header-->
+                    <div class="header-contacts">
+                        <div class="header-contacts__phones">
+                            <div class="header-contacts__phones-wrapper">
+                                <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="header-contacts__main-phone">
+                                    +7 <?= substr($siteparam_main_phone, 1); ?>
+                                </a>
+                                <?php if ($siteparam_second_phone_tel): ?>
+                                <div class="header-contacts__second-phone-wrapper">
+                                    <a href="tel:+7<?= $siteparam_second_phone_tel; ?>" class="header-contacts__second-phone">
+                                        +7 <?= substr($siteparam_second_phone, 1); ?>
+                                    </a>
+                                    <?php if ($siteparam_whatsapp_number): ?>
+                                    <a href="https://wa.me/7<?= $siteparam_whatsapp_number_tel; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>"
+                                       target="_blank" title="Написать в WhatsApp" class="header-contacts__whatsapp">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="header-contacts__communication-wrapper">
+                            <a href="mailto:<?= $siteparam_main_email; ?>" title="Написать E-mail" class="header-email">
+                                <i class="fa-solid fa-envelope header-email__icon"></i>
+                                <span class="header-email__link"><?= $siteparam_main_email; ?></span>
+                            </a>
+                            <?php if ($siteparam_telegram || $siteparam_vk): ?>
+                            <ul class="social-media header-social-media">
+                                <?php if ($siteparam_telegram): ?>
+                                <li class="social-media__item">
+                                    <a href="https://t.me/<?= $siteparam_telegram; ?>" target="_blank" title="Наш канал в Telegram" class="social-media__link social-media__telegram">
+                                        <i class="fa-brands fa-telegram"></i>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                                <?php if ($siteparam_vk): ?>
+                                <li class="social-media__item">
+                                    <a href="<?= $siteparam_vk; ?>" target="_blank" title="Наше сообщество в VK" class="social-media__link social-media__vk">
+                                        <i class="fa-brands fa-vk"></i>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                            </ul>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
