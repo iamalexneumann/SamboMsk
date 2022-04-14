@@ -8,10 +8,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     <?php
     use Bitrix\Main\Page\Asset;
     $Asset = Asset::getInstance();
-    //$Asset->addJs(SITE_TEMPLATE_PATH . '/libs/jquery/jquery-3.6.0.min.js');
+    $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/jquery-3.6.0.min.js');
     $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/bootstrap/css/bootstrap.min.css');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/bootstrap/js/bootstrap.min.js');
-    //$Asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
+    $Asset->addJs(SITE_TEMPLATE_PATH . '/main.js');
     $APPLICATION->ShowHead();
     ?>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 

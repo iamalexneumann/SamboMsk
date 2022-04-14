@@ -32,7 +32,7 @@ $APPLICATION->SetTitle("Фото");
 		"DETAIL_PAGER_TITLE" => "",
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "",
-			1 => "photos",
+			1 => "ATT_PHOTOS",
 			2 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "Y",

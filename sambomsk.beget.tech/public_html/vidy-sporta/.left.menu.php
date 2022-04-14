@@ -16,7 +16,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"История самбо", 
-		"/stati/istoriya-sambo-istoriya-rossii/", 
+		"/stati/istoriya-vozniknoveniya-sambo/", 
 		Array(), 
 		Array(), 
 		"" 

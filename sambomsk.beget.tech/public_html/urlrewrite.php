@@ -56,7 +56,7 @@ $arUrlRewrite=array (
     'PATH' => '/stati/detail.php',
     'SORT' => 100,
   ),
-  16 => 
+  18 => 
   array (
     'CONDITION' => '#^/o-nas/video/#',
     'RULE' => '',
@@ -64,7 +64,7 @@ $arUrlRewrite=array (
     'PATH' => '/o-nas/video/index.php',
     'SORT' => 100,
   ),
-  15 => 
+  19 => 
   array (
     'CONDITION' => '#^/o-nas/foto/#',
     'RULE' => '',
