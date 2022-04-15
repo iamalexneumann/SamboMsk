@@ -1,0 +1,152 @@
+.coaches-list {
+
+}
+
+.coaches-list__col {
+	display: flex;
+}
+
+.coach {
+	display: flex;
+	border: 1px solid #ececec;
+	margin-bottom: 30px;
+	border-radius: 3px;
+	position: relative;
+	overflow: hidden;
+	background-color: #ffffff;
+	transition: all .25s ease-in-out;
+}
+
+.coach:hover {
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+	transform: translateY(-1px);
+}
+
+.coach__img-link {
+	flex-shrink: 0;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	width: 50%;
+}
+
+.coach__img {
+	transition: transform .25s ease-in-out;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.coach__img-link:hover .coach__img {
+	transform: scale(1.0125);
+}
+
+.coach__wrapper {
+	flex-grow: 1;
+	padding: 30px;
+	border-left: 1px solid #ececec;;
+}
+
+.coach__header {
+	margin-bottom: 30px;
+}
+
+.coach__title {
+	font-size: 1.25rem;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.coach__link {
+	color: #424242;
+}
+
+.coach__link:hover {
+	color: #0652DD;
+}
+
+.coach__age {
+	font-size: 0.85rem;
+	color: #6f6f6f;
+}
+
+.coach__rank {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+.coach__rank-icon {
+	font-size: 1.25rem;
+	color: #0652DD;
+	margin-right: 10px;
+}
+
+.coach__rank-text {
+	font-size: 0.85rem;
+}
+.coach__btn-icon {
+	margin-left: 3px;
+}
+
+.coach__achievments {
+	margin-bottom: 30px;
+}
+
+.coach__achievments ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.coach__achievments li {
+	margin-bottom: 10px;
+	font-size: 0.85rem;
+	display: flex;
+	align-items: center;
+}
+
+.coach__achievments li:before {
+	display: inline-block;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font: var(--fa-font-solid);
+	content: "\f091";
+	margin-right: 10px;
+	color: #0652DD;
+	font-size: 1.25rem;
+}
+
+@media (min-width: 991.98px) and (max-width: 1199.98px) {
+	.coach {
+		flex-direction: column;
+	}
+	.coach__wrapper {
+		border-left: none;
+		border-top: 1px solid #ececec;;
+	}
+	.coach__img-link {
+		width: 100%;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.coach {
+		flex-direction: column;
+	}
+	.coach__wrapper {
+		padding: 20px;
+		border-left: none;
+		border-top: 1px solid #ececec;;
+	}
+	.coach__header {
+		margin-bottom: 20px;
+	}
+	.coach__title {
+		font-size: 1.35rem;
+	}
+	.coach__img-link {
+		width: 100%;
+	}
+}

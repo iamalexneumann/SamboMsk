@@ -15,3 +15,14 @@ function get_youtube_id (string $url):string
     preg_match($regex_pattern, $url, $mathes);
     return $mathes[1];
 }
+
+use Bitrix\Main\Grid\Declension;
+function get_age (int $year, string $one, string $four, string $five):string
+{
+    $year = date('Y') - $year;
+    if ($year <= 0) {
+        return '';
+    }
+    $yearDeclension = new Declension($one, $four, $five);
+    return $year . ' ' . $yearDeclension->get($year);
+}

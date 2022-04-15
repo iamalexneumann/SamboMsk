@@ -297,7 +297,6 @@ h5,
 
 .main-footer__menu-wrapper {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .footer-menu {
@@ -663,16 +662,16 @@ h5,
     flex-wrap: wrap;
   }
   .header-email__link {
-    font-size: 0.85rem;
     font-weight: 700;
   }
   .header-email__icon {
     color: #cdcdcd;
-    margin-right: 5px;
+    margin-right: 7px;
   }
   .header-social-media {
 
   }
+
   .header-social-media .social-media__link {
     width: 30px;
     height: 30px;
