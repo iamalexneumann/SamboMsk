@@ -1,10 +1,10 @@
-<?
+<?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Контакты");
 ?><div class="main-content container">
 	<div class="contacts-links">
 		<div class="links-halls">
- <b>1Наши залы</b>
+ <b>Наши залы</b>
 			<?$APPLICATION->IncludeComponent(
 	"bitrix:menu", 
 	"bottom_extra_menu", 
@@ -90,15 +90,8 @@ $APPLICATION->SetTitle("Контакты");
 	)
 );?>
 </div>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
-	Array(
-		"AREA_FILE_SHOW" => "file",
-		"AREA_FILE_SUFFIX" => "inc",
-		"COMPOSITE_FRAME_MODE" => "A",
-		"COMPOSITE_FRAME_TYPE" => "AUTO",
-		"EDIT_TEMPLATE" => "",
-		"PATH" => "/index_map.php"
-	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+
+<?php
+require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/halls_map.php');
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
+?>

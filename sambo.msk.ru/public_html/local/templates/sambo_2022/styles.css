@@ -617,6 +617,161 @@ h5,
   margin-right: 5px;
 }
 
+.main-section {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.main-section:nth-of-type(even) {
+  background-color: #f8f8f8;
+}
+
+.main-section__title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #424242;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.main-section__subtitle {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6f6f6f;
+  max-width: 450px;
+  margin: -30px auto 40px;
+  letter-spacing: 0.05em;
+}
+
+.halls-list-map {
+  width: 100%;
+  height: 600px;
+}
+
+.yandex-map {
+
+}
+
+.yandex-map__header {
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.4;
+  color: #555555;
+}
+
+.yandex-map__img-link {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid #ececec;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  width: 213px;
+  height: 1209x;
+}
+
+.yandex-map__img {
+  transition: transform .25s ease-in-out;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.yandex-map__img-link:hover .yandex-map__img {
+  transform: scale(1.0125);
+}
+
+.yandex-map__link {
+  font-size: 1rem;
+  color: #424242;
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.yandex-map__set-open {
+  font-size: 0.75rem;
+  color: #6f6f6f;
+  font-weight: 400;
+}
+
+.yandex-map__content {
+  padding: 10px;
+  padding-top: 0;
+  color: #555555;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.yandex-map__address {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.yandex-map__address-icon {
+  color: #cdcdcd;
+  margin-right: 7px;
+}
+
+.yandex-map__address-text {
+  font-size: 0.85rem;
+}
+
+.yandex-map__phones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.yandex-map__phone-item {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.yandex-map__phone-item:last-of-type {
+  margin-right: 0;
+}
+
+.yandex-map__phone-item::after {
+  content: ",";
+}
+
+.yandex-map__phone-item:last-of-type::after {
+  content: "";
+}
+
+.yandex-map__phone-icon {
+  margin-right: 7px;
+  color: #cdcdcd;
+}
+
+.yandex-map__phone-link {
+  color: #424242;
+  font-weight: 700;
+}
+
+.yandex-map__phone-description {
+  font-size: 0.85rem;
+  color: #6f6f6f;
+  margin-left: 7px;
+}
+
+.yandex-map__btn {
+  margin-top: 10px;
+}
+
 @media (max-width: 1399.98px) {
   .footer-menu__list_columns-two {
     column-gap: 30px;
@@ -734,6 +889,14 @@ h5,
   }
   .share-block__title {
     font-size: 1.25rem;
+  }
+  .yandex-map__header,
+  .yandex-map__content {
+    max-width: 300px;
+  }
+  .yandex-map__link {
+    width: 142px;
+    height: 80px;
   }
 }
 

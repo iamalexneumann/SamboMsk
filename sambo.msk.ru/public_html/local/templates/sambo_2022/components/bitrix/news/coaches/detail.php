@@ -6,7 +6,7 @@ $this->setFrameMode(true);
 
 $APPLICATION->IncludeComponent(
     "bitrix:news.detail",
-    ".default",
+    "coach_detail",
     Array(
         "DISPLAY_DATE" => $arParams["DISPLAY_DATE"],
         "DISPLAY_NAME" => $arParams["DISPLAY_NAME"],

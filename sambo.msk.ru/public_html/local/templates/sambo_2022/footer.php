@@ -3,7 +3,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 ?>
+        <?php if (!($CurDir === '/')): ?>
         </div>
+        <?php endif; ?>
     </main>
     <footer class="main-footer">
         <div class="main-footer__content">

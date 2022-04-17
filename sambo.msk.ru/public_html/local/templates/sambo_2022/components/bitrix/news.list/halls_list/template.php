@@ -83,10 +83,10 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
                         <?php endif; ?>
                         <footer class="hall__footer">
                             <?php if ($att_address): ?>
-                            <div class="hall__address">
-                                <i class="hall__address-icon fa-solid fa-location-dot"></i>
-                                <div class="hall__address-text"><?= $att_address; ?></div>
-                            </div>
+                                <div class="hall__address">
+                                    <i class="hall__address-icon fa-solid fa-location-dot"></i>
+                                    <div class="hall__address-text"><?= $att_address; ?></div>
+                                </div>
                             <?php endif; ?>
                             <?php if ($att_phones): ?>
                             <div class="hall__phones">

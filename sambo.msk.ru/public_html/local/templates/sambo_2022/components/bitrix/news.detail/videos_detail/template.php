@@ -12,11 +12,7 @@ $att_videos = $arResult["DISPLAY_PROPERTIES"]["ATT_VIDEOS"] ?? '';
         <?= $arResult["DETAIL_TEXT"]; ?>
     </div>
     <?php endif; ?>
-    <?php
-    if (count($att_videos) > 0):
-        $this->addExternalCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
-        $this->addExternalJS(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
-        ?>
+    <?php if (count($att_videos) > 0): ?>
         <figure role="group" class="videos-list">
             <div class="row videos-list__row">
             <?php

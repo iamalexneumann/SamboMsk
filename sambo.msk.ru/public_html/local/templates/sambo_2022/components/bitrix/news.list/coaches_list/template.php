@@ -43,7 +43,7 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
                             <h<?= $param_tag_title; ?> class="coach__title">
                                 <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="coach__link"><?= $arItem["NAME"]; ?></a>
                             </h<?= $param_tag_title; ?>>
-                            <?php if ($att_birthday_year): echo $coach_age; ?>
+                            <?php if ($att_birthday_year): ?>
                             <div class="coach__age">
                                 <?= get_age(
                                         $att_birthday_year,

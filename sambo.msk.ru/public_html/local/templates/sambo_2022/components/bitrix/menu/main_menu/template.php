@@ -15,7 +15,7 @@ if (!empty($arResult)):
         }
         if ($arItem["IS_PARENT"]):
             if ($arItem["DEPTH_LEVEL"] == 1):
-                $dropdown_label = CUtil::translit($arItem["TEXT"], "ru", array("replace_space"=>"-", "replace_other"=>"-"));
+                $dropdown_label = CUtil::translit($arItem["TEXT"], "ru", array("replace_space"=>"", "replace_other"=>""));
 ?>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle<?php if ($arItem["SELECTED"]): ?> active<?php endif; ?>"
