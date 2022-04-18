@@ -29,17 +29,14 @@ function get_age (int $year, string $one, string $four, string $five):string
 
 function use_wide_template (string $url):bool
 {
-    $pages = [
-        '/nashi-zaly/',
-        '/o-nas/trenery/',
+    $patterns = [
+        '#^/nashi-zaly/([0-9a-zA-Z_-]+)/.*#',
+        '#^/kontakty/#',
+        '#^/o-nas/trenery/([0-9a-zA-Z_-]+)/.*#'
     ];
-    for ($i = 0; $i < count($pages); $i++) {
-        $pattern = ',' . $pages[$i] . '([0-9a-zA-Z_-]+)/,';
-        preg_match($pattern, $url, $matches);
-//        echo $pages[$i];
-//        print_r($matches);
-//        echo count($matches);
-        if (!count($matches) > 0) {
+    for ($i = 0; $i < count($patterns); $i++) {
+        preg_match($patterns[$i], $url, $matches);
+        if (count($matches) > 0) {
             return true;
         }
     }

@@ -6,6 +6,7 @@ $APPLICATION->SetTitle("Главная");
 <section class="main-section">
     <div class="container">
         <h2 class="main-section__title">Наши тренеры</h2>
+        <div class="main-section__subtitle">Педагогический состав с многолетним опытом работы. Все тренеры действующие мастера спорта или кандидаты в мастера спорта по самбо и дзюдо.</div>
         <?php
         $APPLICATION->IncludeComponent(
             "bitrix:news.list",
@@ -73,6 +74,7 @@ $APPLICATION->SetTitle("Главная");
     <section class="main-section">
         <div class="container">
             <h2 class="main-section__title">Наши залы</h2>
+            <div class="main-section__subtitle">Мы постоянно работаем над расширением нашей географии. Наши залы расположены в Москве и области - выберите удобный для Вас.</div>
             <?php
             $APPLICATION->IncludeComponent(
                 "bitrix:news.list",

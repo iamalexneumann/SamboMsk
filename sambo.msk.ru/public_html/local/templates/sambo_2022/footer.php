@@ -3,7 +3,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 ?>
-        <?php if (!($CurDir === '/')): ?>
+        <?php if (!($CurDir === '/') || !(use_wide_template($CurDir) === true)): ?>
         </div>
         <?php endif; ?>
     </main>

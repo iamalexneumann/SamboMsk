@@ -1,9 +1,7 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Контакты");
-?><div class="main-content container">
-	<div class="contacts-links">
-		<div class="links-halls">
+?>
  <b>Наши залы</b>
 			<?$APPLICATION->IncludeComponent(
 	"bitrix:menu", 
@@ -26,10 +24,7 @@ $APPLICATION->SetTitle("Контакты");
 	),
 	false
 );?>
-		</div>
-		<div class="header-contacts">
  <b>Наши реквизиты</b>
-			<div>
 				<p>
  <b>ОГРН:</b> 1167700068161<br>
  <b>ИНН:</b> 7728350420<br>
@@ -37,11 +32,7 @@ $APPLICATION->SetTitle("Контакты");
  <b>ОПФ:</b> Автономные некоммерческие организации<br>
  <b>Регистратор:</b> УПРАВЛЕНИЕ ФЕДЕРАЛЬНОЙ НАЛОГОВОЙ СЛУЖБЫ ПО Г.МОСКВЕ
 				</p>
-			</div>
-		</div>
-		<div class="contacts-social">
  <b>Наши контакты</b>
-			<div class="phones contacts-round">
 				 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",
@@ -52,9 +43,7 @@ $APPLICATION->SetTitle("Контакты");
 		"EDIT_TEMPLATE" => ""
 	)
 );?>
-			</div>
  <a href="#" class="btn btn-red btn-call-me">Перезвоните мне</a>
-			<div class="email contacts-round">
 				 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",
@@ -65,8 +54,6 @@ $APPLICATION->SetTitle("Контакты");
 		"EDIT_TEMPLATE" => ""
 	)
 );?>
-			</div>
-			<div class="student-social">
 				 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",
@@ -77,9 +64,6 @@ $APPLICATION->SetTitle("Контакты");
 		"EDIT_TEMPLATE" => ""
 	)
 );?>
-			</div>
-		</div>
-	</div>
 	 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",
@@ -89,7 +73,6 @@ $APPLICATION->SetTitle("Контакты");
 		"EDIT_TEMPLATE" => ""
 	)
 );?>
-</div>
 
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/halls_map.php');

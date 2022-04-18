@@ -130,17 +130,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
         
     </header>
     <main>
-    <?php
-//echo $CurDir;
-//$pages = 'nashi-zaly';
-//echo preg_match(',/' . $pages . '/([0-9a-zA-Z_-]+)/,', $url, $matches);
-//if (use_wide_template($CurDir) === true) {
-//    echo 'тру';
-//} else {
-//    echo 'ложь';
-//}
-//    echo use_wide_template($CurDir);
-    ?>
         <?php if (!($CurDir === '/')): ?>
         <header class="page-header">
             <div class="container">
@@ -159,5 +148,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                 <h1 class="page-header__title"><?php $APPLICATION->ShowTitle('h1', false); ?></h1>
             </div>
         </header>
+        <?php if (use_wide_template($CurDir) === false): ?>
         <div class="container main-content">
+        <?php endif; ?>
         <?php endif; ?>
