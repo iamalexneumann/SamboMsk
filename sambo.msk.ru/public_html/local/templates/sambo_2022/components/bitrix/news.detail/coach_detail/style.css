@@ -117,9 +117,75 @@
 	transition: all .25s ease-in-out;
 	display: inline-block;
 	vertical-align: middle;
+	margin-bottom: 30px;
 }
 
 .coach-detail__img-link:hover {
 	box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
 	transform: translateY(-1px);
+}
+
+.coach__rank {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+.coach__rank-icon {
+	font-size: 1.75rem;
+	color: #0652DD;
+	margin-right: 10px;
+}
+
+.coach__rank-text {
+	font-size: 1rem;
+}
+.coach__btn-icon {
+	margin-left: 3px;
+}
+
+.coach__achievments {
+	margin-bottom: 30px;
+}
+
+.coach__achievments ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.coach__achievments li {
+	margin-bottom: 10px;
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+}
+
+.coach__achievments li:before {
+	display: inline-block;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font: var(--fa-font-solid);
+	content: "\f091";
+	margin-right: 10px;
+	color: #0652DD;
+	font-size: 1.75rem;
+}
+
+.coach__age {
+	margin-bottom: 30px;
+}
+
+.coach__age-date {
+
+}
+
+.coach__age-date span {
+	font-weight: 700;
+}
+
+.coach__age-description {
+	font-size: 0.85rem;
+	color: #6f6f6f;
 }

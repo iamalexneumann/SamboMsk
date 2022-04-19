@@ -18,9 +18,6 @@ $coach_photo = CFile::ResizeImageGet(
 );
 $att_rank = $arResult["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"];
 $att_birthday = $arResult["DISPLAY_PROPERTIES"]["ATT_BIRTHDAY"]["VALUE"];
-if ($att_birthday) {
-    $att_birthday_year = FormatDate('Y', strtotime($att_birthday));
-}
 $att_achievments = $arResult["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"];
 ?>
 <div class="coach-detail main-content">
@@ -39,16 +36,25 @@ $att_achievments = $arResult["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"];
                         <?= $arResult["DETAIL_TEXT"]; ?>
                     </div>
                 <?php endif; ?>
-                <!--            --><?php //if ($att_birthday_year): ?>
-                <!--            <div class="coach__age">-->
-                <!--                --><?//= get_age(
-                //                    $att_birthday_year,
-                //                    GetMessage('age_declension_one'),
-                //                    GetMessage('age_declension_four'),
-                //                    GetMessage('age_declension_five')
-                //                ); ?>
-                <!--            </div>-->
-                <!--            --><?php //endif; ?>
+                <?php if ($att_birthday):
+                        $att_birthday_year = FormatDate('Y', strtotime($att_birthday));
+                        $att_birthday_formatted = FormatDate('d F Y', strtotime($att_birthday));
+                ?>
+                <div class="coach__age">
+                    <span class="coach__age-date">
+                        <span><?= GetMessage('coach_age'); ?>:</span>
+                        <?= $att_birthday_formatted; ?> <?= GetMessage("COACH_DETAIL_YEAR"); ?>
+                    </span>
+                    <span class="coach__age-description">
+                        (<?= get_age(
+                            $att_birthday_year,
+                            GetMessage('age_declension_one'),
+                            GetMessage('age_declension_four'),
+                            GetMessage('age_declension_five')
+                        ); ?>)
+                    </span>
+                </div>
+                <?php endif; ?>
                 <div class="coach__achievments">
                     <?php if ($att_rank): ?>
                         <div class="coach__rank">

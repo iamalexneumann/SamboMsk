@@ -68,11 +68,19 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
                             <?php endif; ?>
                             <?php
                             if ($att_achievments) {
+                                $att_achievments_count = 3;
+                                $att_achievments_decoded = json_decode($att_achievments);
+                                $att_achievments_decoded_count = count($att_achievments_decoded->blocks[0]->elements);
+                                if ($att_achievments_decoded_count > $att_achievments_count) {
+                                    for ($i = $att_achievments_count; $i < $att_achievments_decoded_count; $i++) {
+                                        unset($att_achievments_decoded->blocks[0]->elements[$i]);
+                                    }
+                                }
                                 $APPLICATION->IncludeComponent(
                                     "sprint.editor:blocks",
                                     ".default",
                                     Array(
-                                        "JSON" => $att_achievments,
+                                        "JSON" => json_encode($att_achievments_decoded),
                                     ),
                                     $component,
                                     Array(
