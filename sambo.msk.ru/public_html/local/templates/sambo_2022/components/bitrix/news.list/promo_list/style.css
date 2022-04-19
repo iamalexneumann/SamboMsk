@@ -1,0 +1,42 @@
+.promo-alert {
+	background-color: #0652DD;
+    color: #ffffff;
+    font-size: 0.85rem;
+    margin: 0;
+    padding: 10px 40px 10px 0;
+    letter-spacing: 0.05em;
+    position: relative;
+    border-radius: 0;
+    border: none;
+}
+
+.promo-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.promo-list__item {
+
+}
+
+.promo-list__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-list__btn {
+    padding: 3px 8px !important;
+    font-size: 0.75rem;
+    margin-left: 10px;
+}
+
+.promo-alert .btn-close {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+}

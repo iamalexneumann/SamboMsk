@@ -12,7 +12,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/jquery-3.6.0.min.js');
     $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/bootstrap/css/bootstrap.min.css');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/bootstrap/js/bootstrap.min.js');
-    //Asset->addJs(SITE_TEMPLATE_PATH . '/libs/fa.min.js');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/main.js');
     $APPLICATION->ShowHead();
     ?>
@@ -35,7 +34,77 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 </head>
 <body>
     <?php $APPLICATION->ShowPanel(); ?>
-    <header class="main-header">
+    <?php
+    $APPLICATION->IncludeComponent(
+        "bitrix:news.list",
+        "promo_list",
+        array(
+            "ACTIVE_DATE_FORMAT" => "d.m.Y",
+            "ADD_SECTIONS_CHAIN" => "N",
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_ADDITIONAL" => "",
+            "AJAX_OPTION_HISTORY" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "Y",
+            "CACHE_FILTER" => "N",
+            "CACHE_GROUPS" => "Y",
+            "CACHE_TIME" => "36000000",
+            "CACHE_TYPE" => "A",
+            "CHECK_DATES" => "Y",
+            "COMPOSITE_FRAME_MODE" => "A",
+            "COMPOSITE_FRAME_TYPE" => "AUTO",
+            "DETAIL_URL" => "",
+            "DISPLAY_BOTTOM_PAGER" => "N",
+            "DISPLAY_DATE" => "N",
+            "DISPLAY_NAME" => "N",
+            "DISPLAY_PICTURE" => "N",
+            "DISPLAY_PREVIEW_TEXT" => "N",
+            "DISPLAY_TOP_PAGER" => "N",
+            "FIELD_CODE" => array(
+                0 => "",
+                1 => "",
+            ),
+            "FILTER_NAME" => "",
+            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+            "IBLOCK_ID" => "12",
+            "IBLOCK_TYPE" => "content",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "INCLUDE_SUBSECTIONS" => "Y",
+            "MESSAGE_404" => "",
+            "NEWS_COUNT" => "5",
+            "PAGER_BASE_LINK_ENABLE" => "N",
+            "PAGER_DESC_NUMBERING" => "N",
+            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+            "PAGER_SHOW_ALL" => "N",
+            "PAGER_SHOW_ALWAYS" => "N",
+            "PAGER_TEMPLATE" => ".default",
+            "PAGER_TITLE" => "Новости",
+            "PARENT_SECTION" => "",
+            "PARENT_SECTION_CODE" => "",
+            "PREVIEW_TRUNCATE_LEN" => "",
+            "PROPERTY_CODE" => array(
+                0 => "ATT_PREVIEW_TEXT",
+                1 => "ATT_BTN_TEXT",
+                2 => "ATT_BTN_LINK",
+                3 => "",
+            ),
+            "SET_BROWSER_TITLE" => "N",
+            "SET_LAST_MODIFIED" => "N",
+            "SET_META_DESCRIPTION" => "N",
+            "SET_META_KEYWORDS" => "N",
+            "SET_STATUS_404" => "N",
+            "SET_TITLE" => "N",
+            "SHOW_404" => "N",
+            "SORT_BY1" => "SORT",
+            "SORT_BY2" => "ACTIVE_FROM",
+            "SORT_ORDER1" => "ASC",
+            "SORT_ORDER2" => "DESC",
+            "STRICT_SECTION_CHECK" => "N",
+            "COMPONENT_TEMPLATE" => "promo_list"
+        ),
+        false
+    ); ?>
+    <header class="main-header sticky-top">
         <nav class="navbar navbar-expand-xl navbar-light">
             <div class="container-fluid">
                 <a<?php if (!($CurDir === '/')): ?> href="/" title="На главную"<?php endif; ?> class="logo header-logo">

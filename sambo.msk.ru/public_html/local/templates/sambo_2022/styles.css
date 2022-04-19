@@ -780,6 +780,27 @@ h5,
   margin-top: 10px;
 }
 
+.btn-close {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #424242;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  right: 0;
+  background: transparent;
+  padding: 0;
+  transition: all .25s ease-in-out;
+}
+
+.btn-close_light {
+  color: #ffffff;
+}
+
+.btn-close_light:hover {
+  color: #ffffff;
+}
+
 @media (max-width: 1399.98px) {
   .footer-menu__list_columns-two {
     column-gap: 30px;
