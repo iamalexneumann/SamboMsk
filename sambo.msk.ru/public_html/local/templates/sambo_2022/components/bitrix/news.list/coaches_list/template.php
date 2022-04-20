@@ -20,7 +20,7 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
                     "width" => $article_img_width,
                     "height" => $article_img_height
                 ],
-                BX_RESIZE_IMAGE_EXACT
+                BX_RESIZE_IMAGE_PROPORTIONAL_ALT
             );
             $att_rank = $arItem["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"];
             $att_birthday = $arItem["DISPLAY_PROPERTIES"]["ATT_BIRTHDAY"]["VALUE"];
