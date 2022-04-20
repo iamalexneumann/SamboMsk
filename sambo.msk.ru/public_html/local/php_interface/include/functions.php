@@ -30,9 +30,12 @@ function get_age (int $year, string $one, string $four, string $five):string
 function use_wide_template (string $url):bool
 {
     $patterns = [
-        '#^/nashi-zaly/([0-9a-zA-Z_-]+)/.*#',
-        '#^/kontakty/#',
-        '#^/o-nas/trenery/([0-9a-zA-Z_-]+)/.*#'
+        '#^/nashi-zaly/([0-9a-zA-Z_-]+)/$#',
+        '#^/kontakty/$#',
+        '#^/o-nas/trenery/([0-9a-zA-Z_-]+)/$#',
+        '#^/vidy-sporta/sambo-v-moskve/$#',
+        '#^/vidy-sporta/dzyudo-v-moskve/$#',
+        '#^/o-nas/$#',
     ];
     for ($i = 0; $i < count($patterns); $i++) {
         preg_match($patterns[$i], $url, $matches);

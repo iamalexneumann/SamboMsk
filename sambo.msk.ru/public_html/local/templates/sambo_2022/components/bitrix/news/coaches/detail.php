@@ -60,6 +60,7 @@ $APPLICATION->IncludeComponent(
     ),
     $component
 );
-echo '<div class="mb-50">';
-require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_detail_share_back.php');
-echo '</div>';
+?>
+<div class="mb-50">
+<?php require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_detail_block_share_ru.php'); ?>
+</div>

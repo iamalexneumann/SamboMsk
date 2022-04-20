@@ -61,4 +61,4 @@ $APPLICATION->IncludeComponent(
 	$component
 );
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_detail_share_back.php');
+require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_detail_block_share_ru.php');

@@ -4,6 +4,29 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 }
 $this->setFrameMode(true);
 
+if (Cmodule::IncludeModule('asd.iblock')) {
+    $iblock_ufs = CASDiblockTools::GetIBUF($arParams["IBLOCK_ID"]);
+    $uf_preview_text = $iblock_ufs["UF_PREVIEW_TEXT"] ?? '';
+}
+?>
+<?php if ($uf_preview_text): ?>
+<div class="iblock-preview-text">
+    <?php
+    $APPLICATION->IncludeComponent(
+        "sprint.editor:blocks",
+        "seo_text",
+        Array(
+            "JSON" => $uf_preview_text,
+        ),
+        $component,
+        Array(
+            "HIDE_ICONS" => "Y"
+        )
+    );
+    ?>
+</div>
+<?php endif; ?>
+<?php
 $APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "halls_list",
