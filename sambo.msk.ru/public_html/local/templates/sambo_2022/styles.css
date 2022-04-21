@@ -343,6 +343,10 @@ h5,
   column-gap: 50px;
 }
 
+.footer-menu__list_page-contacts {
+
+}
+
 .footer-menu__item {
   margin: 5px 0 5px;
 }
@@ -351,6 +355,16 @@ h5,
   color: #c2c2c2;
   font-size: 0.85rem;
   display: inline-block;
+}
+
+.footer-menu__list_page-contacts .footer-menu__link {
+  /*font-size: 1rem;*/
+  color: #424242;
+  /*font-weight: 700;*/
+}
+
+.footer-menu__list_page-contacts .footer-menu__link:hover {
+  color: #0741ad;
 }
 
 .footer-menu__link:hover {
@@ -447,6 +461,7 @@ h5,
   color: #ffffff;
   font-size: 0.85rem;
   font-weight: 700;
+  transition: all .25s ease-in-out;
 }
 
 .footer-email:hover .footer-email__link {
@@ -986,6 +1001,101 @@ h5,
   margin-bottom: 30px;
   height: 100px;
   width: auto;
+}
+
+.page-contacts {
+
+}
+
+.contacts-block {
+  margin-bottom: 30px;
+}
+
+.contacts-block__title {
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  color: #424242;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.contacts-block__requisites {
+
+}
+
+.contacts-block__requisites .sp-properties {
+  width: 100%;
+  color: #424242;
+  vertical-align: top;
+  font-size: 0.85rem;
+}
+
+.contacts-block__requisites .sp-properties_title {
+  font-weight: 700;
+  padding: 5px;
+  border: 1px solid #ececec;
+}
+
+.contacts-block__requisites .sp-properties_text {
+  padding: 5px;
+  border: 1px solid #ececec;
+}
+
+.contacts-block .footer-phones__icon {
+  color: #cdcdcd;
+}
+
+.contacts-block .footer-phones__main-phone {
+  color: #424242;
+}
+
+.contacts-block .footer-phones__main-phone:hover {
+  color: #0741ad;
+}
+
+.contacts-block .footer-phones__second-phone {
+  color: #6f6f6f;
+}
+
+.contacts-block .footer-phones__second-phone:hover {
+  color: #0741ad;
+}
+
+.contacts-block .footer-email {
+  color: #cdcdcd;
+}
+
+.contacts-block .footer-email__link {
+  color: #424242;
+}
+
+.contacts-block .footer-email__link:hover {
+  color: #0741ad;
+}
+
+.contacts-block .social-media__link {
+  color: #ffffff;
+}
+
+.contacts-block .social-media__telegram {
+  border: 1px solid #0088cc;
+  background-color: #0088cc;
+}
+
+.contacts-block .social-media__whatsapp {
+  border: 1px solid #25d366;
+  background-color: #25d366;
+}
+
+.contacts-block .social-media__vk {
+  border: 1px solid #45668e;
+  background-color: #45668e;
+}
+
+.contacts-block .social-media__link:hover {
+  opacity: 0.85;
 }
 
 @media (max-width: 1399.98px) {

@@ -17,6 +17,7 @@ $siteparam_whatsapp_text_converted = convert_space_to_url_code($siteparam_whatsa
 $siteparam_main_email = \COption::GetOptionString( 'askaron.settings', 'UF_MAIN_EMAIL') ?? '';
 $siteparam_telegram = \COption::GetOptionString( 'askaron.settings', 'UF_TELEGRAM') ?? '';
 $siteparam_vk = \COption::GetOptionString( 'askaron.settings', 'UF_VK') ?? '';
+$siteparam_requisites = \COption::GetOptionString( 'askaron.settings', 'UF_REQUISITES') ?? '';
 
 $CurDir = $APPLICATION->GetCurDir();
 $CurUri = $APPLICATION->GetCurUri();
