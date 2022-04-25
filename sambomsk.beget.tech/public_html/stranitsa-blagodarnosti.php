@@ -1,21 +1,20 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+<?php
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Страница благодарности");
-?><div class="modal-window form-callback" style="width: 100%;">
-  <div class="form-img">
-    <img width="390" src="/bitrix/templates/sambo/img/form-callback.png" height="411" alt="">
-  </div>
-  <div id="callback-form">
-    <div class="form-success">
-      <div style="font-weight: bold;">Спасибо. Мы перезвоним Вам в течение дня!</div>
-      <div class="" style="margin-top: 40px">
-        <div class="title">Следите за новостями:</div>
-        <ul class="footer-social" style="background: #0039a6; padding: 20px;">
-          <li><a style="margin-left: 0;" href="https://vk.com/msksambo" class="link-vk" target="_blank">Вконтакте</a></li>
-          <li><a href="https://www.instagram.com/sambo_lll_medvedya/" class="link-im" target="_blank">Instagram</a></li>
-          <li><a href="https://www.facebook.com/msksambo/" class="link-yb" target="_blank">Facebook </a></li>
-        </ul>
-      </div>
+?>
+
+<div class="main-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5">
+                <img width="390" src="<?= SITE_TEMPLATE_PATH; ?>/img/thanks-page-img.png" height="411" alt="">
+            </div>
+            <div class="col-lg-6 contacts-block mb-0">
+                <div class="h4">Спасибо. Мы перезвоним Вам в течение дня!</div>
+                <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/block_contacts_ru.php'); ?>
+            </div>
+        </div>
     </div>
-  </div>
-</div><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+</div>
+
+<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php"); ?>

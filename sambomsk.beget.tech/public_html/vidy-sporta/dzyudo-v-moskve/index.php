@@ -95,6 +95,7 @@ $APPLICATION->SetTitle("Дзюдо в Москве");
         </p>
     </div>
 </section>
+<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form_ru.php'); ?>
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",
@@ -121,6 +122,7 @@ $APPLICATION->IncludeComponent(
         "PATH" => SITE_TEMPLATE_PATH . "/include/section_photos_ru.php",
     )
 );?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form_ru.php'); ?>
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",

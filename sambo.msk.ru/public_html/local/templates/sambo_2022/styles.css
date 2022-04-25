@@ -25,7 +25,6 @@ a {
 
 a:hover {
   color: #0741ad;
-  /*#3742fa*/
 }
 
 h1,
@@ -104,6 +103,10 @@ h5,
   border-color: #0741ad;
 }
 
+.btn-light {
+  color: #424242;
+}
+
 .page-header {
   padding: 30px 0;
   background-color: #f8f8f8;
@@ -142,6 +145,7 @@ h5,
   background-color: #ffffff;
   box-shadow: 0 1px 5px rgb(0 0 0 / 14%);
   border-bottom: 1px solid #eff1f5;
+  z-index: 1000;
 }
 
 .logo {
@@ -1098,6 +1102,81 @@ h5,
   opacity: 0.85;
 }
 
+.main-form-section {
+  background: #f8f8f8 url("img/main-logo-section.svg") 0 25%;
+  background-size: 35%;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-form-section::before {
+  position: absolute;
+  z-index: 1;
+  top: -30%;
+  right: 0;
+  width: 48%;
+  height: 200%;
+  content: '';
+  border-top-left-radius: 350px;
+  background-color: #0652DD;
+}
+
+.main-form-section__row {
+  align-items: center;
+}
+
+.main-form-section__content, .main-form-section__form {
+  position: relative;
+  z-index: 2;
+}
+
+.main-form-section__content {
+  display: flex;
+  align-items: center;
+}
+
+.main-form-section__content::after {
+  width: 165px;
+  height: 242px;
+  background: url('img/main-form-section-img.png') no-repeat;
+  content: '';
+  background-size: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.main-form-section__text {
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  max-width: 500px;
+  padding-right: 30px;
+}
+
+.main-form-section__selected-text, .main-form-section__selected-link {
+  background-color: #0652DD;
+  color: #ffffff;
+  padding: 0 5px;
+  margin-top: 1px;
+}
+
+.main-form-section__selected-link {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.main-form-section__selected-link:hover {
+  color: #e8e8e8;
+}
+
+.main-form-section__form {
+  color: #ffffff;
+}
+
+.main-form-section__form-wrapper {
+  padding-left: 150px;
+}
+
 @media (max-width: 1399.98px) {
   .footer-menu__list_columns-two {
     column-gap: 30px;
@@ -1172,6 +1251,12 @@ h5,
     color: #ffffff;
     opacity: 0.85;
   }
+  .main-form-section__text {
+    padding-right: 0;
+  }
+  .main-form-section__content::after {
+    display: none;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -1189,6 +1274,26 @@ h5,
   .kinds-of-sports__item {
     width: 100%;
     min-height: 350px;
+  }
+  .main-form-section::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 0;
+  }
+  .main-form-section__content {
+    margin-bottom: 30px;
+  }
+  .main-form-section__form-wrapper {
+    padding: 0;
+  }
+  .main-form-section__text {
+    color: #ffffff;
+  }
+  .main-form-section__selected-text, .main-form-section__selected-link {
+    background-color: #ffffff;
+    color: #0652DD;
   }
 }
 
