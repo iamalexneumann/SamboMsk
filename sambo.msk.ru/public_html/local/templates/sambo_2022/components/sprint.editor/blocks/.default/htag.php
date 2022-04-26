@@ -1,3 +1,3 @@
-<? /** @var $block array */ ?>
-<? if (!empty($block['anchor'])): ?><a name="<?= $block['anchor'] ?>"></a><? endif; ?>
-<<?= $block['type'] ?>><?= $block['value'] ?></<?= $block['type'] ?>>
+<<?= $block['type'] ?><?php if (!empty($block['anchor'])): ?> id="<?= $block['anchor']; ?>"<?php endif; ?>>
+    <?= $block['value']; ?>
+</<?= $block['type']; ?>>
