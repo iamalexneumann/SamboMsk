@@ -36,7 +36,7 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
                     <div class="article-vertical__wrapper">
                         <header class="article-vertical__header">
                             <?php if($arParams["DISPLAY_DATE"] !== "N" && $arItem["DISPLAY_ACTIVE_FROM"]): ?>
-                            <time class="article-vertical__time" datetime="<?= FormatDate('Y-m-d', MakeTimeStamp($arItem["TIMESTAMP_X"])); ?>"><?= $arItem["DISPLAY_ACTIVE_FROM"]; ?> г.</time>
+                            <time class="article-vertical__time" datetime="<?= FormatDate('Y-m-d', MakeTimeStamp($arItem["ACTIVE_FROM"])); ?>"><?= $arItem["DISPLAY_ACTIVE_FROM"]; ?> г.</time>
                             <?php endif; ?>
                             <h<?= $param_tag_title; ?> class="article-vertical__title">
                                 <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="article-vertical__link"><?= $arItem["NAME"]; ?></a>
