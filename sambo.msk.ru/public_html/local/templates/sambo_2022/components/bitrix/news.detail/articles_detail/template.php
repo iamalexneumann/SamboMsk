@@ -6,7 +6,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) {
 $this->setFrameMode(true);
 $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
 ?>
-<div class="page-articles-detail">
+<div class="page-articles-detail clearfix">
     <?php
     $APPLICATION->IncludeComponent(
         "sprint.editor:blocks",

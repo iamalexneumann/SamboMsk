@@ -27,6 +27,7 @@
     display: none;
     border-bottom: 2px solid #ccc;
     border-right: 2px solid #ccc;
+    overflow-y: scroll;
 }
 
 .sp-block-my_float_img.sp-show .sp-panel {

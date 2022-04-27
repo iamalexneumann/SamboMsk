@@ -210,3 +210,10 @@
 .article-content__list .article-content__item {
     margin-bottom: 5px;
 }
+
+.article-content__item.level2 {
+    margin-left: 1rem;
+}
+.article-content__item.level3 {
+    margin-left: 2rem;
+}
