@@ -1,3 +1,7 @@
+<?php
+$siteparam_main_phone = \COption::GetOptionString( 'askaron.settings', 'UF_MAIN_PHONE') ?? '';
+$siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main_phone), 1);
+?>
 <div class="main-form-section">
     <div class="container">
         <div class="row main-form-section__row">

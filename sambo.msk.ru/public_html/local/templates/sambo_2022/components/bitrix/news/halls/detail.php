@@ -6,7 +6,7 @@ $this->setFrameMode(true);
 
 $APPLICATION->IncludeComponent(
     "bitrix:news.detail",
-    ".default",
+    "halls_detail",
     Array(
         "DISPLAY_DATE" => $arParams["DISPLAY_DATE"],
         "DISPLAY_NAME" => $arParams["DISPLAY_NAME"],
@@ -60,5 +60,36 @@ $APPLICATION->IncludeComponent(
     ),
     $component
 );
-
-require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_detail_block_share_ru.php');
+?>
+<?php
+$APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    Array(
+        "AREA_FILE_SHOW" => "file",
+        "AREA_FILE_SUFFIX" => "inc",
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO",
+        "EDIT_TEMPLATE" => "",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_photos_ru.php",
+    )
+);
+?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form_ru.php'); ?>
+<?php
+$GLOBALS['hallsFilter'] = array('!CODE' => $arResult["VARIABLES"]["ELEMENT_CODE"]);
+$GLOBALS['hallsSectionTitle'] = 'Другие наши залы';
+$APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    Array(
+        "AREA_FILE_SHOW" => "file",
+        "AREA_FILE_SUFFIX" => "inc",
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO",
+        "EDIT_TEMPLATE" => "",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_halls_ru.php",
+    )
+);
+?>
+<?php require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex_ru.php'); ?>

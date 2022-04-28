@@ -56,7 +56,7 @@
 }
 
 
-.sp-block-my_float_img label {
+.sp-block-my_float_img .sp-field label {
     display: block;
     margin-bottom: 5px;
 }

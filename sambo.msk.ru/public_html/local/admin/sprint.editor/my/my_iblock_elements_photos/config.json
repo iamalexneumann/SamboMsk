@@ -1,0 +1,9 @@
+{
+  "title": "Фотоальбомы",
+  "sort": "700",
+  "templates": [
+    "select.html"
+  ],
+  "js": [
+  ]
+}

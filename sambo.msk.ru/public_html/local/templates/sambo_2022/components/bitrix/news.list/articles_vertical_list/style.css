@@ -61,6 +61,7 @@
 .article-vertical__title {
 	font-size: 1.25rem;
 	margin: 0;
+	font-weight: 700;
 }
 
 .article-vertical__preview-text {

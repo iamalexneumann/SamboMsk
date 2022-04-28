@@ -5,11 +5,24 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 
 $this->setFrameMode(true);
 $att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
+$att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
 ?>
 <div class="photos-detail">
-    <?php if($arResult["DETAIL_TEXT"] <> ''): ?>
-    <div class="photos-detail__text">
-        <?= $arResult["DETAIL_TEXT"]; ?>
+    <?php if($att_detail_text): ?>
+    <div class="mb-5">
+        <?php
+        $APPLICATION->IncludeComponent(
+            "sprint.editor:blocks",
+            ".default",
+            Array(
+                "JSON" => $att_detail_text,
+            ),
+            $component,
+            Array(
+                "HIDE_ICONS" => "Y"
+            )
+        );
+        ?>
     </div>
     <?php endif; ?>
     <?php

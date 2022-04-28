@@ -4,8 +4,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 }
 
 $this->setFrameMode(true);
-$att_photos = $arResult["DISPLAY_PROPERTIES"]["photos"] ?? '';
-$att_videos = $arResult["DISPLAY_PROPERTIES"]["videos"] ?? '';
+$att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
+$att_videos = $arResult["DISPLAY_PROPERTIES"]["ATT_VIDEOS"] ?? '';
 $coach_photo_width = 660;
 $coach_photo_height = 1000;
 $coach_photo = CFile::ResizeImageGet(
@@ -19,6 +19,7 @@ $coach_photo = CFile::ResizeImageGet(
 $att_rank = $arResult["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"];
 $att_birthday = $arResult["DISPLAY_PROPERTIES"]["ATT_BIRTHDAY"]["VALUE"];
 $att_achievments = $arResult["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"];
+$att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
 ?>
 <div class="coach-detail main-content">
     <div class="container">
@@ -31,10 +32,22 @@ $att_achievments = $arResult["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"];
                 </a>
             </div>
             <div class="col-md-7 coach-detail__content-wrapper">
-                <?php if($arResult["DETAIL_TEXT"] <> ''): ?>
-                    <div class="coach-detail__text">
-                        <?= $arResult["DETAIL_TEXT"]; ?>
-                    </div>
+                <?php if($att_detail_text): ?>
+                <div class="mb-5">
+                    <?php
+                    $APPLICATION->IncludeComponent(
+                        "sprint.editor:blocks",
+                        ".default",
+                        Array(
+                            "JSON" => $att_detail_text,
+                        ),
+                        $component,
+                        Array(
+                            "HIDE_ICONS" => "Y"
+                        )
+                    );
+                    ?>
+                </div>
                 <?php endif; ?>
                 <?php if ($att_birthday):
                         $att_birthday_year = FormatDate('Y', strtotime($att_birthday));
@@ -86,7 +99,7 @@ $att_achievments = $arResult["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"];
         </div>
     </div>
     <?php
-    if (count($att_photos) > 0):
+    if ($att_photos):
         $this->addExternalCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
         $this->addExternalJS(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
         ?>
@@ -129,7 +142,7 @@ $att_achievments = $arResult["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"];
             <figcaption class="photos-list__main-figcaption main-section__title container"><?= $arResult["NAME"] . ' - ' . GetMessage("PHOTO_FIGCAPTION_TEXT"); ?></figcaption>
         </figure>
     <?php endif; ?>
-    <?php if (count($att_videos) > 0): ?>
+    <?php if ($att_videos): ?>
         <figure role="group" class="videos-list main-section d-flex flex-column-reverse">
             <div class="container">
                 <div class="row videos-list__row">
