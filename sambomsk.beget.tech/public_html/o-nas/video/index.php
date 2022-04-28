@@ -32,7 +32,8 @@ $APPLICATION->SetTitle("Видео");
 		"DETAIL_PAGER_TITLE" => "",
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "ATT_VIDEOS",
-			1 => "",
+			1 => "ATT_DETAIL_TEXT",
+			2 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",

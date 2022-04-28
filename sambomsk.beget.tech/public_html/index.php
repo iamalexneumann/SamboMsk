@@ -3,6 +3,28 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetPageProperty("title", "Главная");
 $APPLICATION->SetTitle("Главная");
 ?>
+<div class="first-screen">
+    <div class="container first-screen__container">
+        <div class="first-screen__wrapper">
+            <div class="first-screen__title">Самбо и дзюдо в Москве и области</div>
+            <div class="first-screen__subtitle">для  детей от 5 до 14 лет любого уровня подготовки</div>
+            <ul class="screen-features">
+                <li class="screen-features__item">
+                    <div class="screen-features__icon"><i class="fa-solid fa-child-reaching"></i></div>
+                    <div class="screen-features__description">Возрастные группы 5-7 лет; 8-14 лет</div>
+                </li>
+                <li class="screen-features__item">
+                    <div class="screen-features__icon"><i class="fa-solid fa-gift"></i></div>
+                    <div class="screen-features__description">Первое занятие бесплатно</div>
+                </li>
+                <li class="screen-features__item">
+                    <div class="screen-features__icon"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <div class="screen-features__description">Скидки при приобретении абонемента</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 <section class="main-section">
     <div class="container">
         <h2 class="main-section__title">Школа спортивных единоборств "МСК ТРИ МЕДВЕДЯ"</h2>

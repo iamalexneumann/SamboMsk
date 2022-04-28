@@ -613,17 +613,17 @@ h5,
   width: 100%;
 }
 
-.custom-ul-list, .iblock-preview-text ul, .sp-lists ul {
+.custom-ul-list, .iblock-preview-text ul, .page-articles-detail .sp-lists ul, .page-news-detail .sp-lists ul {
   list-style: none;
   margin: 0 0 30px 0;
   padding: 0;
 }
 
-.custom-ul-list li, .iblock-preview-text li, .sp-lists li {
+.custom-ul-list li, .iblock-preview-text li, .page-articles-detail .sp-lists li, .page-news-detail .sp-lists li {
   margin-bottom: 1rem;
 }
 
-.custom-ul-list li::before, .iblock-preview-text li::before, .sp-lists li::before {
+.custom-ul-list li::before, .iblock-preview-text li::before, .page-articles-detail .sp-lists li::before, .page-news-detail .sp-lists li::before {
   display: inline-block;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -1191,6 +1191,69 @@ h5,
   margin-bottom: 7px !important;
 }
 
+.first-screen {
+  height: 700px;
+  background-color: #171717;
+  background: linear-gradient(90deg, #00369E 0%, rgba(6, 82, 221, 0) 85%),
+  url(/upload/iblock/6cf/7g8nswlq75i66qk78dih2vqpfxv2zlsz.webp) 50% 50%;
+  background-size: cover;
+  color: #ffffff;
+  position: relative;
+}
+
+.first-screen__container {
+
+}
+
+.first-screen__title {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.first-screen__subtitle {
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  margin-top: -15px;
+}
+
+.first-screen__container {
+  height: 100%;
+}
+
+.first-screen__wrapper {
+  max-width: 550px;
+  padding: 80px 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.screen-features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 30px;
+}
+
+.screen-features__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.screen-features__icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  width: 35px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
 @media (max-width: 1399.98px) {
   .footer-menu__list_columns-two {
     column-gap: 30px;
@@ -1308,6 +1371,9 @@ h5,
   .main-form-section__selected-text, .main-form-section__selected-link {
     background-color: #ffffff;
     color: #0652DD;
+  }
+  .first-screen__title {
+    font-size: 1.5rem;
   }
 }
 

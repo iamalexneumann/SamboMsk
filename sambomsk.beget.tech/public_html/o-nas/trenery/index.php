@@ -33,9 +33,10 @@ $APPLICATION->SetTitle("Тренеры");
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "ATT_RANK",
 			1 => "ATT_BIRTHDAY",
-			2 => "videos",
-			3 => "ATT_ACHIEVMENTS",
-			4 => "photos",
+			2 => "ATT_ACHIEVMENTS",
+			3 => "ATT_VIDEOS",
+			4 => "ATT_DETAIL_TEXT",
+			5 => "ATT_PHOTOS",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",

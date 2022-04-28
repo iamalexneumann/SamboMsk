@@ -34,7 +34,7 @@ $APPLICATION->SetTitle("Новости");
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "",
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "",
+			0 => "ATT_DETAIL_TEXT",
 			1 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "Y",

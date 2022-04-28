@@ -67,26 +67,26 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
                             <?php endif; ?>
                         </header>
                         <?php if ($att_features): ?>
-                        <div class="hall__features">
+                        <ul class="hall__features">
                             <?php
                             foreach ($att_features["~VALUE"] as $key => $feature_icon):
                                 $feature_description = $att_features["DESCRIPTION"][$key];
                                 ?>
-                                <div class="hall__feature-item">
+                                <li class="hall__feature-item">
                                     <div class="hall__feature-icon"><?= $feature_icon; ?></div>
                                     <?php if ($feature_description): ?>
                                     <div class="hall__feature-description"><?= $feature_description; ?></div>
                                     <?php endif; ?>
-                                </div>
+                                </li>
                             <?php endforeach; ?>
-                        </div>
+                        </ul>
                         <?php endif; ?>
                         <footer class="hall__footer">
                             <?php if ($att_address): ?>
-                                <div class="hall__address">
-                                    <i class="hall__address-icon fa-solid fa-location-dot"></i>
-                                    <div class="hall__address-text"><?= $att_address; ?></div>
-                                </div>
+                            <div class="hall__address">
+                                <i class="hall__address-icon fa-solid fa-location-dot"></i>
+                                <div class="hall__address-text"><?= $att_address; ?></div>
+                            </div>
                             <?php endif; ?>
                             <?php if ($att_phones): ?>
                             <div class="hall__phones">
