@@ -2,17 +2,19 @@
     <div class="footer-phones">
         <i class="fa-solid fa-phone footer-phones__icon"></i>
         <div class="footer-phones__wrapper">
-            <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="footer-phones__main-phone">
+            <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="footer-phones__main-phone"
+               onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
                 +7 <?= substr($siteparam_main_phone, 1); ?>
             </a>
             <?php if ($siteparam_second_phone_tel): ?>
-                <a href="tel:+7<?= $siteparam_second_phone_tel; ?>" class="footer-phones__second-phone">
+                <a href="tel:+7<?= $siteparam_second_phone_tel; ?>" class="footer-phones__second-phone"
+                   onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_second_phone_tel; ?>'); return true;">
                     +7 <?= substr($siteparam_second_phone, 1); ?>
                 </a>
             <?php endif; ?>
         </div>
     </div>
-    <button type="button" class="btn btn-danger footer-btn-callback">Заказать звонок</button>
+    <a href="javascript:document.getElementById('pgd_div').click();" class="btn btn-danger footer-btn-callback">Заказать звонок</a>
     <a href="mailto:<?= $siteparam_main_email; ?>" title="Написать E-mail" class="footer-email">
         <i class="fa-solid fa-envelope footer-email__icon"></i>
         <span class="footer-email__link"><?= $siteparam_main_email; ?></span>

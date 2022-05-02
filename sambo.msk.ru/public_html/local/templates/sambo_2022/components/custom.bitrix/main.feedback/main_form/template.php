@@ -109,5 +109,6 @@ endif;
     </div>
 
     <input type="hidden" name="PARAMS_HASH" value="<?=$arResult["PARAMS_HASH"]?>">
-    <input type="submit" name="submit" value="<?= GetMessage("MFT_SUBMIT"); ?>" class="btn btn-light">
+    <input type="submit" name="submit" value="<?= GetMessage("MFT_SUBMIT"); ?>" class="btn btn-light"
+           onclick="ym(56418265, 'reachGoal', 'form_submit'); return true;">
 </form>

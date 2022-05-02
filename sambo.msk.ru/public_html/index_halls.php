@@ -1,7 +1,7 @@
 <section class="screen-halls screen">
 <div class="container">
 	<h2>Наши залы</h2>
-	<?$APPLICATION->IncludeComponent(
+	 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"NEW_halls_list",
 	Array(
@@ -45,7 +45,7 @@
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array("desc_header","nabor","fe1","phones",""),
+		"PROPERTY_CODE" => array("ATT_ADDRESS","ATT_SET_OPEN","fe1","phones","desc_header","nabor",""),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "N",

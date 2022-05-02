@@ -10,7 +10,8 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
                     Чтобы получить подробную консультацию или
                     <span class="main-form-section__selected-text">записаться на бесплатное пробное занятие</span>
                     позвоните по номеру телефона
-                    <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="main-form-section__selected-link">
+                    <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="main-form-section__selected-link"
+                       onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
                         +7 <?= substr($siteparam_main_phone, 1); ?>
                     </a>
                     или заполните форму и мы Вам перезвоним
@@ -25,7 +26,7 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
                         array(
                             "COMPOSITE_FRAME_MODE" => "A",
                             "COMPOSITE_FRAME_TYPE" => "AUTO",
-                            "EMAIL_TO" => "4649030@mail.ru",
+                            "EMAIL_TO" => "sambo-msk@yandex.ru",
                             "EVENT_MESSAGE_ID" => array(
                                 0 => "7",
                             ),

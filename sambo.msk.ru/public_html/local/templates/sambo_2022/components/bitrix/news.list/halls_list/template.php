@@ -97,7 +97,8 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
                                 <div class="hall__phone-item">
                                     <i class="hall__phone-icon fa-solid fa-phone"></i>
                                     <a href="tel:+7<?= clear_symbols_in_phone_number(substr($phone_number, 1)); ?>"
-                                       class="hall__phone-link">+7 <?= substr($phone_number, 1); ?></a>
+                                       class="hall__phone-link"
+                                       onclick="ym(56418265, 'reachGoal', '7<?= clear_symbols_in_phone_number(substr($phone_number, 1)); ?>'); return true;">+7 <?= substr($phone_number, 1); ?></a>
                                     <?php if ($phone_description): ?>
                                     <div class="hall__phone-description">(<?= $phone_description; ?>)</div>
                                     <?php endif; ?>

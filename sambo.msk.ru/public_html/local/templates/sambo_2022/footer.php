@@ -82,17 +82,19 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                         <div class="footer-phones">
                             <i class="fa-solid fa-phone footer-phones__icon"></i>
                             <div class="footer-phones__wrapper">
-                                <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="footer-phones__main-phone">
+                                <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="footer-phones__main-phone"
+                                   onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
                                     +7 <?= substr($siteparam_main_phone, 1); ?>
                                 </a>
                                 <?php if ($siteparam_second_phone_tel): ?>
-                                <a href="tel:+7<?= $siteparam_second_phone_tel; ?>" class="footer-phones__second-phone">
+                                <a href="tel:+7<?= $siteparam_second_phone_tel; ?>" class="footer-phones__second-phone"
+                                   onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_second_phone_tel; ?>'); return true;">
                                     +7 <?= substr($siteparam_second_phone, 1); ?>
                                 </a>
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-danger footer-btn-callback">Заказать звонок</button>
+                        <a href="javascript:document.getElementById('pgd_div').click();" class="btn btn-danger footer-btn-callback">Заказать звонок</a>
                         <a href="mailto:<?= $siteparam_main_email; ?>" title="Написать E-mail" class="footer-email">
                             <i class="fa-solid fa-envelope footer-email__icon"></i>
                             <span class="footer-email__link"><?= $siteparam_main_email; ?></span>
@@ -132,6 +134,22 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
             </div>
         </div>
     </footer>
+    <?php if ($siteparam_whatsapp_number): ?>
+    <a class="whatsapp-btn" onclick="gtag('event', 'click', {'event_category': 'whatsapp', 'event_label': '', 'value': ''}); ym(56418265, 'reachGoal', 'whatsapp'); return true;"
+       href="https://wa.me/7<?= $siteparam_whatsapp_number_tel; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>" target="_blank" title="Написать в WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <?php endif; ?>
+    <a href="#body-area" class="to-top-btn" title="Наверх"><i class="fa-solid fa-angle-up"></i></a>
     <script src="https://kit.fontawesome.com/136048e5a7.js" crossorigin="anonymous"></script>
+    <script data-skip-moving="true">
+        var _pwidget = {widgetId: 267722};
+        (function(d){
+            var pw=d.createElement('script');pw.type='text/javascript';pw.async = true;
+            pw.src='https://wdg.pogodiwidget.com/pogodi.js';
+            var s=d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pw, s);
+        })(document);
+    </script>
+
 </body>
 </html>

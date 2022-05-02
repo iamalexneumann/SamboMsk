@@ -73,7 +73,8 @@ $att_geo = $arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"];
                         <div class="screen-phones__item">
                             <i class="screen-phones__icon fa-solid fa-phone"></i>
                             <a href="tel:+7<?= clear_symbols_in_phone_number(substr($phone_number, 1)); ?>"
-                               class="screen-phones__link">+7 <?= substr($phone_number, 1); ?></a>
+                               class="screen-phones__link"
+                               onclick="ym(56418265, 'reachGoal', '7<?= clear_symbols_in_phone_number(substr($phone_number, 1)); ?>'); return true;">+7 <?= substr($phone_number, 1); ?></a>
                             <?php if ($phone_description): ?>
                             <div class="screen-phones__description">(<?= $phone_description; ?>)</div>
                             <?php endif; ?>
@@ -300,7 +301,7 @@ if ($att_photos):
 <?php endif; ?>
 <?php
 if ($att_geo): ?>
-<section class="main-section">
+<section class="main-section map-section">
     <div class="container">
         <h2 class="main-section__title"><?= $arResult["NAME"]; ?> - <?= GetMessage("MAP_SECTION_TITLE"); ?></h2>
         <?php

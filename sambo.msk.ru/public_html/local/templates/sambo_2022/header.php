@@ -6,6 +6,27 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150889105-1" data-skip-moving="true"></script>
+    <script data-skip-moving="true">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('set', {'user_id': 'USER_ID'});
+        gtag('config', 'UA-150889105-1');
+    </script>
+    <script data-skip-moving="true">
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '154726285131657');
+        fbq('track', 'PageView');
+    </script>
+    <script data-skip-moving="true">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?166",t.onload=function(){VK.Retargeting.Init("VK-RTRG-450603-eTwIi"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script>
     <?php
     use Bitrix\Main\Page\Asset;
     $Asset = Asset::getInstance();
@@ -31,7 +52,11 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     <meta name="theme-color" content="#ffffff">
     <title><?php $APPLICATION->ShowTitle(); ?></title>
 </head>
-<body>
+<body id="body-area">
+    <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=154726285131657&ev=PageView&noscript=1" /></noscript>
+    <noscript><img src="https://vk.com/rtrg?p=VK-RTRG-450603-eTwIi" style="position:fixed; left:-999px;" alt=""/></noscript>
+    <script data-skip-moving="true"> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(56418265, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script>
+    <noscript><img src="https://mc.yandex.ru/watch/56418265" style="position:absolute; left:-9999px;" alt="" /></noscript>
     <?php $APPLICATION->ShowPanel(); ?>
     <?php
     $APPLICATION->IncludeComponent(
@@ -151,12 +176,14 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                     <div class="header-contacts">
                         <div class="header-contacts__phones">
                             <div class="header-contacts__phones-wrapper">
-                                <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="header-contacts__main-phone">
+                                <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="header-contacts__main-phone"
+                                   onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
                                     +7 <?= substr($siteparam_main_phone, 1); ?>
                                 </a>
                                 <?php if ($siteparam_second_phone_tel): ?>
                                 <div class="header-contacts__second-phone-wrapper">
-                                    <a href="tel:+7<?= $siteparam_second_phone_tel; ?>" class="header-contacts__second-phone">
+                                    <a href="tel:+7<?= $siteparam_second_phone_tel; ?>" class="header-contacts__second-phone"
+                                       onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_second_phone_tel; ?>'); return true;">
                                         +7 <?= substr($siteparam_second_phone, 1); ?>
                                     </a>
                                     <?php if ($siteparam_whatsapp_number): ?>

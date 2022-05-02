@@ -1355,6 +1355,50 @@ h5,
   color: #424242;
 }
 
+.whatsapp-btn {
+  position: fixed;
+  z-index: 100;
+  right: 40px;
+  bottom: 160px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #25d366;
+  color: #ffffff;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .25s ease-in-out;
+}
+
+.whatsapp-btn:hover {
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.to-top-btn {
+  position: fixed;
+  z-index: 100;
+  bottom: 50px;
+  left: 50px;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  transition: all .25s;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 6px 10px rgba(177, 189, 202, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
 @media (max-width: 1399.98px) {
   .footer-menu__list_columns-two {
     column-gap: 30px;
@@ -1526,6 +1570,20 @@ h5,
   }
   .features-section__title {
     font-size: 1.5rem;
+  }
+  .whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    right: 10px;
+    bottom: 80px;
+    font-size: 2rem;
+  }
+  .to-top-btn {
+    bottom: 15px;
+    left: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
 }
 
