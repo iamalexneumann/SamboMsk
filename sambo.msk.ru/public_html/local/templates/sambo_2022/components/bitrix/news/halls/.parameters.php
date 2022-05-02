@@ -20,6 +20,11 @@ $arTemplateParameters = array(
         "TYPE" => "STRING",
         "DEFAULT" => "",
     ),
+    "YANDEX_API_KEY" => Array(
+        "NAME" => GetMessage("T_IBLOCK_DESC_NEWS_YANDEX_API_KEY"),
+        "TYPE" => "STRING",
+        "DEFAULT" => "",
+    ),
 	"DISPLAY_DATE" => Array(
 		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_DATE"),
 		"TYPE" => "CHECKBOX",

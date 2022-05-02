@@ -1195,10 +1195,14 @@ h5,
   height: 700px;
   background-color: #171717;
   background: linear-gradient(90deg, #00369E 0%, rgba(6, 82, 221, 0) 85%),
-  url(/upload/iblock/6cf/7g8nswlq75i66qk78dih2vqpfxv2zlsz.webp) 50% 50%;
+  url(img/first-screen-bg.webp) 50% 50%;
   background-size: cover;
   color: #ffffff;
   position: relative;
+}
+
+.first-screen__header {
+  margin-bottom: 30px;
 }
 
 .first-screen__container {
@@ -1212,12 +1216,23 @@ h5,
   font-size: 2.5rem;
   text-transform: uppercase;
   margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.first-screen__header .first-screen__title {
+  margin: 0;
 }
 
 .first-screen__subtitle {
   font-size: 1.15rem;
   letter-spacing: 0.05em;
-  margin-top: -15px;
+  margin-top: 10px;
+}
+
+.first-screen__open-text {
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .first-screen__container {
@@ -1237,7 +1252,6 @@ h5,
   margin: 0;
   padding: 0;
   list-style: none;
-  margin-top: 30px;
 }
 
 .screen-features__item {
@@ -1252,6 +1266,93 @@ h5,
   width: 35px;
   text-align: center;
   flex-shrink: 0;
+}
+
+.first-screen__footer {
+  margin-top: 30px;
+}
+
+.screen-address {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.screen-address__icon {
+  color: rgba(255, 255, 255, 0.55);
+  margin-right: 7px;
+}
+
+.screen-address__text {
+  font-size: 0.85rem;
+}
+
+.screen-phones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.screen-phones__item {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.screen-phones__item::after {
+  content: ",";
+}
+
+.screen-phones__item:last-of-type::after {
+  content: "";
+}
+
+.screen-phones__icon {
+  color: rgba(255, 255, 255, 0.55);
+  margin-right: 7px;
+}
+
+.screen-phones__link {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.screen-phones__link:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.screen-phones__description {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-left: 7px;
+}
+
+.table {
+  color: #424242;
+  border-color: #ececec;
+}
+
+.table th {
+  letter-spacing: 0.05em;
+}
+
+.table>:not(:first-child) {
+  border-top: 1px solid #ececec;
+}
+
+.table>:not(caption)>*>* {
+  padding: 15px 25px;
+  background-color: #ffffff;
+  border-bottom-width: 1px;
+  box-shadow: none;
+  color: #424242;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+  background-color: #f8f8f8;
+  color: #424242;
 }
 
 @media (max-width: 1399.98px) {

@@ -135,6 +135,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_de
             "TAG_TITLE" => "3",
             "USE_FILTER" => "Y",
             "FILTER_NAME" => "newsFilter",
-        )
+        ),
+        $component
     ); ?>
 </section>

@@ -57,6 +57,7 @@ $APPLICATION->IncludeComponent(
         "SHARE_SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
         "ADD_ELEMENT_CHAIN" => (isset($arParams["ADD_ELEMENT_CHAIN"]) ? $arParams["ADD_ELEMENT_CHAIN"] : ''),
         'STRICT_SECTION_CHECK' => (isset($arParams['STRICT_SECTION_CHECK']) ? $arParams['STRICT_SECTION_CHECK'] : ''),
+        "YANDEX_API_KEY" => $arParams["YANDEX_API_KEY"],
     ),
     $component
 );
@@ -75,6 +76,7 @@ $APPLICATION->IncludeComponent(
     )
 );
 ?>
+<div id="halls-form"></div>
 <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form_ru.php'); ?>
 <?php
 $GLOBALS['hallsFilter'] = array('!CODE' => $arResult["VARIABLES"]["ELEMENT_CODE"]);

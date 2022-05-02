@@ -1,4 +1,5 @@
-<?
+<?php
+$MESS['T_IBLOCK_DESC_NEWS_YANDEX_API_KEY'] = "API-ключ карт Яндекса. ОБЯЗАТЕЛЬНО! (https://developer.tech.yandex.ru/services/)";
 $MESS["T_IBLOCK_DESC_NEWS_DATE"] = "Выводить дату элемента";
 $MESS["T_IBLOCK_DESC_NEWS_NAME"] = "Выводить название элемента";
 $MESS["T_IBLOCK_DESC_NEWS_PICTURE"] = "Выводить детальное изображение";
@@ -9,4 +10,3 @@ $MESS["T_IBLOCK_DESC_NEWS_SHARE_TEMPLATE"] = "Шаблон компонента 
 $MESS["T_IBLOCK_DESC_NEWS_SHARE_SYSTEM"] = "Используемые соц. закладки и сети";
 $MESS["T_IBLOCK_DESC_NEWS_SHARE_SHORTEN_URL_LOGIN"] = "Логин для bit.ly";
 $MESS["T_IBLOCK_DESC_NEWS_SHARE_SHORTEN_URL_KEY"] = "Ключ для для bit.ly";
-?>

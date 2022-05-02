@@ -80,7 +80,7 @@ $arUrlRewrite=array (
     'PATH' => '/o-nas/foto/index.php',
     'SORT' => 100,
   ),
-  22 => 
+  27 => 
   array (
     'CONDITION' => '#^/nashi-zaly/#',
     'RULE' => '',

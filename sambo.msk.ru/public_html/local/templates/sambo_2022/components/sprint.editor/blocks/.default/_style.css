@@ -217,3 +217,40 @@
 .article-content__item.level3 {
     margin-left: 2rem;
 }
+
+.price-table {
+    max-width: 600px;
+    margin: 0 auto !important;
+}
+
+.price-table__caption {
+    font-size: 0.85rem;
+    color: #6f6f6f;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.price-table__th {
+    letter-spacing: 0.05em;
+}
+
+.schedule-section__table-wrapper {
+
+}
+
+.schedule-section__table-wrapper {
+    
+}
+
+.schedule-section__table-wrapper table {
+    margin-bottom: 50px;
+}
+
+.schedule-table__caption {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #424242;
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+}

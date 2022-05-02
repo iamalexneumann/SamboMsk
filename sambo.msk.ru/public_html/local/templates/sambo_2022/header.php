@@ -124,28 +124,30 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                     <span class="navbar-toggler__icon"><i class="fa-solid fa-bars"></i></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainMenu">
-                    <?php
-                    $APPLICATION->IncludeComponent(
-                    	"bitrix:menu", 
-                    	"main_menu", 
-                    	array(
-                    		"ALLOW_MULTI_SELECT" => "N",
-                    		"CHILD_MENU_TYPE" => "left",
-                    		"DELAY" => "N",
-                    		"MAX_LEVEL" => "2",
-                    		"MENU_CACHE_GET_VARS" => array(
-                    		),
-                    		"MENU_CACHE_TIME" => "3600",
-                    		"MENU_CACHE_TYPE" => "N",
-                    		"MENU_CACHE_USE_GROUPS" => "Y",
-                    		"ROOT_MENU_TYPE" => "top",
-                    		"USE_EXT" => "Y",
-                    		"COMPONENT_TEMPLATE" => "main_menu",
-                    		"COMPOSITE_FRAME_MODE" => "A",
-                    		"COMPOSITE_FRAME_TYPE" => "AUTO"
-                    	),
-                    	false
-                    );?>
+                    <div class="me-auto ms-auto">
+                        <?php
+                        $APPLICATION->IncludeComponent(
+                            "bitrix:menu",
+                            "main_menu",
+                            array(
+                                "ALLOW_MULTI_SELECT" => "N",
+                                "CHILD_MENU_TYPE" => "left",
+                                "DELAY" => "N",
+                                "MAX_LEVEL" => "2",
+                                "MENU_CACHE_GET_VARS" => array(
+                                ),
+                                "MENU_CACHE_TIME" => "3600",
+                                "MENU_CACHE_TYPE" => "N",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "ROOT_MENU_TYPE" => "top",
+                                "USE_EXT" => "Y",
+                                "COMPONENT_TEMPLATE" => "main_menu",
+                                "COMPOSITE_FRAME_MODE" => "A",
+                                "COMPOSITE_FRAME_TYPE" => "AUTO"
+                            ),
+                            false
+                        );?>
+                    </div>
                     <div class="header-contacts">
                         <div class="header-contacts__phones">
                             <div class="header-contacts__phones-wrapper">

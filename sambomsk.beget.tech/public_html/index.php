@@ -3,11 +3,13 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetPageProperty("title", "Главная");
 $APPLICATION->SetTitle("Главная");
 ?>
-<div class="first-screen">
+<section class="first-screen">
     <div class="container first-screen__container">
         <div class="first-screen__wrapper">
-            <div class="first-screen__title">Самбо и дзюдо в Москве и области</div>
-            <div class="first-screen__subtitle">для  детей от 5 до 14 лет любого уровня подготовки</div>
+            <header class="first-screen__header">
+                <h1 class="first-screen__title">Самбо и дзюдо в Москве и области</h1>
+                <div class="first-screen__subtitle">для  детей от 5 до 14 лет любого уровня подготовки</div>
+            </header>
             <ul class="screen-features">
                 <li class="screen-features__item">
                     <div class="screen-features__icon"><i class="fa-solid fa-child-reaching"></i></div>
@@ -24,7 +26,7 @@ $APPLICATION->SetTitle("Главная");
             </ul>
         </div>
     </div>
-</div>
+</section>
 <section class="main-section">
     <div class="container">
         <h2 class="main-section__title">Школа спортивных единоборств "МСК ТРИ МЕДВЕДЯ"</h2>

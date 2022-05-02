@@ -6,7 +6,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 
 if (!empty($arResult)):
 ?>
-<ul class="navbar-nav navbar-nav me-auto ms-auto">
+<ul class="navbar-nav navbar-nav">
 <?php
     $previousLevel = 0;
     foreach ($arResult as $arItem):

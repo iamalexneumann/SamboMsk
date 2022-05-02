@@ -1,0 +1,52 @@
+.sp-block-my_schedule label {
+    display: block;
+    margin-bottom: 5px !important;
+}
+
+.sp-block-my_schedule .sp-item-text {
+    width: 80%;
+    margin-bottom: 10px !important;
+}
+
+.sp-block-my_schedule table {
+    width: 100%;
+    border-collapse: separate;
+    background: #fff;
+    border: 1px solid #aaa !important;
+}
+
+.sp-block-my_schedule td {
+    border: 1px solid #aaa;
+    padding: 5px;
+    min-width: 24px;
+    height: 22px;
+}
+
+.sp-block-my_schedule tr.active td{
+    border: 1px solid #d00;
+}
+
+.sp-block-my_schedule td p {
+    margin: 0;
+    padding: 0;
+}
+
+.sp-block-my_schedule td.active {
+    background: #FFEBC1;
+}
+
+.sp-block-my_schedule .bold {
+    font-weight: bold;
+}
+
+.sp-block-my_schedule .center {
+    text-align: center;
+}
+
+.sp-block-my_schedule .right {
+    text-align: right;
+}
+
+.sp-block-my_schedule .sp-buttons {
+    /*text-align: center;*/
+}
