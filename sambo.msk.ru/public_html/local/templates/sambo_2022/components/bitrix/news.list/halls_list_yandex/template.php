@@ -51,7 +51,7 @@ $param_map_zoom = $arParams["MAP_ZOOM"] ?? '10';
 
                     $balloon_content_body = '
                         <a href="' . $arItem["DETAIL_PAGE_URL"] . '" class="yandex-map__img-link">
-                            <img src="' . $article_img["src"] . '" class="yandex-map__img" alt="">
+                            <img data-src="' . $article_img["src"] . '" class="yandex-map__img lazyload" alt="">
                         </a>
                         ';
                     if ($att_address) {

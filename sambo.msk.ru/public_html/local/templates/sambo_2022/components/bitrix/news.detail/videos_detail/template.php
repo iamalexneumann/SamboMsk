@@ -36,7 +36,7 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
                 <div class="col-lg-6 videos-list__col">
                     <figure class="videos-list__item">
                         <div class="adaptive-video-container">
-                            <iframe src="https://www.youtube.com/embed/<?= get_youtube_id($att_video); ?>"
+                            <iframe data-src="https://www.youtube.com/embed/<?= get_youtube_id($att_video); ?>" class="lazyload"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     <?php if ($att_video_description): ?> title="<?= $att_video_description; ?>"<?php endif; ?>
                                     allowfullscreen></iframe>

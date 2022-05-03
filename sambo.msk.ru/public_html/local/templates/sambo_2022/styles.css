@@ -1,8 +1,41 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans/OpenSans-Bold.eot');
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+  url('fonts/OpenSans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('fonts/OpenSans/OpenSans-Bold.woff') format('woff'),
+  url('fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans/OpenSans-Regular.eot');
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+  url('fonts/OpenSans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+  url('fonts/OpenSans/OpenSans-Regular.woff') format('woff'),
+  url('fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans/OpenSans-ExtraBold.eot');
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+  url('fonts/OpenSans/OpenSans-ExtraBold.eot?#iefix') format('embedded-opentype'),
+  url('fonts/OpenSans/OpenSans-ExtraBold.woff') format('woff'),
+  url('fonts/OpenSans/OpenSans-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
 body {
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.4;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   color: #555555;
 
   background: #ffffff;
@@ -117,6 +150,7 @@ h5,
 
 .page-header__title {
   margin: 0;
+  font-size: 2rem;
 }
 
 .breadcrumb {
@@ -1397,6 +1431,17 @@ h5,
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+}
+
+.blur-up {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: all .25s ease-in-out;
+}
+
+.blur-up.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
 }
 
 @media (max-width: 1399.98px) {

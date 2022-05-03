@@ -6,39 +6,39 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150889105-1" data-skip-moving="true"></script>
-    <script data-skip-moving="true">
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('set', {'user_id': 'USER_ID'});
-        gtag('config', 'UA-150889105-1');
-    </script>
-    <script data-skip-moving="true">
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '154726285131657');
-        fbq('track', 'PageView');
-    </script>
-    <script data-skip-moving="true">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?166",t.onload=function(){VK.Retargeting.Init("VK-RTRG-450603-eTwIi"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script>
+    <title><?php $APPLICATION->ShowTitle(); ?></title>
+<!--    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150889105-1" data-skip-moving="true"></script>-->
+<!--    <script data-skip-moving="true">-->
+<!--        window.dataLayer = window.dataLayer || [];-->
+<!--        function gtag() { dataLayer.push(arguments); }-->
+<!--        gtag('js', new Date());-->
+<!--        gtag('set', {'user_id': 'USER_ID'});-->
+<!--        gtag('config', 'UA-150889105-1');-->
+<!--    </script>-->
+<!--    <script data-skip-moving="true">-->
+<!--        !function(f,b,e,v,n,t,s)-->
+<!--        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?-->
+<!--            n.callMethod.apply(n,arguments):n.queue.push(arguments)};-->
+<!--            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';-->
+<!--            n.queue=[];t=b.createElement(e);t.async=!0;-->
+<!--            t.src=v;s=b.getElementsByTagName(e)[0];-->
+<!--            s.parentNode.insertBefore(t,s)}(window, document,'script',-->
+<!--            'https://connect.facebook.net/en_US/fbevents.js');-->
+<!--        fbq('init', '154726285131657');-->
+<!--        fbq('track', 'PageView');-->
+<!--    </script>-->
+<!--    <script data-skip-moving="true">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?166",t.onload=function(){VK.Retargeting.Init("VK-RTRG-450603-eTwIi"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script>-->
     <?php
     use Bitrix\Main\Page\Asset;
     $Asset = Asset::getInstance();
     $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/jquery-3.6.0.min.js');
     $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/bootstrap/css/bootstrap.min.css');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/bootstrap/js/bootstrap.min.js');
+    $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/fontawesome-free-6.1.1-web/css/all.min.css');
+    $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/lazysizes.min.js');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/main.js');
     $APPLICATION->ShowHead();
     ?>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="apple-touch-icon" sizes="180x180" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/apple-touch-icon.png">
@@ -50,13 +50,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <title><?php $APPLICATION->ShowTitle(); ?></title>
 </head>
 <body id="body-area">
-    <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=154726285131657&ev=PageView&noscript=1" /></noscript>
-    <noscript><img src="https://vk.com/rtrg?p=VK-RTRG-450603-eTwIi" style="position:fixed; left:-999px;" alt=""/></noscript>
-    <script data-skip-moving="true"> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(56418265, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script>
-    <noscript><img src="https://mc.yandex.ru/watch/56418265" style="position:absolute; left:-9999px;" alt="" /></noscript>
+<!--    <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=154726285131657&ev=PageView&noscript=1" /></noscript>-->
+<!--    <noscript><img src="https://vk.com/rtrg?p=VK-RTRG-450603-eTwIi" style="position:fixed; left:-999px;" alt=""/></noscript>-->
+<!--    <script data-skip-moving="true"> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(56418265, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script>-->
+<!--    <noscript><img src="https://mc.yandex.ru/watch/56418265" style="position:absolute; left:-9999px;" alt="" /></noscript>-->
     <?php $APPLICATION->ShowPanel(); ?>
     <?php
     $APPLICATION->IncludeComponent(

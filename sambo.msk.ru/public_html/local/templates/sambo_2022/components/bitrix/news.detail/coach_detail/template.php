@@ -16,6 +16,14 @@ $coach_photo = CFile::ResizeImageGet(
     ],
     BX_RESIZE_IMAGE_PROPORTIONAL_ALT
 );
+$article_img_lqip = CFile::ResizeImageGet(
+    $arResult["PREVIEW_PICTURE"],
+    [
+        "width" => 100,
+        "height" => 100
+    ],
+    BX_RESIZE_IMAGE_PROPORTIONAL_ALT
+);
 $att_rank = $arResult["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"];
 $att_birthday = $arResult["DISPLAY_PROPERTIES"]["ATT_BIRTHDAY"]["VALUE"];
 $att_achievments = $arResult["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"];
@@ -27,7 +35,9 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
             <div class="col-md-5 coach-detail__img-wrapper">
                 <a href="<?= $arResult["DETAIL_PICTURE"]["SRC"]; ?>" class="coach-detail__img-link"
                    data-fancybox="coach-photos-list" title="<?= $arResult["NAME"]; ?>">
-                    <img src="<?= $coach_photo["src"]; ?>" alt="<?= $arResult["NAME"]; ?>" class="coach-detail__img"
+                    <img src="<?= $article_img_lqip["src"];?>"
+                         data-src="<?= $coach_photo["src"]; ?>"
+                         alt="<?= $arResult["NAME"]; ?>" class="coach-detail__img lazyload blur-up"
                          width="<?= $coach_photo_width; ?>" height="<?= $coach_photo_height; ?>">
                 </a>
             </div>
@@ -108,6 +118,14 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
             <div class="row photos-list__row">
                 <?php
                 foreach($att_photos['VALUE'] as $arItemKey => $att_photo):
+                    $att_photo_lqip = CFile::ResizeImageGet(
+                        $att_photo,
+                        [
+                            'width' => 100,
+                            'height' => 100
+                        ],
+                        BX_RESIZE_IMAGE_EXACT
+                    );
                     $att_photo_width = 500;
                     $att_photo_height = 500;
                     $att_photo = CFile::ResizeImageGet(
@@ -128,7 +146,8 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
                                     title="<?= $att_photo_description; ?>"
                                     data-caption="<?= $att_photo_description; ?>"
                                 <?php endif; ?>>
-                                <img src="<?= $att_photo['src']; ?>" alt="<?= $att_photo_description; ?>" class="photos-list__img"
+                                <img src="<?= $att_photo_lqip['src']; ?>" data-src="<?= $att_photo['src']; ?>"
+                                     alt="<?= $att_photo_description; ?>" class="photos-list__img lazyload blur-up"
                                      width="<?= $att_photo_width; ?>" height="<?= $att_photo_height; ?>">
                             </a>
                             <?php if ($att_photo_description): ?>
@@ -154,13 +173,13 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
                     <div class="col-lg-6 videos-list__col">
                         <figure class="videos-list__item">
                             <div class="adaptive-video-container">
-                                <iframe src="https://www.youtube.com/embed/<?= get_youtube_id($att_video); ?>"
+                                <iframe data-src="https://www.youtube.com/embed/<?= get_youtube_id($att_video); ?>" class="lazyload"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     <?php if ($att_video_description): ?> title="<?= $att_video_description; ?>"<?php endif; ?>
                                         allowfullscreen></iframe>
                             </div>
                             <?php if ($att_video_description): ?>
-                                <figcaption class="videos-list__item-figcaption"><?= $att_video_description; ?></figcaption>
+                            <figcaption class="videos-list__item-figcaption"><?= $att_video_description; ?></figcaption>
                             <?php endif; ?>
                         </figure>
                     </div>

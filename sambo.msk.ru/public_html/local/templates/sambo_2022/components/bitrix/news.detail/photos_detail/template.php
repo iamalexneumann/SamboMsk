@@ -34,6 +34,14 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
             <div class="row photos-list__row">
             <?php
             foreach($att_photos['VALUE'] as $arItemKey => $att_photo):
+                $att_photo_lqip = CFile::ResizeImageGet(
+                    $att_photo,
+                    [
+                        "width" => 100,
+                        "height" => 100
+                    ],
+                    BX_RESIZE_IMAGE_EXACT
+                );
                 $att_photo_width = 500;
                 $att_photo_height = 500;
                 $att_photo = CFile::ResizeImageGet(
@@ -54,7 +62,8 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
                                 title="<?= $att_photo_description; ?>"
                                 data-caption="<?= $att_photo_description; ?>"
                             <?php endif; ?>>
-                            <img src="<?= $att_photo['src']; ?>" alt="<?= $att_photo_description; ?>" class="photos-list__img"
+                            <img src="<?= $att_photo_lqip['src']; ?>" data-src="<?= $att_photo['src']; ?>"
+                                 alt="<?= $att_photo_description; ?>" class="photos-list__img lazyload blur-up"
                                  width="<?= $att_photo_width; ?>" height="<?= $att_photo_height; ?>">
                         </a>
                         <?php if ($att_photo_description): ?>

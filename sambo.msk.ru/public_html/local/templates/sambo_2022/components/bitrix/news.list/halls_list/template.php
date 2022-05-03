@@ -22,6 +22,14 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
                 ],
                 BX_RESIZE_IMAGE_EXACT
             );
+            $article_img_lqip = CFile::ResizeImageGet(
+                $arItem["PREVIEW_PICTURE"],
+                [
+                    "width" => 100,
+                    "height" => 100
+                ],
+                BX_RESIZE_IMAGE_PROPORTIONAL_ALT
+            );
             $att_set_open = $arItem["DISPLAY_PROPERTIES"]["ATT_SET_OPEN"]["VALUE"];
             $att_address = $arItem["DISPLAY_PROPERTIES"]["ATT_ADDRESS"]["VALUE"];
             $att_phones = $arItem["DISPLAY_PROPERTIES"]["ATT_PHONES"];
@@ -30,8 +38,9 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
             <div class="col-lg-6 halls-list__col">
                 <article class="hall" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                     <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="hall__img-link" rel="nofollow">
-                        <img src="<?= $article_img["src"]; ?>"
-                             class="hall__img"
+                        <img src="<?= $article_img_lqip["src"];?>"
+                             data-src="<?= $article_img["src"]; ?>"
+                             class="hall__img lazyload blur-up"
                              alt="<?= $arItem["NAME"]; ?>"
                              width="<?= $article_img_width; ?>"
                              height="<?= $article_img_height; ?>">

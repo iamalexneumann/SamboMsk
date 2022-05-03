@@ -22,6 +22,14 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
                 ],
                 BX_RESIZE_IMAGE_PROPORTIONAL_ALT
             );
+            $article_img_lqip = CFile::ResizeImageGet(
+                $arItem["PREVIEW_PICTURE"],
+                [
+                    "width" => 100,
+                    "height" => 100
+                ],
+                BX_RESIZE_IMAGE_PROPORTIONAL_ALT
+            );
             $att_rank = $arItem["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"];
             $att_birthday = $arItem["DISPLAY_PROPERTIES"]["ATT_BIRTHDAY"]["VALUE"];
             if ($att_birthday) {
@@ -32,8 +40,9 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
             <div class="col-lg-6 coaches-list__col">
                 <article class="coach" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                     <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="coach__img-link" rel="nofollow">
-                        <img src="<?= $article_img["src"]; ?>"
-                             class="coach__img"
+                        <img src="<?= $article_img_lqip["src"];?>"
+                             data-src="<?= $article_img["src"]; ?>"
+                             class="coach__img lazyload blur-up"
                              alt="<?= $arItem["NAME"]; ?>"
                              width="<?= $article_img_width; ?>"
                              height="<?= $article_img_height; ?>">

@@ -23,7 +23,7 @@ $APPLICATION->SetTitle("Виды спорта");
 </ul>
 <div class="kinds-of-sports mb-5 mt-5">
     <article class="kinds-of-sports__item kinds-of-sports__item_blue-bg">
-        <img src="/upload/iblock/55a/55a26733081316a6ad9090ebcde9d38d.jpg" class="kinds-of-sports__img" alt="Самбо в Москве">
+        <img data-src="/upload/iblock/55a/55a26733081316a6ad9090ebcde9d38d.jpg" class="kinds-of-sports__img lazyload" alt="Самбо в Москве">
         <div class="kinds-of-sports__wrapper">
             <h3 class="kinds-of-sports__title">
                 <a href="/vidy-sporta/sambo-v-moskve/" class="kinds-of-sports__link">Самбо в Москве</a>
@@ -42,7 +42,7 @@ $APPLICATION->SetTitle("Виды спорта");
         </div>
     </article>
     <article class="kinds-of-sports__item kinds-of-sports__item_red-bg">
-        <img src="/upload/iblock/137/13760d0ae76351c4d951ae2fd768a446.jpg" class="kinds-of-sports__img" alt="Дзюдо в Москве">
+        <img data-src="/upload/iblock/137/13760d0ae76351c4d951ae2fd768a446.jpg" class="kinds-of-sports__img lazyload" alt="Дзюдо в Москве">
         <div class="kinds-of-sports__wrapper">
             <h3 class="kinds-of-sports__title">
                 <a href="/vidy-sporta/dzyudo-v-moskve/" class="kinds-of-sports__link">Дзюдо в Москве</a>

@@ -7,7 +7,7 @@ $APPLICATION->SetTitle("Дзюдо в Москве");
     <div class="container">
         <h2 class="main-section__title">История дзюдо</h2>
         <figure class="float-block float-block_left">
-            <img src="/upload/judo/brosok.jpg" alt="Бросок в дзюдо">
+            <img data-src="/upload/judo/brosok.jpg" class="lazyload" alt="Бросок в дзюдо">
             <figcaption class="float-block__figcaption">Бросок в дзюдо</figcaption>
         </figure>
         <p>
@@ -31,7 +31,7 @@ $APPLICATION->SetTitle("Дзюдо в Москве");
     <div class="container">
         <h2 class="main-section__title">Дзигаро Кано</h2>
         <figure class="float-block float-block_right">
-            <img src="/upload/judo/kano.jpg" alt="Дзигаро Кано с учеником">
+            <img data-src="/upload/judo/kano.jpg" class="lazyload" alt="Дзигаро Кано с учеником">
             <figcaption class="float-block__figcaption">Дзигаро Кано с учеником</figcaption>
         </figure>
         <p>
@@ -63,7 +63,7 @@ $APPLICATION->SetTitle("Дзюдо в Москве");
     <div class="container">
         <h2 class="main-section__title">Первый русский дзюдоист</h2>
         <figure class="float-block float-block_left">
-            <img src="/upload/judo/junior.jpg" alt="Юношеские соревнования по дзюдо">
+            <img data-src="/upload/judo/junior.jpg" class="lazyload" alt="Юношеские соревнования по дзюдо">
             <figcaption class="float-block__figcaption">Юношеские соревнования по дзюдо</figcaption>
         </figure>
         <p>
@@ -75,7 +75,7 @@ $APPLICATION->SetTitle("Дзюдо в Москве");
     <div class="container">
         <h2 class="main-section__title">Начало обучению борьбе на территории России </h2>
         <figure class="float-block float-block_right">
-            <img src="/upload/judo/woman.jpg" alt="Международные соревнования по дзюдо">
+            <img data-src="/upload/judo/woman.jpg" class="lazyload" alt="Международные соревнования по дзюдо">
             <figcaption class="float-block__figcaption">Международные соревнования по дзюдо</figcaption>
         </figure>
         <p>
@@ -87,7 +87,7 @@ $APPLICATION->SetTitle("Дзюдо в Москве");
     <div class="container">
         <h2 class="main-section__title">Что можно получить, занимаясь этим видом единоборства?</h2>
         <figure class="float-block float-block_left">
-            <img src="/upload/judo/deti1.jpg" alt="Юные дзюдоисты">
+            <img data-src="/upload/judo/deti1.jpg" class="lazyload" alt="Юные дзюдоисты">
             <figcaption class="float-block__figcaption">Юные дзюдоисты</figcaption>
         </figure>
         <p>

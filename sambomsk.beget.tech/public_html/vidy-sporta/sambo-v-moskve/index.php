@@ -7,7 +7,7 @@ $APPLICATION->SetTitle("Самбо в Москве");
     <div class="container">
         <h2 class="main-section__title">Несколько слов о самбо</h2>
         <figure class="float-block float-block_left">
-            <img src="/upload/brosok-sambo.webp" alt="Несколько слов о самбо">
+            <img data-src="/upload/brosok-sambo.webp" class="lazyload" alt="Несколько слов о самбо">
             <figcaption class="float-block__figcaption">Бросок в самбо</figcaption>
         </figure>
         <ul class="custom-ul-list">
@@ -23,7 +23,7 @@ $APPLICATION->SetTitle("Самбо в Москве");
     <div class="container">
         <h2 class="main-section__title">История самбо — история России</h2>
         <figure class="float-block float-block_right">
-            <img src="https://sambo.msk.ru/bitrix/templates/sambo/img/sambo-2.jpg" alt="История самбо — история России">
+            <img data-src="https://sambo.msk.ru/bitrix/templates/sambo/img/sambo-2.jpg" class="lazyload" alt="История самбо — история России">
             <figcaption class="float-block__figcaption">Самбо в СССР</figcaption>
         </figure>
         <p>1920-е—1930-е годы - зарождение и становление самбо. Самбо сразу стало развиваться не только, как вид спорта , но и как средство обучения кадрового состава органов правопорядка.</p>
@@ -39,7 +39,7 @@ $APPLICATION->SetTitle("Самбо в Москве");
     <div class="container">
         <h2 class="main-section__title">Кому подходит самбо</h2>
         <figure class="float-block float-block_left">
-            <img src="/upload/coach-with-kids.webp" alt="Кому подходит самбо">
+            <img data-src="/upload/coach-with-kids.webp" class="lazyload" alt="Кому подходит самбо">
             <figcaption class="float-block__figcaption">Тренер даёт советы детям</figcaption>
         </figure>
         <p>В нашу секцию мы принимаем детей с 5 лет. Следует отметить, что в программе тренировок у детей этого возраста основной упор делается на общую физическую подготовку.</p>

@@ -21,12 +21,21 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
             ],
             BX_RESIZE_IMAGE_EXACT
         );
+        $article_img_lqip = CFile::ResizeImageGet(
+            $arItem["PREVIEW_PICTURE"],
+            [
+                "width" => 100,
+                "height" => 100
+            ],
+            BX_RESIZE_IMAGE_PROPORTIONAL_ALT
+        );
         $att_preview_text = $arItem["DISPLAY_PROPERTIES"]["ATT_PREVIEW_TEXT"]["~VALUE"];
     ?>
     <article class="article <?php if ($param_list_tag): ?> <?= $param_list_tag; ?>-article<?php endif; ?>" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
         <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="article__img-link" rel="nofollow">
-            <img src="<?= $article_img["src"]; ?>"
-                 class="article__img"
+            <img src="<?= $article_img_lqip["src"];?>"
+                 data-src="<?= $article_img["src"]; ?>"
+                 class="article__img lazyload blur-up"
                  alt="<?= $arItem["NAME"]; ?>"
                  width="<?= $article_img_width; ?>"
                  height="<?= $article_img_height; ?>">

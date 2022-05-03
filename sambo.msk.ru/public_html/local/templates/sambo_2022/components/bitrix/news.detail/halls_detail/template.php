@@ -156,6 +156,14 @@ if ($att_photos):
         <div class="row photos-list__row">
             <?php
             foreach($att_photos['VALUE'] as $arItemKey => $att_photo):
+                $att_photo_lqip = CFile::ResizeImageGet(
+                    $att_photo,
+                    [
+                        'width' => 100,
+                        'height' => 100
+                    ],
+                    BX_RESIZE_IMAGE_EXACT
+                );
                 $att_photo_width = 500;
                 $att_photo_height = 500;
                 $att_photo = CFile::ResizeImageGet(
@@ -176,11 +184,12 @@ if ($att_photos):
                                 title="<?= $att_photo_description; ?>"
                                 data-caption="<?= $att_photo_description; ?>"
                             <?php endif; ?>>
-                            <img src="<?= $att_photo['src']; ?>" alt="<?= $att_photo_description; ?>" class="photos-list__img"
+                            <img src="<?= $att_photo_lqip['src']; ?>" data-src="<?= $att_photo['src']; ?>"
+                                 alt="<?= $att_photo_description; ?>" class="photos-list__img lazyload blur-up"
                                  width="<?= $att_photo_width; ?>" height="<?= $att_photo_height; ?>">
                         </a>
                         <?php if ($att_photo_description): ?>
-                            <figcaption class="photos-list__item-figcaption"><?= $att_photo_description; ?></figcaption>
+                        <figcaption class="photos-list__item-figcaption"><?= $att_photo_description; ?></figcaption>
                         <?php endif; ?>
                     </figure>
                 </div>
@@ -202,13 +211,13 @@ if ($att_photos):
                 <div class="col-lg-6 videos-list__col">
                     <figure class="videos-list__item">
                         <div class="adaptive-video-container">
-                            <iframe src="https://www.youtube.com/embed/<?= get_youtube_id($att_video); ?>"
+                            <iframe data-src="https://www.youtube.com/embed/<?= get_youtube_id($att_video); ?>" class="lazyload"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 <?php if ($att_video_description): ?> title="<?= $att_video_description; ?>"<?php endif; ?>
                                     allowfullscreen></iframe>
                         </div>
                         <?php if ($att_video_description): ?>
-                            <figcaption class="videos-list__item-figcaption"><?= $att_video_description; ?></figcaption>
+                        <figcaption class="videos-list__item-figcaption"><?= $att_video_description; ?></figcaption>
                         <?php endif; ?>
                     </figure>
                 </div>

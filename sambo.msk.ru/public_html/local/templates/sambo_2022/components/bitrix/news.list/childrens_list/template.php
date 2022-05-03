@@ -25,6 +25,14 @@ $param_tag_title = $arParams["TAG_TITLE"] ?? '2';
                 ],
                 BX_RESIZE_IMAGE_PROPORTIONAL_ALT
             );
+            $article_img_lqip = CFile::ResizeImageGet(
+                $arItem["PREVIEW_PICTURE"],
+                [
+                    "width" => 100,
+                    "height" => 100
+                ],
+                BX_RESIZE_IMAGE_PROPORTIONAL_ALT
+            );
             $att_year = $arItem["DISPLAY_PROPERTIES"]["ATT_YEAR"]["VALUE"];
             $att_victories = $arItem["DISPLAY_PROPERTIES"]["ATT_VICTORIES"]["VALUE"];
             $att_defeat = $arItem["DISPLAY_PROPERTIES"]["ATT_DEFEAT"]["VALUE"];
@@ -35,8 +43,9 @@ $param_tag_title = $arParams["TAG_TITLE"] ?? '2';
                     <a class="children__img-link" href="<?= $arItem["PREVIEW_PICTURE"]["SRC"]; ?>"
                        data-fancybox="childrens-list"
                        data-caption="<?= $arItem["NAME"]; ?>">
-                        <img src="<?= $article_img["src"]; ?>"
-                             class="children__img"
+                        <img src="<?= $article_img_lqip["src"];?>"
+                             data-src="<?= $article_img["src"]; ?>"
+                             class="children__img lazyload blur-up"
                              alt="<?= $arItem["NAME"]; ?>"
                              width="<?= $article_img_width; ?>"
                              height="<?= $article_img_height; ?>">
