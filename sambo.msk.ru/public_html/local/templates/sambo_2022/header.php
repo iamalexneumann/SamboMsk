@@ -37,7 +37,16 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/fontawesome-free-6.1.1-web/css/all.min.css');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/lazysizes.min.js');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/main.js');
+
     $APPLICATION->ShowHead();
+//    $bXhtmlStyle = true;
+//    echo '<meta http-equiv="Content-Type" content="text/html; charset='.LANG_CHARSET.'"'.($bXhtmlStyle? ' /':'').'>'."\n";
+//    $APPLICATION->ShowMeta("robots", false, $bXhtmlStyle);
+//    $APPLICATION->ShowMeta("keywords", false, $bXhtmlStyle);
+//    $APPLICATION->ShowMeta("description", false, $bXhtmlStyle);
+//    $APPLICATION->ShowLink("canonical", null, $bXhtmlStyle);
+//    $APPLICATION->ShowHeadStrings();
+//    $APPLICATION->ShowHeadScripts();
     ?>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">

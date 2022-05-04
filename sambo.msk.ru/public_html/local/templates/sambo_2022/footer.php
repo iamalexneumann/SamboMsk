@@ -149,6 +149,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 <!--            var s=d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pw, s);-->
 <!--        })(document);-->
 <!--    </script>-->
-
+<?php
+//$APPLICATION->ShowCSS(true, $bXhtmlStyle);
+?>
 </body>
 </html>
