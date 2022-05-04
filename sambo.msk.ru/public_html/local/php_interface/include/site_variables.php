@@ -1,6 +1,8 @@
 <?php
 require_once ('functions.php');
-
+$siteparam_section_head = \COption::GetOptionString( 'askaron.settings', 'UF_SECTION_HEAD') ?? '';
+$siteparam_section_body_before = \COption::GetOptionString( 'askaron.settings', 'UF_SECTION_BODY_BEFORE') ?? '';
+$siteparam_section_body_after = \COption::GetOptionString( 'askaron.settings', 'UF_SECTION_BODY_AFTER') ?? '';
 $siteparam_main_logo = CFile::GetPath(\COption::GetOptionString( 'askaron.settings', 'UF_MAIN_LOGO') ?? '');
 $siteparam_footer_logo = CFile::GetPath(\COption::GetOptionString( 'askaron.settings', 'UF_FOOTER_LOGO') ?? '');
 $siteparam_main_logo_name = \COption::GetOptionString( 'askaron.settings', 'UF_MAIN_LOGO_NAME') ?? '';

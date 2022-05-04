@@ -1,11 +1,9 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetPageProperty("keywords", "Самбо, дзюдо, самбо детям, спортивная секция");
-$APPLICATION->SetPageProperty("description", "Самбо и дзюдо для детей");
-$APPLICATION->SetTitle("Для родителей");
+$APPLICATION->SetTitle("Информация и памятка для родителей");
 ?>
 <div class="card mb-4">
-    <img alt="Для родителей" data-src="/upload/dlya-roditeleywebp.webp" title="Самбо для детей в Москве" class="lazyload">
+    <img alt="Для родителей" src="/bitrix/images/main/preview.gif" data-src="/upload/dlya-roditeleywebp.webp" title="Самбо для детей в Москве" class="lazyload">
 </div>
 <p>
     Каждый родитель сталкивается с вопросом выбора спортивной секции для ребенка. Доступность проезда и цен, опытный педагогический состав, возможность быть в курсе успеваемости ребенка. Мы постарались и учли все эти важные стороны тренировочного процесса. В наших уже залах занимаются десятки мальчишек и девчонок. Попробуйте и вы!

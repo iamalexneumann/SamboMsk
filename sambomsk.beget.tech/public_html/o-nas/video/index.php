@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Видео");
+$APPLICATION->SetTitle("Видеоальбомы с соревнований и других мероприятий");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"videos", 

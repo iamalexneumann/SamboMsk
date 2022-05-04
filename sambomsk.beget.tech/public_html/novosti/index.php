@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("keywords", "Самбо, дзюдо, самбо детям, школа самбо, секция для детей");
 $APPLICATION->SetPageProperty("description", "Новости Школы Самбо \"Три Медведя\"");
-$APPLICATION->SetTitle("Новости");
+$APPLICATION->SetTitle("Новости детской школы \"Три Медведя\"");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"news", 

@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Спортсмены");
+$APPLICATION->SetTitle("Ученики детской школы \"Три Медведя\"");
 ?>
 
 <?php

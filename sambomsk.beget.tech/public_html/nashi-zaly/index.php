@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Наши залы");
+$APPLICATION->SetTitle("Список залов детской школы самбо и дзюдо \"Три Медведя\"");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"halls", 

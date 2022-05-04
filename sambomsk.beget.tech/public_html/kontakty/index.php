@@ -1,6 +1,6 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Контакты");
+$APPLICATION->SetTitle("Контакты школы самбо и дзюдо \"Три Медведя\"");
 ?>
 <div class="page-contacts">
     <section class="main-section">

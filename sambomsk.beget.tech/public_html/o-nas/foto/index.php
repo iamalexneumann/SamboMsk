@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Фото");
+$APPLICATION->SetTitle("Фотоальбомы с соревнований и других мероприятий");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"photos", 

@@ -141,14 +141,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     </a>
     <?php endif; ?>
     <a href="#body-area" class="to-top-btn" title="Наверх"><i class="fa-solid fa-angle-up"></i></a>
-<!--    <script data-skip-moving="true">-->
-<!--        var _pwidget = {widgetId: 267722};-->
-<!--        (function(d){-->
-<!--            var pw=d.createElement('script');pw.type='text/javascript';pw.async = true;-->
-<!--            pw.src='https://wdg.pogodiwidget.com/pogodi.js';-->
-<!--            var s=d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pw, s);-->
-<!--        })(document);-->
-<!--    </script>-->
+    <?= $siteparam_section_body_after; ?>
 <?php
 //$APPLICATION->ShowCSS(true, $bXhtmlStyle);
 ?>

@@ -1,6 +1,9 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Виды спорта");
+$APPLICATION->SetPageProperty("TITLE", "Единоборства детской школы самбо и дзюдо \"Три Медведя\"");
+$APPLICATION->SetPageProperty("keywords", "детские единоборства три медведя в москве и области");
+$APPLICATION->SetPageProperty("description", "Список единоборств детской школы самбо и дзюдо \"Три Медведя\". Записывайтесь к нам на бесплатное пробное занятие. 📞 Телефоны: +7 (495) 294-03-33, +7 (916) 562-53-80. Звоните!");
+$APPLICATION->SetTitle("Единоборства для детей в Москве и области");
 ?>
 <h2>Самбо или дзюдо?</h2>
 <p>
@@ -23,7 +26,7 @@ $APPLICATION->SetTitle("Виды спорта");
 </ul>
 <div class="kinds-of-sports mb-5 mt-5">
     <article class="kinds-of-sports__item kinds-of-sports__item_blue-bg">
-        <img data-src="/upload/iblock/55a/55a26733081316a6ad9090ebcde9d38d.jpg" class="kinds-of-sports__img lazyload" alt="Самбо в Москве">
+        <img src="/bitrix/images/main/preview.gif" data-src="/upload/iblock/55a/55a26733081316a6ad9090ebcde9d38d.jpg" class="kinds-of-sports__img lazyload" alt="Самбо в Москве">
         <div class="kinds-of-sports__wrapper">
             <h3 class="kinds-of-sports__title">
                 <a href="/vidy-sporta/sambo-v-moskve/" class="kinds-of-sports__link">Самбо в Москве</a>
@@ -42,7 +45,7 @@ $APPLICATION->SetTitle("Виды спорта");
         </div>
     </article>
     <article class="kinds-of-sports__item kinds-of-sports__item_red-bg">
-        <img data-src="/upload/iblock/137/13760d0ae76351c4d951ae2fd768a446.jpg" class="kinds-of-sports__img lazyload" alt="Дзюдо в Москве">
+        <img src="/bitrix/images/main/preview.gif" data-src="/upload/iblock/137/13760d0ae76351c4d951ae2fd768a446.jpg" class="kinds-of-sports__img lazyload" alt="Дзюдо в Москве">
         <div class="kinds-of-sports__wrapper">
             <h3 class="kinds-of-sports__title">
                 <a href="/vidy-sporta/dzyudo-v-moskve/" class="kinds-of-sports__link">Дзюдо в Москве</a>

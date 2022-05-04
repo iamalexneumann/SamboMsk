@@ -16,14 +16,6 @@ $arUrlRewrite=array (
     'PATH' => '/o-nas/video/detail.php',
     'SORT' => 100,
   ),
-  2 => 
-  array (
-    'CONDITION' => '#^/vidy-sporta/([0-9a-zA-Z_-]+)/.*#',
-    'RULE' => 'ELEMENT_CODE=$1',
-    'ID' => '',
-    'PATH' => '/vidy-sporta/detail.php',
-    'SORT' => 100,
-  ),
   3 => 
   array (
     'CONDITION' => '#^/nashi-zaly/([0-9a-zA-Z_-]+)/.*#',

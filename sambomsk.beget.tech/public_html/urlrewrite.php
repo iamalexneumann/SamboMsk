@@ -56,7 +56,7 @@ $arUrlRewrite=array (
     'PATH' => '/stati/detail.php',
     'SORT' => 100,
   ),
-  25 => 
+  32 => 
   array (
     'CONDITION' => '#^/o-nas/trenery/#',
     'RULE' => '',
@@ -64,7 +64,7 @@ $arUrlRewrite=array (
     'PATH' => '/o-nas/trenery/index.php',
     'SORT' => 100,
   ),
-  26 => 
+  30 => 
   array (
     'CONDITION' => '#^/o-nas/video/#',
     'RULE' => '',
@@ -72,7 +72,7 @@ $arUrlRewrite=array (
     'PATH' => '/o-nas/video/index.php',
     'SORT' => 100,
   ),
-  19 => 
+  31 => 
   array (
     'CONDITION' => '#^/o-nas/foto/#',
     'RULE' => '',
@@ -80,7 +80,7 @@ $arUrlRewrite=array (
     'PATH' => '/o-nas/foto/index.php',
     'SORT' => 100,
   ),
-  27 => 
+  33 => 
   array (
     'CONDITION' => '#^/nashi-zaly/#',
     'RULE' => '',
@@ -88,7 +88,7 @@ $arUrlRewrite=array (
     'PATH' => '/nashi-zaly/index.php',
     'SORT' => 100,
   ),
-  23 => 
+  29 => 
   array (
     'CONDITION' => '#^/novosti/#',
     'RULE' => '',
@@ -96,7 +96,7 @@ $arUrlRewrite=array (
     'PATH' => '/novosti/index.php',
     'SORT' => 100,
   ),
-  24 => 
+  28 => 
   array (
     'CONDITION' => '#^/stati/#',
     'RULE' => '',

@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Статьи");
+$APPLICATION->SetPageProperty("title", "Статьи &#128240; о самбо и дзюдо на сайте школы \"Три Медведя\"");
+$APPLICATION->SetTitle("Статьи о самбо и дзюдо");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"articles", 

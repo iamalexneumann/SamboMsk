@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Тренеры");
+$APPLICATION->SetTitle("Тренеры детской школы \"Три Медведя\"");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"coaches", 
