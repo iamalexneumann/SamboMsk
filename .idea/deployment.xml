@@ -18,22 +18,8 @@
             <excludedPath path="/.beget" />
             <excludedPath path="/.beget_profiler_files" />
             <excludedPath path="/.subversion" />
-            <excludedPath path="/sambo.msk.ru/public_html/novosti" />
-            <excludedPath path="/sambo.msk.ru/public_html/politika-konfidentsialnosti" />
             <excludedPath path="/sambo.msk.ru/public_html/bitrix" />
-            <excludedPath path="/sambo.msk.ru/public_html/strakhovanie" />
-            <excludedPath path="/sambo.msk.ru/public_html/vidy-sporta" />
-            <excludedPath path="/sambo.msk.ru/public_html/stati" />
-            <excludedPath path="/sambo.msk.ru/public_html/mails" />
-            <excludedPath path="/sambo.msk.ru/public_html/kontakty" />
             <excludedPath path="/sambo.msk.ru/public_html/upload" />
-            <excludedPath path="/sambo.msk.ru/public_html/otzyvy" />
-            <excludedPath path="/sambo.msk.ru/public_html/o-nas" />
-            <excludedPath path="/sambo.msk.ru/public_html/nashi-zaly" />
-            <excludedPath path="/sambo.msk.ru/public_html/includes" />
-            <excludedPath path="/sambo.msk.ru/public_html/test" />
-            <excludedPath path="/sambo.msk.ru/public_html/shop-sambo" />
-            <excludedPath path="/sambo.msk.ru/public_html/search" />
             <excludedPath local="true" path="$PROJECT_DIR$/.gem" />
             <excludedPath local="true" path="$PROJECT_DIR$/.service" />
             <excludedPath local="true" path="$PROJECT_DIR$/.cache" />
@@ -44,22 +30,8 @@
             <excludedPath local="true" path="$PROJECT_DIR$/.beget" />
             <excludedPath local="true" path="$PROJECT_DIR$/.beget_profiler_files" />
             <excludedPath local="true" path="$PROJECT_DIR$/.subversion" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/novosti" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/politika-konfidentsialnosti" />
             <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/bitrix" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/strakhovanie" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/vidy-sporta" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/stati" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/mails" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/kontakty" />
             <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/upload" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/otzyvy" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/o-nas" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/nashi-zaly" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/includes" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/test" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/shop-sambo" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/search" />
             <excludedPath local="true" path="$PROJECT_DIR$/.gem" />
             <excludedPath local="true" path="$PROJECT_DIR$/.service" />
             <excludedPath local="true" path="$PROJECT_DIR$/.cache" />
@@ -70,22 +42,9 @@
             <excludedPath local="true" path="$PROJECT_DIR$/.beget" />
             <excludedPath local="true" path="$PROJECT_DIR$/.beget_profiler_files" />
             <excludedPath local="true" path="$PROJECT_DIR$/.subversion" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/novosti" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/politika-konfidentsialnosti" />
             <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/bitrix" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/strakhovanie" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/vidy-sporta" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/stati" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/mails" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/kontakty" />
             <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/upload" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/otzyvy" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/o-nas" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/nashi-zaly" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/includes" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/test" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/shop-sambo" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/search" />
+            <excludedPath path="/sambomsk.beget.tech/" />
           </excludedPaths>
         </serverdata>
       </paths>

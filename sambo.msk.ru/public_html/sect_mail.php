@@ -1,1 +1,0 @@
-<a href="mailto:sambo-msk@yandex.ru" class="link-email footer-link-email"><b>sambo-msk@yandex.ru</b></a>

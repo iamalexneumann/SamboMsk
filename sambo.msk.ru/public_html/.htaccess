@@ -16,8 +16,11 @@ ErrorDocument 404 /404.php
   RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
   RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
   RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+  RewriteCond %{HTTP_HOST} sambomsk.beget.tech
+  RewriteRule (.*) https://sambo.msk.ru/$1 [R=301,L]
   RewriteCond %{SERVER_PORT} !^443$
   RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
 </IfModule>
 
 <IfModule mod_dir.c>

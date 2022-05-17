@@ -1,13 +1,6 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Главная", 
-		"/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
 		"О нас", 
 		"/o-nas/", 
 		Array(), 

@@ -14,7 +14,7 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
                        onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
                         +7 <?= substr($siteparam_main_phone, 1); ?>
                     </a>
-                    или заполните форму и мы Вам перезвоним
+                    или заполните форму, и мы Вам перезвоним
                 </div>
             </div>
             <div class="col-lg-6 main-form-section__form">

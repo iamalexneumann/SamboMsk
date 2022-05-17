@@ -14,7 +14,7 @@
             <?php endif; ?>
         </div>
     </div>
-    <a href="javascript:document.getElementById('pgd_div').click();" class="btn btn-danger footer-btn-callback">Заказать звонок</a>
+    <button type="button" class="btn btn-danger footer-btn-callback" data-bs-toggle="modal" data-bs-target="#callbackModal">Заказать звонок</button>
     <a href="mailto:<?= $siteparam_main_email; ?>" title="Написать E-mail" class="footer-email">
         <i class="fa-solid fa-envelope footer-email__icon"></i>
         <span class="footer-email__link"><?= $siteparam_main_email; ?></span>

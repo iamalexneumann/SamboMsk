@@ -20,4 +20,8 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
         )
     );
     ?>
+    <div class="views-counter">
+        <i class="fa-solid fa-eye views-counter__icon"></i>
+        <span class="views-counter__text"><?= get_views_with_declension($arResult["SHOW_COUNTER"] ?? 0); ?></span>
+    </div>
 </div>

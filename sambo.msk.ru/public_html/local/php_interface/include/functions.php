@@ -27,6 +27,12 @@ function get_age (int $year, string $one, string $four, string $five):string
     return $year . ' ' . $yearDeclension->get($year);
 }
 
+function get_views_with_declension (int $views_counter = 0):string
+{
+    $viewsDeclension = new Declension('просмотр', 'просмотра', 'просмотров');
+    return $views_counter . ' ' . $viewsDeclension->get($views_counter);
+}
+
 function use_wide_template (string $url):bool
 {
     $patterns = [

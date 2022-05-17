@@ -40,3 +40,40 @@
     width: 40px;
     height: 40px;
 }
+
+.promo-alert .carousel-control-next,
+.promo-alert .carousel-control-prev {
+    width: 40px;
+    font-size: 0.85rem;
+}
+
+.promo-alert .carousel-control-next {
+    right: 40px;
+}
+
+@media (max-width: 767.98px) {
+    .promo-alert {
+        padding-right: 25px;
+    }
+    .promo-alert .carousel-control-next,
+    .promo-alert .carousel-control-prev {
+        width: 25px;
+    }
+    .promo-alert .carousel-control-next {
+        right: 25px;
+    }
+    .promo-alert .btn-close {
+        font-size: 1.125rem;
+        width: 25px;
+        height: 25px;
+    }
+    .promo-alert .container {
+        padding: 0 25px;
+    }
+    .promo-list__content {
+        text-align: center;
+    }
+    .promo-list__btn {
+        margin-top: 5px;
+    }
+}

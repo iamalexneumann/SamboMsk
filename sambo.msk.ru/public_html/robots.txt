@@ -37,4 +37,4 @@ Allow: /bitrix/js/
 Allow: /bitrix/templates/
 Allow: /bitrix/panel/
 Host: sambo.msk.ru
-Sitemap: http://sambo.msk.ru/sitemaps/sitemap.xml
+Sitemap: https://sambo.msk.ru/sitemaps/sitemap.xml

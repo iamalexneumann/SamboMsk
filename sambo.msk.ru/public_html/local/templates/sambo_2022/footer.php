@@ -7,7 +7,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
         </div>
         <?php endif; ?>
     </main>
-    <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form_ru.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_modal_form_ru.php'); ?>
     <footer class="main-footer">
         <div class="main-footer__content">
             <div class="container">
@@ -94,7 +94,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <a href="javascript:document.getElementById('pgd_div').click();" class="btn btn-danger footer-btn-callback">Заказать звонок</a>
+                        <button type="button" class="btn btn-danger footer-btn-callback" data-bs-toggle="modal" data-bs-target="#callbackModal">Заказать звонок</button>
                         <a href="mailto:<?= $siteparam_main_email; ?>" title="Написать E-mail" class="footer-email">
                             <i class="fa-solid fa-envelope footer-email__icon"></i>
                             <span class="footer-email__link"><?= $siteparam_main_email; ?></span>
@@ -142,6 +142,42 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     <?php endif; ?>
     <a href="#body-area" class="to-top-btn" title="Наверх"><i class="fa-solid fa-angle-up"></i></a>
     <?= $siteparam_section_body_after; ?>
+    <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title fw-bold">Заказать звонок</div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <?php
+            $APPLICATION->IncludeComponent(
+                "custom.bitrix:main.feedback",
+                "modal_form",
+                array(
+                    "COMPOSITE_FRAME_MODE" => "A",
+                    "COMPOSITE_FRAME_TYPE" => "AUTO",
+                    "EMAIL_TO" => "sambo-msk@yandex.ru",
+                    "EVENT_MESSAGE_ID" => array(
+                        0 => "7",
+                    ),
+                    "OK_TEXT" => "Спасибо. Мы перезвоним Вам в течение дня!",
+                    "REQUIRED_FIELDS" => array(
+                        0 => "NAME",
+                        1 => "USER_PHONE",
+                    ),
+                    "USE_CAPTCHA" => "N",
+                    "COMPONENT_TEMPLATE" => "modal_form",
+                    "REDIRECT_URL" => "/stranitsa-blagodarnosti.php",
+                ),
+                false
+            ); ?>
+          </div>
+        </div>
+      </div>
+    </div>
 <?php
 //$APPLICATION->ShowCSS(true, $bXhtmlStyle);
 ?>

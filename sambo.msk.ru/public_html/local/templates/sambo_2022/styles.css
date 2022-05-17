@@ -1229,7 +1229,6 @@ h5,
 }
 
 .first-screen {
-  height: 700px;
   background-color: #171717;
   background: linear-gradient(90deg, #00369E 0%, rgba(6, 82, 221, 0) 85%),
   url(img/first-screen-bg.webp) 50% 50%;
@@ -1277,6 +1276,7 @@ h5,
 }
 
 .first-screen__wrapper {
+  min-height: 700px;
   max-width: 550px;
   padding: 80px 0;
   height: 100%;
@@ -1396,7 +1396,8 @@ h5,
   position: fixed;
   z-index: 100;
   right: 40px;
-  bottom: 160px;
+  bottom: 40px;
+  /*bottom: 160px;*/
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -1445,6 +1446,24 @@ h5,
 .blur-up.lazyloaded {
   -webkit-filter: blur(0);
   filter: blur(0);
+}
+
+.page-thanks .footer-btn-callback {
+  display: none;
+}
+
+.views-counter {
+  margin-top: 10px;
+}
+
+.views-counter__icon {
+  margin-right: 5px;
+  color: #cdcdcd;
+}
+
+.views-counter__text {
+  font-size: 0.85rem;
+  color: #6f6f6f;
 }
 
 @media (max-width: 1399.98px) {
@@ -1622,8 +1641,9 @@ h5,
   .whatsapp-btn {
     width: 60px;
     height: 60px;
-    right: 10px;
-    bottom: 80px;
+    right: 15px;
+    bottom: 15px;
+    /*bottom: 80px;*/
     font-size: 2rem;
   }
   .to-top-btn {
@@ -1632,6 +1652,9 @@ h5,
     width: 35px;
     height: 35px;
     font-size: 1rem;
+  }
+  .first-screen__wrapper {
+    min-height: 500px;
   }
 }
 
