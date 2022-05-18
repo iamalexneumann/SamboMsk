@@ -1,9 +1,13 @@
-<? /** @var $block array */ ?>
-<table class="sp-properties">
-    <? foreach ($block['elements'] as $item): ?>
-        <tr>
-            <td class="sp-properties_title"><?= $item['title'] ?></td>
-            <td class="sp-properties_text"><?= $item['text'] ?></td>
-        </tr>
-    <? endforeach; ?>
-</table>
+<?php /** @var $block array */ ?>
+<div class="table-responsive">
+    <table class="sp-properties table table-bordered table-striped">
+        <tbody>
+        <?php foreach ($block['elements'] as $item): ?>
+            <tr>
+                <th scope="row"><?= $item['title'] ?></th>
+                <td><?= $item['text'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
