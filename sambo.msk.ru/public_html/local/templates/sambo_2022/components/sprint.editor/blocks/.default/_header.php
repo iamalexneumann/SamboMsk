@@ -9,10 +9,10 @@
 if ($this->arParams['USE_JQUERY'] == 'Y') {
     CUtil::InitJSCore(["jquery"]);
 }
-
+echo SITE_TEMPLATE_PATH;
 if ($this->arParams['USE_FANCYBOX'] == 'Y') {
-    $this->registerCss('/bitrix/admin/sprint.editor/assets/fancybox3/jquery.fancybox.min.css');
-    $this->registerJs('/bitrix/admin/sprint.editor/assets/fancybox3/jquery.fancybox.min.js');
+    $this->registerCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
+    $this->registerJs(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
 }
 
 if ($this->arParams['USE_GRID'] == 'Y') {
