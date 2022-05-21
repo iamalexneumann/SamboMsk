@@ -9,7 +9,7 @@
 if ($this->arParams['USE_JQUERY'] == 'Y') {
     CUtil::InitJSCore(["jquery"]);
 }
-echo SITE_TEMPLATE_PATH;
+
 if ($this->arParams['USE_FANCYBOX'] == 'Y') {
     $this->registerCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
     $this->registerJs(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
