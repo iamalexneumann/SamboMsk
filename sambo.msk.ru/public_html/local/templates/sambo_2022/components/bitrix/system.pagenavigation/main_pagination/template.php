@@ -18,7 +18,7 @@ if (!$arResult["NavShowAlways"]) {
                 ?>
                 <li class="page-item">
                     <a class="page-link" href="<?= $arResult["sUrlPath"]; ?>?<?= $strNavQueryString; ?>PAGEN_<?= $arResult["NavNum"]; ?>=<?= ($arResult["NavPageNomer"]+1); ?>" aria-label="Предыдущая">
-                        <span aria-hidden="true"><?= GetMessage("nav_prev"); ?></span>
+                        <span aria-hidden="true"><?= GetMessage("main_pag_nav_prev"); ?></span>
                     </a>
                 </li>
             <?php
@@ -26,7 +26,7 @@ if (!$arResult["NavShowAlways"]) {
                     ?>
                     <li class="page-item">
                         <a class="page-link" href="<?= $arResult["sUrlPath"]; ?><?= $strNavQueryStringFull; ?>" aria-label="Предыдущая">
-                            <span aria-hidden="true"><?= GetMessage("nav_prev"); ?></span>
+                            <span aria-hidden="true"><?= GetMessage("main_pag_nav_prev"); ?></span>
                         </a>
                     </li>
                 <?php
@@ -34,7 +34,7 @@ if (!$arResult["NavShowAlways"]) {
                     ?>
                     <li class="page-item">
                         <a class="page-link" href="<?= $arResult["sUrlPath"]; ?>?<?= $strNavQueryString; ?>PAGEN_<?= $arResult["NavNum"]; ?>=<?= ($arResult["NavPageNomer"]+1); ?>" aria-label="Предыдущая">
-                            <span aria-hidden="true"><?= GetMessage("nav_prev"); ?></span>
+                            <span aria-hidden="true"><?= GetMessage("main_pag_nav_prev"); ?></span>
                         </a>
                     </li>
                 <?php
@@ -109,7 +109,7 @@ if (!$arResult["NavShowAlways"]) {
             ?>
             <li class="page-item">
                 <a class="page-link" href="<?= $arResult["sUrlPath"]; ?>?<?= $strNavQueryString; ?>PAGEN_<?= $arResult["NavNum"]; ?>=<?= ($arResult["NavPageNomer"]-1); ?>" aria-label="Следующая">
-                    <span aria-hidden="true"><?= GetMessage("nav_next"); ?></span>
+                    <span aria-hidden="true"><?= GetMessage("main_pag_nav_next"); ?></span>
                 </a>
             </li>
         <?php
@@ -123,7 +123,7 @@ if (!$arResult["NavShowAlways"]) {
                 ?>
                 <li class="page-item">
                     <a class="page-link" href="<?= $arResult["sUrlPath"]; ?>?<?= $strNavQueryString; ?>PAGEN_<?= $arResult["NavNum"]; ?>=<?= ($arResult["NavPageNomer"]-1); ?>" aria-label="Предыдущая">
-                        <span aria-hidden="true"><?= GetMessage("nav_prev"); ?></span>
+                        <span aria-hidden="true"><?= GetMessage("main_pag_nav_prev"); ?></span>
                     </a>
                 </li>
             <?php
@@ -131,7 +131,7 @@ if (!$arResult["NavShowAlways"]) {
                     ?>
                     <li class="page-item">
                         <a class="page-link" href="<?= $arResult["sUrlPath"]; ?>?<?= $strNavQueryString; ?>PAGEN_<?= $arResult["NavNum"]; ?>=<?= ($arResult["NavPageNomer"]-1); ?>" aria-label="Предыдущая">
-                            <span aria-hidden="true"><?= GetMessage("nav_prev"); ?></span>
+                            <span aria-hidden="true"><?= GetMessage("main_pag_nav_prev"); ?></span>
                         </a>
                     </li>
                 <?php
@@ -139,7 +139,7 @@ if (!$arResult["NavShowAlways"]) {
                     ?>
                     <li class="page-item">
                         <a class="page-link" href="<?= $arResult["sUrlPath"]; ?><?= $strNavQueryStringFull; ?>" aria-label="Предыдущая">
-                            <span aria-hidden="true"><?= GetMessage("nav_prev"); ?></span>
+                            <span aria-hidden="true"><?= GetMessage("main_pag_nav_prev"); ?></span>
                         </a>
                     </li>
                 <?php
@@ -213,7 +213,7 @@ if (!$arResult["NavShowAlways"]) {
             ?>
             <li class="page-item">
                 <a class="page-link" href="<?= $arResult["sUrlPath"]; ?>?<?= $strNavQueryString; ?>PAGEN_<?= $arResult["NavNum"]; ?>=<?= ($arResult["NavPageNomer"]+1); ?>" aria-label="Следующая">
-                    <span aria-hidden="true"><?= GetMessage("nav_next"); ?></span>
+                    <span aria-hidden="true"><?= GetMessage("main_pag_nav_next"); ?></span>
                 </a>
             </li>
         <?php
@@ -224,13 +224,13 @@ if (!$arResult["NavShowAlways"]) {
         if ($arResult["NavShowAll"]):
             ?>
             <li class="page-item">
-                <a class="page-link" href="<?= $arResult["sUrlPath"]; ?>?<?= $strNavQueryString; ?>SHOWALL_<?= $arResult["NavNum"]; ?>=0"><?= GetMessage("nav_paged"); ?></a>
+                <a class="page-link" href="<?= $arResult["sUrlPath"]; ?>?<?= $strNavQueryString; ?>SHOWALL_<?= $arResult["NavNum"]; ?>=0"><?= GetMessage("main_pag_nav_paged"); ?></a>
             </li>
         <?php
         else:
             ?>
             <li class="page-item">
-                <a class="page-link" href="<?= $arResult["sUrlPath"]; ?>?<?= $strNavQueryString; ?>SHOWALL_<?= $arResult["NavNum"]; ?>=1"><?= GetMessage("nav_all"); ?></a>
+                <a class="page-link" href="<?= $arResult["sUrlPath"]; ?>?<?= $strNavQueryString; ?>SHOWALL_<?= $arResult["NavNum"]; ?>=1"><?= GetMessage("main_pag_nav_all"); ?></a>
             </li>
         <?php
         endif;
