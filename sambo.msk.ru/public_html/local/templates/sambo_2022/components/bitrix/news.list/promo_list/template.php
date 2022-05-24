@@ -4,7 +4,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 }
 $this->setFrameMode(true);
 if (count($arResult['ITEMS']) > 0):
-    $this->addExternalJS(SITE_TEMPLATE_PATH . "/libs/js-cookie/js.cookie.min.js");
 ?>
 <div class="alert alert-primary promo-alert fade show" id="header-promo-list" role="alert">
     <div class="container">
@@ -30,27 +29,26 @@ if (count($arResult['ITEMS']) > 0):
                 </li>
             <?php endforeach; ?>
         </ul>
+        <?php if (count($arResult['ITEMS']) > 1): ?>
         <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
+        <?php endif; ?>
         <button type="button" class="btn-close btn-close_light" data-bs-dismiss="alert" aria-label="<?= GetMessage("PROMO_LIST_BTN_CLOSE_ARIA_LABEL"); ?>">
             <i class="fa-solid fa-xmark"></i>
         </button>
     </div>
 </div>
-<script>
-    if (Cookies.get('headerPromoList') === 'hide') {
+<script data-skip-moving="true">
+    if (sessionStorage.getItem('hideHeaderMessages') === 'true') {
         document.querySelector('#header-promo-list').classList.add('d-none');
     }
 
     document.querySelector('#header-promo-list .btn-close').addEventListener("click", function() {
-        Cookies.set('headerPromoList', 'hide', {
-            expires: 3,
-            path: '/'
-        });
+        sessionStorage.setItem('hideHeaderMessages', 'true');
     });
 </script>
 <?php endif; ?>
