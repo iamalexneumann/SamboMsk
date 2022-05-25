@@ -45,14 +45,14 @@ $att_geo = $arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"];
             <?php if ($att_features): ?>
             <ul class="screen-features">
                 <?php
-                foreach ($att_features["~VALUE"] as $key => $feature_icon):
-                    $feature_description = $att_features["DESCRIPTION"][$key];
+                foreach ($att_features["VALUE"] as $key => $feature_title):
+                    $feature_icon = $att_features["~DESCRIPTION"][$key];
                     ?>
                     <li class="screen-features__item">
+                        <?php if ($feature_icon): ?>
                         <div class="screen-features__icon"><?= $feature_icon; ?></div>
-                        <?php if ($feature_description): ?>
-                            <div class="screen-features__description"><?= $feature_description; ?></div>
                         <?php endif; ?>
+                        <div class="screen-features__description"><?= $feature_title; ?></div>
                     </li>
                 <?php endforeach; ?>
             </ul>
