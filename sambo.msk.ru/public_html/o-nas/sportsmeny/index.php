@@ -6,7 +6,7 @@ $APPLICATION->SetTitle("Ученики детской школы \"Три Мед
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:news.list",
-    "childrens_list",
+    "children_list",
     Array(
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
         "ADD_SECTIONS_CHAIN" => "N",

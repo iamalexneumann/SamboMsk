@@ -1,9 +1,27 @@
 <?php
 
 $settings = [
-    'title' => 'Макет новостей',
+    'title' => 'Макет новости',
     'layout_enabled' => [
         'layout_none',
+    ],
+    'wide_mode' => true,
+    'block_settings' => [
+        'my_iblock_elements_photos' => [
+            'enabled_iblocks' => [
+                'type'  => 'hidden',
+                'value' => [1],
+            ],
+        ]
+    ],
+    'block_enabled' => [
+        'text',
+        'lists',
+        'gallery',
+        'properties',
+        'snippet',
+        'my_float_img',
+        'my_iblock_elements_photos',
     ],
     'snippets' => [
         [
