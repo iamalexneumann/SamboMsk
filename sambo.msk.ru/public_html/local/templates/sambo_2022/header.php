@@ -13,7 +13,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     $Asset = Asset::getInstance();
     $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/jquery-3.6.0.min.js');
     $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/bootstrap/css/bootstrap.min.css');
-    $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/bootstrap/js/bootstrap.min.js');
+    $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/bootstrap/js/bootstrap.bundle.min.js');
     $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/fontawesome-free-6.1.1-web/css/all.min.css');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/lazysizes.min.js');
     $Asset->addJs(SITE_TEMPLATE_PATH . '/main.js');

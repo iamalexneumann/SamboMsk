@@ -7,7 +7,7 @@ if (count($arResult['ITEMS']) > 0):
 ?>
 <div class="alert alert-primary promo-alert fade show" id="header-promo-list" role="alert">
     <div class="container">
-        <ul class="promo-list carousel slide clearfix" id="promoCarousel" data-bs-ride="carousel" data-bs-interval="false">
+        <ul class="promo-list carousel slide clearfix" id="promoCarousel" data-bs-interval="false">
             <?php
             foreach ($arResult['ITEMS'] as $key => $arItem):
                 $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem['IBLOCK_ID'], 'ELEMENT_EDIT'));
