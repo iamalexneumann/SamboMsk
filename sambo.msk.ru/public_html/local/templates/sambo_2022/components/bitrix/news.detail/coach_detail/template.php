@@ -2,8 +2,10 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
-
 $this->setFrameMode(true);
+$this->addExternalCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
+$this->addExternalJS(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
+
 $att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
 $att_videos = $arResult["DISPLAY_PROPERTIES"]["ATT_VIDEOS"] ?? '';
 $coach_photo_width = 660;
@@ -59,9 +61,10 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
                     ?>
                 </div>
                 <?php endif; ?>
-                <?php if ($att_birthday):
-                        $att_birthday_year = FormatDate('Y', strtotime($att_birthday));
-                        $att_birthday_formatted = FormatDate('d F Y', strtotime($att_birthday));
+                <?php
+                if ($att_birthday):
+                    $att_birthday_year = FormatDate('Y', strtotime($att_birthday));
+                    $att_birthday_formatted = FormatDate('d F Y', strtotime($att_birthday));
                 ?>
                 <div class="coach__age">
                     <span class="coach__age-date">
@@ -108,11 +111,7 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
             </div>
         </div>
     </div>
-    <?php
-    if ($att_photos):
-        $this->addExternalCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
-        $this->addExternalJS(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
-    ?>
+    <?php if ($att_photos): ?>
     <figure role="group" class="photos-list main-section d-flex flex-column-reverse">
         <div class="container">
             <div class="row photos-list__row">

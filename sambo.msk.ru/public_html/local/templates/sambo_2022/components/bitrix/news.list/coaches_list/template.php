@@ -32,7 +32,8 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
             );
             $att_rank = $arItem["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"];
             $att_birthday = $arItem["DISPLAY_PROPERTIES"]["ATT_BIRTHDAY"]["VALUE"];
-            if ($att_birthday) {
+            $att_birthday_year = '';
+            if ($att_birthday !== '') {
                 $att_birthday_year = FormatDate('Y', strtotime($att_birthday));
             }
             $att_achievments = $arItem["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"];
