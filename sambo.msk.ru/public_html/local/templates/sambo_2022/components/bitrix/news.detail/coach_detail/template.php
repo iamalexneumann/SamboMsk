@@ -5,31 +5,15 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 $this->setFrameMode(true);
 $this->addExternalCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
 $this->addExternalJS(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
-
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @global CMain $APPLICATION
+ * @var CBitrixComponentTemplate $this
+ * @var CBitrixComponent $component
+ */
 $att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
 $att_videos = $arResult["DISPLAY_PROPERTIES"]["ATT_VIDEOS"] ?? '';
-$coach_photo_width = 660;
-$coach_photo_height = 1000;
-$coach_photo = CFile::ResizeImageGet(
-    $arResult["DETAIL_PICTURE"],
-    [
-        'width' => $coach_photo_width,
-        'height' => $coach_photo_height
-    ],
-    BX_RESIZE_IMAGE_PROPORTIONAL_ALT
-);
-$article_img_lqip = CFile::ResizeImageGet(
-    $arResult["PREVIEW_PICTURE"],
-    [
-        "width" => 100,
-        "height" => 100
-    ],
-    BX_RESIZE_IMAGE_PROPORTIONAL_ALT
-);
-$att_rank = $arResult["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"];
-$att_birthday = $arResult["DISPLAY_PROPERTIES"]["ATT_BIRTHDAY"]["VALUE"];
-$att_achievments = $arResult["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"];
-$att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
 ?>
 <div class="coach-detail main-content">
     <div class="container">
@@ -37,21 +21,23 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
             <div class="col-md-5 coach-detail__img-wrapper">
                 <a href="<?= $arResult["DETAIL_PICTURE"]["SRC"]; ?>" class="coach-detail__img-link"
                    data-fancybox="coach-photos-list" title="<?= $arResult["NAME"]; ?>">
-                    <img src="<?= $article_img_lqip["src"];?>"
-                         data-src="<?= $coach_photo["src"]; ?>"
-                         alt="<?= $arResult["NAME"]; ?>" class="coach-detail__img lazyload blur-up"
-                         width="<?= $coach_photo_width; ?>" height="<?= $coach_photo_height; ?>">
+                    <img src="<?= $arResult["PICTURE_LQIP"]["SRC"]; ?>"
+                         data-src="<?= $arResult["PICTURE"]["SRC"]; ?>"
+                         class="coach-detail__img lazyload blur-up"
+                         alt="<?= $arResult["NAME"]; ?>"
+                         width="<?= $arResult["PICTURE"]["WIDTH"]; ?>"
+                         height="<?= $arResult["PICTURE"]["HEIGHT"]; ?>">
                 </a>
             </div>
             <div class="col-md-7 coach-detail__content-wrapper">
-                <?php if($att_detail_text): ?>
+                <?php if($arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"]): ?>
                 <div class="mb-5">
                     <?php
                     $APPLICATION->IncludeComponent(
                         "sprint.editor:blocks",
                         ".default",
                         Array(
-                            "JSON" => $att_detail_text,
+                            "JSON" => $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"],
                         ),
                         $component,
                         Array(
@@ -61,44 +47,33 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
                     ?>
                 </div>
                 <?php endif; ?>
-                <?php
-                if ($att_birthday):
-                    $att_birthday_year = FormatDate('Y', strtotime($att_birthday));
-                    $att_birthday_formatted = FormatDate('d F Y', strtotime($att_birthday));
-                ?>
+                <?php if ($arResult["DISPLAY_PROPERTIES"]["ATT_BIRTHDAY"]["VALUE"]): ?>
                 <div class="coach__age">
                     <span class="coach__age-date">
                         <span><?= GetMessage('coach_age'); ?>:</span>
-                        <?= $att_birthday_formatted; ?> <?= GetMessage("COACH_DETAIL_YEAR"); ?>
+                        <?= $arResult["BIRHTDAY_FORMATTED"]; ?> <?= GetMessage("COACH_DETAIL_YEAR"); ?>
                     </span>
-                    <span class="coach__age-description">
-                        (<?= get_age(
-                            $att_birthday_year,
-                            GetMessage('age_declension_one'),
-                            GetMessage('age_declension_four'),
-                            GetMessage('age_declension_five')
-                        ); ?>)
-                    </span>
+                    <span class="coach__age-description">(<?= $arResult["AGE"]; ?>)</span>
                 </div>
                 <?php endif; ?>
                 <div class="coach__achievments">
-                    <?php if ($att_rank): ?>
+                    <?php if ($arResult["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"]): ?>
                         <div class="coach__rank">
                             <div class="coach__rank-icon">
                                 <i class="fa-solid fa-medal"></i>
                             </div>
                             <div class="coach__rank-text">
-                                <?= $att_rank; ?>
+                                <?= $arResult["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"]; ?>
                             </div>
                         </div>
                     <?php endif; ?>
                     <?php
-                    if ($att_achievments) {
+                    if ($arResult["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"]) {
                         $APPLICATION->IncludeComponent(
                             "sprint.editor:blocks",
                             ".default",
                             Array(
-                                "JSON" => $att_achievments,
+                                "JSON" => $arResult["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"],
                             ),
                             $component,
                             Array(
@@ -116,44 +91,27 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
         <div class="container">
             <div class="row photos-list__row">
                 <?php
-                foreach($att_photos['VALUE'] as $arItemKey => $att_photo):
-                    $att_photo_lqip = CFile::ResizeImageGet(
-                        $att_photo,
-                        [
-                            'width' => 100,
-                            'height' => 100
-                        ],
-                        BX_RESIZE_IMAGE_EXACT
-                    );
-                    $att_photo_width = 500;
-                    $att_photo_height = 500;
-                    $att_photo = CFile::ResizeImageGet(
-                        $att_photo,
-                        [
-                            'width' => $att_photo_width,
-                            'height' => $att_photo_height
-                        ],
-                        BX_RESIZE_IMAGE_EXACT
-                    );
-                    $att_photo_description = $att_photos['DESCRIPTION'][$arItemKey] ?? '';
-                    $att_photo_src = $att_photos['FILE_VALUE'][$arItemKey]['SRC'];
+                foreach($att_photos['VALUE'] as $key => $att_photo):
+                    $att_photo_description = $att_photos['DESCRIPTION'][$key] ?? '';
                     ?>
-                    <div class="col-lg-4 col-6 photos-list__col">
-                        <figure class="photos-list__item">
-                            <a href="<?= $att_photo_src; ?>" data-fancybox="photos-list" class="photos-list__link"
-                                <?php if ($att_photo_description): ?>
-                                    title="<?= $att_photo_description; ?>"
-                                    data-caption="<?= $att_photo_description; ?>"
-                                <?php endif; ?>>
-                                <img src="<?= $att_photo_lqip['src']; ?>" data-src="<?= $att_photo['src']; ?>"
-                                     alt="<?= $att_photo_description; ?>" class="photos-list__img lazyload blur-up"
-                                     width="<?= $att_photo_width; ?>" height="<?= $att_photo_height; ?>">
-                            </a>
+                <div class="col-lg-4 col-6 photos-list__col">
+                    <figure class="photos-list__item">
+                        <a href="<?= $att_photos['FILE_VALUE'][$key]['SRC']; ?>" data-fancybox="photos-list" class="photos-list__link"
                             <?php if ($att_photo_description): ?>
-                                <figcaption class="photos-list__item-figcaption"><?= $att_photo_description; ?></figcaption>
-                            <?php endif; ?>
-                        </figure>
-                    </div>
+                                title="<?= $att_photo_description; ?>"
+                                data-caption="<?= $att_photo_description; ?>"
+                            <?php endif; ?>>
+                            <img src="<?= $att_photos['PICTURE_LQIP'][$key]['SRC']; ?>"
+                                 data-src="<?= $att_photos['PICTURE'][$key]['SRC']; ?>"
+                                 alt="<?= $att_photo_description; ?>"
+                                 class="photos-list__img lazyload blur-up"
+                                 width="<?= $att_photos['PICTURE'][$key]['WIDTH']; ?>" height="<?= $att_photos['PICTURE'][$key]['HEIGHT']; ?>">
+                        </a>
+                        <?php if ($att_photo_description): ?>
+                            <figcaption class="photos-list__item-figcaption"><?= $att_photo_description; ?></figcaption>
+                        <?php endif; ?>
+                    </figure>
+                </div>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -165,14 +123,13 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
         <div class="container">
             <div class="row videos-list__row">
                 <?php
-                foreach($att_videos['VALUE'] as $arItemKey => $att_video):
-                    $att_video_description = $att_videos['DESCRIPTION'][$arItemKey] ?? '';
-                    $att_video_src = $att_videos['FILE_VALUE'][$arItemKey]['SRC'];
+                foreach($att_videos['VALUE'] as $key => $att_video):
+                    $att_video_description = $att_videos['DESCRIPTION'][$key] ?? '';
                     ?>
                     <div class="col-lg-6 videos-list__col">
                         <figure class="videos-list__item">
                             <div class="adaptive-video-container">
-                                <iframe data-src="https://www.youtube.com/embed/<?= get_youtube_id($att_video); ?>" class="lazyload"
+                                <iframe data-src="https://www.youtube.com/embed/<?= $att_videos["YOUTUBE_ID"][$key]; ?>" class="lazyload"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     <?php if ($att_video_description): ?> title="<?= $att_video_description; ?>"<?php endif; ?>
                                         allowfullscreen></iframe>

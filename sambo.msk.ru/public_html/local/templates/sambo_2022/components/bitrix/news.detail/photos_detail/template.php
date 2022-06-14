@@ -4,18 +4,24 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 }
 
 $this->setFrameMode(true);
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @global CMain $APPLICATION
+ * @var CBitrixComponentTemplate $this
+ * @var CBitrixComponent $component
+ */
 $att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
-$att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
 ?>
 <div class="photos-detail">
-    <?php if($att_detail_text): ?>
+    <?php if($arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"]): ?>
     <div class="mb-5">
         <?php
         $APPLICATION->IncludeComponent(
             "sprint.editor:blocks",
             ".default",
             Array(
-                "JSON" => $att_detail_text,
+                "JSON" => $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"],
             ),
             $component,
             Array(
@@ -33,44 +39,27 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
         <figure role="group" class="photos-list">
             <div class="row photos-list__row">
             <?php
-            foreach($att_photos['VALUE'] as $arItemKey => $att_photo):
-                $att_photo_lqip = CFile::ResizeImageGet(
-                    $att_photo,
-                    [
-                        "width" => 100,
-                        "height" => 100
-                    ],
-                    BX_RESIZE_IMAGE_EXACT
-                );
-                $att_photo_width = 500;
-                $att_photo_height = 500;
-                $att_photo = CFile::ResizeImageGet(
-                    $att_photo,
-                    [
-                        'width' => $att_photo_width,
-                        'height' => $att_photo_height
-                    ],
-                    BX_RESIZE_IMAGE_EXACT
-                );
-                $att_photo_description = $att_photos['DESCRIPTION'][$arItemKey] ?? '';
-                $att_photo_src = $att_photos['FILE_VALUE'][$arItemKey]['SRC'];
+            foreach($att_photos['VALUE'] as $key => $att_photo):
+                $att_photo_description = $att_photos['DESCRIPTION'][$key] ?? '';
                 ?>
-                <div class="col-lg-4 col-6 photos-list__col">
-                    <figure class="photos-list__item">
-                        <a href="<?= $att_photo_src; ?>" data-fancybox="photos-list" class="photos-list__link"
-                            <?php if ($att_photo_description): ?>
-                                title="<?= $att_photo_description; ?>"
-                                data-caption="<?= $att_photo_description; ?>"
-                            <?php endif; ?>>
-                            <img src="<?= $att_photo_lqip['src']; ?>" data-src="<?= $att_photo['src']; ?>"
-                                 alt="<?= $att_photo_description; ?>" class="photos-list__img lazyload blur-up"
-                                 width="<?= $att_photo_width; ?>" height="<?= $att_photo_height; ?>">
-                        </a>
+            <div class="col-lg-4 col-6 photos-list__col">
+                <figure class="photos-list__item">
+                    <a href="<?= $att_photos['FILE_VALUE'][$key]['SRC']; ?>" data-fancybox="photos-list" class="photos-list__link"
                         <?php if ($att_photo_description): ?>
-                        <figcaption class="photos-list__item-figcaption"><?= $att_photo_description; ?></figcaption>
-                        <?php endif; ?>
-                    </figure>
-                </div>
+                            title="<?= $att_photo_description; ?>"
+                            data-caption="<?= $att_photo_description; ?>"
+                        <?php endif; ?>>
+                        <img src="<?= $att_photos['PICTURE_LQIP'][$key]['SRC']; ?>"
+                             data-src="<?= $att_photos['PICTURE'][$key]['SRC']; ?>"
+                             alt="<?= $att_photo_description; ?>"
+                             class="photos-list__img lazyload blur-up"
+                             width="<?= $att_photos['PICTURE'][$key]['WIDTH']; ?>" height="<?= $att_photos['PICTURE'][$key]['HEIGHT']; ?>">
+                    </a>
+                    <?php if ($att_photo_description): ?>
+                    <figcaption class="photos-list__item-figcaption"><?= $att_photo_description; ?></figcaption>
+                    <?php endif; ?>
+                </figure>
+            </div>
             <?php endforeach; ?>
             </div>
             <figcaption class="photos-list__main-figcaption"><?= $arResult["NAME"] . ' - ' . GetMessage("MAIN_FIGCAPTION_TEXT"); ?></figcaption>

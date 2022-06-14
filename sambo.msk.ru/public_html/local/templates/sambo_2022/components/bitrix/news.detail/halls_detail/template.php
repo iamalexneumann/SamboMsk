@@ -3,57 +3,40 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) {
     die();
 }
 $this->setFrameMode(true);
-$article_img_width = 1600;
-$article_img_height = 1200;
-$article_img = CFile::ResizeImageGet(
-    $arResult["DETAIL_PICTURE"],
-    [
-        "width" => $article_img_width,
-        "height" => $article_img_height
-    ],
-    BX_RESIZE_IMAGE_EXACT
-);
-$att_set_open = $arResult["DISPLAY_PROPERTIES"]["ATT_SET_OPEN"]["VALUE"];
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @global CMain $APPLICATION
+ * @var CBitrixComponentTemplate $this
+ * @var CBitrixComponent $component
+ */
 $att_address = $arResult["DISPLAY_PROPERTIES"]["ATT_ADDRESS"]["VALUE"];
 $att_phones = $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"];
 $att_features = $arResult["DISPLAY_PROPERTIES"]["ATT_FEATURES"];
 $att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
 $att_videos = $arResult["DISPLAY_PROPERTIES"]["ATT_VIDEOS"] ?? '';
 $att_coaches_list = $arResult["DISPLAY_PROPERTIES"]["ATT_COACHES_LIST"]["VALUE"] ?? '';
-$att_price = $arResult["DISPLAY_PROPERTIES"]["ATT_PRICE"]["~VALUE"] ?? '';
-$att_schedule = $arResult["DISPLAY_PROPERTIES"]["ATT_SCHEDULE"]["~VALUE"] ?? '';
-$att_geo = $arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"];
 ?>
 <div class="first-screen"
-    <?php if ($article_img): ?> style="background: linear-gradient(90deg, #00369E 0%, rgba(6, 82, 221, 0) 85%),
-            url(<?= $article_img["src"]; ?>) 50% 50%; background-size: cover;"<?php endif; ?>>
+    <?php if ($arResult["PICTURE"]): ?> style="background: linear-gradient(90deg, #00369E 0%, rgba(6, 82, 221, 0) 85%),
+            url(<?= $arResult["PICTURE"]["SRC"]; ?>) 50% 50%; background-size: cover;"<?php endif; ?>>
     <div class="container first-screen__container">
         <div class="first-screen__wrapper">
             <header class="first-screen__header">
                 <div class="first-screen__title"><?= $arResult["NAME"]; ?></div>
-                <?php if ($att_set_open): ?>
-                <div class="first-screen__open-text">
-                    <?php
-                    if ($att_set_open === 'Да') {
-                        echo GetMessage("set_open_text_open");
-                    } else {
-                        echo GetMessage("set_open_text_closed");
-                    } ?>
-                </div>
+                <?php if ($arResult["DISPLAY_PROPERTIES"]["ATT_SET_OPEN"]["VALUE"]): ?>
+                <div class="first-screen__open-text"><?= $arResult["SET_OPEN_TEXT"]; ?></div>
                 <?php endif; ?>
             </header>
             <?php if ($att_features): ?>
             <ul class="screen-features">
-                <?php
-                foreach ($att_features["VALUE"] as $key => $feature_title):
-                    $feature_icon = $att_features["~DESCRIPTION"][$key];
-                    ?>
-                    <li class="screen-features__item">
-                        <?php if ($feature_icon): ?>
-                        <div class="screen-features__icon"><?= $feature_icon; ?></div>
-                        <?php endif; ?>
-                        <div class="screen-features__description"><?= $feature_title; ?></div>
-                    </li>
+                <?php foreach ($att_features["VALUE"] as $key => $feature_title): ?>
+                <li class="screen-features__item">
+                    <?php if ($att_features["~DESCRIPTION"][$key]): ?>
+                    <div class="screen-features__icon"><?= $att_features["~DESCRIPTION"][$key]; ?></div>
+                    <?php endif; ?>
+                    <div class="screen-features__description"><?= $feature_title; ?></div>
+                </li>
                 <?php endforeach; ?>
             </ul>
             <?php endif; ?>
@@ -66,19 +49,16 @@ $att_geo = $arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"];
                 <?php endif; ?>
                 <?php if ($att_phones): ?>
                 <div class="screen-phones">
-                    <?php
-                    foreach ($att_phones["VALUE"] as $key => $phone_number):
-                        $phone_description = $att_phones["DESCRIPTION"][$key];
-                        ?>
-                        <div class="screen-phones__item">
-                            <i class="screen-phones__icon fa-solid fa-phone"></i>
-                            <a href="tel:+7<?= clear_symbols_in_phone_number(substr($phone_number, 1)); ?>"
-                               class="screen-phones__link"
-                               onclick="ym(56418265, 'reachGoal', '7<?= clear_symbols_in_phone_number(substr($phone_number, 1)); ?>'); return true;">+7 <?= substr($phone_number, 1); ?></a>
-                            <?php if ($phone_description): ?>
-                            <div class="screen-phones__description">(<?= $phone_description; ?>)</div>
-                            <?php endif; ?>
-                        </div>
+                    <?php foreach ($att_phones["VALUE"] as $key => $phone_number): ?>
+                    <div class="screen-phones__item">
+                        <i class="screen-phones__icon fa-solid fa-phone"></i>
+                        <a href="tel:+7<?= $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"]["PHONE_TEL"][$key]; ?>"
+                           class="screen-phones__link"
+                           onclick="ym(56418265, 'reachGoal', '7<?= $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"]["PHONE_TEL"][$key]; ?>'); return true;"><?= $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"]["PHONE_FORMATTED"][$key]; ?></a>
+                        <?php if ($att_phones["DESCRIPTION"][$key]): ?>
+                        <div class="screen-phones__description">(<?= $att_phones["DESCRIPTION"][$key]; ?>)</div>
+                        <?php endif; ?>
+                    </div>
                     <?php endforeach; ?>
                 </div>
                 <?php endif; ?>
@@ -100,7 +80,7 @@ $APPLICATION->IncludeComponent(
     )
 );
 ?>
-<?php if ($att_price): ?>
+<?php if ($arResult["DISPLAY_PROPERTIES"]["ATT_PRICE"]["~VALUE"]): ?>
 <section class="main-section">
     <div class="container text-center">
         <h2 class="main-section__title"><?= GetMessage("PRICE_SECTION_TITLE"); ?></h2>
@@ -110,7 +90,7 @@ $APPLICATION->IncludeComponent(
             "sprint.editor:blocks",
             ".default",
             Array(
-                "JSON" => $att_price,
+                "JSON" => $arResult["DISPLAY_PROPERTIES"]["ATT_PRICE"]["~VALUE"],
             ),
             $component,
             Array(
@@ -122,7 +102,7 @@ $APPLICATION->IncludeComponent(
 </section>
 <?php endif; ?>
 <?php
-if ($att_schedule):
+if ($arResult["DISPLAY_PROPERTIES"]["ATT_SCHEDULE"]["~VALUE"]):
     $this->addExternalJs(SITE_TEMPLATE_PATH . '/libs/masonry.pkgd.min.js');
 ?>
 <section class="main-section schedule-section">
@@ -134,7 +114,7 @@ if ($att_schedule):
                 "sprint.editor:blocks",
                 ".default",
                 Array(
-                    "JSON" => $att_schedule,
+                    "JSON" => $arResult["DISPLAY_PROPERTIES"]["ATT_SCHEDULE"]["~VALUE"],
                 ),
                 $component,
                 Array(
@@ -155,38 +135,21 @@ if ($att_photos):
     <div class="container">
         <div class="row photos-list__row">
             <?php
-            foreach($att_photos['VALUE'] as $arItemKey => $att_photo):
-                $att_photo_lqip = CFile::ResizeImageGet(
-                    $att_photo,
-                    [
-                        'width' => 100,
-                        'height' => 100
-                    ],
-                    BX_RESIZE_IMAGE_EXACT
-                );
-                $att_photo_width = 500;
-                $att_photo_height = 500;
-                $att_photo = CFile::ResizeImageGet(
-                    $att_photo,
-                    [
-                        'width' => $att_photo_width,
-                        'height' => $att_photo_height
-                    ],
-                    BX_RESIZE_IMAGE_EXACT
-                );
-                $att_photo_description = $att_photos['DESCRIPTION'][$arItemKey] ?? '';
-                $att_photo_src = $att_photos['FILE_VALUE'][$arItemKey]['SRC'];
+            foreach($att_photos['VALUE'] as $key => $att_photo):
+                $att_photo_description = $att_photos['DESCRIPTION'][$key] ?? '';
                 ?>
                 <div class="col-lg-4 col-6 photos-list__col">
                     <figure class="photos-list__item">
-                        <a href="<?= $att_photo_src; ?>" data-fancybox="photos-list" class="photos-list__link"
+                        <a href="<?= $att_photos['FILE_VALUE'][$key]['SRC']; ?>" data-fancybox="photos-list" class="photos-list__link"
                             <?php if ($att_photo_description): ?>
                                 title="<?= $att_photo_description; ?>"
                                 data-caption="<?= $att_photo_description; ?>"
                             <?php endif; ?>>
-                            <img src="<?= $att_photo_lqip['src']; ?>" data-src="<?= $att_photo['src']; ?>"
-                                 alt="<?= $att_photo_description; ?>" class="photos-list__img lazyload blur-up"
-                                 width="<?= $att_photo_width; ?>" height="<?= $att_photo_height; ?>">
+                            <img src="<?= $att_photos['PICTURE_LQIP'][$key]['SRC']; ?>"
+                                 data-src="<?= $att_photos['PICTURE'][$key]['SRC']; ?>"
+                                 alt="<?= $att_photo_description; ?>"
+                                 class="photos-list__img lazyload blur-up"
+                                 width="<?= $att_photos['PICTURE'][$key]['WIDTH']; ?>" height="<?= $att_photos['PICTURE'][$key]['HEIGHT']; ?>">
                         </a>
                         <?php if ($att_photo_description): ?>
                         <figcaption class="photos-list__item-figcaption"><?= $att_photo_description; ?></figcaption>
@@ -204,23 +167,22 @@ if ($att_photos):
     <div class="container">
         <div class="row videos-list__row">
             <?php
-            foreach($att_videos['VALUE'] as $arItemKey => $att_video):
-                $att_video_description = $att_videos['DESCRIPTION'][$arItemKey] ?? '';
-                $att_video_src = $att_videos['FILE_VALUE'][$arItemKey]['SRC'];
+            foreach($att_videos['VALUE'] as $key => $att_video):
+                $att_video_description = $att_videos['DESCRIPTION'][$key] ?? '';
                 ?>
-                <div class="col-lg-6 videos-list__col">
-                    <figure class="videos-list__item">
-                        <div class="adaptive-video-container">
-                            <iframe data-src="https://www.youtube.com/embed/<?= get_youtube_id($att_video); ?>" class="lazyload"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                <?php if ($att_video_description): ?> title="<?= $att_video_description; ?>"<?php endif; ?>
-                                    allowfullscreen></iframe>
-                        </div>
-                        <?php if ($att_video_description): ?>
-                        <figcaption class="videos-list__item-figcaption"><?= $att_video_description; ?></figcaption>
-                        <?php endif; ?>
-                    </figure>
-                </div>
+            <div class="col-lg-6 videos-list__col">
+                <figure class="videos-list__item">
+                    <div class="adaptive-video-container">
+                        <iframe data-src="https://www.youtube.com/embed/<?= $att_videos["YOUTUBE_ID"][$key]; ?>" class="lazyload"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            <?php if ($att_video_description): ?> title="<?= $att_video_description; ?>"<?php endif; ?>
+                                allowfullscreen></iframe>
+                    </div>
+                    <?php if ($att_video_description): ?>
+                    <figcaption class="videos-list__item-figcaption"><?= $att_video_description; ?></figcaption>
+                    <?php endif; ?>
+                </figure>
+            </div>
             <?php endforeach; ?>
         </div>
     </div>
@@ -309,7 +271,7 @@ if ($att_photos):
 </section>
 <?php endif; ?>
 <?php
-if ($att_geo): ?>
+if ($arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"]): ?>
 <section class="main-section map-section">
     <div class="container">
         <h2 class="main-section__title"><?= $arResult["NAME"]; ?> - <?= GetMessage("MAP_SECTION_TITLE"); ?></h2>
@@ -327,16 +289,14 @@ if ($att_geo): ?>
 
             function init() {
                 const hallMap = new ymaps.Map("halls-detail-map", {
-                        center: [<?= $att_geo; ?>],
+                        center: [<?= $arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"]; ?>],
                         zoom: 16,
                     }),
 
                     <?php
                     $balloon_content_header = '<div class="yandex-map__link">' . $arResult["NAME"] .'</div>';
-                    if ($att_set_open === 'Да') {
-                        $balloon_content_header .= '<div class="yandex-map__set-open">' . GetMessage("set_open_text_open") . '</div>';
-                    } else {
-                        $balloon_content_header .= '<div class="yandex-map__set-open">' . GetMessage("set_open_text_closed") . '</div>';
+                    if ($arResult["DISPLAY_PROPERTIES"]["ATT_SET_OPEN"]["VALUE"]) {
+                        $balloon_content_header .= '<div class="yandex-map__set-open">' . $arResult["SET_OPEN_TEXT"] . '</div>';
                     }
                     $balloon_content_header = str_replace(PHP_EOL, '', $balloon_content_header);
 
@@ -351,16 +311,15 @@ if ($att_geo): ?>
                     }
                     if ($att_phones) {
                         foreach ($att_phones["VALUE"] as $key => $phone_number) {
-                            $phone_description = $att_phones["DESCRIPTION"][$key];
                             $balloon_content_body .= '
                                 <div class="yandex-map__phone-item">
                                     <i class="yandex-map__phone-icon fa-solid fa-phone"></i>
-                                    <a href="tel:+7' . clear_symbols_in_phone_number(substr($phone_number, 1)) . '"
-                                       class="yandex-map__phone-link">+7 ' . substr($phone_number, 1) . '</a>
+                                    <a href="tel:+7' . $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"]["PHONE_TEL"][$key] . '"
+                                       class="yandex-map__phone-link">' . $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"]["PHONE_FORMATTED"][$key] . '</a>
                                 ';
-                            if ($phone_description) {
+                            if ($att_phones["DESCRIPTION"][$key]) {
                                 $balloon_content_body .= '
-                                    <div class="yandex-map__phone-description">(' . $phone_description . ')</div>
+                                    <div class="yandex-map__phone-description">(' . $att_phones["DESCRIPTION"][$key] . ')</div>
                                 </div>
                                 ';
                             } else {
@@ -376,7 +335,7 @@ if ($att_geo): ?>
                     $balloon_content_body = str_replace(PHP_EOL, '', $balloon_content_body);
                     ?>
 
-                    hallPlacemark = new ymaps.Placemark([<?= $att_geo; ?>], {
+                    hallPlacemark = new ymaps.Placemark([<?= $arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"]; ?>], {
                         balloonContentHeader: '<div class="yandex-map__header"><?= $balloon_content_header; ?></div>',
                         balloonContentBody: '<div class="yandex-map__content"><?= $balloon_content_body; ?></div>',
                         hintContent: "<?= $arResult["NAME"]; ?>",

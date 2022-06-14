@@ -1,10 +1,16 @@
 <?php
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) {
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) {
     die();
 }
 
 $this->setFrameMode(true);
-$att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @global CMain $APPLICATION
+ * @var CBitrixComponentTemplate $this
+ * @var CBitrixComponent $component
+ */
 ?>
 <div class="page-news-detail clearfix">
     <?php
@@ -12,16 +18,17 @@ $att_detail_text = $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"];
         "sprint.editor:blocks",
         ".default",
         Array(
-            "JSON" => $att_detail_text,
+            "JSON" => $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"],
         ),
         $component,
         Array(
             "HIDE_ICONS" => "Y"
         )
-    );
-    ?>
-    <div class="views-counter">
-        <i class="fa-solid fa-eye views-counter__icon"></i>
-        <span class="views-counter__text"><?= get_views_with_declension($arResult["SHOW_COUNTER"] ?? 0); ?></span>
-    </div>
+    ); ?>
 </div>
+<?php if ($arResult["VIEW_COUNT"]): ?>
+<div class="views-counter">
+    <i class="fa-solid fa-eye views-counter__icon"></i>
+    <span class="views-counter__text"><?= $arResult["VIEW_COUNT"]; ?></span>
+</div>
+<?php endif; ?>
