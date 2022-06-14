@@ -3,6 +3,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 $this->setFrameMode(true);
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @var CBitrixComponentTemplate $this
+ * @var CBitrixComponent $component
+ * @var CMain $APPLICATION
+ */
 if (count($arResult['ITEMS']) > 0):
 ?>
 <div class="alert alert-primary promo-alert fade show" id="header-promo-list" role="alert">

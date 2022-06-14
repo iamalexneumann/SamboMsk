@@ -3,6 +3,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 $this->setFrameMode(true);
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @var CBitrixComponentTemplate $this
+ * @var CBitrixComponent $component
+ * @var CMain $APPLICATION
+ */
 $param_tag_title = $arParams["TAG_TITLE"] ?? '2';
 $param_list_tag = $arParams["TAG_LIST"] ?? '';
 ?>
@@ -12,93 +19,52 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
         foreach($arResult["ITEMS"] as $arItem):
             $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
             $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-            $article_img_width = 450;
-            $article_img_height = 675;
-            $article_img = CFile::ResizeImageGet(
-                $arItem["PREVIEW_PICTURE"],
-                [
-                    "width" => $article_img_width,
-                    "height" => $article_img_height
-                ],
-                BX_RESIZE_IMAGE_PROPORTIONAL_ALT
-            );
-            $article_img_lqip = CFile::ResizeImageGet(
-                $arItem["PREVIEW_PICTURE"],
-                [
-                    "width" => 100,
-                    "height" => 100
-                ],
-                BX_RESIZE_IMAGE_PROPORTIONAL_ALT
-            );
-            $att_rank = $arItem["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"];
-            $att_birthday = $arItem["DISPLAY_PROPERTIES"]["ATT_BIRTHDAY"]["VALUE"];
-            $att_birthday_year = '';
-            if ($att_birthday !== '') {
-                $att_birthday_year = FormatDate('Y', strtotime($att_birthday));
-            }
-            $att_achievments = $arItem["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"];
             ?>
             <div class="col-lg-6 coaches-list__col">
                 <article class="coach" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                     <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="coach__img-link" rel="nofollow">
-                        <img src="<?= $article_img_lqip["src"];?>"
-                             data-src="<?= $article_img["src"]; ?>"
+                        <img src="<?= $arItem["PICTURE_LQIP"]["SRC"]; ?>"
+                             data-src="<?= $arItem["PICTURE"]["SRC"]; ?>"
                              class="coach__img lazyload blur-up"
                              alt="<?= $arItem["NAME"]; ?>"
-                             width="<?= $article_img_width; ?>"
-                             height="<?= $article_img_height; ?>">
+                             width="<?= $arItem["PICTURE"]["WIDTH"]; ?>"
+                             height="<?= $arItem["PICTURE"]["HEIGHT"]; ?>">
                     </a>
                     <div class="coach__wrapper">
                         <header class="coach__header">
                             <h<?= $param_tag_title; ?> class="coach__title">
                                 <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="coach__link"><?= $arItem["NAME"]; ?></a>
                             </h<?= $param_tag_title; ?>>
-                            <?php if ($att_birthday_year): ?>
-                            <div class="coach__age">
-                                <?= get_age(
-                                        $att_birthday_year,
-                                        GetMessage('age_declension_one'),
-                                        GetMessage('age_declension_four'),
-                                        GetMessage('age_declension_five')
-                                ); ?>
-                            </div>
+                            <?php if ($arItem["AGE"]): ?>
+                            <div class="coach__age"><?= $arItem["AGE"]; ?></div>
                             <?php endif; ?>
                         </header>
-                        <?php if ($att_achievments || $att_rank): ?>
+                        <?php if ($arItem["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"] || $arItem["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"]): ?>
                         <div class="coach__achievments">
-                            <?php if ($att_rank): ?>
+                            <?php if ($arItem["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"]): ?>
                             <div class="coach__rank">
                                 <div class="coach__rank-icon">
                                     <i class="fa-solid fa-medal"></i>
                                 </div>
                                 <div class="coach__rank-text">
-                                    <?= $att_rank; ?>
+                                    <?= $arItem["DISPLAY_PROPERTIES"]["ATT_RANK"]["VALUE"]; ?>
                                 </div>
                             </div>
                             <?php endif; ?>
                             <?php
-                            if ($att_achievments) {
-                                $att_achievments_count = 3;
-                                $att_achievments_decoded = json_decode($att_achievments);
-                                $att_achievments_decoded_count = count($att_achievments_decoded->blocks[0]->elements);
-                                if ($att_achievments_decoded_count > $att_achievments_count) {
-                                    for ($i = $att_achievments_count; $i < $att_achievments_decoded_count; $i++) {
-                                        unset($att_achievments_decoded->blocks[0]->elements[$i]);
-                                    }
-                                }
+                            if ($arItem["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"]) {
                                 $APPLICATION->IncludeComponent(
                                     "sprint.editor:blocks",
                                     ".default",
                                     Array(
-                                        "JSON" => json_encode($att_achievments_decoded),
+                                        "JSON" => $arItem["DISPLAY_PROPERTIES"]["ATT_ACHIEVMENTS"]["~VALUE"],
                                     ),
                                     $component,
                                     Array(
                                         "HIDE_ICONS" => "Y"
                                     )
                                 );
-                            }
-                            ?>
+                            } ?>
                         </div>
                         <?php endif; ?>
                         <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" class="btn btn-primary coach__btn" rel="nofollow">
@@ -111,7 +77,7 @@ $param_list_tag = $arParams["TAG_LIST"] ?? '';
     </div>
 </div>
 <?php
-if($arParams["DISPLAY_BOTTOM_PAGER"]) {
+if ($arParams["DISPLAY_BOTTOM_PAGER"]) {
     echo $arResult["NAV_STRING"];
 }
 ?>
