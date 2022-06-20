@@ -103,7 +103,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                         <ul class="social-media footer-social-media">
                             <?php if ($siteparam_telegram): ?>
                             <li class="social-media__item">
-                                <a href="https://t.me/<?= $siteparam_telegram; ?>" target="_blank" title="Наш канал в Telegram" class="social-media__link social-media__telegram">
+                                <a href="<?= $siteparam_telegram; ?>" target="_blank" title="Наш канал в Telegram" class="social-media__link social-media__telegram">
                                     <i class="fa-brands fa-telegram"></i>
                                 </a>
                             </li>
