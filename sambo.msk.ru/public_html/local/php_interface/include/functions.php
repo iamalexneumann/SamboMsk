@@ -51,3 +51,8 @@ function use_wide_template (string $url):bool
     }
     return false;
 }
+
+function get_telegram_discussion (string $url):string
+{
+    return str_replace('https://t.me/', '', $url);
+}

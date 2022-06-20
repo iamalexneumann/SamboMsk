@@ -35,7 +35,7 @@ $APPLICATION->SetTitle("Новости детской школы \"Три Мед
 		"DETAIL_PAGER_TITLE" => "",
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "ATT_DETAIL_TEXT",
-			1 => "",
+			1 => "ATT_RELATED_TELEGRAM_POST",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",

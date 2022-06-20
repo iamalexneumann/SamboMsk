@@ -33,7 +33,7 @@ $APPLICATION->SetTitle("Статьи о самбо и дзюдо");
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "ATT_DETAIL_TEXT",
-			1 => "",
+			1 => "ATT_RELATED_TELEGRAM_POST",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
