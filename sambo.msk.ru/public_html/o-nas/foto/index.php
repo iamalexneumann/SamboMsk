@@ -31,7 +31,7 @@ $APPLICATION->SetTitle("Фотоальбомы с соревнований и д
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "",
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "",
+			0 => "ATT_DETAIL_TEXT",
 			1 => "ATT_PHOTOS",
 			2 => "",
 		),

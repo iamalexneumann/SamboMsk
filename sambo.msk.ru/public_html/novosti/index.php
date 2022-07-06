@@ -1,14 +1,17 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+<?php
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("keywords", "Самбо, дзюдо, самбо детям, школа самбо, секция для детей");
 $APPLICATION->SetPageProperty("description", "Новости Школы Самбо \"Три Медведя\"");
 $APPLICATION->SetTitle("Новости детской школы \"Три Медведя\"");
-?><?$APPLICATION->IncludeComponent(
+?>
+
+<?php
+$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"news", 
 	array(
 		"ADD_ELEMENT_CHAIN" => "Y",
-		"ADD_SECTIONS_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
@@ -36,6 +39,7 @@ $APPLICATION->SetTitle("Новости детской школы \"Три Мед
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "ATT_DETAIL_TEXT",
 			1 => "ATT_RELATED_TELEGRAM_POST",
+			2 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -73,13 +77,13 @@ $APPLICATION->SetTitle("Новости детской школы \"Три Мед
 		"SEF_MODE" => "Y",
 		"SET_LAST_MODIFIED" => "Y",
 		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "Y",
+		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "N",
+		"STRICT_SECTION_CHECK" => "Y",
 		"TAG_LIST" => "news",
 		"TAG_TITLE" => "2",
 		"USE_CATEGORIES" => "N",
@@ -91,9 +95,11 @@ $APPLICATION->SetTitle("Новости детской школы \"Три Мед
 		"USE_SHARE" => "N",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
-			"section" => "",
-			"detail" => "#ELEMENT_CODE#/",
-		),
+			"section" => "#SECTION_CODE#/",
+			"detail" => "#SECTION_CODE#/#ELEMENT_CODE#/",
+		)
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

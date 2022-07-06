@@ -56,3 +56,26 @@ function get_telegram_discussion (string $url):string
 {
     return str_replace('https://t.me/', '', $url);
 }
+
+function get_section_code_from_page_url (string $cur_page):string
+{
+    $url_explode = explode('/', $cur_page);
+    return array_slice($url_explode, -2, 1)[0];
+}
+
+function get_uf_from_section (int $iblock_id, string $section_code):array
+{
+    $sections = CIBlockSection::GetList(
+        [],
+        [
+            'IBLOCK_ID' => $iblock_id,
+            '=CODE' => $section_code
+        ],
+        false,
+        ["UF_*"],
+    );
+    if ($section = $sections->Fetch()) {
+        return $section;
+    }
+    return [];
+}

@@ -1466,6 +1466,32 @@ h5,
   color: #6f6f6f;
 }
 
+.nav-pills {
+  margin-bottom: 40px;
+}
+
+.nav-pills .nav-item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-pills .nav-link {
+  background: #f8f8f8;
+  color: #424242;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+.nav-pills .nav-link:hover {
+  background: #e7e7e7;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: #0652DD;
+}
+
+
 @media (max-width: 1399.98px) {
   .footer-menu__list_columns-two {
     column-gap: 30px;

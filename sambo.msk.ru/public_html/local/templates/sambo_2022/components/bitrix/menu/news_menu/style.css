@@ -1,0 +1,13 @@
+.menu-subsections-aside {
+
+}
+
+
+.menu-subsections-aside__title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #424242;
+    letter-spacing: 0.025em;
+    font-size: 1.375rem;
+}

@@ -1,31 +1,20 @@
 <?php
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @global CMain $APPLICATION
+ * @var CBitrixComponentTemplate $this
+ * @var CBitrixComponent $component
+ */
 $this->setFrameMode(true);
-
-if (Cmodule::IncludeModule('asd.iblock')) {
-    $iblock_ufs = CASDiblockTools::GetIBUF($arParams["IBLOCK_ID"]);
-    $uf_preview_text = $iblock_ufs["UF_PREVIEW_TEXT"] ?? '';
-}
+$section_code = get_section_code_from_page_url($APPLICATION->GetCurPage());
+$uf_from_section = get_uf_from_section($arParams["IBLOCK_ID"], $section_code);
+$uf_seo_text_top = $uf_from_section["UF_SEO_TEXT_TOP"] ?? '';
+$uf_seo_text_bottom = $uf_from_section["UF_SEO_TEXT_BOTTOM"] ?? '';
 ?>
-<?php if ($uf_preview_text): ?>
-    <div class="iblock-preview-text">
-        <?php
-        $APPLICATION->IncludeComponent(
-            "sprint.editor:blocks",
-            "seo_text",
-            Array(
-                "JSON" => $uf_preview_text,
-            ),
-            $component,
-            Array(
-                "HIDE_ICONS" => "Y"
-            )
-        );
-        ?>
-    </div>
-<?php endif; ?>
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:menu",
@@ -47,6 +36,22 @@ $APPLICATION->IncludeComponent(
         "HIDE_ICONS" => "Y"
     )
 ); ?>
+<?php if ($uf_seo_text_top): ?>
+<div class="seo-text seo-text_top iblock-preview-text">
+    <?php
+    $APPLICATION->IncludeComponent(
+        "sprint.editor:blocks",
+        ".default",
+        Array(
+            "JSON" => $uf_seo_text_top,
+        ),
+        $component,
+        Array(
+            "HIDE_ICONS" => "Y"
+        )
+    ); ?>
+</div>
+<?php endif; ?>
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:news.list",
@@ -61,9 +66,6 @@ $APPLICATION->IncludeComponent(
         "SORT_ORDER2" => $arParams["SORT_ORDER2"],
         "FIELD_CODE" => $arParams["LIST_FIELD_CODE"],
         "PROPERTY_CODE" => $arParams["LIST_PROPERTY_CODE"],
-        "DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["detail"],
-        "SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
-        "IBLOCK_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"],
         "DISPLAY_PANEL" => $arParams["DISPLAY_PANEL"],
         "SET_TITLE" => $arParams["SET_TITLE"],
         "SET_LAST_MODIFIED" => $arParams["SET_LAST_MODIFIED"],
@@ -72,6 +74,7 @@ $APPLICATION->IncludeComponent(
         "SHOW_404" => $arParams["SHOW_404"],
         "FILE_404" => $arParams["FILE_404"],
         "INCLUDE_IBLOCK_INTO_CHAIN" => $arParams["INCLUDE_IBLOCK_INTO_CHAIN"],
+        "ADD_SECTIONS_CHAIN" => $arParams["ADD_SECTIONS_CHAIN"],
         "CACHE_TYPE" => $arParams["CACHE_TYPE"],
         "CACHE_TIME" => $arParams["CACHE_TIME"],
         "CACHE_FILTER" => $arParams["CACHE_FILTER"],
@@ -98,8 +101,29 @@ $APPLICATION->IncludeComponent(
         "FILTER_NAME" => $arParams["FILTER_NAME"],
         "HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
         "CHECK_DATES" => $arParams["CHECK_DATES"],
-        "TAG_TITLE" => $arParams["TAG_TITLE"],
-        "TAG_LIST" => $arParams["TAG_LIST"],
+        "STRICT_SECTION_CHECK" => $arParams["STRICT_SECTION_CHECK"],
+
+        "PARENT_SECTION" => $arResult["VARIABLES"]["SECTION_ID"],
+        "PARENT_SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
+        "DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["detail"],
+        "SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
+        "IBLOCK_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"],
     ),
     $component
-);
+); ?>
+<?php if ($uf_seo_text_bottom): ?>
+<div class="seo-text seo-text_bottom iblock-preview-text">
+    <?php
+    $APPLICATION->IncludeComponent(
+        "sprint.editor:blocks",
+        ".default",
+        Array(
+            "JSON" => $uf_seo_text_bottom,
+        ),
+        $component,
+        Array(
+            "HIDE_ICONS" => "Y"
+        )
+    ); ?>
+</div>
+<?php endif; ?>
