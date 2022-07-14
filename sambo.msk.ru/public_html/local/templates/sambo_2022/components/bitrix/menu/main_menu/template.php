@@ -13,7 +13,7 @@ if (!empty($arResult)):
         if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel) {
             echo str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));
         }
-        if ($arItem["IS_PARENT"]):
+        if ($arItem["IS_PARENT"] && $arItem["TEXT"] !== 'Статьи'):
             if ($arItem["DEPTH_LEVEL"] == 1):
                 $dropdown_label = CUtil::translit($arItem["TEXT"], "ru", array("replace_space"=>"", "replace_other"=>""));
 ?>
@@ -51,6 +51,7 @@ if (!empty($arResult)):
     </li>
 <?php
                 else:
+                    if ($arItem["CHAIN"][0] === 'Статьи') continue;
 ?>
     <li>
         <a class="dropdown-item<?php if ($arItem["SELECTED"]): ?> active<?php endif; ?>"

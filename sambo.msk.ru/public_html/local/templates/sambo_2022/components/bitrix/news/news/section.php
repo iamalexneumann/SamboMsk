@@ -21,7 +21,7 @@ $APPLICATION->IncludeComponent(
     "news_menu",
     Array(
         "ALLOW_MULTI_SELECT" => "N",
-        "CHILD_MENU_TYPE" => "left",
+        "CHILD_MENU_TYPE" => "",
         "DELAY" => "N",
         "MAX_LEVEL" => "1",
         "MENU_CACHE_GET_VARS" => array(""),

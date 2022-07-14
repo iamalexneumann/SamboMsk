@@ -21,15 +21,15 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                                 "footer_menu",
                                 array(
                                     "ALLOW_MULTI_SELECT" => "N",
-                                    "CHILD_MENU_TYPE" => "left",
+                                    "CHILD_MENU_TYPE" => "",
                                     "DELAY" => "N",
                                     "MAX_LEVEL" => "1",
                                     "MENU_CACHE_GET_VARS" => array(
                                     ),
                                     "MENU_CACHE_TIME" => "3600",
-                                    "MENU_CACHE_TYPE" => "N",
+                                    "MENU_CACHE_TYPE" => "A",
                                     "MENU_CACHE_USE_GROUPS" => "Y",
-                                    "ROOT_MENU_TYPE" => "bottom",
+                                    "ROOT_MENU_TYPE" => "halls_menu",
                                     "USE_EXT" => "Y",
                                     "COMPONENT_TEMPLATE" => "footer_menu",
                                     "COMPOSITE_FRAME_MODE" => "A",
@@ -53,7 +53,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                                     "MENU_CACHE_GET_VARS" => array(
                                     ),
                                     "MENU_CACHE_TIME" => "3600",
-                                    "MENU_CACHE_TYPE" => "N",
+                                    "MENU_CACHE_TYPE" => "A",
                                     "MENU_CACHE_USE_GROUPS" => "Y",
                                     "ROOT_MENU_TYPE" => "footer_menu",
                                     "USE_EXT" => "Y",
@@ -130,7 +130,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
         </div>
         <div class="main-footer__copyright">
             <div class="container">
-                &copy; <?= $siteparam_site_name; ?>, 2016-<?= date('Y'); ?>. Все права защищены. <a href="/politika-konfidentsialnosti/" class="main-footer__copyright-link">Политика конфиденциальности</a>
+                &copy; <?= $siteparam_site_name; ?>, 2016-<?= date('Y'); ?>. Все права защищены.
+                <a href="/politika-konfidentsialnosti/" class="main-footer__copyright-link">Политика конфиденциальности</a>
+                <a href="/sitemaps/" class="main-footer__copyright-link">Карта сайта</a>
             </div>
         </div>
     </footer>

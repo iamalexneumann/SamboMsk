@@ -1,0 +1,19 @@
+.custom-ol-list {
+    list-style: none;
+    counter-reset: li;
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.custom-ol-list li {
+    margin-bottom: 1rem;
+}
+
+.custom-ol-list li::before {
+    counter-increment: li;
+    content: counters(li, ".") ". ";
+}
+
+.custom-ol-list ol {
+    margin-bottom: 1rem;
+}
