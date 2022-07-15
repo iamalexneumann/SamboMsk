@@ -58,7 +58,7 @@ function deleteKernelCss (&$content) {
             '/<link.+?href=".+?bitrix\/js\/main\/core\/css\/core[^"]+"[^>]+>/',
             '/<script.+?>if\(\!window\.BX\)window\.BX.+?<\/script>/',
             '/<script[^>]+?>\(window\.BX\|\|top\.BX\)\.message[^<]+<\/script>/',
-            '/<script.+?src=".+?bitrix\/js\/main\/core\/core[^"]+"><\/script\>/',
+            // '/<script.+?src=".+?bitrix\/js\/main\/core\/core[^"]+"><\/script\>/',
             '/<script.+?>BX\.(setCSSList|setJSList)\(\[.+?\]\).*?<\/script>/',
             '/BX\.(setCSSList|setJSList)\(\[.+?\]\);/',
             '/\s{2,}/'

@@ -28,14 +28,6 @@ ErrorDocument 404 /404.php
 </IfModule>
 
 <IfModule mod_expires.c>
-  ExpiresActive on
-  ExpiresByType image/jpeg "access plus 3 day"
-  ExpiresByType image/gif "access plus 3 day"
-  ExpiresByType image/png "access plus 3 day"
-  ExpiresByType text/css "access plus 3 day"
-  ExpiresByType application/javascript "access plus 3 day"  
-</IfModule>
-<IfModule mod_expires.c>
     ExpiresActive on
     ExpiresDefault                                      "access plus 1 month"
     ExpiresByType text/css                              "access plus 1 year"
@@ -80,6 +72,7 @@ ErrorDocument 404 /404.php
     ExpiresByType application/font-woff2                "access plus 1 month"
     ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
 </IfModule>
+
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE application/javascript
   AddOutputFilterByType DEFLATE application/rss+xml
