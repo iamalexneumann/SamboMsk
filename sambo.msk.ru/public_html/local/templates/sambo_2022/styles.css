@@ -481,6 +481,10 @@ h5,
   margin-bottom: 15px;
 }
 
+.footer-btn-callback__icon {
+  margin-right: 3px;
+}
+
 .footer-email {
   color: #c2c2c2;
   display: flex;
@@ -1491,6 +1495,59 @@ h5,
   background-color: #0652DD;
 }
 
+.inner-form-section {
+  padding: 50px 30px;
+  background: #f8f8f8 url("img/main-logo-section.svg") 50% 50%;
+  background-size: 40%;
+  border: 1px solid #ececec;
+  margin-bottom: 30px;
+  border-radius: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-form-section::after {
+  width: 165px;
+  height: 242px;
+  background: url('/local/templates/sambo_2022/img/main-form-section-img.png') no-repeat;
+  content: '';
+  background-size: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.inner-form-section__content {
+
+}
+
+.inner-form-section__text {
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  max-width: 650px;
+  margin: 0 auto 30px auto;
+}
+
+.inner-form-section__selected-text, .inner-form-section__selected-link {
+  background-color: #0652DD;
+  color: #ffffff;
+  padding: 0 5px;
+  margin-top: 1px;
+}
+
+.inner-form-section__selected-link {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.inner-form-section__selected-link:hover {
+  color: #e8e8e8;
+}
+
+.inner-form-section__btn-callback-icon {
+  margin-right: 3px;
+}
 
 @media (max-width: 1399.98px) {
   .footer-menu__list_columns-two {
@@ -1612,6 +1669,12 @@ h5,
   }
   .first-screen__title {
     font-size: 1.5rem;
+  }
+  .inner-form-section::after {
+    display: none;
+  }
+  .inner-form-section__text {
+    text-align: center;
   }
 }
 

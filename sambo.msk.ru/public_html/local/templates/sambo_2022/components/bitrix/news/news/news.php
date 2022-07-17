@@ -100,6 +100,8 @@ $APPLICATION->IncludeComponent(
         "CHECK_DATES" => $arParams["CHECK_DATES"],
         "TAG_TITLE" => $arParams["TAG_TITLE"],
         "TAG_LIST" => $arParams["TAG_LIST"],
+        "SHOW_CTA_FORM" => $arParams["SHOW_CTA_FORM"],
+        "CTA_FORM_POSITION" => $arParams["CTA_FORM_POSITION"],
     ),
     $component
 );

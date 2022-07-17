@@ -34,6 +34,7 @@ $APPLICATION->SetTitle("Статьи о самбо и дзюдо");
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "ATT_DETAIL_TEXT",
 			1 => "ATT_RELATED_TELEGRAM_POST",
+			2 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -88,6 +89,8 @@ $APPLICATION->SetTitle("Статьи о самбо и дзюдо");
 		"COMPONENT_TEMPLATE" => "articles",
 		"TAG_TITLE" => "2",
 		"TAG_LIST" => "main-articles",
+		"SHOW_CTA_FORM" => "Y",
+		"CTA_FORM_POSITION" => "2",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",

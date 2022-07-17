@@ -20,6 +20,25 @@ $arTemplateParameters = array(
 		"TYPE" => "STRING",
 		"DEFAULT" => "",
 	),
+	"SHOW_CTA_FORM" => Array(
+		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_SHOW_CTA_FORM"),
+		"TYPE" => "CHECKBOX",
+		"DEFAULT" => "N",
+	),
+	"CTA_FORM_POSITION" => [
+		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_CTA_FORM_POSITION"),
+		"TYPE" => "LIST",
+		"MULTIPLE" => "N",
+		"VALUES" => [
+			"1" => "1",
+			"2" => "2",
+			"3" => "3",
+			"4" => "4",
+			"5" => "5",
+			"6" => "6",
+		],
+		"DEFAULT" => "2",
+	],
 	"DISPLAY_DATE" => Array(
 		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_DATE"),
 		"TYPE" => "CHECKBOX",

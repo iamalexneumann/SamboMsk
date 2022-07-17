@@ -93,6 +93,8 @@ $APPLICATION->IncludeComponent(
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
+		"SHOW_CTA_FORM" => "Y",
+		"CTA_FORM_POSITION" => "3",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "#SECTION_CODE#/",
