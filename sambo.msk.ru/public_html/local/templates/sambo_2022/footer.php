@@ -161,7 +161,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                 array(
                     "COMPOSITE_FRAME_MODE" => "A",
                     "COMPOSITE_FRAME_TYPE" => "AUTO",
-                    "EMAIL_TO" => "sambo-msk@yandex.ru",
+                    "EMAIL_TO" => "sambo-msk@yandex.ru, iamalexneumann@yandex.ru",
                     "EVENT_MESSAGE_ID" => array(
                         0 => "7",
                     ),
@@ -180,8 +180,11 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
         </div>
       </div>
     </div>
-<?php
-//$APPLICATION->ShowCSS(true, $bXhtmlStyle);
-?>
 </body>
 </html>
+<?php
+create_og_img(
+    $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/img/og-media-main-img.jpg',
+    htmlspecialchars_decode($APPLICATION->GetTitle(false)),
+    get_img_name_from_cur_dir($CurDir)
+); ?>

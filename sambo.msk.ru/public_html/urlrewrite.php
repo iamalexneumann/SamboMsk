@@ -24,7 +24,7 @@ $arUrlRewrite=array (
     'PATH' => '/nashi-zaly/index.php',
     'SORT' => 100,
   ),
-  36 => 
+  42 => 
   array (
     'CONDITION' => '#^/o-nas/foto/#',
     'RULE' => '',
@@ -32,7 +32,7 @@ $arUrlRewrite=array (
     'PATH' => '/o-nas/foto/index.php',
     'SORT' => 100,
   ),
-  37 => 
+  43 => 
   array (
     'CONDITION' => '#^/novosti/#',
     'RULE' => '',
@@ -40,7 +40,7 @@ $arUrlRewrite=array (
     'PATH' => '/novosti/index.php',
     'SORT' => 100,
   ),
-  34 => 
+  41 => 
   array (
     'CONDITION' => '#^/stati/#',
     'RULE' => '',

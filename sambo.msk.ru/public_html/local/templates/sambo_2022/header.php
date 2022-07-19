@@ -4,7 +4,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
 <head>
     <title><?php $APPLICATION->ShowTitle(); ?></title>
     <?= $siteparam_section_head; ?>
@@ -19,17 +19,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     $Asset->addJs(SITE_TEMPLATE_PATH . '/main.js');
 
     $APPLICATION->ShowHead();
-//    $bXhtmlStyle = true;
-//    echo '<meta http-equiv="Content-Type" content="text/html; charset='.LANG_CHARSET.'"'.($bXhtmlStyle? ' /':'').'>'."\n";
-//    $APPLICATION->ShowMeta("robots", false, $bXhtmlStyle);
-//    $APPLICATION->ShowMeta("keywords", false, $bXhtmlStyle);
-//    $APPLICATION->ShowMeta("description", false, $bXhtmlStyle);
-//    $APPLICATION->ShowLink("canonical", null, $bXhtmlStyle);
-//    $APPLICATION->ShowHeadStrings();
-//    $APPLICATION->ShowHeadScripts();
     ?>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Favisons -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/favicon-16x16.png">
@@ -39,6 +32,27 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <!-- Twitter  -->
+    <meta name="twitter:card" content="summary_large_image" />
+<!--    <meta name="twitter:site" content="@" />-->
+    <meta name="twitter:title" content="<?php $APPLICATION->ShowTitle(); ?>" />
+    <meta name="twitter:url" content="https://<?= SITE_SERVER_NAME . $CurDir; ?>" />
+    <meta name="twitter:domain" content="<?= SITE_SERVER_NAME; ?>" />
+    <meta name="twitter:description" content="<?php $APPLICATION->ShowProperty('description'); ?>" />
+    <meta name="twitter:image" content="https://<?= SITE_SERVER_NAME . SITE_TEMPLATE_PATH . '/img/og-media/' . get_img_name_from_cur_dir($CurDir) ?>?date=<?= date("Ymd"); ?>" />
+    <!-- OG  -->
+    <meta property="article:author" content="https://<?= SITE_SERVER_NAME; ?>">
+    <?php $APPLICATION->ShowViewContent('siteparamArticlePublishedTime'); ?>
+    <?php $APPLICATION->ShowViewContent('siteparamArticleModifiedTime'); ?>
+    <?php $APPLICATION->ShowViewContent('siteparamArticleSection'); ?>
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="<?php $APPLICATION->ShowTitle(); ?>" />
+    <meta property="og:url" content="https://<?= SITE_SERVER_NAME . $CurDir; ?>" />
+    <meta property="og:image" content="https://<?= SITE_SERVER_NAME . SITE_TEMPLATE_PATH . '/img/og-media/' . get_img_name_from_cur_dir($CurDir) ?>?date=<?= date("Ymd"); ?>" />
+    <meta property="og:site_name" content="<?= $siteparam_site_name; ?>" />
+    <meta property="og:image:width" content="968" />
+    <meta property="og:image:height" content="504" />
+    <meta property="og:description" content="<?php $APPLICATION->ShowProperty('description'); ?>" />
 </head>
 <body id="body-area">
     <?= $siteparam_section_body_before; ?>
@@ -227,7 +241,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                     false
                 );
                 ?>
-                <h1 class="page-header__title"><?php $APPLICATION->ShowTitle('h1', false); ?></h1>
+                <h1 class="page-header__title"><?php $APPLICATION->ShowTitle(false); ?></h1>
             </div>
         </header>
         <?php if (use_wide_template($CurDir) === false): ?>

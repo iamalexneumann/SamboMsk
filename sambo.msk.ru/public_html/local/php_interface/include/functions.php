@@ -79,3 +79,60 @@ function get_uf_from_section (int $iblock_id, string $section_code):array
     }
     return [];
 }
+
+function get_img_name_from_cur_dir (string $CurDir):string
+{
+    if ($CurDir === '/') {
+        return 'og-index.jpg';
+    }
+    $img_name_array = explode('/', $CurDir);
+    return 'og-' . $img_name_array[count($img_name_array) - 2] . '.jpg';
+}
+
+function create_og_img (string $img_path, string $text, string $img_output_name)
+{
+    $img_folder_path = $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/img';
+    if (file_exists($img_folder_path . '/og-media/' . $img_output_name) !== true) {
+        $img = imagecreatefromjpeg($img_path);
+        $img_size = getimagesize($img_path);
+        $img_substrate = imagecreatefrompng($img_folder_path . '/og-media-substrate.png');
+
+        $img_width = (int)$img_size[0] - 60;
+        $img_height = (int)$img_size[1];
+        imagecopy($img, $img_substrate, 0, 0, 0, 0, $img_width + 60, $img_height);
+
+        putenv('GDFONTPATH=' . $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/fonts/OpenSans/');
+        $font = 'OpenSans-ExtraBold.ttf';
+        $font_size = 32;
+        $text = mb_strtoupper($text);
+        $font_color = imagecolorallocate($img, 255, 255, 255);
+
+        $text_arr = explode(' ', $text);
+        $text_new = '';
+
+        foreach ($text_arr as $word) {
+            $tmp_string = $text_new . ' ' . $word;
+            $tmp_box = imagettfbbox($font_size, 0, $font, $tmp_string);
+            if ($tmp_box[2] > $img_width) {
+                $text_new .= ($text_new === '' ? '' : "\n") . $word;
+            } else {
+                $text_new .= ($text_new === '' ? '' : ' ') . $word;
+            }
+        }
+
+        $text_arr = explode("\n", $text_new);
+        $height_tmp = 0;
+        $cord_center_y = ($img_height - (count($text_arr) * ($font_size * 1.8))) / 2;
+
+        foreach ($text_arr as $text_str) {
+            $text_box = imagettfbbox($font_size, 0, $font, $text_str);
+            $left_x = round(($img_width - ($text_box[2] - $text_box[0])) / 2);
+            imagettftext($img, $font_size ,0 , 30 + $left_x, 32 + $cord_center_y + $height_tmp, $font_color, $font, $text_str);
+            $height_tmp = $height_tmp + $font_size * 1.8;
+        }
+
+        imagejpeg($img, $img_folder_path . '/og-media/' . $img_output_name, 100);
+        imagedestroy($img);
+        imagedestroy($img_substrate);
+    }
+}

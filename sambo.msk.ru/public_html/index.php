@@ -1,7 +1,7 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetPageProperty("title", "Главная страница сайта детской школы самбо и дзюдо \"Три Медведя\"");
-$APPLICATION->SetTitle("Главная");
+$APPLICATION->SetTitle("Главная страница МСК \"Три Медведя\"");
 ?>
 <section class="first-screen">
  <div class="container first-screen__container">
