@@ -1549,6 +1549,17 @@ h5,
   margin-right: 3px;
 }
 
+.cta-tournament-section {
+  padding: 10px;
+  background: #f8f8f8;
+  border: 1px solid #ececec;
+  margin-bottom: 1rem;
+}
+
+.cta-tournament-section p:last-of-type {
+  margin-bottom: 0;
+}
+
 @media (max-width: 1399.98px) {
   .footer-menu__list_columns-two {
     column-gap: 30px;
