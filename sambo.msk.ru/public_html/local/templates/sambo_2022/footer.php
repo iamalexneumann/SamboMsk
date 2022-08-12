@@ -161,7 +161,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                 array(
                     "COMPOSITE_FRAME_MODE" => "A",
                     "COMPOSITE_FRAME_TYPE" => "AUTO",
-                    "EMAIL_TO" => "sambo-msk@yandex.ru, iamalexneumann@yandex.ru",
+                    "EMAIL_TO" => "sambo-msk@yandex.ru",
                     "EVENT_MESSAGE_ID" => array(
                         0 => "7",
                     ),

@@ -21,28 +21,28 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
                 <div class="main-form-section__form-wrapper">
                     <?php
                     $APPLICATION->IncludeComponent(
-	"custom.bitrix:main.feedback", 
-	"main_form", 
-	array(
-		"COMPOSITE_FRAME_MODE" => "A",
-		"COMPOSITE_FRAME_TYPE" => "AUTO",
-		"EMAIL_TO" => "sambo-msk@yandex.ru, iamalexneumann@yandex.ru",
-		"EVENT_MESSAGE_ID" => array(
-			0 => "7",
-		),
-		"OK_TEXT" => "Спасибо. Мы перезвоним Вам в течение дня!",
-		"REQUIRED_FIELDS" => array(
-			0 => "NAME",
-			1 => "USER_PHONE",
-			2 => "HALLS_LIST",
-		),
-		"USE_CAPTCHA" => "N",
-		"COMPONENT_TEMPLATE" => "main_form",
-		"HALLS_URL" => "/nashi-zaly/",
-		"REDIRECT_URL" => "/stranitsa-blagodarnosti.php"
-	),
-	false
-); ?>
+                        "custom.bitrix:main.feedback",
+                        "main_form",
+                        array(
+                            "COMPOSITE_FRAME_MODE" => "A",
+                            "COMPOSITE_FRAME_TYPE" => "AUTO",
+                            "EMAIL_TO" => "sambo-msk@yandex.ru",
+                            "EVENT_MESSAGE_ID" => array(
+                                0 => "7",
+                            ),
+                            "OK_TEXT" => "Спасибо. Мы перезвоним Вам в течение дня!",
+                            "REQUIRED_FIELDS" => array(
+                                0 => "NAME",
+                                1 => "USER_PHONE",
+                                2 => "HALLS_LIST",
+                            ),
+                            "USE_CAPTCHA" => "N",
+                            "COMPONENT_TEMPLATE" => "main_form",
+                            "HALLS_URL" => "/nashi-zaly/",
+                            "REDIRECT_URL" => "/stranitsa-blagodarnosti.php"
+                        ),
+                        false
+                    ); ?>
                 </div>
             </div>
         </div>
