@@ -1,2 +1,2 @@
 <?php
-$MESS["NEWS_MENU_SUBSECTIONS_TITLE"] = "Разделы:";
+$MESS['NEWS_MENU_SUBSECTIONS_TITLE'] = 'Разделы';

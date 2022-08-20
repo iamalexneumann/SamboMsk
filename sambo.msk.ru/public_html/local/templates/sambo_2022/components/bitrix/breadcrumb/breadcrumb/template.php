@@ -1,34 +1,37 @@
 <?php
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
-
-global $APPLICATION;
+}
+/**
+ * @var array $arResult
+ * @var CBitrixComponentTemplate $this
+ */
 
 if (empty($arResult))
-	return '';
+    return '';
 
 $strReturn = '<nav aria-label="breadcrumb"><ol class="breadcrumb">';
 $itemSize = count($arResult);
 for ($index = 0; $index < $itemSize; $index++) {
-	$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
+    $title = htmlspecialcharsex($arResult[$index]['TITLE']);
 
-	if ($arResult[$index]["LINK"] <> "" && $index != $itemSize-1) {
-		$strReturn .= '<li class="breadcrumb-item"><a href="' . $arResult[$index]["LINK"] . '">' . $title . '</a></li>';
-	} else {
-		$strReturn .= '<li class="breadcrumb-item active" aria-current="page">' . $title . '</li>';
-	}
+    if ($arResult[$index]['LINK'] <> '' && $index !== $itemSize - 1) {
+        $strReturn .= '<li class="breadcrumb-item"><a href="' . $arResult[$index]['LINK'] . '">' . $title . '</a></li>';
+    } else {
+        $strReturn .= '<li class="breadcrumb-item active" aria-current="page">' . $title . '</li>';
+    }
 }
 $strReturn .= '</ol></nav>';
 
 $arItems = [];
 for($index = 0; $index < $itemSize; $index++)
 {
-    $title = htmlspecialcharsex($arResult[$index]["TITLE"]);
+    $title = htmlspecialcharsex($arResult[$index]['TITLE']);
     $arItems[] = [
         '@type'=>'ListItem',
         'position'=>$index,
         'item'=>[
-            '@id'=>$arResult[$index]["LINK"],
+            '@id'=>$arResult[$index]['LINK'],
             'name'=>$title
         ]
     ];

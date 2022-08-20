@@ -9,19 +9,21 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     <title><?php $APPLICATION->ShowTitle(); ?></title>
     <?= $siteparam_section_head; ?>
     <?php
+    use Bitrix\Main\UI\Extension;
     use Bitrix\Main\Page\Asset;
-    $Asset = Asset::getInstance();
-    $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/jquery-3.6.0.min.js');
-    $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/bootstrap/css/bootstrap.min.css');
-    $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/bootstrap/js/bootstrap.bundle.min.js');
-    $Asset->addCss(SITE_TEMPLATE_PATH . '/libs/fontawesome-free-6.1.1-web/css/all.min.css');
-    $Asset->addJs(SITE_TEMPLATE_PATH . '/libs/lazysizes.min.js');
-    $Asset->addJs(SITE_TEMPLATE_PATH . '/main.js');
-
+    Extension::load(
+        [
+            'jquery3',
+            'ui.bootstrap5',
+            'ui.fonts.font-awesome',
+            'ui.fonts.opensans',
+            'ui.lazysizes',
+        ]
+    );
+    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/main.js');
     $APPLICATION->ShowHead();
     ?>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
     <!-- Favisons -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/favicon-32x32.png">

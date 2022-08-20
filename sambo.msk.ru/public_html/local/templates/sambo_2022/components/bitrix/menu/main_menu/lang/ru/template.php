@@ -1,3 +1,2 @@
-<?
-$MESS ['MENU_ITEM_ACCESS_DENIED'] = "Доступ запрещен";
-?>
+<?php
+$MESS['MENU_ITEM_ACCESS_DENIED'] = 'Доступ запрещен';
