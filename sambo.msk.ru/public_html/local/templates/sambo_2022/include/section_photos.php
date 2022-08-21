@@ -1,9 +1,20 @@
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    die();
+}
+/**
+ * @global CMain $APPLICATION
+ * @var CBitrixComponent $component
+ */
+
+use Bitrix\Main\Localization\Loc;
+?>
 <section class="main-section">
     <div class="container">
-        <h2 class="main-section__title">Фото с соревнований</h2>
-        <div class="main-section__subtitle">Ребята из нашей школы принимают участие в соревнованиях разного уровня, чтобы на практике оттачивать и повышать своё спортивное мастерство.</div>
+        <h2 class="main-section__title"><?= Loc::getMessage('SECTION_PHOTOS_TITLE'); ?></h2>
+        <div class="main-section__subtitle"><?= Loc::getMessage('SECTION_PHOTOS_SUBTITLE'); ?></div>
         <div class="main-section__text-link-wrapper">
-            <a href="/o-nas/foto/" class="main-section__text-link">Смотреть все фото <i class="fa-solid fa-angle-right"></i></a>
+            <a href="/o-nas/foto/" class="main-section__text-link"><?= Loc::getMessage('SECTION_PHOTOS_TEXT_LINK'); ?> <i class="fa-solid fa-angle-right"></i></a>
         </div>
         <?php
         $APPLICATION->IncludeComponent(
@@ -65,7 +76,8 @@
                 "STRICT_SECTION_CHECK" => "N",
                 "TAG_LIST" => "photos",
                 "TAG_TITLE" => "3"
-            )
+            ),
+            $component
         ); ?>
     </div>
 </section>

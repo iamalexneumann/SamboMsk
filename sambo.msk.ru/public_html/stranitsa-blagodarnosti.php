@@ -15,7 +15,9 @@ $APPLICATION->SetTitle("Страница благодарности");
                     <i class="fa-solid fa-angle-left share-block__btn-icon"></i>
                     На главную
                 </a>
-                <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/block_contacts.php'); ?>
+                <div class="contacts-block__communications">
+                    <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/block_contacts.php'); ?>
+                </div>
             </div>
         </div>
     </div>

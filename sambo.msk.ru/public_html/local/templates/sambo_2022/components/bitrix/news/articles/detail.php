@@ -82,7 +82,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_det
     <div class="main-section__subtitle"><?= Loc::getMessage('ARTICLES_SECTION_SUBTITLE'); ?></div>
     <div class="main-section__text-link-wrapper">
         <a href="<?= $arResult['FOLDER'] . $arResult['URL_TEMPLATES']['news']; ?>"
-           class="main-section__text-link"><?= Loc::getMessage('ARTICLES_SECTION_LINK_TEXT'); ?></a>
+           class="main-section__text-link"><?= Loc::getMessage('ARTICLES_SECTION_LINK_TEXT'); ?> <i class="fa-solid fa-angle-right"></i></a>
     </div>
     <?php
     $GLOBALS['NEWS_FILTER'] = [

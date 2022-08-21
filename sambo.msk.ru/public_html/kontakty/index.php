@@ -55,7 +55,9 @@ $APPLICATION->SetTitle("Контакты школы самбо и дзюдо \"�
                 </div>
                 <div class="col-lg-3 contacts-block">
                     <div class="contacts-block__title">Контакты</div>
-                    <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/block_contacts.php'); ?>
+                    <div class="contacts-block__communications">
+                        <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/block_contacts.php'); ?>
+                    </div>
                 </div>
             </div>
         </div>

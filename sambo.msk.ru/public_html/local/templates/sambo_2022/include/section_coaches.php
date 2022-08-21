@@ -1,7 +1,18 @@
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    die();
+}
+/**
+ * @global CMain $APPLICATION
+ * @var CBitrixComponent $component
+ */
+
+use Bitrix\Main\Localization\Loc;
+?>
 <section class="main-section">
     <div class="container">
-        <h2 class="main-section__title">Наши тренеры</h2>
-        <div class="main-section__subtitle">Педагогический состав с многолетним опытом работы. Все тренеры действующие мастера спорта или кандидаты в мастера спорта по самбо и дзюдо.</div>
+        <h2 class="main-section__title"><?= Loc::getMessage('SECTION_COACHES_TITLE'); ?></h2>
+        <div class="main-section__subtitle"><?= Loc::getMessage('SECTION_COACHES_SUBTITLE'); ?></div>
         <?php
         $APPLICATION->IncludeComponent(
             "bitrix:news.list",
@@ -62,7 +73,8 @@
                 "STRICT_SECTION_CHECK" => "N",
                 "TAG_LIST" => "",
                 "TAG_TITLE" => "3"
-            )
+            ),
+            $component
         ); ?>
     </div>
 </section>

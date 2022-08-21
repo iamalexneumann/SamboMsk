@@ -1,7 +1,18 @@
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    die();
+}
+/**
+ * @global CMain $APPLICATION
+ * @var CBitrixComponent $component
+ */
+
+use Bitrix\Main\Localization\Loc;
+?>
 <section class="main-section pb-0">
     <div class="container">
-        <h2 class="main-section__title">Расположение наших залов</h2>
-        <div class="main-section__subtitle">Выберите интересующий Вас зал, нажмите на его иконку и на карте откроется окно с информацией об этом зале.</div>
+        <h2 class="main-section__title"><?= Loc::getMessage('SECTION_HALLS_YANDEX_TITLE'); ?></h2>
+        <div class="main-section__subtitle"><?= Loc::getMessage('SECTION_HALLS_YANDEX_SUBTITLE'); ?></div>
     </div>
     <?php
     $APPLICATION->IncludeComponent(

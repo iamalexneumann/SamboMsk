@@ -5,6 +5,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 /**
  * @var array $arResult
  */
+
 use Bitrix\Main\Localization\Loc;
 Loc::loadLanguageFile(__FILE__);
 ?>
@@ -17,6 +18,8 @@ Loc::loadLanguageFile(__FILE__);
     </div>
     <?php if ($arResult['FOLDER']): ?>
     <a href="<?= $arResult['FOLDER'] . $arResult['URL_TEMPLATES']['news']; ?>"
-       class="btn btn-primary share-block__btn"><?= Loc::getMessage('BLOCK_SHARE_LIST_BTN_TEXT'); ?></a>
+       class="btn btn-primary share-block__btn">
+        <i class="fa-solid fa-angle-left share-block__btn-icon"></i> <?= Loc::getMessage('BLOCK_SHARE_LIST_BTN_TEXT'); ?>
+    </a>
     <?php endif; ?>
 </div>

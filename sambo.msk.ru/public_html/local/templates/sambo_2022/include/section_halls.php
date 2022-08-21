@@ -1,7 +1,18 @@
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    die();
+}
+/**
+ * @global CMain $APPLICATION
+ * @var CBitrixComponent $component
+ */
+
+use Bitrix\Main\Localization\Loc;
+?>
 <section class="main-section">
     <div class="container">
-        <h2 class="main-section__title"><?= $GLOBALS['HALLS_SECTION_TITLE'] ?: 'Наши залы' ?></h2>
-        <div class="main-section__subtitle">Мы постоянно работаем над расширением нашей географии. Наши залы расположены в Москве и области - выберите удобный для Вас.</div>
+        <h2 class="main-section__title"><?= $GLOBALS['HALLS_SECTION_TITLE'] ?: Loc::getMessage('SECTION_HALLS_TITLE'); ?></h2>
+        <div class="main-section__subtitle"><?= Loc::getMessage('SECTION_HALLS_SUBTITLE'); ?></div>
         <?php
         $APPLICATION->IncludeComponent(
             "bitrix:news.list",
@@ -62,7 +73,8 @@
                 "STRICT_SECTION_CHECK" => "N",
                 "TAG_LIST" => "",
                 "TAG_TITLE" => "3"
-            )
+            ),
+            $component
         ); ?>
     </div>
 </section>

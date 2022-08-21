@@ -1,4 +1,14 @@
 <?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    die();
+}
+/**
+ * @global CMain $APPLICATION
+ * @var CBitrixComponent $component
+ */
+
+use Bitrix\Main\Localization\Loc;
+
 $siteparam_main_phone = \COption::GetOptionString( 'askaron.settings', 'UF_MAIN_PHONE') ?? '';
 $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main_phone), 1);
 ?>
@@ -7,14 +17,12 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
         <div class="row main-form-section__row">
             <div class="col-lg-6 main-form-section__content">
                 <div class="main-form-section__text">
-                    Чтобы
-                    <span class="main-form-section__selected-text">записаться на бесплатное пробное занятие</span>
-                    позвоните по номеру телефона
+                    <?= Loc::getMessage('SECTION_MAIN_FORM_BEFORE_TEXT'); ?>
                     <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="main-form-section__selected-link"
                        onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
                         +7 <?= substr($siteparam_main_phone, 1); ?>
                     </a>
-                    или заполните форму, и мы Вам перезвоним
+                    <?= Loc::getMessage('SECTION_MAIN_FORM_AFTER_TEXT'); ?>
                 </div>
             </div>
             <div class="col-lg-6 main-form-section__form">
@@ -41,7 +49,7 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
                             "HALLS_URL" => "/nashi-zaly/",
                             "REDIRECT_URL" => "/stranitsa-blagodarnosti.php"
                         ),
-                        false
+                        $component
                     ); ?>
                 </div>
             </div>

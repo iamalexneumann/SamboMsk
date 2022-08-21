@@ -2,15 +2,30 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
-use Bitrix\Main\Localization\Loc;
-Loc::loadLanguageFile(__FILE__);
 /**
  * @var CMain $APPLICATION
  * @var CMain $CurDir
  * @var COption $siteparam_section_head
- * @var COption $siteparam_main_phone
+ * @var COption $siteparam_section_body_before
+ * @var COption $siteparam_main_logo
+ * @var COption $siteparam_site_name
+ * @var COption $siteparam_main_logo_name
+ * @var COption $siteparam_main_logo_description
  * @var COption $siteparam_main_phone_tel
+ * @var COption $siteparam_main_phone
+ * @var COption $siteparam_second_phone_tel
+ * @var COption $siteparam_second_phone
+ * @var COption $siteparam_whatsapp_number
+ * @var COption $siteparam_whatsapp_number_tel
+ * @var COption $siteparam_whatsapp_text
+ * @var COption $siteparam_whatsapp_text_converted
+ * @var COption $siteparam_main_email
+ * @var COption $siteparam_telegram
+ * @var COption $siteparam_vk
  */
+
+use Bitrix\Main\Localization\Loc;
+Loc::loadLanguageFile(__FILE__);
 ?>
 <!DOCTYPE html>
 <html lang="<?= LANGUAGE_ID; ?>"
@@ -113,7 +128,7 @@ Loc::loadLanguageFile(__FILE__);
             "PAGER_SHOW_ALL" => "N",
             "PAGER_SHOW_ALWAYS" => "N",
             "PAGER_TEMPLATE" => ".default",
-            "PAGER_TITLE" => "Новости",
+            "PAGER_TITLE" => "",
             "PARENT_SECTION" => "",
             "PARENT_SECTION_CODE" => "",
             "PREVIEW_TRUNCATE_LEN" => "",
@@ -142,7 +157,7 @@ Loc::loadLanguageFile(__FILE__);
     <header class="main-header sticky-top">
         <nav class="navbar navbar-expand-xl navbar-light">
             <div class="container-fluid">
-                <a<?php if (!($CurDir === '/')): ?> href="/" title="На главную"<?php endif; ?> class="logo header-logo">
+                <a<?php if (!($CurDir === '/')): ?> href="/" title="<?= Loc::getMessage('HEADER_MAIN_LOGO_TITLE'); ?>"<?php endif; ?> class="logo header-logo">
                     <img src="<?= $siteparam_main_logo; ?>" alt="<?= $siteparam_site_name; ?>" width="75" height="75" class="logo__img">
                     <?php if ($siteparam_main_logo_name || $siteparam_main_logo_description): ?>
                     <span class="logo__wrapper">
@@ -155,8 +170,8 @@ Loc::loadLanguageFile(__FILE__);
                     </span>
                     <?php endif; ?>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler__text">меню</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="<?= Loc::getMessage('HEADER_NAVBAR_ARIA_LABEL'); ?>">
+                    <span class="navbar-toggler__text"><?= Loc::getMessage('HEADER_NAVBAR_BTN_TEXT'); ?></span>
                     <span class="navbar-toggler__icon"><i class="fa-solid fa-bars"></i></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainMenu">
@@ -182,24 +197,28 @@ Loc::loadLanguageFile(__FILE__);
                                 "COMPOSITE_FRAME_TYPE" => "AUTO"
                             ),
                             false
-                        );?>
+                        ); ?>
                     </div>
                     <div class="header-contacts">
                         <div class="header-contacts__phones">
                             <div class="header-contacts__phones-wrapper">
-                                <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="header-contacts__main-phone"
+                                <a href="tel:+7<?= $siteparam_main_phone_tel; ?>"
+                                   class="header-contacts__main-phone"
                                    onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
                                     +7 <?= substr($siteparam_main_phone, 1); ?>
                                 </a>
                                 <?php if ($siteparam_second_phone_tel): ?>
                                 <div class="header-contacts__second-phone-wrapper">
-                                    <a href="tel:+7<?= $siteparam_second_phone_tel; ?>" class="header-contacts__second-phone"
+                                    <a href="tel:+7<?= $siteparam_second_phone_tel; ?>"
+                                       class="header-contacts__second-phone"
                                        onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_second_phone_tel; ?>'); return true;">
                                         +7 <?= substr($siteparam_second_phone, 1); ?>
                                     </a>
                                     <?php if ($siteparam_whatsapp_number): ?>
                                     <a href="https://wa.me/7<?= $siteparam_whatsapp_number_tel; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>"
-                                       target="_blank" title="Написать в WhatsApp" class="header-contacts__whatsapp">
+                                       target="_blank"
+                                       title="<?= Loc::getMessage('HEADER_WHATSAPP_TITLE'); ?>"
+                                       class="header-contacts__whatsapp">
                                         <i class="fa-brands fa-whatsapp"></i>
                                     </a>
                                     <?php endif; ?>
@@ -208,7 +227,9 @@ Loc::loadLanguageFile(__FILE__);
                             </div>
                         </div>
                         <div class="header-contacts__communication-wrapper">
-                            <a href="mailto:<?= $siteparam_main_email; ?>" title="Написать E-mail" class="header-email">
+                            <a href="mailto:<?= $siteparam_main_email; ?>"
+                               title="<?= Loc::getMessage('HEADER_EMAIL_TITLE'); ?>"
+                               class="header-email">
                                 <i class="fa-solid fa-envelope header-email__icon"></i>
                                 <span class="header-email__link"><?= $siteparam_main_email; ?></span>
                             </a>
@@ -216,14 +237,20 @@ Loc::loadLanguageFile(__FILE__);
                             <ul class="social-media header-social-media">
                                 <?php if ($siteparam_telegram): ?>
                                 <li class="social-media__item">
-                                    <a href="https://t.me/<?= $siteparam_telegram; ?>" target="_blank" title="Наш канал в Telegram" class="social-media__link social-media__telegram">
+                                    <a href="https://t.me/<?= $siteparam_telegram; ?>"
+                                       target="_blank"
+                                       title="<?= Loc::getMessage('HEADER_TELEGRAM_TITLE'); ?>"
+                                       class="social-media__link social-media__telegram">
                                         <i class="fa-brands fa-telegram"></i>
                                     </a>
                                 </li>
                                 <?php endif; ?>
                                 <?php if ($siteparam_vk): ?>
                                 <li class="social-media__item">
-                                    <a href="<?= $siteparam_vk; ?>" target="_blank" title="Наше сообщество в VK" class="social-media__link social-media__vk">
+                                    <a href="<?= $siteparam_vk; ?>"
+                                       target="_blank"
+                                       title="<?= Loc::getMessage('HEADER_VK_TITLE'); ?>"
+                                       class="social-media__link social-media__vk">
                                         <i class="fa-brands fa-vk"></i>
                                     </a>
                                 </li>
@@ -235,7 +262,6 @@ Loc::loadLanguageFile(__FILE__);
                 </div>
             </div>
         </nav>
-        
     </header>
     <main>
         <?php if (!($CurDir === '/')): ?>
@@ -251,8 +277,7 @@ Loc::loadLanguageFile(__FILE__);
                         "SITE_ID" => SITE_ID,
                     ),
                     false
-                );
-                ?>
+                ); ?>
                 <h1 class="page-header__title"><?php $APPLICATION->ShowTitle(false); ?></h1>
             </div>
         </header>
