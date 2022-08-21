@@ -24,7 +24,7 @@ $param_cta_from_position = (int)$arParams["CTA_FORM_POSITION"] ?? 3;
             ?>
             <?php if ($key === $param_cta_from_position && $param_show_cta_form === 'Y'): ?>
             <div class="col-12">
-                <?php include($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_inner_form_ru.php'); ?>
+                <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_inner_form.php'); ?>
             </div>
             <?php endif; ?>
             <div class="col-lg-4 col-md-6 articles-list-vertical__col">

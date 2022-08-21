@@ -7,11 +7,13 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
  * @var CBitrixComponentTemplate $this
  */
 
-if (empty($arResult))
+if (empty($arResult)) {
     return '';
+}
 
 $strReturn = '<nav aria-label="breadcrumb"><ol class="breadcrumb">';
 $itemSize = count($arResult);
+
 for ($index = 0; $index < $itemSize; $index++) {
     $title = htmlspecialcharsex($arResult[$index]['TITLE']);
 
@@ -24,8 +26,7 @@ for ($index = 0; $index < $itemSize; $index++) {
 $strReturn .= '</ol></nav>';
 
 $arItems = [];
-for($index = 0; $index < $itemSize; $index++)
-{
+for ($index = 0; $index < $itemSize; $index++) {
     $title = htmlspecialcharsex($arResult[$index]['TITLE']);
     $arItems[] = [
         '@type'=>'ListItem',

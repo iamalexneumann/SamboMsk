@@ -7,7 +7,7 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
         <div class="row main-form-section__row">
             <div class="col-lg-6 main-form-section__content">
                 <div class="main-form-section__text">
-                    Чтобы получить подробную консультацию или
+                    Чтобы
                     <span class="main-form-section__selected-text">записаться на бесплатное пробное занятие</span>
                     позвоните по номеру телефона
                     <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="main-form-section__selected-link"

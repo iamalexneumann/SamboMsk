@@ -5,8 +5,7 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
 <div class="inner-form-section">
     <div class="inner-form-section__content">
         <div class="inner-form-section__text">
-            Чтобы получить подробную консультацию или
-            <span class="inner-form-section__selected-text">записаться на бесплатное пробное занятие</span>
+            Чтобы <span class="inner-form-section__selected-text">записаться на бесплатное пробное занятие</span>
             позвоните по номеру телефона
             <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="inner-form-section__selected-link"
                onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
@@ -15,7 +14,10 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
             или закажите звонок, и мы Вам перезвоним
         </div>
         <div class="text-center">
-            <button type="button" class="btn btn-danger inner-form-section__btn-callback" data-bs-toggle="modal" data-bs-target="#callbackModal"><i class="fa-solid fa-phone inner-form-section__btn-callback-icon"></i> Заказать звонок</button>
+            <button type="button"
+                    class="btn btn-danger inner-form-section__btn-callback"
+                    data-bs-toggle="modal"
+                    data-bs-target="#callbackModal"><i class="fa-solid fa-phone inner-form-section__btn-callback-icon"></i> Заказать звонок</button>
         </div>
     </div>
 </div>

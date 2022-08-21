@@ -27,6 +27,7 @@ $APPLICATION->SetTitle("Детская школа дзюдо в Москве");
         </p>
     </div>
 </section>
+
 <section class="main-section clearfix">
     <div class="container">
         <h2 class="main-section__title">Дзигаро Кано</h2>
@@ -59,6 +60,7 @@ $APPLICATION->SetTitle("Детская школа дзюдо в Москве");
         </p>
     </div>
 </section>
+
 <section class="main-section clearfix">
     <div class="container">
         <h2 class="main-section__title">Первый русский дзюдоист</h2>
@@ -71,6 +73,7 @@ $APPLICATION->SetTitle("Детская школа дзюдо в Москве");
         </p>
     </div>
 </section>
+
 <section class="main-section clearfix">
     <div class="container">
         <h2 class="main-section__title">Начало обучению борьбе на территории России </h2>
@@ -83,6 +86,7 @@ $APPLICATION->SetTitle("Детская школа дзюдо в Москве");
         </p>
     </div>
 </section>
+
 <section class="main-section clearfix">
     <div class="container">
         <h2 class="main-section__title">Что можно получить, занимаясь этим видом единоборства?</h2>
@@ -95,7 +99,9 @@ $APPLICATION->SetTitle("Детская школа дзюдо в Москве");
         </p>
     </div>
 </section>
-<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form_ru.php'); ?>
+
+<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form.php'); ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",
@@ -106,9 +112,10 @@ $APPLICATION->IncludeComponent(
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_coaches_ru.php",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_coaches.php",
     )
-);?>
+); ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",
@@ -119,10 +126,12 @@ $APPLICATION->IncludeComponent(
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_photos_ru.php",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_photos.php",
     )
-);?>
-<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form_ru.php'); ?>
+); ?>
+
+<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form.php'); ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",
@@ -133,10 +142,11 @@ $APPLICATION->IncludeComponent(
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_halls_ru.php",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_halls.php",
     )
-);?>
+); ?>
+
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex_ru.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex.php');
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
 ?>

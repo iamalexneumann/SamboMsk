@@ -2,9 +2,19 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+use Bitrix\Main\Localization\Loc;
+Loc::loadLanguageFile(__FILE__);
+/**
+ * @var CMain $APPLICATION
+ * @var CMain $CurDir
+ * @var COption $siteparam_section_head
+ * @var COption $siteparam_main_phone
+ * @var COption $siteparam_main_phone_tel
+ */
 ?>
 <!DOCTYPE html>
-<html lang="ru" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+<html lang="<?= LANGUAGE_ID; ?>"
+      prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
 <head>
     <title><?php $APPLICATION->ShowTitle(); ?></title>
     <?= $siteparam_section_head; ?>

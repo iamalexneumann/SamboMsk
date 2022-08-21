@@ -22,14 +22,16 @@ if (!is_array($arResult['arMap']) || count($arResult['arMap']) < 1) {
 
 $arRootNode = Array();
 foreach ($arResult['arMap'] as $index => $arItem) {
-	if ($arItem['LEVEL'] === 0)
-		$arRootNode[] = $index;
+	if ($arItem['LEVEL'] === 0) {
+        $arRootNode[] = $index;
+    }
 }
 ?>
 <ol class="custom-ol-list ps-0">
 <?php
 $previousLevel = -1;
 $counter = 0;
+
 foreach ($arResult['arMap'] as $index => $arItem):
     $arItem['FULL_PATH'] = htmlspecialcharsbx($arItem['FULL_PATH'], ENT_COMPAT, false);
     $arItem['NAME'] = htmlspecialcharsbx($arItem['NAME'], ENT_COMPAT, false);

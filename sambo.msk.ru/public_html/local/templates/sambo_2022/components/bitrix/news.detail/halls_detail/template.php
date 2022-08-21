@@ -67,18 +67,7 @@ $att_coaches_list = $arResult["DISPLAY_PROPERTIES"]["ATT_COACHES_LIST"]["VALUE"]
     </div>
 </div>
 <?php
-$APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "",
-    Array(
-        "AREA_FILE_SHOW" => "file",
-        "AREA_FILE_SUFFIX" => "inc",
-        "COMPOSITE_FRAME_MODE" => "A",
-        "COMPOSITE_FRAME_TYPE" => "AUTO",
-        "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_features_ru.php",
-    )
-);
+require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_features.php');
 ?>
 <?php if ($arResult["DISPLAY_PROPERTIES"]["ATT_PRICE"]["~VALUE"]): ?>
 <section class="main-section">

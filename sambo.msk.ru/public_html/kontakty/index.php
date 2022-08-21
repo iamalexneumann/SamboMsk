@@ -55,12 +55,12 @@ $APPLICATION->SetTitle("Контакты школы самбо и дзюдо \"�
                 </div>
                 <div class="col-lg-3 contacts-block">
                     <div class="contacts-block__title">Контакты</div>
-                    <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/block_contacts_ru.php'); ?>
+                    <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/block_contacts.php'); ?>
                 </div>
             </div>
         </div>
     </section>
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex_ru.php'); ?>
+    <?php require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex.php'); ?>
 </div>
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");

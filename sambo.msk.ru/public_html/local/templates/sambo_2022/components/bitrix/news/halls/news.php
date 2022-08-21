@@ -1,14 +1,29 @@
 <?php
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @global CMain $APPLICATION
+ * @global CUser $USER
+ * @global CDatabase $DB
+ * @var CBitrixComponentTemplate $this
+ * @var string $templateName
+ * @var string $templateFile
+ * @var string $templateFolder
+ * @var string $componentPath
+ * @var CBitrixComponent $component
+ */
 $this->setFrameMode(true);
 
+$uf_preview_text = '';
 if (Cmodule::IncludeModule('asd.iblock')) {
-    $iblock_ufs = CASDiblockTools::GetIBUF($arParams["IBLOCK_ID"]);
-    $uf_preview_text = $iblock_ufs["UF_PREVIEW_TEXT"] ?? '';
+    $iblock_ufs = CASDiblockTools::GetIBUF($arParams['IBLOCK_ID']);
+    $uf_preview_text = $iblock_ufs['UF_PREVIEW_TEXT'] ?? '';
 }
 ?>
+
 <?php if ($uf_preview_text): ?>
 <div class="iblock-preview-text">
     <?php
@@ -26,6 +41,7 @@ if (Cmodule::IncludeModule('asd.iblock')) {
     ?>
 </div>
 <?php endif; ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:news.list",

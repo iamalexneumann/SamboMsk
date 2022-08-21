@@ -16,10 +16,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
  * @var CBitrixComponent $component
  */
 ?>
+
 <?php if (!empty($arResult)): ?>
 <ul class="footer-menu__list<?= $arParams['CLASS_NAME'] ? ' ' . $arParams['CLASS_NAME'] : ''; ?>">
 <?php
 $previousLevel = 0;
+
 foreach ($arResult as $arItem):
     if ($previousLevel && $arItem['DEPTH_LEVEL'] < $previousLevel) {
         echo str_repeat('</ul></li>', ($previousLevel - $arItem['DEPTH_LEVEL']));
@@ -29,12 +31,12 @@ foreach ($arResult as $arItem):
         if ($arItem['PERMISSION'] > "D"):
             if ($arItem['DEPTH_LEVEL'] === 1): ?>
     <li class="footer-menu__item">
-        <a href="<?= $arItem['LINK']; ?>"
+        <a<?php if ($arItem['SELECTED'] !== true): ?> href="<?= $arItem['LINK']; ?><?php endif; ?>"
            class="footer-menu__link<?php if ($arItem['SELECTED']): ?> footer-menu__link_active<?php endif; ?>"><?= $arItem['TEXT']; ?></a>
     </li>
-            <?php endif; ?>
-        <?php endif; ?>
 <?php
+            endif;
+        endif;
     endif;
     $previousLevel = $arItem['DEPTH_LEVEL'];
 endforeach;

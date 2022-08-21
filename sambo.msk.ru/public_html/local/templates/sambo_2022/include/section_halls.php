@@ -1,6 +1,6 @@
 <section class="main-section">
     <div class="container">
-        <h2 class="main-section__title"><?php if ($GLOBALS['hallsSectionTitle']): echo $GLOBALS['hallsSectionTitle']; else: echo 'Наши залы'; endif; ?></h2>
+        <h2 class="main-section__title"><?= $GLOBALS['HALLS_SECTION_TITLE'] ?: 'Наши залы' ?></h2>
         <div class="main-section__subtitle">Мы постоянно работаем над расширением нашей географии. Наши залы расположены в Москве и области - выберите удобный для Вас.</div>
         <?php
         $APPLICATION->IncludeComponent(
@@ -29,7 +29,7 @@
                 "DISPLAY_PREVIEW_TEXT" => "N",
                 "DISPLAY_TOP_PAGER" => "N",
                 "FIELD_CODE" => array("", ""),
-                "FILTER_NAME" => "hallsFilter",
+                "FILTER_NAME" => "HALLS_FILTER",
                 "HIDE_LINK_WHEN_NO_DETAIL" => "N",
                 "IBLOCK_ID" => "4",
                 "IBLOCK_TYPE" => "content",

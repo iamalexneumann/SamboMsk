@@ -1,20 +1,28 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 /**
  * @var array $arParams
  * @var array $arResult
  * @global CMain $APPLICATION
+ * @global CUser $USER
+ * @global CDatabase $DB
  * @var CBitrixComponentTemplate $this
+ * @var string $templateName
+ * @var string $templateFile
+ * @var string $templateFolder
+ * @var string $componentPath
  * @var CBitrixComponent $component
  */
 $this->setFrameMode(true);
+
 $section_code = get_section_code_from_page_url($APPLICATION->GetCurPage());
-$uf_from_section = get_uf_from_section($arParams["IBLOCK_ID"], $section_code);
-$uf_seo_text_top = $uf_from_section["UF_SEO_TEXT_TOP"] ?? '';
-$uf_seo_text_bottom = $uf_from_section["UF_SEO_TEXT_BOTTOM"] ?? '';
+$uf_from_section = get_uf_from_section($arParams['IBLOCK_ID'], $section_code);
+$uf_seo_text_top = $uf_from_section['UF_SEO_TEXT_TOP'] ?? '';
+$uf_seo_text_bottom = $uf_from_section['UF_SEO_TEXT_BOTTOM'] ?? '';
 ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:menu",
@@ -36,6 +44,7 @@ $APPLICATION->IncludeComponent(
         "HIDE_ICONS" => "Y"
     )
 ); ?>
+
 <?php if ($uf_seo_text_top): ?>
 <div class="seo-text seo-text_top iblock-preview-text">
     <?php
@@ -52,6 +61,7 @@ $APPLICATION->IncludeComponent(
     ); ?>
 </div>
 <?php endif; ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:news.list",
@@ -111,6 +121,7 @@ $APPLICATION->IncludeComponent(
     ),
     $component
 ); ?>
+
 <?php if ($uf_seo_text_bottom): ?>
 <div class="seo-text seo-text_bottom iblock-preview-text">
     <?php

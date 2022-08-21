@@ -23,9 +23,10 @@ $APPLICATION->IncludeComponent(
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_features_ru.php",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_features.php",
     )
-);?>
+); ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",
@@ -36,9 +37,10 @@ $APPLICATION->IncludeComponent(
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_coaches_ru.php",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_coaches.php",
     )
-);?>
+); ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",
@@ -49,10 +51,12 @@ $APPLICATION->IncludeComponent(
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_photos_ru.php",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_photos.php",
     )
-);?>
-<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form_ru.php'); ?>
+); ?>
+
+<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form.php'); ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",
@@ -63,10 +67,11 @@ $APPLICATION->IncludeComponent(
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_halls_ru.php",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_halls.php",
     )
-);?>
+); ?>
+
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex_ru.php');
+require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex.php');
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
 ?>

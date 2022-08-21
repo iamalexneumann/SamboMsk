@@ -27,13 +27,13 @@ use Bitrix\Main\Localization\Loc;
         if ($arParams['MAX_LEVEL'] === 1 && $arItem['DEPTH_LEVEL'] > 1) {
             continue;
         }
-        ?>
+    ?>
         <li class="nav-item">
-            <a<?php if(!$arItem['SELECTED']): ?> href="<?= $arItem['LINK']; ?>"<?php endif; ?>
-                    class="nav-link<?php if($arItem['SELECTED']): ?> active<?php endif; ?>"
-                    <?php if($arItem['SELECTED']): ?>
-                    aria-current="page"
-                    <?php endif; ?>><?= $arItem['TEXT']; ?></a>
+            <a<?php if ($arItem['SELECTED'] !== true): ?> href="<?= $arItem['LINK']; ?>"<?php endif; ?>
+                class="nav-link<?php if($arItem['SELECTED']): ?> active<?php endif; ?>"
+                <?php if($arItem['SELECTED']): ?>
+                aria-current="page"
+                <?php endif; ?>><?= $arItem['TEXT']; ?></a>
         </li>
     <?php endforeach; ?>
     </ul>

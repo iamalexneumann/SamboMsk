@@ -1,3 +1,1 @@
-<?
-$MESS ['SEARCH_LABEL'] = "Поиск:";
-?>
+<?php

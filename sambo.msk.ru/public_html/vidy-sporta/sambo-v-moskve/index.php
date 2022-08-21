@@ -19,13 +19,10 @@ $APPLICATION->SetTitle("Детская школа самбо в Москве");
         </ul>
     </div>
 </section>
+
 <section class="main-section">
     <div class="container">
         <h2 class="main-section__title">История самбо — история России</h2>
-        <figure class="float-block float-block_right">
-            <img src="/bitrix/images/main/preview.gif" data-src="https://sambo.msk.ru/bitrix/templates/sambo/img/sambo-2.jpg" class="lazyload" alt="История самбо — история России">
-            <figcaption class="float-block__figcaption">Самбо в СССР</figcaption>
-        </figure>
         <p>1920-е—1930-е годы - зарождение и становление самбо. Самбо сразу стало развиваться не только, как вид спорта , но и как средство обучения кадрового состава органов правопорядка.</p>
         <p>Основой самбо стали техники дзюдо Кодокан и приемы национальных видов борьбы народов СССР: грузинской, азербайджанской, туркменской и других видов борьбы. Например, «подхват» и «зацеп изнутри», взяты из грузинской борьбы, «зацеп снаружи» — из туркменской , «подсад» — из татарской.</p>
         <p>Уже в 1923 году состоялись первые соревнования по самбо. Поначалу борьба называлась «сам», «самоз», «борьба вольная», «борьба вольного стиля», и только в 1940-е годы – официально утвердилось знакомое и привычное нашему слуху название "самбо".</p>
@@ -35,6 +32,7 @@ $APPLICATION->SetTitle("Детская школа самбо в Москве");
         <p>В 1940 г - изданы первые руководства по "борьбе вольного стиля" Н. Гапковского и Р. Школьникова, а также пособие для школ НКВД под авторством В.П. Волкова (ученика Ощепкова В.С. и Спиридонова В.А.) - "Курс самозащиты без оружия САМБО"</p>
     </div>
 </section>
+
 <section class="main-section clearfix">
     <div class="container">
         <h2 class="main-section__title">Кому подходит самбо</h2>
@@ -46,6 +44,7 @@ $APPLICATION->SetTitle("Детская школа самбо в Москве");
         <p>Осуществляется тренировка всех физических качеств, изучаются основы самостраховки (дети учатся правильно падать), акробатики и простейшие технические действия. Полноценные занятия борьбой рекомендуется с 10 лет, так как до этого возраста суставо-связочный аппарат и многие системы организма еще не готовы к таким нагрузкам.</p>
     </div>
 </section>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",
@@ -56,9 +55,10 @@ $APPLICATION->IncludeComponent(
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_coaches_ru.php",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_coaches.php",
     )
-);?>
+); ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",
@@ -69,10 +69,12 @@ $APPLICATION->IncludeComponent(
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_photos_ru.php",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_photos.php",
     )
-);?>
-<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form_ru.php'); ?>
+); ?>
+
+<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form.php'); ?>
+
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:main.include",
@@ -83,10 +85,11 @@ $APPLICATION->IncludeComponent(
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO",
         "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_halls_ru.php",
+        "PATH" => SITE_TEMPLATE_PATH . "/include/section_halls.php",
     )
-);?>
+); ?>
+
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex_ru.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex.php');
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
 ?>

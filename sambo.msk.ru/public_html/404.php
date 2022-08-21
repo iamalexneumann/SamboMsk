@@ -23,7 +23,7 @@ $APPLICATION->SetTitle("Ошибка 404 - страница не найдена"
                     "footer_menu",
                     array(
                         "ALLOW_MULTI_SELECT" => "N",
-                        "CHILD_MENU_TYPE" => "left",
+                        "CHILD_MENU_TYPE" => "",
                         "DELAY" => "N",
                         "MAX_LEVEL" => "1",
                         "MENU_CACHE_GET_VARS" => array(
@@ -31,7 +31,7 @@ $APPLICATION->SetTitle("Ошибка 404 - страница не найдена"
                         "MENU_CACHE_TIME" => "3600",
                         "MENU_CACHE_TYPE" => "N",
                         "MENU_CACHE_USE_GROUPS" => "Y",
-                        "ROOT_MENU_TYPE" => "bottom",
+                        "ROOT_MENU_TYPE" => "halls_menu",
                         "USE_EXT" => "Y",
                         "COMPONENT_TEMPLATE" => "footer_menu",
                         "COMPOSITE_FRAME_MODE" => "A",
@@ -63,7 +63,7 @@ $APPLICATION->SetTitle("Ошибка 404 - страница не найдена"
             </div>
             <div class="col-lg-3 contacts-block">
                 <div class="contacts-block__title">Контакты</div>
-                <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/block_contacts_ru.php'); ?>
+                <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/block_contacts.php'); ?>
             </div>
         </div>
     </div>

@@ -1,8 +1,22 @@
 <?php
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @global CMain $APPLICATION
+ * @global CUser $USER
+ * @global CDatabase $DB
+ * @var CBitrixComponentTemplate $this
+ * @var string $templateName
+ * @var string $templateFile
+ * @var string $templateFolder
+ * @var string $componentPath
+ * @var CBitrixComponent $component
+ */
 $this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
 
 $APPLICATION->IncludeComponent(
     "bitrix:news.detail",
@@ -61,19 +75,19 @@ $APPLICATION->IncludeComponent(
     $component
 );
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_detail_block_share_ru.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_detail_block_share.php');
 ?>
 <section class="main-section pb-0">
-    <h2 class="main-section__title"><?= GetMessage("T_NEWS_DETAIL_NEWS_SECTION_TITLE"); ?></h2>
-    <div class="main-section__subtitle"><?= GetMessage("T_NEWS_DETAIL_NEWS_SECTION_SUBTITLE"); ?></div>
+    <h2 class="main-section__title"><?= Loc::getMessage('ARTICLES_SECTION_TITLE'); ?></h2>
+    <div class="main-section__subtitle"><?= Loc::getMessage('ARTICLES_SECTION_SUBTITLE'); ?></div>
     <div class="main-section__text-link-wrapper">
-        <a href="<?= $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"]; ?>"
-           class="main-section__text-link">
-            <?= GetMessage("T_NEWS_DETAIL_NEWS_SECTION_TEXT_LINK"); ?> <i class="fa-solid fa-angle-right"></i>
-        </a>
+        <a href="<?= $arResult['FOLDER'] . $arResult['URL_TEMPLATES']['news']; ?>"
+           class="main-section__text-link"><?= Loc::getMessage('ARTICLES_SECTION_LINK_TEXT'); ?></a>
     </div>
     <?php
-    $GLOBALS['newsFilter'] = array('!CODE' => $arResult["VARIABLES"]["ELEMENT_CODE"]);
+    $GLOBALS['NEWS_FILTER'] = [
+        '!CODE' => $arResult["VARIABLES"]["ELEMENT_CODE"]
+    ];
 
     $APPLICATION->IncludeComponent(
         "bitrix:news.list",
@@ -134,7 +148,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_de
             "TAG_LIST" => "news",
             "TAG_TITLE" => "3",
             "USE_FILTER" => "Y",
-            "FILTER_NAME" => "newsFilter",
+            "FILTER_NAME" => "NEWS_FILTER",
         ),
         $component
     ); ?>

@@ -1,8 +1,22 @@
 <?php
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @global CMain $APPLICATION
+ * @global CUser $USER
+ * @global CDatabase $DB
+ * @var CBitrixComponentTemplate $this
+ * @var string $templateName
+ * @var string $templateFile
+ * @var string $templateFolder
+ * @var string $componentPath
+ * @var CBitrixComponent $component
+ */
 $this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
 
 $APPLICATION->IncludeComponent(
     "bitrix:news.detail",
@@ -60,38 +74,18 @@ $APPLICATION->IncludeComponent(
         "YANDEX_API_KEY" => $arParams["YANDEX_API_KEY"],
     ),
     $component
-);
-?>
+); ?>
+
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_photos.php'); ?>
+
+<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form.php'); ?>
+
 <?php
-$APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "",
-    Array(
-        "AREA_FILE_SHOW" => "file",
-        "AREA_FILE_SUFFIX" => "inc",
-        "COMPOSITE_FRAME_MODE" => "A",
-        "COMPOSITE_FRAME_TYPE" => "AUTO",
-        "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_photos_ru.php",
-    )
-);
+$GLOBALS['HALLS_FILTER'] = [
+    '!CODE' => $arResult['VARIABLES']['ELEMENT_CODE']
+];
+$GLOBALS['HALLS_SECTION_TITLE'] = Loc::getMessage('HALLS_SECTION_TITLE');
+require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls.php');
 ?>
-<div id="halls-form"></div>
-<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form_ru.php'); ?>
-<?php
-$GLOBALS['hallsFilter'] = array('!CODE' => $arResult["VARIABLES"]["ELEMENT_CODE"]);
-$GLOBALS['hallsSectionTitle'] = 'Другие наши залы';
-$APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "",
-    Array(
-        "AREA_FILE_SHOW" => "file",
-        "AREA_FILE_SUFFIX" => "inc",
-        "COMPOSITE_FRAME_MODE" => "A",
-        "COMPOSITE_FRAME_TYPE" => "AUTO",
-        "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/section_halls_ru.php",
-    )
-);
-?>
-<?php require_once ($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex_ru.php'); ?>
+
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls_yandex.php'); ?>
