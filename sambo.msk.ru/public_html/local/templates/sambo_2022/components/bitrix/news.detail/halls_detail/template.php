@@ -1,39 +1,50 @@
 <?php
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
-$this->setFrameMode(true);
 /**
  * @var array $arParams
  * @var array $arResult
  * @global CMain $APPLICATION
+ * @global CUser $USER
+ * @global CDatabase $DB
+ * @var array $arLangMessages
  * @var CBitrixComponentTemplate $this
+ * @var string $templateName
+ * @var string $templateFile
+ * @var string $templateFolder
+ * @var string $parentTemplateFolder
+ * @var string $componentPath
+ * @var array $templateData
  * @var CBitrixComponent $component
  */
-$att_address = $arResult["DISPLAY_PROPERTIES"]["ATT_ADDRESS"]["VALUE"];
-$att_phones = $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"];
-$att_features = $arResult["DISPLAY_PROPERTIES"]["ATT_FEATURES"];
-$att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
-$att_videos = $arResult["DISPLAY_PROPERTIES"]["ATT_VIDEOS"] ?? '';
-$att_coaches_list = $arResult["DISPLAY_PROPERTIES"]["ATT_COACHES_LIST"]["VALUE"] ?? '';
+$this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
+
+$att_address = $arResult['DISPLAY_PROPERTIES']['ATT_ADDRESS']['VALUE'];
+$att_phones = $arResult['DISPLAY_PROPERTIES']['ATT_PHONES'];
+$att_features = $arResult['DISPLAY_PROPERTIES']['ATT_FEATURES'];
+$att_photos = $arResult['DISPLAY_PROPERTIES']['ATT_PHOTOS'] ?? '';
+$att_videos = $arResult['DISPLAY_PROPERTIES']['ATT_VIDEOS'] ?? '';
+$att_coaches_list = $arResult['DISPLAY_PROPERTIES']['ATT_COACHES_LIST']['VALUE'] ?? '';
 ?>
 <div class="first-screen"
-    <?php if ($arResult["PICTURE"]): ?> style="background: linear-gradient(90deg, #00369E 0%, rgba(6, 82, 221, 0) 85%),
-            url(<?= $arResult["PICTURE"]["SRC"]; ?>) 50% 50%; background-size: cover;"<?php endif; ?>>
+    <?php if ($arResult['PICTURE']): ?> style="background: linear-gradient(90deg, #00369E 0%, rgba(6, 82, 221, 0) 85%),
+            url(<?= $arResult['PICTURE']['SRC']; ?>) 50% 50%; background-size: cover;"<?php endif; ?>>
     <div class="container first-screen__container">
         <div class="first-screen__wrapper">
             <header class="first-screen__header">
-                <div class="first-screen__title"><?= $arResult["NAME"]; ?></div>
-                <?php if ($arResult["DISPLAY_PROPERTIES"]["ATT_SET_OPEN"]["VALUE"]): ?>
-                <div class="first-screen__open-text"><?= $arResult["SET_OPEN_TEXT"]; ?></div>
+                <div class="first-screen__title"><?= $arResult['NAME']; ?></div>
+                <?php if ($arResult['DISPLAY_PROPERTIES']['ATT_SET_OPEN']['VALUE']): ?>
+                <div class="first-screen__open-text"><?= $arResult['SET_OPEN_TEXT']; ?></div>
                 <?php endif; ?>
             </header>
             <?php if ($att_features): ?>
             <ul class="screen-features">
-                <?php foreach ($att_features["VALUE"] as $key => $feature_title): ?>
+                <?php foreach ($att_features['VALUE'] as $key => $feature_title): ?>
                 <li class="screen-features__item">
-                    <?php if ($att_features["~DESCRIPTION"][$key]): ?>
-                    <div class="screen-features__icon"><?= $att_features["~DESCRIPTION"][$key]; ?></div>
+                    <?php if ($att_features['~DESCRIPTION'][$key]): ?>
+                    <div class="screen-features__icon"><?= $att_features['~DESCRIPTION'][$key]; ?></div>
                     <?php endif; ?>
                     <div class="screen-features__description"><?= $feature_title; ?></div>
                 </li>
@@ -49,14 +60,14 @@ $att_coaches_list = $arResult["DISPLAY_PROPERTIES"]["ATT_COACHES_LIST"]["VALUE"]
                 <?php endif; ?>
                 <?php if ($att_phones): ?>
                 <div class="screen-phones">
-                    <?php foreach ($att_phones["VALUE"] as $key => $phone_number): ?>
+                    <?php foreach ($att_phones['VALUE'] as $key => $phone_number): ?>
                     <div class="screen-phones__item">
                         <i class="screen-phones__icon fa-solid fa-phone"></i>
-                        <a href="tel:+7<?= $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"]["PHONE_TEL"][$key]; ?>"
+                        <a href="tel:+7<?= $arResult['DISPLAY_PROPERTIES']['ATT_PHONES']['PHONE_TEL'][$key]; ?>"
                            class="screen-phones__link"
-                           onclick="ym(56418265, 'reachGoal', '7<?= $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"]["PHONE_TEL"][$key]; ?>'); return true;"><?= $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"]["PHONE_FORMATTED"][$key]; ?></a>
-                        <?php if ($att_phones["DESCRIPTION"][$key]): ?>
-                        <div class="screen-phones__description">(<?= $att_phones["DESCRIPTION"][$key]; ?>)</div>
+                           onclick="ym(56418265, 'reachGoal', '7<?= $arResult['DISPLAY_PROPERTIES']['ATT_PHONES']['PHONE_TEL'][$key]; ?>'); return true;"><?= $arResult['DISPLAY_PROPERTIES']['ATT_PHONES']['PHONE_FORMATTED'][$key]; ?></a>
+                        <?php if ($att_phones['DESCRIPTION'][$key]): ?>
+                        <div class="screen-phones__description">(<?= $att_phones['DESCRIPTION'][$key]; ?>)</div>
                         <?php endif; ?>
                     </div>
                     <?php endforeach; ?>
@@ -66,44 +77,41 @@ $att_coaches_list = $arResult["DISPLAY_PROPERTIES"]["ATT_COACHES_LIST"]["VALUE"]
         </div>
     </div>
 </div>
-<?php
-require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_features.php');
-?>
-<?php if ($arResult["DISPLAY_PROPERTIES"]["ATT_PRICE"]["~VALUE"]): ?>
+
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_features.php'); ?>
+
+<?php if ($arResult['DISPLAY_PROPERTIES']['ATT_PRICE']['~VALUE']): ?>
 <section class="main-section">
     <div class="container text-center">
-        <h2 class="main-section__title"><?= GetMessage("PRICE_SECTION_TITLE"); ?></h2>
+        <h2 class="main-section__title"><?= Loc::getMessage('HALLS_DETAIL_PRICE_SECTION_TITLE'); ?></h2>
         <?php
-        $GLOBALS['captionPriceTable'] = $arResult["NAME"] . ' - ' . mb_strtolower(GetMessage("PRICE_SECTION_TITLE"));
+        $GLOBALS['CAPTION_PRICE_TABLE'] = $arResult['NAME'] . ' - ' . mb_strtolower(Loc::getMessage('HALLS_DETAIL_PRICE_SECTION_TITLE'));
         $APPLICATION->IncludeComponent(
             "sprint.editor:blocks",
             ".default",
             Array(
-                "JSON" => $arResult["DISPLAY_PROPERTIES"]["ATT_PRICE"]["~VALUE"],
+                "JSON" => $arResult['DISPLAY_PROPERTIES']['ATT_PRICE']['~VALUE'],
             ),
             $component,
             Array(
                 "HIDE_ICONS" => "Y"
             )
-        );
-        ?>
+        ); ?>
     </div>
 </section>
 <?php endif; ?>
-<?php
-if ($arResult["DISPLAY_PROPERTIES"]["ATT_SCHEDULE"]["~VALUE"]):
-    $this->addExternalJs(SITE_TEMPLATE_PATH . '/libs/masonry.pkgd.min.js');
-?>
+
+<?php if ($arResult['DISPLAY_PROPERTIES']['ATT_SCHEDULE']['~VALUE']): ?>
 <section class="main-section schedule-section">
     <div class="container">
-        <h2 class="main-section__title"><?= GetMessage("SCHEDULE_SECTION_TITLE"); ?></h2>
+        <h2 class="main-section__title"><?= Loc::getMessage('HALLS_DETAIL_SCHEDULE_SECTION_TITLE'); ?></h2>
         <div class="row" data-masonry='{"percentPosition": true }'>
             <?php
             $APPLICATION->IncludeComponent(
                 "sprint.editor:blocks",
                 ".default",
                 Array(
-                    "JSON" => $arResult["DISPLAY_PROPERTIES"]["ATT_SCHEDULE"]["~VALUE"],
+                    "JSON" => $arResult['DISPLAY_PROPERTIES']['ATT_SCHEDULE']['~VALUE'],
                 ),
                 $component,
                 Array(
@@ -115,54 +123,52 @@ if ($arResult["DISPLAY_PROPERTIES"]["ATT_SCHEDULE"]["~VALUE"]):
     </div>
 </section>
 <?php endif; ?>
-<?php
-if ($att_photos):
-    $this->addExternalCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
-    $this->addExternalJS(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
-    ?>
+
+<?php if ($arResult['ATT_PHOTOS_COUNT'] > 1):  ?>
 <figure role="group" class="photos-list main-section d-flex flex-column-reverse">
     <div class="container">
         <div class="row photos-list__row">
             <?php
-            foreach($att_photos['VALUE'] as $key => $att_photo):
+            foreach ($att_photos['VALUE'] as $key => $att_photo):
                 $att_photo_description = $att_photos['DESCRIPTION'][$key] ?? '';
-                ?>
-                <div class="col-lg-4 col-6 photos-list__col">
-                    <figure class="photos-list__item">
-                        <a href="<?= $att_photos['FILE_VALUE'][$key]['SRC']; ?>" data-fancybox="photos-list" class="photos-list__link"
-                            <?php if ($att_photo_description): ?>
-                                title="<?= $att_photo_description; ?>"
-                                data-caption="<?= $att_photo_description; ?>"
-                            <?php endif; ?>>
-                            <img src="<?= $att_photos['PICTURE_LQIP'][$key]['SRC']; ?>"
-                                 data-src="<?= $att_photos['PICTURE'][$key]['SRC']; ?>"
-                                 alt="<?= $att_photo_description; ?>"
-                                 class="photos-list__img lazyload blur-up"
-                                 width="<?= $att_photos['PICTURE'][$key]['WIDTH']; ?>" height="<?= $att_photos['PICTURE'][$key]['HEIGHT']; ?>">
-                        </a>
+            ?>
+            <div class="col-lg-4 col-6 photos-list__col">
+                <figure class="photos-list__item">
+                    <a href="<?= $att_photos['FILE_VALUE'][$key]['SRC']; ?>" data-fancybox="photos-list" class="photos-list__link"
                         <?php if ($att_photo_description): ?>
-                        <figcaption class="photos-list__item-figcaption"><?= $att_photo_description; ?></figcaption>
-                        <?php endif; ?>
-                    </figure>
-                </div>
+                            title="<?= $att_photo_description; ?>"
+                            data-caption="<?= $att_photo_description; ?>"
+                        <?php endif; ?>>
+                        <img src="<?= $att_photos['PICTURE_LQIP'][$key]['SRC']; ?>"
+                             data-src="<?= $att_photos['PICTURE'][$key]['SRC']; ?>"
+                             alt="<?= $att_photo_description; ?>"
+                             class="photos-list__img lazyload blur-up"
+                             width="<?= $att_photos['PICTURE'][$key]['WIDTH']; ?>" height="<?= $att_photos['PICTURE'][$key]['HEIGHT']; ?>">
+                    </a>
+                    <?php if ($att_photo_description): ?>
+                    <figcaption class="photos-list__item-figcaption"><?= $att_photo_description; ?></figcaption>
+                    <?php endif; ?>
+                </figure>
+            </div>
             <?php endforeach; ?>
         </div>
     </div>
-    <figcaption class="photos-list__main-figcaption main-section__title container"><?= $arResult["NAME"] . ' - ' . GetMessage("PHOTO_FIGCAPTION_TEXT"); ?></figcaption>
+    <figcaption class="photos-list__main-figcaption main-section__title container"><?= $arResult['NAME'] . ' - ' . Loc::getMessage('HALLS_DETAIL_PHOTOS_FIGCAPTION_TEXT'); ?></figcaption>
 </figure>
 <?php endif; ?>
+
 <?php if ($att_videos): ?>
 <figure role="group" class="videos-list main-section d-flex flex-column-reverse">
     <div class="container">
         <div class="row videos-list__row">
             <?php
-            foreach($att_videos['VALUE'] as $key => $att_video):
+            foreach ($att_videos['VALUE'] as $key => $att_video):
                 $att_video_description = $att_videos['DESCRIPTION'][$key] ?? '';
-                ?>
+            ?>
             <div class="col-lg-6 videos-list__col">
                 <figure class="videos-list__item">
                     <div class="adaptive-video-container">
-                        <iframe data-src="https://www.youtube.com/embed/<?= $att_videos["YOUTUBE_ID"][$key]; ?>" class="lazyload"
+                        <iframe data-src="https://www.youtube.com/embed/<?= $att_videos['YOUTUBE_ID'][$key]; ?>" class="lazyload"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             <?php if ($att_video_description): ?> title="<?= $att_video_description; ?>"<?php endif; ?>
                                 allowfullscreen></iframe>
@@ -175,21 +181,22 @@ if ($att_photos):
             <?php endforeach; ?>
         </div>
     </div>
-    <figcaption class="videos-list__main-figcaption main-section__title container"><?= $arResult["NAME"] . ' - ' . GetMessage("VIDEO_FIGCAPTION_TEXT"); ?></figcaption>
+    <figcaption class="videos-list__main-figcaption main-section__title container"><?= $arResult['NAME'] . ' - ' . Loc::getMessage('HALLS_DETAIL_VIDEOS_FIGCAPTION_TEXT'); ?></figcaption>
 </figure>
 <?php endif; ?>
+
 <?php if ($att_coaches_list): ?>
 <section class="main-section">
     <div class="container">
-        <h2 class="main-section__title"><?= GetMessage("COACHES_LIST_SECTION_TITLE"); ?></h2>
-        <div class="main-section__subtitle"><?= GetMessage("COACHES_LIST_SECTION_SUBTITLE"); ?></div>
+        <h2 class="main-section__title"><?= Loc::getMessage('HALLS_DETAIL_COACHES_SECTION_TITLE'); ?></h2>
+        <div class="main-section__subtitle"><?= Loc::getMessage('HALLS_DETAIL_COACHES_SECTION_SUBTITLE'); ?></div>
         <div class="main-section__text-link-wrapper">
             <a href="/o-nas/trenery/" class="main-section__text-link">
-                <?= GetMessage("COACHES_LIST_SECTION_LINK"); ?> <i class="fa-solid fa-angle-right"></i>
+                <?= Loc::getMessage('HALLS_DETAIL_COACHES_SECTION_LINK_TEXT'); ?> <i class="fa-solid fa-angle-right"></i>
             </a>
         </div>
         <?php
-        $GLOBALS['coachesFilter'] = array('ID' => $att_coaches_list);
+        $GLOBALS['COACHES_FILTER'] = ['ID' => $att_coaches_list];
 
         $APPLICATION->IncludeComponent(
             "bitrix:news.list",
@@ -217,7 +224,7 @@ if ($att_photos):
                 "DISPLAY_PREVIEW_TEXT" => "N",
                 "DISPLAY_TOP_PAGER" => "N",
                 "FIELD_CODE" => array("", ""),
-                "FILTER_NAME" => "coachesFilter",
+                "FILTER_NAME" => "COACHES_FILTER",
                 "HIDE_LINK_WHEN_NO_DETAIL" => "N",
                 "IBLOCK_ID" => "6",
                 "IBLOCK_TYPE" => "content",
@@ -259,18 +266,15 @@ if ($att_photos):
     </div>
 </section>
 <?php endif; ?>
-<?php
-if ($arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"]): ?>
+
+<?php if ($arResult['DISPLAY_PROPERTIES']['ATT_GEO']['VALUE']): ?>
 <section class="main-section map-section">
     <div class="container">
-        <h2 class="main-section__title"><?= $arResult["NAME"]; ?> - <?= GetMessage("MAP_SECTION_TITLE"); ?></h2>
+        <h2 class="main-section__title"><?= $arResult['NAME']; ?> - <?= Loc::getMessage('HALLS_DETAIL_MAP_SECTION_TITLE'); ?></h2>
         <?php
-        $param_yandex_api_key = $arParams["YANDEX_API_KEY"] ?? '';
-        if (!$param_yandex_api_key) {
-            echo GetMessage("yandex_error_message");
-        } else {
-            $this->addExternalJS("https://api-maps.yandex.ru/2.1/?apikey=" . $param_yandex_api_key . "&lang=ru_RU");
-        }
+        $param_yandex_api_key = $arParams['YANDEX_API_KEY'] ?? '';
+        if ($arParams['YANDEX_API_KEY']):
+            $this->addExternalJS('https://api-maps.yandex.ru/2.1/?apikey=' . $arParams['YANDEX_API_KEY'] . '&lang=ru_RU');
         ?>
         <div id="halls-detail-map" class="yandex-map halls-detail-map"></div>
         <script>
@@ -278,14 +282,14 @@ if ($arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"]): ?>
 
             function init() {
                 const hallMap = new ymaps.Map("halls-detail-map", {
-                        center: [<?= $arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"]; ?>],
+                        center: [<?= $arResult['DISPLAY_PROPERTIES']['ATT_GEO']['VALUE']; ?>],
                         zoom: 16,
                     }),
 
                     <?php
-                    $balloon_content_header = '<div class="yandex-map__link">' . $arResult["NAME"] .'</div>';
-                    if ($arResult["DISPLAY_PROPERTIES"]["ATT_SET_OPEN"]["VALUE"]) {
-                        $balloon_content_header .= '<div class="yandex-map__set-open">' . $arResult["SET_OPEN_TEXT"] . '</div>';
+                    $balloon_content_header = '<div class="yandex-map__link">' . $arResult['NAME'] .'</div>';
+                    if ($arResult['DISPLAY_PROPERTIES']['ATT_SET_OPEN']['VALUE']) {
+                        $balloon_content_header .= '<div class="yandex-map__set-open">' . $arResult['SET_OPEN_TEXT'] . '</div>';
                     }
                     $balloon_content_header = str_replace(PHP_EOL, '', $balloon_content_header);
 
@@ -299,16 +303,16 @@ if ($arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"]): ?>
                             ';
                     }
                     if ($att_phones) {
-                        foreach ($att_phones["VALUE"] as $key => $phone_number) {
+                        foreach ($att_phones['VALUE'] as $key => $phone_number) {
                             $balloon_content_body .= '
                                 <div class="yandex-map__phone-item">
                                     <i class="yandex-map__phone-icon fa-solid fa-phone"></i>
-                                    <a href="tel:+7' . $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"]["PHONE_TEL"][$key] . '"
-                                       class="yandex-map__phone-link">' . $arResult["DISPLAY_PROPERTIES"]["ATT_PHONES"]["PHONE_FORMATTED"][$key] . '</a>
+                                    <a href="tel:+7' . $arResult['DISPLAY_PROPERTIES']['ATT_PHONES']['PHONE_TEL'][$key] . '"
+                                       class="yandex-map__phone-link">' . $arResult['DISPLAY_PROPERTIES']['ATT_PHONES']['PHONE_FORMATTED'][$key] . '</a>
                                 ';
-                            if ($att_phones["DESCRIPTION"][$key]) {
+                            if ($att_phones['DESCRIPTION'][$key]) {
                                 $balloon_content_body .= '
-                                    <div class="yandex-map__phone-description">(' . $att_phones["DESCRIPTION"][$key] . ')</div>
+                                    <div class="yandex-map__phone-description">(' . $att_phones['DESCRIPTION'][$key] . ')</div>
                                 </div>
                                 ';
                             } else {
@@ -318,16 +322,16 @@ if ($arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"]): ?>
                     }
                     $balloon_content_body .= '
                         <a href="#halls-form" class="btn btn-primary btn-sm yandex-map__btn">
-                            <i class="fa-solid fa-pencil"></i>' . GetMessage("MAP_SECTION_BTN_TEXT") . '
+                            <i class="fa-solid fa-pencil"></i>' . Loc::getMessage('HALLS_DETAIL_MAP_SECTION_BTN_TEXT') . '
                         </a>
                         ';
                     $balloon_content_body = str_replace(PHP_EOL, '', $balloon_content_body);
                     ?>
 
-                    hallPlacemark = new ymaps.Placemark([<?= $arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"]; ?>], {
+                    hallPlacemark = new ymaps.Placemark([<?= $arResult['DISPLAY_PROPERTIES']['ATT_GEO']['VALUE']; ?>], {
                         balloonContentHeader: '<div class="yandex-map__header"><?= $balloon_content_header; ?></div>',
                         balloonContentBody: '<div class="yandex-map__content"><?= $balloon_content_body; ?></div>',
-                        hintContent: "<?= $arResult["NAME"]; ?>",
+                        hintContent: "<?= $arResult['NAME']; ?>",
                     }, {
                         iconLayout: 'default#image',
                         iconImageHref: '<?= SITE_TEMPLATE_PATH; ?>/img/pin.png',
@@ -339,6 +343,11 @@ if ($arResult["DISPLAY_PROPERTIES"]["ATT_GEO"]["VALUE"]): ?>
                 hallPlacemark.balloon.open();
             }
         </script>
+        <?php
+        else:
+            echo Loc::getMessage('HALLS_DETAIL_YANDEX_ERROR_MESSAGE');
+        endif;
+        ?>
     </div>
 </section>
 <?php endif; ?>

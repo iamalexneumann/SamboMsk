@@ -69,9 +69,9 @@ Loc::loadLanguageFile(__FILE__);
     <meta name="twitter:image" content="https://<?= SITE_SERVER_NAME . SITE_TEMPLATE_PATH . '/img/og-media/' . get_img_name_from_cur_dir($CurDir) ?>?date=<?= date("Ymd"); ?>" />
     <!-- OG  -->
     <meta property="article:author" content="https://<?= SITE_SERVER_NAME; ?>">
-    <?php $APPLICATION->ShowViewContent('siteparamArticlePublishedTime'); ?>
-    <?php $APPLICATION->ShowViewContent('siteparamArticleModifiedTime'); ?>
-    <?php $APPLICATION->ShowViewContent('siteparamArticleSection'); ?>
+    <?php $APPLICATION->ShowViewContent('META_ARTICLE_PUBLISHED_TIME'); ?>
+    <?php $APPLICATION->ShowViewContent('META_ARTICLE_MODIFIED_TIME'); ?>
+    <?php $APPLICATION->ShowViewContent('META_ARTICLE_SECTION'); ?>
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<?php $APPLICATION->ShowTitle(); ?>" />
     <meta property="og:url" content="https://<?= SITE_SERVER_NAME . $CurDir; ?>" />

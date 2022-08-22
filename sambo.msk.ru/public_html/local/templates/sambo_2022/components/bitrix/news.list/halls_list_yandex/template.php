@@ -21,7 +21,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 use Bitrix\Main\Localization\Loc;
 
 if ($arParams['YANDEX_API_KEY']) {
-    $this->addExternalJS("https://api-maps.yandex.ru/2.1/?apikey=" . $arParams['YANDEX_API_KEY'] . "&lang=ru_RU");
+    $this->addExternalJS('https://api-maps.yandex.ru/2.1/?apikey=' . $arParams['YANDEX_API_KEY'] . '&lang=ru_RU');
     echo '<div id="halls-list-map" class="yandex-map halls-list-map"></div>';
 } else {
     echo Loc::getMessage('HALLS_LIST_YANDEX_ERROR_MESSAGE');

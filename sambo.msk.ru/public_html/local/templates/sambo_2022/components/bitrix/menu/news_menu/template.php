@@ -23,7 +23,7 @@ use Bitrix\Main\Localization\Loc;
     <div class="menu-subsections-aside__title"><?= Loc::getMessage('NEWS_MENU_SUBSECTIONS_TITLE'); ?>:</div>
     <ul class="nav nav-pills">
     <?php
-    foreach($arResult as $arItem):
+    foreach ($arResult as $arItem):
         if ($arParams['MAX_LEVEL'] === 1 && $arItem['DEPTH_LEVEL'] > 1) {
             continue;
         }

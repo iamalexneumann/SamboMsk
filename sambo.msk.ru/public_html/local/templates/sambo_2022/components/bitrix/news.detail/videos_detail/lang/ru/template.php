@@ -1,2 +1,2 @@
 <?php
-$MESS["MAIN_FIGCAPTION_TEXT"] = 'видеоальбом';
+$MESS['VIDEOS_DETAIL_MAIN_FIGCAPTION_TEXT'] = 'видеоальбом';

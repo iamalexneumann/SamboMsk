@@ -1,28 +1,36 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 /**
+ * @var array $arParams
  * @var array $arResult
  * @global CMain $APPLICATION
+ * @global CUser $USER
+ * @global CDatabase $DB
+ * @var CBitrixComponentTemplate $this
  */
+$component = $this->__component;
 
-$arResult["VIEW_COUNT"] = get_views_with_declension($arResult["SHOW_COUNTER"] ?? 0);
-$arResult["TELEGRAM_DISCUSSION"] = get_telegram_discussion($arResult["DISPLAY_PROPERTIES"]["ATT_RELATED_TELEGRAM_POST"]["VALUE"] ?? '');
+$arResult['VIEW_COUNT'] = get_views_with_declension($arResult['SHOW_COUNTER'] ?? 0);
+$arResult['TELEGRAM_DISCUSSION'] = get_telegram_discussion($arResult['DISPLAY_PROPERTIES']['ATT_RELATED_TELEGRAM_POST']['VALUE'] ?? '');
+
 $ogPictureFileTmp = \CFile::ResizeImageGet(
-    $arResult["DETAIL_PICTURE"],
+    $arResult['DETAIL_PICTURE'],
     [
-        "width" => 968,
-        "height" => 504,
+        'width' => 968,
+        'height' => 504,
     ],
     BX_RESIZE_IMAGE_EXACT,
     true
 );
-create_og_img(
-    $_SERVER['DOCUMENT_ROOT'] . $ogPictureFileTmp['src'],
-    htmlspecialchars_decode($arResult["NAME"]),
-    get_img_name_from_cur_dir($APPLICATION->GetCurDir())
+$arResult['OG_PICTURE_SRC'] = $ogPictureFileTmp['src'];
+
+$component->SetResultCacheKeys(
+    [
+        'DATE_CREATE',
+        'VIEW_COUNT',
+        'TELEGRAM_DISCUSSION',
+        'OG_PICTURE_SRC',
+    ],
 );
-$this->SetViewTarget('siteparamArticlePublishedTime');
-?><meta property="article:published_time" content="<?= FormatDate("Y-m-dТH:i:s+03:00", strtotime($arResult["ACTIVE_FROM"])); ?>"><?php
-$this->EndViewTarget();

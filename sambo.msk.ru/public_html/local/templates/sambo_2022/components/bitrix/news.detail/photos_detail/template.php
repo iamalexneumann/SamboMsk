@@ -1,27 +1,37 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
-
-$this->setFrameMode(true);
 /**
  * @var array $arParams
  * @var array $arResult
  * @global CMain $APPLICATION
+ * @global CUser $USER
+ * @global CDatabase $DB
+ * @var array $arLangMessages
  * @var CBitrixComponentTemplate $this
+ * @var string $templateName
+ * @var string $templateFile
+ * @var string $templateFolder
+ * @var string $parentTemplateFolder
+ * @var string $componentPath
+ * @var array $templateData
  * @var CBitrixComponent $component
  */
-$att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
+$this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
+
+$att_photos = $arResult['DISPLAY_PROPERTIES']['ATT_PHOTOS'] ?? '';
 ?>
 <div class="photos-detail">
-    <?php if($arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"]): ?>
+    <?php if($arResult['DISPLAY_PROPERTIES']['ATT_DETAIL_TEXT']['~VALUE']): ?>
     <div class="mb-5">
         <?php
         $APPLICATION->IncludeComponent(
             "sprint.editor:blocks",
             ".default",
             Array(
-                "JSON" => $arResult["DISPLAY_PROPERTIES"]["ATT_DETAIL_TEXT"]["~VALUE"],
+                "JSON" => $arResult['DISPLAY_PROPERTIES']['ATT_DETAIL_TEXT']['~VALUE'],
             ),
             $component,
             Array(
@@ -31,17 +41,14 @@ $att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
         ?>
     </div>
     <?php endif; ?>
-    <?php
-    if (count($att_photos) > 0):
-        $this->addExternalCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
-        $this->addExternalJS(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
-        ?>
-        <figure role="group" class="photos-list">
-            <div class="row photos-list__row">
+
+    <?php if ($arResult['ATT_PHOTOS_COUNT'] > 0): ?>
+    <figure role="group" class="photos-list">
+        <div class="row photos-list__row">
             <?php
-            foreach($att_photos['VALUE'] as $key => $att_photo):
+            foreach ($att_photos['VALUE'] as $key => $att_photo):
                 $att_photo_description = $att_photos['DESCRIPTION'][$key] ?? '';
-                ?>
+            ?>
             <div class="col-lg-4 col-6 photos-list__col">
                 <figure class="photos-list__item">
                     <a href="<?= $att_photos['FILE_VALUE'][$key]['SRC']; ?>" data-fancybox="photos-list" class="photos-list__link"
@@ -61,8 +68,8 @@ $att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"] ?? '';
                 </figure>
             </div>
             <?php endforeach; ?>
-            </div>
-            <figcaption class="photos-list__main-figcaption"><?= $arResult["NAME"] . ' - ' . GetMessage("MAIN_FIGCAPTION_TEXT"); ?></figcaption>
-        </figure>
+        </div>
+        <figcaption class="photos-list__main-figcaption"><?= $arResult['NAME'] . ' - ' . Loc::getMessage('PHOTOS_DETAIL_MAIN_FIGCAPTION_TEXT'); ?></figcaption>
+    </figure>
     <?php endif; ?>
 </div>

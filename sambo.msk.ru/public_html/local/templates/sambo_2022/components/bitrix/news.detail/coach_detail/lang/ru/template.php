@@ -1,8 +1,8 @@
 <?php
-$MESS["PHOTO_FIGCAPTION_TEXT"] = 'фотографии с тренером';
-$MESS["VIDEO_FIGCAPTION_TEXT"] = 'видео с тренером';
-$MESS["COACH_DETAIL_YEAR"] = 'г.';
-$MESS["age_declension_one"] = "год";
-$MESS["age_declension_four"] = "года";
-$MESS["age_declension_five"] = "лет";
-$MESS["coach_age"] = "Дата рождения";
+$MESS['COACH_DETAIL_PHOTOS_FIGCAPTION_TEXT'] = 'фотографии с тренером';
+$MESS['COACH_DETAIL_VIDEOS_FIGCAPTION_TEXT'] = 'видео с тренером';
+$MESS['COACH_DETAIL_YEAR_TEXT'] = 'г.';
+$MESS['COACH_DETAIL_AGE_DECLENSION_ONE'] = 'год';
+$MESS['COACH_DETAIL_AGE_DECLENSION_FOUR'] = 'года';
+$MESS['COACH_DETAIL_AGE_DECLENSION_FIVE'] = 'лет';
+$MESS['COACH_DETAIL_BITRHDAY_TEXT'] = 'Дата рождения';

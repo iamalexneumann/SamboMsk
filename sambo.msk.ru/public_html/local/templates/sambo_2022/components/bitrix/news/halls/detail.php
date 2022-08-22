@@ -80,7 +80,9 @@ $APPLICATION->IncludeComponent(
 
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_photos.php'); ?>
 
-<?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form.php'); ?>
+<div id="halls-form">
+    <?php require($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_main_form.php'); ?>
+</div>
 
 <?php
 $GLOBALS['HALLS_FILTER'] = [

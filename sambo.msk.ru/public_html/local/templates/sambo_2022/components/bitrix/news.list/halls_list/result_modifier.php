@@ -1,5 +1,5 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 /**
@@ -13,7 +13,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 use Bitrix\Main\Localization\Loc;
 
 if ($arResult['ITEMS']) {
-    foreach($arResult['ITEMS'] as $key => &$arItem) {
+    foreach ($arResult['ITEMS'] as $key => &$arItem) {
         $item_picture = $arItem['PREVIEW_PICTURE'];
         if ($item_picture) {
             $arItemPictureFileTmp = \CFile::ResizeImageGet(

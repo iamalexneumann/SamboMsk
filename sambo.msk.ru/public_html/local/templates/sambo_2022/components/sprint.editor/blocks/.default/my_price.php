@@ -2,12 +2,7 @@
 <div class="table-responsive">
     <table class="table price-table table-bordered table-striped align-middle">
         <caption class="price-table__caption">
-            <?php
-            if ($GLOBALS['captionPriceTable']) {
-                echo $GLOBALS['captionPriceTable'];
-            } else {
-                echo 'Стоимость тренировок';
-            } ?>
+            <?= $GLOBALS['CAPTION_PRICE_TABLE'] ?: 'Стоимость тренировок'; ?>
         </caption>
         <tbody>
             <?php foreach ($block['elements'] as $item): ?>

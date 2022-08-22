@@ -31,7 +31,7 @@ $APPLICATION->IncludeComponent(
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_FIELD_CODE" => array(
 			0 => "SHOW_COUNTER",
-			1 => "",
+			1 => "DATE_CREATE",
 		),
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",

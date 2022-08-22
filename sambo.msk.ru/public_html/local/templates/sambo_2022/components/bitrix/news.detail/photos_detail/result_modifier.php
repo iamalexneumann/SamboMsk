@@ -1,23 +1,27 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 /**
+ * @var array $arParams
  * @var array $arResult
  * @global CMain $APPLICATION
+ * @global CUser $USER
+ * @global CDatabase $DB
+ * @var CBitrixComponentTemplate $this
  */
+$component = $this->__component;
 
-$att_photos = $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"];
+$att_photos = $arResult['DISPLAY_PROPERTIES']['ATT_PHOTOS'];
+$component->arResult['ATT_PHOTOS_COUNT'] = count($att_photos['VALUE']);
 
-foreach($att_photos['VALUE'] as $key => $att_photo) {
-    $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"]["PICTURE"][$key] = [];
-    $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"]["PICTURE_LQIP"][$key] = [];
+foreach ($att_photos['VALUE'] as $key => $att_photo) {
     if ($att_photo) {
         $arItemPictureFileTmp = \CFile::ResizeImageGet(
             $att_photo,
             [
-                "width" => 500,
-                "height" => 500,
+                'width' => 500,
+                'height' => 500,
             ],
             BX_RESIZE_IMAGE_EXACT,
             true
@@ -26,40 +30,41 @@ foreach($att_photos['VALUE'] as $key => $att_photo) {
         $arItemPictureLqipFileTmp = \CFile::ResizeImageGet(
             $att_photo,
             [
-                "width" => 100,
-                "height" => 100,
+                'width' => 100,
+                'height' => 100,
             ],
             BX_RESIZE_IMAGE_EXACT,
             true
         );
 
-        if ($arItemPictureFileTmp["src"]) {
-            $arItemPictureFileTmp["src"] = \CUtil::GetAdditionalFileURL($arItemPictureFileTmp["src"], true);
+        if ($arItemPictureFileTmp['src']) {
+            $arItemPictureFileTmp['src'] = \CUtil::GetAdditionalFileURL($arItemPictureFileTmp['src'], true);
         }
 
-        if ($arItemPictureLqipFileTmp["src"]) {
-            $arItemPictureLqipFileTmp["src"] = \CUtil::GetAdditionalFileURL($arItemPictureLqipFileTmp["src"], true);
+        if ($arItemPictureLqipFileTmp['src']) {
+            $arItemPictureLqipFileTmp['src'] = \CUtil::GetAdditionalFileURL($arItemPictureLqipFileTmp['src'], true);
         }
 
-        $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"]["PICTURE"][$key] = array_change_key_case($arItemPictureFileTmp, CASE_UPPER);
-        $arResult["DISPLAY_PROPERTIES"]["ATT_PHOTOS"]["PICTURE_LQIP"][$key] = array_change_key_case($arItemPictureLqipFileTmp, CASE_UPPER);
+        $arResult['DISPLAY_PROPERTIES']['ATT_PHOTOS']['PICTURE'][$key] = array_change_key_case($arItemPictureFileTmp, CASE_UPPER);
+        $arResult['DISPLAY_PROPERTIES']['ATT_PHOTOS']['PICTURE_LQIP'][$key] = array_change_key_case($arItemPictureLqipFileTmp, CASE_UPPER);
     }
 }
-$arResult["TELEGRAM_DISCUSSION"] = get_telegram_discussion($arResult["DISPLAY_PROPERTIES"]["ATT_RELATED_TELEGRAM_POST"]["VALUE"] ?? '');
+
 $ogPictureFileTmp = \CFile::ResizeImageGet(
-    $arResult["DETAIL_PICTURE"],
+    $arResult['DETAIL_PICTURE'],
     [
-        "width" => 968,
-        "height" => 504,
+        'width' => 968,
+        'height' => 504,
     ],
     BX_RESIZE_IMAGE_EXACT,
     true
 );
-create_og_img(
-    $_SERVER['DOCUMENT_ROOT'] . $ogPictureFileTmp['src'],
-    htmlspecialchars_decode($arResult["NAME"]),
-    get_img_name_from_cur_dir($APPLICATION->GetCurDir())
+$arResult['OG_PICTURE_SRC'] = $ogPictureFileTmp['src'];
+
+$component->SetResultCacheKeys(
+    [
+        'DATE_CREATE',
+        'OG_PICTURE_SRC',
+        'ATT_PHOTOS_COUNT',
+    ],
 );
-$this->SetViewTarget('siteparamArticlePublishedTime');
-?><meta property="article:published_time" content="<?= FormatDate("Y-m-dТH:i:s+03:00", strtotime($arResult["ACTIVE_FROM"])); ?>"><?php
-$this->EndViewTarget();
