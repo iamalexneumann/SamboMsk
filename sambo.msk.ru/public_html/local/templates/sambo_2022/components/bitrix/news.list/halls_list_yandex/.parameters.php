@@ -1,40 +1,31 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+    die();
+}
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @global CMain $APPLICATION
+ * @global CUser $USER
+ * @global CDatabase $DB
+ * @var CBitrixComponentTemplate $this
+ */
+use Bitrix\Main\Localization\Loc;
 
-$arTemplateParameters = array(
-	"YANDEX_API_KEY" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_YANDEX_API_KEY"),
+$arTemplateParameters = [
+	"YANDEX_API_KEY" => [
+		"NAME" => Loc::getMessage('HALS_LIST_YANDEX_YANDEX_API_KEY'),
 		"TYPE" => "STRING",
 		"DEFAULT" => "",
-	),
-	"MAP_CENTER" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_MAP_CENTER"),
+	],
+	"MAP_CENTER" => [
+		"NAME" => Loc::getMessage('HALS_LIST_YANDEX_MAP_CENTER'),
 		"TYPE" => "STRING",
 		"DEFAULT" => "55.76, 37.64",
-	),
-	"MAP_ZOOM" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_MAP_ZOOM"),
+    ],
+	"MAP_ZOOM" => [
+		"NAME" => Loc::getMessage('HALS_LIST_YANDEX_MAP_ZOOM'),
 		"TYPE" => "STRING",
 		"DEFAULT" => "9",
-	),
-	"DISPLAY_DATE" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_DATE"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-	"DISPLAY_NAME" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_NAME"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-	"DISPLAY_PICTURE" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_PICTURE"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-	"DISPLAY_PREVIEW_TEXT" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_TEXT"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-);
+    ],
+];

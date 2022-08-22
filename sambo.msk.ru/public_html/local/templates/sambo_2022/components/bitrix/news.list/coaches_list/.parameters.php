@@ -1,11 +1,13 @@
-<?
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+	die();
+}
+use Bitrix\Main\Localization\Loc;
 
-$arTemplateParameters = array(
+$arTemplateParameters = [
 	"TAG_TITLE" => [
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_TAG_TITLE"),
+		"NAME" => Loc::getMessage('COACHES_LIST_TAG_TITLE'),
 		"TYPE" => "LIST",
-		"MULTIPLE" => "N",
 		"VALUES" => [
 			"2" => "<h2>",
 			"3" => "<h3>",
@@ -13,32 +15,6 @@ $arTemplateParameters = array(
 			"5" => "<h5>",
 			"6" => "<h6>"
 		],
-		"DEFAULT" => "1",
+		"DEFAULT" => "2",
 	],
-	"TAG_LIST" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_TAG_LIST"),
-		"TYPE" => "STRING",
-		"DEFAULT" => "",
-	),
-	"DISPLAY_DATE" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_DATE"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-	"DISPLAY_NAME" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_NAME"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-	"DISPLAY_PICTURE" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_PICTURE"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-	"DISPLAY_PREVIEW_TEXT" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_TEXT"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-);
-?>
+];

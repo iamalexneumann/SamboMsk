@@ -1,11 +1,13 @@
-<?
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+	die();
+}
+use Bitrix\Main\Localization\Loc;
 
-$arTemplateParameters = array(
+$arTemplateParameters = [
 	"TAG_TITLE" => [
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_TAG_TITLE"),
+		"NAME" => Loc::getMessage('ARTICLES_LIST_TAG_TITLE'),
 		"TYPE" => "LIST",
-		"MULTIPLE" => "N",
 		"VALUES" => [
 			"2" => "<h2>",
 			"3" => "<h3>",
@@ -13,22 +15,21 @@ $arTemplateParameters = array(
 			"5" => "<h5>",
 			"6" => "<h6>"
 		],
-		"DEFAULT" => "1",
+		"DEFAULT" => "2",
 	],
-	"TAG_LIST" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_TAG_LIST"),
+	"TAG_LIST" => [
+		"NAME" => Loc::getMessage('ARTICLES_LIST_TAG_LIST'),
 		"TYPE" => "STRING",
 		"DEFAULT" => "",
-	),
-	"SHOW_CTA_FORM" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_SHOW_CTA_FORM"),
+	],
+	"SHOW_CTA_FORM" => [
+		"NAME" => Loc::getMessage('ARTICLES_LIST_SHOW_CTA_FORM'),
 		"TYPE" => "CHECKBOX",
 		"DEFAULT" => "N",
-	),
+	],
 	"CTA_FORM_POSITION" => [
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_CTA_FORM_POSITION"),
+		"NAME" => Loc::getMessage('ARTICLES_LIST_CTA_FORM_POSITION'),
 		"TYPE" => "LIST",
-		"MULTIPLE" => "N",
 		"VALUES" => [
 			"1" => "1",
 			"2" => "2",
@@ -39,25 +40,9 @@ $arTemplateParameters = array(
 		],
 		"DEFAULT" => "2",
 	],
-	"DISPLAY_DATE" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_DATE"),
+	"DISPLAY_DATE" => [
+		"NAME" => Loc::getMessage('ARTICLES_LIST_DISPLAY_DATE'),
 		"TYPE" => "CHECKBOX",
 		"DEFAULT" => "Y",
-	),
-	"DISPLAY_NAME" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_NAME"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-	"DISPLAY_PICTURE" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_PICTURE"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-	"DISPLAY_PREVIEW_TEXT" => Array(
-		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_TEXT"),
-		"TYPE" => "CHECKBOX",
-		"DEFAULT" => "Y",
-	),
-);
-?>
+	],
+];
