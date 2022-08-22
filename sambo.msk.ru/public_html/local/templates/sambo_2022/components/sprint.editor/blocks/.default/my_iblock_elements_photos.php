@@ -1,4 +1,11 @@
 <?php
+/**
+ * @var array $block
+ * @var CMain $APPLICATION
+ */
+use Bitrix\Main\Localization\Loc;
+Loc::loadLanguageFile(__FILE__);
+
 $elements = Sprint\Editor\Blocks\IblockElements::getList(
     $block, [
         'NAME',
@@ -11,8 +18,8 @@ $elements = Sprint\Editor\Blocks\IblockElements::getList(
     <?php
     foreach ($elements as $aItem):
         $image_arr = [
-            "file" => [
-                  "ID" => $aItem['PREVIEW_PICTURE'],
+            'file' => [
+                'ID' => $aItem['PREVIEW_PICTURE'],
             ]
         ];
         $image = Sprint\Editor\Blocks\Image::getImage(
@@ -26,7 +33,7 @@ $elements = Sprint\Editor\Blocks\IblockElements::getList(
     <div class="col-lg-4 col-md-6 articles-list-vertical__col">
         <figure class="article-vertical photos-article">
             <a href="<?= $aItem['DETAIL_PAGE_URL']; ?>" class="article-vertical__img-link" rel="nofollow">
-                <img src="<?= $image["SRC"]; ?>"
+                <img src="<?= $image['SRC']; ?>"
                      class="article-vertical__img"
                      alt="<?= $aItem['NAME']; ?>">
             </a>
@@ -37,7 +44,7 @@ $elements = Sprint\Editor\Blocks\IblockElements::getList(
                     </div>
                 </div>
                 <a href="<?= $aItem['DETAIL_PAGE_URL']; ?>" class="btn btn-primary article-vertical__btn" rel="nofollow">
-                    Смотреть альбом <i class="fa-solid fa-angle-right article-vertical__btn-icon"></i>
+                    <?= Loc::getMessage('MY_IBLOCK_ELEMENTS_PHOTOS_MORE_BTN'); ?> <i class="fa-solid fa-angle-right article-vertical__btn-icon"></i>
                 </a>
             </div>
             <figcaption class="d-none"><?= $aItem['NAME']; ?></figcaption>

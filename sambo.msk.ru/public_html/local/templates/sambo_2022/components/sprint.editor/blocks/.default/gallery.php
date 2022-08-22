@@ -1,7 +1,8 @@
 <?php
 /**
- * @var $block array
- * @var $this SprintEditorBlocksComponent
+ * @var array $block
+ * @var CMain $APPLICATION
+ * @var CBitrixComponentTemplate $this
  */
 
 $images = Sprint\Editor\Blocks\Gallery::getImages(
@@ -19,8 +20,8 @@ $images = Sprint\Editor\Blocks\Gallery::getImages(
 ?>
 <?php
 if (!empty($images)):
-    $this->registerCss(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.css');
-    $this->registerJs(SITE_TEMPLATE_PATH . '/libs/fancyapps/fancybox.umd.js');
+    $this->registerCss('/local/js/ui/fancybox/fancybox.css');
+    $this->registerJs('/local/js/ui/fancybox/fancybox.umd.js');
 ?>
 <figure role="group" class="photos-list">
     <div class="row photos-list__row">

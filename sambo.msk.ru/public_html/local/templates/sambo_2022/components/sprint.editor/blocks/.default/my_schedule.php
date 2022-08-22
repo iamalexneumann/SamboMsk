@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var array $block
+ * @var CMain $APPLICATION
+ */
+?>
 <?php if ($block['rows']): ?>
 <div class="col-lg-6">
     <div class="table-responsive schedule-section__table-wrapper">
@@ -6,7 +12,7 @@
             <caption class="schedule-table__caption"><?= $block['table_caption']; ?></caption>
             <?php endif; ?>
             <tbody>
-            <?php foreach ($block['rows'] as $cols): ?>
+                <?php foreach ($block['rows'] as $cols): ?>
                 <tr class="schedule-table__tr">
                     <?php
                     foreach ($cols as $col_key =>$col):
@@ -17,19 +23,19 @@
                         } else {
                             $col_tag = 'td';
                         }
-                        ?>
-                        <<?= $col_tag; ?>
-                            class="schedule-table__<?= $col_tag; ?>"
-                            <?php if ($col_tag === 'th'): ?> scope="row"<?php endif; ?>
-                            <?php if ($col['style']): ?> style="<?= $col['style']; ?>"<?php endif; ?>
-                            <?php if ($col['colspan']): ?> colspan="<?= $col['colspan']; ?>"<?php endif; ?>
-                            <?php if ($col['rowspan']): ?> rowspan="<?= $col['rowspan']; ?>"<?php endif; ?>
-                        >
-                            <?= str_replace('; ', '<br>', $col['text']); ?>
-                        </<?= $col_tag; ?>>
+                    ?>
+                    <<?= $col_tag; ?>
+                        class="schedule-table__<?= $col_tag; ?>"
+                        <?php if ($col_tag === 'th'): ?> scope="row"<?php endif; ?>
+                        <?php if ($col['style']): ?> style="<?= $col['style']; ?>"<?php endif; ?>
+                        <?php if ($col['colspan']): ?> colspan="<?= $col['colspan']; ?>"<?php endif; ?>
+                        <?php if ($col['rowspan']): ?> rowspan="<?= $col['rowspan']; ?>"<?php endif; ?>
+                    >
+                        <?= str_replace('; ', '<br>', $col['text']); ?>
+                    </<?= $col_tag; ?>>
                     <?php endforeach; ?>
                 </tr>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>

@@ -1,4 +1,9 @@
 <?php
+/**
+ * @var array $block
+ * @var CMain $APPLICATION
+ */
+
 $image = Sprint\Editor\Blocks\Image::getImage(
     $block, [
         'width'  => 1024,
@@ -9,7 +14,10 @@ $image = Sprint\Editor\Blocks\Image::getImage(
 );
 ?>
 <?php if ($image): ?>
-    <div class="card">
-        <img alt="<?= $image['DESCRIPTION'] ?>" src="<?= $image['SRC'] ?>">
-    </div>
+<figure class="card">
+    <img alt="<?= $image['DESCRIPTION'] ?>" src="<?= $image['SRC'] ?>">
+    <?php if ($image['DESCRIPTION']): ?>
+    <figcaption class="float-block__figcaption"><?= $image['DESCRIPTION']; ?></figcaption>
+    <?php endif; ?>
+</figure>
 <?php endif; ?>

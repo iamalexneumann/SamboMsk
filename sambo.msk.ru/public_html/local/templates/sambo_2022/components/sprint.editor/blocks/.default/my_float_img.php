@@ -1,4 +1,9 @@
 <?php
+/**
+ * @var array $block
+ * @var CMain $APPLICATION
+ */
+
 $image_lqip = Sprint\Editor\Blocks\Image::getImage(
     $block, [
         'width'  => 100,
@@ -6,6 +11,7 @@ $image_lqip = Sprint\Editor\Blocks\Image::getImage(
         'exact'  => 0,
     ]
 );
+
 $image = Sprint\Editor\Blocks\Image::getImage(
     $block, [
         'width'  => 500,
@@ -18,7 +24,7 @@ $image = Sprint\Editor\Blocks\Image::getImage(
 <?php if ($image): ?>
 <figure class="float-block <?= $block['css_class']; ?>">
     <img alt="<?= $image['DESCRIPTION']; ?>" class="lazyload blur-up" width="500"
-         src="<?= $image_lqip['SRC']; ?>" data-src="<?= $image['SRC']; ?>"/>
+         src="<?= $image_lqip['SRC']; ?>" data-src="<?= $image['SRC']; ?>">
     <?php if ($image['DESCRIPTION']): ?>
     <figcaption class="float-block__figcaption"><?= $image['DESCRIPTION']; ?></figcaption>
     <?php endif; ?>

@@ -1,4 +1,8 @@
-<?php /** @var $block array */
+<?php
+/**
+ * @var array $block
+ * @var CMain $APPLICATION
+ */
 
 use Sprint\Editor\Module;
 

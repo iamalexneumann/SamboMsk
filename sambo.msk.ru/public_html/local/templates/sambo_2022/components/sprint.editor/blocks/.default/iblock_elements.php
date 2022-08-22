@@ -1,5 +1,11 @@
-<?php /** @var $block array */ ?>
 <?php
+/**
+ * @var array $block
+ * @var CMain $APPLICATION
+ */
+use Bitrix\Main\Localization\Loc;
+Loc::loadLanguageFile(__FILE__);
+
 $elements = Sprint\Editor\Blocks\IblockElements::getList(
     $block,
     [
@@ -9,7 +15,7 @@ $elements = Sprint\Editor\Blocks\IblockElements::getList(
 );
 ?>
 <div class="mt-5">
-    <div class="h2">Статьи по этой теме:</div>
+    <div class="h2"><?= Loc::getMessage('IBLOCK_ELEMENTS_TITLE'); ?></div>
     <ul class="custom-ul-list">
         <?php foreach ($elements as $aItem): ?>
         <li>
