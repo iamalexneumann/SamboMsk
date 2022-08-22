@@ -1,3 +1,9 @@
-$(document).ready(function(){
-    $('input[type=tel]').inputmask('+7 (999) 999-99-99');
+document.addEventListener('DOMContentLoaded', function () {
+    const arrInputsTel = document.querySelectorAll('input[type=tel]');
+
+    arrInputsTel.forEach(input => {
+        Inputmask({
+            'mask': '+7 (999) 999-99-99',
+        }).mask(input);
+    })
 });

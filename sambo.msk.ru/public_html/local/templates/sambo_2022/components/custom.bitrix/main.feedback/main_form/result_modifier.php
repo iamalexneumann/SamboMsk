@@ -1,14 +1,32 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
-if (CModule::IncludeModule("iblock")) {
-    $arSelect = array("NAME", "CODE");
-    $arFilter = array("IBLOCK_ID" => 4, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y");
+/**
+ * @var array $arParams
+ * @var array $arResult
+ * @global CMain $APPLICATION
+ * @global CUser $USER
+ * @global CDatabase $DB
+ * @var CBitrixComponentTemplate $this
+ */
+
+if (CModule::IncludeModule('iblock')) {
+    $arSelect = ['NAME', 'CODE'];
+    $arFilter = [
+        'IBLOCK_ID' => 4,
+        'ACTIVE_DATE' => 'Y',
+        'ACTIVE' => 'Y'
+    ];
 
     $elements = [];
 
-    $res = CIBlockElement::GetList(array("SORT" => "DESC"), $arFilter, false, false, $arSelect);
+    $res = CIBlockElement::GetList(
+        ['SORT' => 'DESC'],
+        $arFilter,
+        false,
+        false, $arSelect
+    );
 
     while ($ob_arr = $res->Fetch()) {
         $elements[] = $ob_arr;
@@ -18,9 +36,9 @@ if (CModule::IncludeModule("iblock")) {
 
     foreach ($elements as $element) {
         $halls_list[] = [
-            "NAME" => $element["NAME"],
-            "CODE" => $element["CODE"],
+            'NAME' => $element['NAME'],
+            'CODE' => $element['CODE'],
         ];
     }
-    $GLOBALS['halls_list'] = $halls_list;
+    $arResult['HALLS_LIST'] = $halls_list;
 }

@@ -1,13 +1,9 @@
 <?php
-$MESS['MFT_NAME'] = "Введите Ваше имя";
-$MESS['MFT_NAME_PLACEHOLDER'] = "Как Вас зовут?";
-$MESS['MFT_EMAIL'] = "Введите Ваш E-mail";
-$MESS['MFT_MESSAGE'] = "Введите текст сообщения";
-$MESS['MFT_USER_PHONE'] = "Введите Ваш номер телефона";
-$MESS['MFT_USER_PHONE_PLACEHOLDER'] = "+7 (___) ___-__-__";
-$MESS['MFT_HALLS_LIST'] = "Выберите зал";
-$MESS['MFT_CAPTCHA'] = "Защита от автоматических сообщений";
-$MESS['MFT_CAPTCHA_CODE'] = "Введите слово на картинке";
-$MESS['MFT_HALLS_LIST_ARIA_LABEL'] = "Выбор зала";
-$MESS['MFT_MODAL_SUBMIT'] = "Заказать звонок";
-$MESS['MFT_MODAL_PRIVACY_POLICY_CHECKBOX_TEXT'] = 'Нажимая кнопку "' . $MESS['MFT_MODAL_SUBMIT'] . '", я соглашаюсь с <a href="/politika-konfidentsialnosti/" class="main-form__privacy-link">Политикой конфиденциальности</a>';
+$MESS['MODAL_FORM_NAME'] = 'Введите Ваше имя';
+$MESS['MODAL_FORM_NAME_PLACEHOLDER'] = 'Как Вас зовут?';
+$MESS['MODAL_FORM_EMAIL'] = 'Введите Ваш E-mail';
+$MESS['MODAL_FORM_MESSAGE'] = 'Введите текст сообщения';
+$MESS['MODAL_FORM_USER_PHONE'] = 'Введите Ваш номер телефона';
+$MESS['MODAL_FORM_USER_PHONE_PLACEHOLDER'] = '+7 (___) ___-__-__';
+$MESS['MODAL_FORM_SUBMIT_BTN_TEXT'] = 'Заказать звонок';
+$MESS['MODAL_FORM_PRIVACY_POLICY_CHECKBOX_TEXT'] = 'Нажимая кнопку "' . $MESS['MODAL_FORM_SUBMIT_BTN_TEXT'] . '", я соглашаюсь с <a href="/politika-konfidentsialnosti/" class="MODAL-form__privacy-link">Политикой конфиденциальности</a>';

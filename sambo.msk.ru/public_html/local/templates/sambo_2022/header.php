@@ -38,7 +38,6 @@ Loc::loadLanguageFile(__FILE__);
     use Bitrix\Main\Page\Asset;
     Extension::load(
         [
-            'jquery3',
             'ui.bootstrap5',
             'ui.fonts.font-awesome',
             'ui.fonts.opensans',

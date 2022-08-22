@@ -8,22 +8,19 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
  * @global CMain $APPLICATION
  * @global CUser $USER
  * @global CDatabase $DB
- * @var array $arLangMessages
  * @var CBitrixComponentTemplate $this
  * @var string $templateName
  * @var string $templateFile
  * @var string $templateFolder
- * @var string $parentTemplateFolder
  * @var string $componentPath
+ * @var string $epilogFile
  * @var array $templateData
  * @var CBitrixComponent $component
  */
-$this->setFrameMode(true);
-use Bitrix\Main\Localization\Loc;
+use Bitrix\Main\UI\Extension;
 
-if ($arParams['YANDEX_API_KEY']) {
-    $this->addExternalJS('https://api-maps.yandex.ru/2.1/?apikey=' . $arParams['YANDEX_API_KEY'] . '&lang=ru_RU');
-    echo '<div id="halls-list-map" class="yandex-map halls-list-map"></div>';
-} else {
-    echo Loc::getMessage('HALLS_LIST_YANDEX_ERROR_MESSAGE');
-}
+Extension::load(
+    [
+        'ui.inputmask',
+    ]
+);
