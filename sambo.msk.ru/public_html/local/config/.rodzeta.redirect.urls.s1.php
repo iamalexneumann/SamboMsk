@@ -222,4 +222,16 @@ return array (
     1 => '301',
     2 => '',
   ),
+  '/nashi-zaly/sambo-dzyudo-v-grad-moskovskom-utro/' => 
+  array (
+    0 => '/nashi-zaly/sambo-i-dzyudo-v-grad-moskovskom/',
+    1 => '301',
+    2 => '',
+  ),
+  '/nashi-zaly/sambo-i-dzyudo-v-novogireev/' => 
+  array (
+    0 => '/nashi-zaly/sambo-i-dzyudo-v-novogireevo-na-magnitogorskoy/',
+    1 => '301',
+    2 => '',
+  ),
 );

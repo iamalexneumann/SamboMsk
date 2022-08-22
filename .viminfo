@@ -34,18 +34,21 @@
 	sambo
 
 # File marks:
-'0  2361  2612  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
-'1  1  0  ~/table.sambo.msk.ru/public_html/web/.htaccess
-'2  27  0  ~/table.sambo.msk.ru/public_html/.htaccess
-'3  23  45  ~/table.sambo.msk.ru/public_html/web/.htaccess
-'4  5635  0  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
-'5  20  0  ~/table.sambo.msk.ru/public_html/PHP_errors.log
-'6  3  0  ~/table.sambo.msk.ru/public_html/web/.htaccess
-'7  25  0  ~/table.sambo.msk.ru/public_html/.htaccess
-'8  212  0  ~/table.sambo.msk.ru/public_html/web/log_2019-04-01_18-06-09.5988
-'9  6  0  ~/table.sambo.msk.ru/public_html/PHP_errors.log
+'0  51  0  ~/sambo.msk.ru/public_html/img.php
+'1  1  0  ~/sambo.msk.ru/public_html/image.php
+'2  2361  2612  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+'3  1  0  ~/table.sambo.msk.ru/public_html/web/.htaccess
+'4  27  0  ~/table.sambo.msk.ru/public_html/.htaccess
+'5  23  45  ~/table.sambo.msk.ru/public_html/web/.htaccess
+'6  5635  0  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+'7  20  0  ~/table.sambo.msk.ru/public_html/PHP_errors.log
+'8  3  0  ~/table.sambo.msk.ru/public_html/web/.htaccess
+'9  25  0  ~/table.sambo.msk.ru/public_html/.htaccess
 
 # Jumplist (newest first):
+-'  51  0  ~/sambo.msk.ru/public_html/img.php
+-'  1  0  ~/sambo.msk.ru/public_html/img.php
+-'  1  0  ~/sambo.msk.ru/public_html/image.php
 -'  2361  2612  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
 -'  2341  1941  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
 -'  2321  1185  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
@@ -120,8 +123,36 @@
 -'  7  28  ~/table.sambo.msk.ru/public_html/config/db.php
 -'  1  0  ~/table.sambo.msk.ru/public_html/config/db.php
 -'  7  28  ~/table.sambo.msk.ru/public_html/config/db.php
+-'  2361  2612  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+-'  2341  1941  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+-'  2321  1185  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+-'  1745  486  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+-'  5407  1517  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+-'  5251  0  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+-'  1  0  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+-'  1  0  ~/table.sambo.msk.ru/public_html/web/.htaccess
+-'  27  0  ~/table.sambo.msk.ru/public_html/.htaccess
+-'  1  0  ~/table.sambo.msk.ru/public_html/.htaccess
+-'  23  45  ~/table.sambo.msk.ru/public_html/web/.htaccess
+-'  5635  0  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+-'  4627  0  ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
+-'  20  0  ~/table.sambo.msk.ru/public_html/PHP_errors.log
+-'  1  0  ~/table.sambo.msk.ru/public_html/PHP_errors.log
+-'  3  0  ~/table.sambo.msk.ru/public_html/web/.htaccess
+-'  25  0  ~/table.sambo.msk.ru/public_html/.htaccess
+-'  212  0  ~/table.sambo.msk.ru/public_html/web/log_2019-04-01_18-06-09.5988
+-'  20  0  ~/table.sambo.msk.ru/public_html/web/log_2019-04-01_18-06-09.5988
+-'  1  0  ~/table.sambo.msk.ru/public_html/web/log_2019-04-01_18-06-09.5988
+-'  6  0  ~/table.sambo.msk.ru/public_html/PHP_errors.log
+-'  12  0  ~/table.sambo.msk.ru/public_html/web/index.php
 
 # History of marks within files (newest to oldest):
+
+> ~/sambo.msk.ru/public_html/img.php
+	"	51	0
+
+> ~/sambo.msk.ru/public_html/image.php
+	"	1	0
 
 > ~/table.sambo.msk.ru/public_html/web/log_2019-04-03_10-56-48.9082
 	"	2361	2612
