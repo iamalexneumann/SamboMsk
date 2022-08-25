@@ -26,8 +26,8 @@ foreach ($arResult as $arItem):
     if ($previousLevel && $arItem['DEPTH_LEVEL'] < $previousLevel) {
         echo str_repeat('</ul></li>', ($previousLevel - $arItem['DEPTH_LEVEL']));
     }
-    if ($arItem['IS_PARENT'] && $arItem["TEXT"] !== Loc::getMessage('MAIN_MENU_BLOG_LINK_NAME')):
-        if ($arItem['DEPTH_LEVEL'] == 1):
+    if ($arItem['IS_PARENT'] && $arItem['TEXT'] !== Loc::getMessage('MAIN_MENU_BLOG_LINK_NAME')):
+        if ($arItem['DEPTH_LEVEL'] === 1):
             $dropdown_label = \CUtil::translit(
                 $arItem['TEXT'],
                 'ru',
@@ -62,7 +62,7 @@ foreach ($arResult as $arItem):
 <?php
         endif;
     elseif ($arItem['PERMISSION'] > 'D'):
-        if ($arItem['DEPTH_LEVEL'] == 1):
+        if ($arItem['DEPTH_LEVEL'] === 1):
 ?>
     <li class="nav-item">
         <a<?php if (!($arItem['SELECTED'])): ?> href="<?= $arItem['LINK']; ?>"<?php endif; ?>
@@ -73,7 +73,7 @@ foreach ($arResult as $arItem):
     </li>
 <?php
             else:
-                if ($arItem["CHAIN"][0] === Loc::getMessage('MAIN_MENU_BLOG_LINK_NAME')) continue;
+                if ($arItem['CHAIN'][0] === Loc::getMessage('MAIN_MENU_BLOG_LINK_NAME')) continue;
 ?>
     <li>
         <a<?php if (!($arItem['SELECTED'])): ?> href="<?= $arItem['LINK']; ?>"<?php endif; ?>
@@ -84,7 +84,7 @@ foreach ($arResult as $arItem):
     </li>
 <?php
                     endif;
-    elseif ($arItem['DEPTH_LEVEL'] == 1):
+    elseif ($arItem['DEPTH_LEVEL'] === 1):
 ?>
     <li class="nav-item">
         <a class="nav-link disabled<?php if ($arItem['SELECTED']): ?> active<?php endif; ?>"

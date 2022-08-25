@@ -134,16 +134,18 @@ $att_coaches_list = $arResult['DISPLAY_PROPERTIES']['ATT_COACHES_LIST']['VALUE']
             ?>
             <div class="col-lg-4 col-6 photos-list__col">
                 <figure class="photos-list__item">
-                    <a href="<?= $att_photos['FILE_VALUE'][$key]['SRC']; ?>" data-fancybox="photos-list" class="photos-list__link"
+                    <a href="<?= $att_photos['FILE_VALUE'][$key]['SRC'] ?: $att_photos['FILE_VALUE']['SRC']; ?>"
+                       data-fancybox="photos-list" class="photos-list__link"
                         <?php if ($att_photo_description): ?>
-                            title="<?= $att_photo_description; ?>"
-                            data-caption="<?= $att_photo_description; ?>"
+                        title="<?= $att_photo_description; ?>"
+                        data-caption="<?= $att_photo_description; ?>"
                         <?php endif; ?>>
                         <img src="<?= $att_photos['PICTURE_LQIP'][$key]['SRC']; ?>"
                              data-src="<?= $att_photos['PICTURE'][$key]['SRC']; ?>"
                              alt="<?= $att_photo_description; ?>"
                              class="photos-list__img lazyload blur-up"
-                             width="<?= $att_photos['PICTURE'][$key]['WIDTH']; ?>" height="<?= $att_photos['PICTURE'][$key]['HEIGHT']; ?>">
+                             width="<?= $att_photos['PICTURE'][$key]['WIDTH']; ?>"
+                             height="<?= $att_photos['PICTURE'][$key]['HEIGHT']; ?>">
                     </a>
                     <?php if ($att_photo_description): ?>
                     <figcaption class="photos-list__item-figcaption"><?= $att_photo_description; ?></figcaption>
