@@ -84,7 +84,9 @@ $GLOBALS['HALLS_FILTER'] = [
 ];
 $GLOBALS['HALLS_SECTION_TITLE'] = Loc::getMessage('HALLS_SECTION_TITLE');
 $GLOBALS['HALLS_SECTION_SUBTITLE'] = Loc::getMessage('HALLS_SECTION_SUBTITLE') . ' ' . $linked_coach['NAME'];
-require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls.php');
+if (!empty(is_empty_iblock($GLOBALS['HALLS_FILTER']))) {
+    require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls.php');
+}
 ?>
 
 <div class="mb-50">

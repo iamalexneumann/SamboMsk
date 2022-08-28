@@ -107,6 +107,27 @@ function get_element_id_from_element_code (string $element_code):array
     return $elements;
 }
 
+/**
+ * Функция проверяет наличие элементов в инфоблоке по заданному фильтру
+ * @param array $filter Фильтр с параметрами
+ * @return array Массив элементов
+ */
+function is_empty_iblock (array $filter):array
+{
+    $elements_list = CIBlockElement::GetList(
+        [],
+        $filter,
+        false,
+        false,
+        ['ID'],
+    );
+    $elements = [];
+    while ($arr_elements = $elements_list->Fetch()) {
+        $elements = $arr_elements;
+    }
+    return $elements;
+}
+
 function get_img_name_from_cur_dir (string $CurDir):string
 {
     if ($CurDir === '/') {
