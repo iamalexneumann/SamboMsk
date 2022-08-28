@@ -80,6 +80,33 @@ function get_uf_from_section (int $iblock_id, string $section_code):array
     return [];
 }
 
+/**
+ * Функция возвращает массив с ID элемента через фильтрацию по его ELEMENT_CODE.
+ * @param string $element_code ELEMENT_CODE элемента инфоблока
+ * @return array Массив с ID элемента
+ */
+function get_element_id_from_element_code (string $element_code):array
+{
+    $elements_list = CIBlockElement::GetList(
+        [],
+        [
+            '=CODE' => $element_code,
+            'ACTIVE' => 'Y',
+        ],
+        false,
+        false,
+        [
+            'ID',
+            'NAME'
+        ],
+    );
+    $elements = [];
+    while ($arr_elements = $elements_list->Fetch()) {
+        $elements = $arr_elements;
+    }
+    return $elements;
+}
+
 function get_img_name_from_cur_dir (string $CurDir):string
 {
     if ($CurDir === '/') {

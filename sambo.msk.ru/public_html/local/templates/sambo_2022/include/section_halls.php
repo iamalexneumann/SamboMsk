@@ -12,7 +12,9 @@ use Bitrix\Main\Localization\Loc;
 <section class="main-section">
     <div class="container">
         <h2 class="main-section__title"><?= $GLOBALS['HALLS_SECTION_TITLE'] ?: Loc::getMessage('SECTION_HALLS_TITLE'); ?></h2>
-        <div class="main-section__subtitle"><?= Loc::getMessage('SECTION_HALLS_SUBTITLE'); ?></div>
+        <?php if ($GLOBALS['HALLS_SECTION_SUBTITLE'] !== ''): ?>
+        <div class="main-section__subtitle"><?= $GLOBALS['HALLS_SECTION_SUBTITLE'] ?: Loc::getMessage('SECTION_HALLS_SUBTITLE'); ?></div>
+        <?php endif; ?>
         <?php
         $APPLICATION->IncludeComponent(
             "bitrix:news.list",

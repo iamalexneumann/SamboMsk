@@ -18,6 +18,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
  * @var CBitrixComponent $component
  */
 $this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
 
 $APPLICATION->IncludeComponent(
     "bitrix:news.detail",
@@ -75,6 +76,16 @@ $APPLICATION->IncludeComponent(
     ),
     $component
 ); ?>
+
+<?php
+$linked_coach = get_element_id_from_element_code($arResult['VARIABLES']['ELEMENT_CODE']);
+$GLOBALS['HALLS_FILTER'] = [
+    'PROPERTY_ATT_COACHES_LIST' => $linked_coach['ID'],
+];
+$GLOBALS['HALLS_SECTION_TITLE'] = Loc::getMessage('HALLS_SECTION_TITLE');
+$GLOBALS['HALLS_SECTION_SUBTITLE'] = Loc::getMessage('HALLS_SECTION_SUBTITLE') . ' ' . $linked_coach['NAME'];
+require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_halls.php');
+?>
 
 <div class="mb-50">
     <?php require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/news_detail_block_share.php'); ?>
