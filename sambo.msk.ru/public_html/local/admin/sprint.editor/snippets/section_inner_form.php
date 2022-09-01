@@ -2,12 +2,14 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+global $APPLICATION;
 use Bitrix\Main\Localization\Loc;
 
 $siteparam_main_phone = \COption::GetOptionString( 'askaron.settings', 'UF_MAIN_PHONE') ?? '';
 $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main_phone), 1);
 ?>
-<div class="inner-form-section">
+<div class="clearfix"></div>
+<div class="inner-form-section mt-4 mb-4">
     <div class="inner-form-section__content">
         <div class="inner-form-section__text">
             <?= Loc::getMessage('SECTION_INNER_FORM_BEFORE_TEXT'); ?>
