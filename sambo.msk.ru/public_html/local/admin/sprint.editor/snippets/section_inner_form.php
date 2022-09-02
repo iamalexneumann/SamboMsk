@@ -2,6 +2,9 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+/**
+ * @var CBitrixComponent $component
+ */
 global $APPLICATION;
 use Bitrix\Main\Localization\Loc;
 
@@ -40,7 +43,10 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
                     "COMPONENT_TEMPLATE" => "modal_form",
                     "REDIRECT_URL" => "/stranitsa-blagodarnosti.php",
                 ),
-                false
+                $component,
+                Array(
+                    "HIDE_ICONS" => "Y"
+                )
             ); ?>
         </div>
     </div>
