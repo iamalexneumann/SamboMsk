@@ -7,10 +7,10 @@
 
 $images = Sprint\Editor\Blocks\Gallery::getImages(
     $block, [
-    'width'  => 100,
-    'height' => 100,
-    'exact'  => 1,
-],
+        'width'  => 100,
+        'height' => 100,
+        'exact'  => 1,
+    ],
     [
         'width'  => 500,
         'height' => 500,
@@ -32,11 +32,11 @@ if (!empty($images)):
                     <img alt="<?= $image['DESCRIPTION']; ?>" src="<?= $image['SRC']; ?>"  width="500" height="500"
                          class="photos-list__img blur-up lazyload" data-src="<?= $image['DETAIL_SRC']; ?>">
                     <?php if (!empty($image['DESCRIPTION'])): ?>
-                    <figcaption class="photos-list__item-figcaption">
-                        <?= $image['DESCRIPTION']; ?>
-                    </figcaption>
-                    <? endif; ?>
                 </a>
+                <figcaption class="photos-list__item-figcaption">
+                    <?= $image['DESCRIPTION']; ?>
+                </figcaption>
+                <?php endif; ?>
             </figure>
         </div>
         <?php endforeach; ?>
