@@ -27,6 +27,8 @@ $att_features = $arResult['DISPLAY_PROPERTIES']['ATT_FEATURES'];
 $att_photos = $arResult['DISPLAY_PROPERTIES']['ATT_PHOTOS'] ?? '';
 $att_videos = $arResult['DISPLAY_PROPERTIES']['ATT_VIDEOS'] ?? '';
 $att_coaches_list = $arResult['DISPLAY_PROPERTIES']['ATT_COACHES_LIST']['VALUE'] ?? '';
+$att_contacts_photos = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_PHOTOS'] ?? '';
+$att_contacts_video = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO'] ?? '';
 ?>
 <div class="first-screen"
     <?php if ($arResult['PICTURE']): ?> style="background: linear-gradient(90deg, #00369E 0%, rgba(6, 82, 221, 0) 85%),
@@ -350,6 +352,68 @@ $att_coaches_list = $arResult['DISPLAY_PROPERTIES']['ATT_COACHES_LIST']['VALUE']
             echo Loc::getMessage('HALLS_DETAIL_YANDEX_ERROR_MESSAGE');
         endif;
         ?>
+        <?php
+        if ($arResult['ATT_CONTACTS_PHOTOS_COUNT'] > 1 || $att_contacts_video):
+            $att_contacts_section_title = Loc::getMessage('HALLS_DETAIL_SECTION_CONTACTS_TITLE') .
+                ' ' .
+                custom_lcfirst($arResult['NAME']);
+        ?>
+        <div class="section-contacts">
+            <h3 class="section-contacts__title"><?= $att_contacts_section_title; ?></h3>
+            <div class="row section-contacts__row">
+                <?php if ($arResult['ATT_CONTACTS_PHOTOS_COUNT'] > 1):  ?>
+                <figure role="group" class="<?php if ($att_contacts_video): ?>col-lg-6<?php else: ?>col<?php endif; ?> photos-list photos-list_contacts">
+                    <div class="row">
+                        <?php
+                        foreach ($att_contacts_photos['VALUE'] as $key => $att_contacts_photo):
+                            $att_contacts_photo_description = $att_contacts_photos['DESCRIPTION'][$key] ?? '';
+                        ?>
+                        <div class="col-6<?php if ((!$att_contacts_video)): ?> col-lg-3<?php endif; ?> photos-list__col">
+                            <figure class="photos-list__item">
+                                <a href="<?= $att_contacts_photos['FILE_VALUE'][$key]['SRC'] ?: $att_contacts_photos['FILE_VALUE']['SRC']; ?>"
+                                   data-fancybox="contacts-photos-list" class="photos-list__link"
+                                    <?php if ($att_contacts_photo_description): ?>
+                                    title="<?= $att_contacts_photo_description; ?>"
+                                    data-caption="<?= $att_contacts_photo_description; ?>"
+                                    <?php endif; ?>>
+                                    <img src="<?= $att_contacts_photos['PICTURE_LQIP'][$key]['SRC']; ?>"
+                                         data-src="<?= $att_contacts_photos['PICTURE'][$key]['SRC']; ?>"
+                                         alt="<?= $att_contacts_photo_description; ?>"
+                                         class="photos-list__img lazyload blur-up"
+                                         width="<?= $att_contacts_photos['PICTURE'][$key]['WIDTH']; ?>"
+                                         height="<?= $att_contacts_photos['PICTURE'][$key]['HEIGHT']; ?>">
+                                </a>
+                                <?php if ($att_contacts_photo_description): ?>
+                                <figcaption class="photos-list__item-figcaption"><?= $att_contacts_photo_description; ?></figcaption>
+                                <?php endif; ?>
+                            </figure>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <figcaption class="photos-list__main-figcaption"><?= $att_contacts_section_title . ' - ' . Loc::getMessage('HALLS_DETAIL_SECTION_CONTACTS_PHOTOS_FIGCAPTION'); ?></figcaption>
+                </figure>
+                <?php endif; ?>
+                <?php
+                if ($att_contacts_video):
+                    $att_contacts_video_description = $att_contacts_section_title .
+                        ' - ' .
+                        Loc::getMessage('HALLS_DETAIL_SECTION_CONTACTS_VIDEO_FIGCAPTION');
+                ?>
+                <div class="col-lg-6<?php if ($arResult['ATT_CONTACTS_PHOTOS_COUNT'] < 1): ?> offset-lg-3<?php endif; ?> section-contacts__col">
+                    <figure class="section-contacts__video contacts-video">
+                        <div class="adaptive-video-container">
+                            <iframe data-src="https://www.youtube.com/embed/<?= $att_contacts_video['YOUTUBE_ID']; ?>" class="lazyload contacts-video__iframe"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    title="<?= $att_contacts_video_description; ?>"
+                                    allowfullscreen></iframe>
+                        </div>
+                        <figcaption class="contacts-video__figcaption"><?= $att_contacts_video_description; ?></figcaption>
+                    </figure>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        <?php endif; ?>
     </div>
 </section>
 <?php endif; ?>

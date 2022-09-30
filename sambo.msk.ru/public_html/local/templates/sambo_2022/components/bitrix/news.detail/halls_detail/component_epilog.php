@@ -27,7 +27,7 @@ if ($arResult['USE_MASONRY']) {
     );
 }
 
-if ($arResult['ATT_PHOTOS_COUNT'] > 1) {
+if ($arResult['ATT_PHOTOS_COUNT'] > 1 || $arResult['ATT_CONTACTS_PHOTOS_COUNT'] > 1) {
     Extension::load(
         [
             'ui.fancybox',

@@ -11,3 +11,6 @@ $MESS['HALLS_DETAIL_SCHEDULE_SECTION_TITLE'] = 'Расписание трени�
 $MESS['HALLS_DETAIL_MAP_SECTION_TITLE'] = 'телефоны и адрес зала';
 $MESS['HALLS_DETAIL_YANDEX_ERROR_MESSAGE'] = '<div class="alert alert-danger" role="alert">Добавьте ключ API Яндекс.Карты</div>';
 $MESS['HALLS_DETAIL_MAP_SECTION_BTN_TEXT'] = 'Записаться в зал';
+$MESS['HALLS_DETAIL_SECTION_CONTACTS_TITLE'] = 'Как добраться до секции';
+$MESS['HALLS_DETAIL_SECTION_CONTACTS_PHOTOS_FIGCAPTION'] = 'фото';
+$MESS['HALLS_DETAIL_SECTION_CONTACTS_VIDEO_FIGCAPTION'] = 'видео';

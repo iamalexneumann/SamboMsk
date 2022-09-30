@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     navbarToggler.addEventListener('click', function () {
         const navbarTogglerIcon = navbarToggler.querySelector('.navbar-toggler__icon .fa-solid');
 
-        console.log(navbarTogglerIcon);
         if (navbarTogglerIcon.classList.contains('fa-bars')) {
             navbarTogglerIcon.classList.remove('fa-bars');
             navbarTogglerIcon.classList.add('fa-xmark');

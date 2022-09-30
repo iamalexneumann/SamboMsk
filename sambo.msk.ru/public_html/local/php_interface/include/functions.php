@@ -11,7 +11,7 @@ function convert_space_to_url_code (string $input_string):string
 
 function get_youtube_id (string $url):string
 {
-    $regex_pattern = '%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i';
+    $regex_pattern = '/(?:https?:)?(?:\/\/)?(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\S*?[^\w\s-])([\w-]{11})(?=[^\w-]|$)(?![?=&+%\w.-]*(?:[\'"][^<>]*>|<\/a>))[?=&+%\w.-]*/';
     preg_match($regex_pattern, $url, $mathes);
     return $mathes[1];
 }
@@ -126,6 +126,30 @@ function is_empty_iblock (array $filter):array
         $elements = $arr_elements;
     }
     return $elements;
+}
+
+/**
+ * Функция, переводящая первый символ строки в нижний регистр. Стандартная функция lcfirst() не работает для кириллицы.
+ * @param string $str Входящая строка
+ * @param string $e Кодировка (по-умолчанию utf-8)
+ * @return string Преобразованная строка с первым строчным символом.
+ */
+function custom_lcfirst (string $str, string $e = 'utf-8'):string
+{
+    $fc = mb_strtolower(mb_substr($str, 0, 1, $e), $e);
+    return $fc . mb_substr($str, 1, mb_strlen($str, $e), $e);
+}
+
+/**
+ * Функция, переводящая первый символ строки в верхний регистр. Стандартная функция ucfirst() не работает для кириллицы.
+ * @param string $str Входящая строка
+ * @param string $e Кодировка (по-умолчанию utf-8)
+ * @return string Преобразованная строка с первым заглавным символом.
+ */
+function custom_ucfirst (string $str, string $e = 'utf-8'):string
+{
+    $fc = mb_strtoupper(mb_substr($str, 0, 1, $e), $e);
+    return $fc . mb_substr($str, 1, mb_strlen($str, $e), $e);
 }
 
 function get_img_name_from_cur_dir (string $CurDir):string

@@ -92,6 +92,49 @@ foreach ($att_photos['VALUE'] as $key => $att_photo) {
     }
 }
 
+$att_contacts_photos = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_PHOTOS'];
+$component->arResult['ATT_CONTACTS_PHOTOS_COUNT'] = count($att_contacts_photos['VALUE']);
+
+foreach ($att_contacts_photos['VALUE'] as $key => $att_contacts_photo) {
+    if ($att_contacts_photo) {
+        $att_contacts_photoFileTmp = \CFile::ResizeImageGet(
+            $att_contacts_photo,
+            [
+                "width" => 300,
+                "height" => 400,
+            ],
+            BX_RESIZE_IMAGE_PROPORTIONAL,
+            true
+        );
+
+        $att_contacts_photoLqipFileTmp = \CFile::ResizeImageGet(
+            $att_contacts_photo,
+            [
+                "width" => 75,
+                "height" => 100,
+            ],
+            BX_RESIZE_IMAGE_PROPORTIONAL,
+            true
+        );
+
+        if ($att_contacts_photoFileTmp['src']) {
+            $att_contacts_photoFileTmp['src'] = \CUtil::GetAdditionalFileURL($att_contacts_photoFileTmp['src'], true);
+        }
+
+        if ($att_contacts_photoLqipFileTmp['src']) {
+            $att_contacts_photoLqipFileTmp['src'] = \CUtil::GetAdditionalFileURL($att_contacts_photoLqipFileTmp['src'], true);
+        }
+
+        $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_PHOTOS']['PICTURE'][$key] = array_change_key_case($att_contacts_photoFileTmp, CASE_UPPER);
+        $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_PHOTOS']['PICTURE_LQIP'][$key] = array_change_key_case($att_contacts_photoLqipFileTmp, CASE_UPPER);
+    }
+}
+
+$att_contacts_video = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO'];
+if ($att_contacts_video) {
+    $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO']['YOUTUBE_ID'] = get_youtube_id($att_contacts_video['VALUE']);
+}
+
 $ogPictureFileTmp = \CFile::ResizeImageGet(
     $arResult['DETAIL_PICTURE'],
     [
