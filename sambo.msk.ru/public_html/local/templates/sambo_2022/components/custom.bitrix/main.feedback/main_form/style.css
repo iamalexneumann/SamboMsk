@@ -43,13 +43,13 @@
     background: transparent;
 }
 
-/*.main-form .main-form__form-control:focus {*/
-/*    color: #ffffff;*/
-/*}*/
+.main-form .main-form__form-control:focus {
+    color: #ffffff;
+}
 
-/*.main-form .main-form__form-control[readonly]:focus {*/
-/*    color: #ffffff;*/
-/*}*/
+.main-form .main-form__form-control[readonly]:focus {
+    color: #ffffff;
+}
 
 .main-form .main-form__form-select {
     background-color: transparent;
