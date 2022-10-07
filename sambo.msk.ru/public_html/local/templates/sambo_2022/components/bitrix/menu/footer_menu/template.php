@@ -31,7 +31,7 @@ foreach ($arResult as $arItem):
         if ($arItem['PERMISSION'] > "D"):
             if ($arItem['DEPTH_LEVEL'] === 1): ?>
     <li class="footer-menu__item">
-        <a<?php if ($arItem['SELECTED'] !== true): ?> href="<?= $arItem['LINK']; ?><?php endif; ?>"
+        <a<?php if ($arItem['SELECTED'] !== true): ?> href="<?= $arItem['LINK']; ?>"<?php endif; ?>
            class="footer-menu__link<?php if ($arItem['SELECTED']): ?> footer-menu__link_active<?php endif; ?>"><?= $arItem['TEXT']; ?></a>
     </li>
 <?php

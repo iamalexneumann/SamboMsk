@@ -59,26 +59,26 @@ Loc::loadLanguageFile(__FILE__);
     <meta name="msapplication-config" content="<?= SITE_TEMPLATE_PATH; ?>/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <!-- Twitter  -->
-    <meta name="twitter:card" content="summary_large_image" />
-<!--    <meta name="twitter:site" content="@" />-->
-    <meta name="twitter:title" content="<?php $APPLICATION->ShowTitle(); ?>" />
-    <meta name="twitter:url" content="https://<?= SITE_SERVER_NAME . $CurDir; ?>" />
-    <meta name="twitter:domain" content="<?= SITE_SERVER_NAME; ?>" />
-    <meta name="twitter:description" content="<?php $APPLICATION->ShowProperty('description'); ?>" />
-    <meta name="twitter:image" content="https://<?= SITE_SERVER_NAME . SITE_TEMPLATE_PATH . '/img/og-media/' . get_img_name_from_cur_dir($CurDir) ?>?date=<?= date("Ymd"); ?>" />
+    <meta name="twitter:card" content="summary_large_image">
+<!--    <meta name="twitter:site" content="@">-->
+    <meta name="twitter:title" content="<?= htmlspecialchars($APPLICATION->GetProperty('title')); ?>">
+    <meta name="twitter:url" content="https://<?= SITE_SERVER_NAME . $CurDir; ?>">
+    <meta name="twitter:domain" content="<?= SITE_SERVER_NAME; ?>">
+    <meta name="twitter:description" content="<?= htmlspecialchars($APPLICATION->GetProperty('description')); ?>">
+    <meta name="twitter:image" content="https://<?= SITE_SERVER_NAME . SITE_TEMPLATE_PATH . '/img/og-media/' . get_img_name_from_cur_dir($CurDir) ?>?date=<?= date("Ymd"); ?>">
     <!-- OG  -->
     <meta property="article:author" content="https://<?= SITE_SERVER_NAME; ?>">
     <?php $APPLICATION->ShowViewContent('META_ARTICLE_PUBLISHED_TIME'); ?>
     <?php $APPLICATION->ShowViewContent('META_ARTICLE_MODIFIED_TIME'); ?>
     <?php $APPLICATION->ShowViewContent('META_ARTICLE_SECTION'); ?>
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="<?php $APPLICATION->ShowTitle(); ?>" />
-    <meta property="og:url" content="https://<?= SITE_SERVER_NAME . $CurDir; ?>" />
-    <meta property="og:image" content="https://<?= SITE_SERVER_NAME . SITE_TEMPLATE_PATH . '/img/og-media/' . get_img_name_from_cur_dir($CurDir) ?>?date=<?= date("Ymd"); ?>" />
-    <meta property="og:site_name" content="<?= $siteparam_site_name; ?>" />
-    <meta property="og:image:width" content="968" />
-    <meta property="og:image:height" content="504" />
-    <meta property="og:description" content="<?php $APPLICATION->ShowProperty('description'); ?>" />
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="<?= htmlspecialchars($APPLICATION->GetProperty('title')); ?>">
+    <meta property="og:url" content="https://<?= SITE_SERVER_NAME . $CurDir; ?>">
+    <meta property="og:image" content="https://<?= SITE_SERVER_NAME . SITE_TEMPLATE_PATH . '/img/og-media/' . get_img_name_from_cur_dir($CurDir) ?>?date=<?= date("Ymd"); ?>">
+    <meta property="og:site_name" content="<?= $siteparam_site_name; ?>">
+    <meta property="og:image:width" content="968">
+    <meta property="og:image:height" content="504">
+    <meta property="og:description" content="<?= htmlspecialchars($APPLICATION->GetProperty('description')); ?>">
 </head>
 <body id="body-area">
     <?= $siteparam_section_body_before; ?>
