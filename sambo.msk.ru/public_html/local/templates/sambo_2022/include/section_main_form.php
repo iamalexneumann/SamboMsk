@@ -43,6 +43,8 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
                                 0 => "NAME",
                                 1 => "USER_PHONE",
                                 2 => "HALLS_LIST",
+                                3 => "AGE",
+                                4 => "SPORT",
                             ),
                             "USE_CAPTCHA" => "N",
                             "COMPONENT_TEMPLATE" => "main_form",

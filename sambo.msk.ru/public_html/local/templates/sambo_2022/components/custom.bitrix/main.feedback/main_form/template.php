@@ -115,6 +115,30 @@ endif;
     <?php endif; ?>
 
     <div class="main-form__item">
+        <label for="age-<?= $six_digit_random_number; ?>" class="form-label main-form__label">
+            <?= Loc::getMessage('MAIN_FORM_AGE'); ?>:
+            <?php if(empty($arParams['REQUIRED_FIELDS']) || in_array('AGE', $arParams['REQUIRED_FIELDS'])): ?>
+            <span class="main-form__require-star">*</span>
+            <?php endif; ?>
+        </label>
+        <input type="text" name="AGE" placeholder="<?= Loc::getMessage('MAIN_FORM_AGE_PLACEHOLDER'); ?>"
+               class="form-control main-form__form-control" id="age-<?= $six_digit_random_number; ?>"
+            <?php if(empty($arParams['REQUIRED_FIELDS']) || in_array('AGE', $arParams['REQUIRED_FIELDS'])): ?> required<?php endif; ?>>
+    </div>
+
+    <div class="main-form__item">
+        <label for="sport-<?= $six_digit_random_number; ?>" class="form-label main-form__label">
+            <?= Loc::getMessage('MAIN_FORM_SPORT'); ?>:
+            <?php if(empty($arParams['REQUIRED_FIELDS']) || in_array('SPORT', $arParams['REQUIRED_FIELDS'])): ?>
+            <span class="main-form__require-star">*</span>
+            <?php endif; ?>
+        </label>
+        <input type="text" name="SPORT" placeholder="<?= Loc::getMessage('MAIN_FORM_SPORT_PLACEHOLDER'); ?>"
+               class="form-control main-form__form-control" id="sport-<?= $six_digit_random_number; ?>"
+            <?php if(empty($arParams['REQUIRED_FIELDS']) || in_array('SPORT', $arParams['REQUIRED_FIELDS'])): ?> required<?php endif; ?>>
+    </div>
+
+    <div class="main-form__item">
         <div class="form-check main-form__form-check">
             <input class="form-check-input main-form__check-input" type="checkbox" id="privacy-policy-<?= $six_digit_random_number; ?>" checked required>
             <label class="form-check-label main-form__check-label" for="privacy-policy-<?= $six_digit_random_number; ?>">
