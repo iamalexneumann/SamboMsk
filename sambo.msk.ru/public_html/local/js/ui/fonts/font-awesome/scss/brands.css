@@ -1,0 +1,46 @@
+/*
+Error: Invalid CSS after "...esome 6 Brands'": expected "{", was ";"
+        on line 10 of brands.scss
+
+5:  *\/
+6: @import 'functions';
+7: @import 'variables';
+8: 
+9: :root, :host {
+10:   --#{$fa-css-prefix}-style-family-brands: 'Font Awesome 6 Brands';
+11:   --#{$fa-css-prefix}-font-brands: normal 400 1em/1 'Font Awesome 6 Brands';
+12: }
+13: 
+14: @font-face {
+15:   font-family: 'Font Awesome 6 Brands';
+
+Backtrace:
+brands.scss:10
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:1179:in `expected'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:1115:in `expected'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:1110:in `tok!'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:655:in `block'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:725:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:675:in `block_child'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:664:in `block_contents'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:656:in `block'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:649:in `ruleset'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:674:in `block_child'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:667:in `block_contents'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:126:in `stylesheet'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:42:in `parse'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/engine.rb:403:in `_to_tree'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/exec/sass_scss.rb:412:in `run'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.6.0/gems/sass-4.0.0.alpha.1/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...esome 6 Brands'\": expected \"{\", was \";\"\A         on line 10 of brands.scss\A \A 5:  */\A 6: @import 'functions';\A 7: @import 'variables';\A 8: \A 9: :root, :host {\A 10:   --#{$fa-css-prefix}-style-family-brands: 'Font Awesome 6 Brands';\A 11:   --#{$fa-css-prefix}-font-brands: normal 400 1em/1 'Font Awesome 6 Brands';\A 12: }\A 13: \A 14: @font-face {\A 15:   font-family: 'Font Awesome 6 Brands';"; }
