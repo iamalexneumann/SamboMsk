@@ -55,7 +55,9 @@ foreach ($att_videos['VALUE'] as $key => $att_video) {
 }
 
 $att_photos = $arResult['DISPLAY_PROPERTIES']['ATT_PHOTOS'];
-$component->arResult['ATT_PHOTOS_COUNT'] = count($att_photos['VALUE']);
+if ($att_photos) {
+    $component->arResult['ATT_PHOTOS_COUNT'] = count($att_photos['VALUE']);
+}
 
 foreach ($att_photos['VALUE'] as $key => $att_photo) {
     if ($att_photo) {
@@ -93,7 +95,9 @@ foreach ($att_photos['VALUE'] as $key => $att_photo) {
 }
 
 $att_contacts_photos = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_PHOTOS'];
-$component->arResult['ATT_CONTACTS_PHOTOS_COUNT'] = count($att_contacts_photos['VALUE']);
+if ($att_contacts_photos) {
+    $component->arResult['ATT_CONTACTS_PHOTOS_COUNT'] = count($att_contacts_photos['VALUE']);
+}
 
 foreach ($att_contacts_photos['VALUE'] as $key => $att_contacts_photo) {
     if ($att_contacts_photo) {
