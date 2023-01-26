@@ -44,6 +44,7 @@ $APPLICATION->SetTitle("Список залов детской школы сам
 			10 => "ATT_CONTACTS_PHOTOS",
             11 => "ATT_CONTACTS_VIDEO",
             12 => "ATT_YANDEX_MAP",
+            13 => "ATT_REVIEWS",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",

@@ -8,6 +8,7 @@ $MESS['HALLS_DETAIL_COACHES_SECTION_SUBTITLE'] = 'Педагогический �
 $MESS['HALLS_DETAIL_COACHES_SECTION_LINK_TEXT'] = 'Смотреть всех тренеров';
 $MESS['HALLS_DETAIL_PRICE_SECTION_TITLE'] = 'Стоимость тренировок';
 $MESS['HALLS_DETAIL_SCHEDULE_SECTION_TITLE'] = 'Расписание тренировок';
+$MESS['HALLS_REVIEWS_SECTION_TITLE'] = 'отзывы';
 $MESS['HALLS_DETAIL_MAP_SECTION_TITLE'] = 'телефоны и адрес зала';
 $MESS['HALLS_DETAIL_YANDEX_ERROR_MESSAGE'] = '<div class="alert alert-danger" role="alert">Добавьте ключ API Яндекс.Карты</div>';
 $MESS['HALLS_DETAIL_MAP_SECTION_BTN_TEXT'] = 'Записаться в зал';
@@ -17,6 +18,7 @@ $MESS['HALLS_DETAIL_SECTION_CONTACTS_VIDEO_FIGCAPTION'] = 'видео';
 
 $MESS['HALLS_DETAIL_MAIN_NAV_PRICE'] = 'Цены';
 $MESS['HALLS_DETAIL_MAIN_NAV_SCHEDULE'] = 'Расписание';
+$MESS['HALLS_DETAIL_MAIN_NAV_REVIEWS'] = 'Отзывы';
 $MESS['HALLS_DETAIL_MAIN_NAV_PHOTOS'] = 'Фото';
 $MESS['HALLS_DETAIL_MAIN_NAV_VIDEOS'] = 'Видео';
 $MESS['HALLS_DETAIL_MAIN_NAV_COACHES'] = 'Тренеры';

@@ -53,6 +53,11 @@ $att_contacts_video = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO'] ?? '
                         <a href="#schedule" class="first-screen__link"><?= Loc::getMessage('HALLS_DETAIL_MAIN_NAV_SCHEDULE'); ?></a>
                     </li>
                     <?php endif; ?>
+                    <?php if ($arResult['DISPLAY_PROPERTIES']['ATT_REVIEWS']['~VALUE']): ?>
+                    <li class="first-screen__li">
+                        <a href="#reviews" class="first-screen__link"><?= Loc::getMessage('HALLS_DETAIL_MAIN_NAV_REVIEWS'); ?></a>
+                    </li>
+                    <?php endif; ?>
                     <?php if ($att_photos): ?>
                     <li class="first-screen__li">
                         <a href="#photos" class="first-screen__link"><?= Loc::getMessage('HALLS_DETAIL_MAIN_NAV_PHOTOS'); ?></a>
@@ -155,6 +160,19 @@ $att_contacts_video = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO'] ?? '
                 )
             );
             ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if ($arResult['DISPLAY_PROPERTIES']['ATT_REVIEWS']['~VALUE']): ?>
+<section class="main-section map-section" id="reviews">
+    <div class="container">
+        <h2 class="main-section__title"><?= $arResult['NAME']; ?> - <?= Loc::getMessage('HALLS_REVIEWS_SECTION_TITLE'); ?></h2>
+        <div class="row">
+            <div class="offset-xl-3 col-xl-6">
+                <?= $arResult['DISPLAY_PROPERTIES']['ATT_REVIEWS']['~VALUE']['TEXT']; ?>
+            </div>
         </div>
     </div>
 </section>
