@@ -33,6 +33,7 @@
 
 .main-form .main-form__form-control:hover, .main-form .main-form__form-control:focus {
     opacity: 1;
+    background-color: transparent;
 }
 
 .main-form .main-form__form-control::placeholder {

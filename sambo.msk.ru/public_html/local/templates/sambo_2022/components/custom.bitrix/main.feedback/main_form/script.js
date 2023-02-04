@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     arrInputsTel.forEach(input => {
         Inputmask({
-            'mask': '+7 (999) 999-99-99',
+            'mask': '9 (999) 999-99-99',
         }).mask(input);
     })
 });
