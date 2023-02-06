@@ -59,7 +59,7 @@ endif;
             <?php endif; ?>
         </label>
         <input type="text" name="user_name" value="<?= $arResult['AUTHOR_NAME']; ?>" placeholder="<?= Loc::getMessage('MAIN_FORM_NAME_PLACEHOLDER'); ?>"
-               class="form-control main-form__form-control" id="user-name-<?= $six_digit_random_number; ?>"
+               class="form-control main-form__form-control" id="user-name-<?= $six_digit_random_number; ?>" maxlength="15"
             <?php if ($arResult['AUTHOR_NAME']): ?> readonly<?php endif; ?>
             <?php if(empty($arParams['REQUIRED_FIELDS']) || in_array('NAME', $arParams['REQUIRED_FIELDS'])): ?> required<?php endif; ?>>
     </div>
