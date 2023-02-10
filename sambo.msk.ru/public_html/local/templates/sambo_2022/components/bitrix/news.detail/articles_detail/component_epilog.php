@@ -30,9 +30,10 @@ use Bitrix\Main\Localization\Loc;
     <div class="main-section__title"><?= Loc::getMessage('ARTICLES_DETAIL_DISCUSSION_TITLE'); ?></div>
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
-            <script async src="https://telegram.org/js/telegram-widget.js?19" data-skip-moving="true"
-                    data-telegram-discussion="<?= $arResult['TELEGRAM_DISCUSSION']; ?>>"
-                    data-comments-limit="5"></script>
+            <script async src="https://telegram.org/js/telegram-widget.js?21" data-skip-moving="true"
+                    data-telegram-discussion="<?= $arResult['TELEGRAM_DISCUSSION']; ?>"
+                    data-comments-limit="5"
+                    data-colorful="1"></script>
         </div>
     </div>
 </div>
