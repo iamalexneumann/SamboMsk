@@ -25,4 +25,5 @@ if (count($arResult['ELEMENTS']) > 0) {
             'ui.fancybox',
         ]
     );
+    echo '<script>Fancybox.bind("[data-fancybox]", {});</script>';
 }

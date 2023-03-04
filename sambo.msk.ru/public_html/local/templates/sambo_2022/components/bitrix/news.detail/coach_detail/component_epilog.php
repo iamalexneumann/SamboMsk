@@ -24,6 +24,7 @@ Extension::load(
         'ui.fancybox',
     ]
 );
+echo '<script>Fancybox.bind("[data-fancybox]", {});</script>';
 
 $APPLICATION->AddViewContent(
     'META_ARTICLE_MODIFIED_TIME',
