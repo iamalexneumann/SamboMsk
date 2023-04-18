@@ -42,6 +42,7 @@ $settings = [
         'properties',
         'snippet',
         'iblock_elements',
+        'image',
         'my_float_img',
         'my_iblock_elements_photos',
     ],
