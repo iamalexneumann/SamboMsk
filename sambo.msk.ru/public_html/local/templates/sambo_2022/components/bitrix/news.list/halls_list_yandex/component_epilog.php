@@ -46,16 +46,16 @@ $param_map_zoom = $arParams['MAP_ZOOM'] ?? '10';
                     $att_phones = $arItem['DISPLAY_PROPERTIES']['ATT_PHONES'];
 
                     $balloon_content_header = '<a href="' . $arItem['DETAIL_PAGE_URL'] . '" class="yandex-map__link">' . $arItem['NAME'] .'</a>';
-                    $balloon_content_header .= '<div class="yandex-map__set-open">' . $arItem['SET_OPEN_TEXT'] . '</div>';
+//                    $balloon_content_header .= '<div class="yandex-map__set-open">' . $arItem['SET_OPEN_TEXT'] . '</div>';
                     $balloon_content_header = str_replace(PHP_EOL, '', $balloon_content_header);
 
-                    $balloon_content_body = '
-                        <a href="' . $arItem['DETAIL_PAGE_URL'] . '" class="yandex-map__img-link">
-                            <img src="' . $arItem['PICTURE']['SRC'] . '" class="yandex-map__img" alt="">
-                        </a>
-                        ';
+//                    $balloon_content_body = '
+//                        <a href="' . $arItem['DETAIL_PAGE_URL'] . '" class="yandex-map__img-link">
+//                            <img src="' . $arItem['PICTURE']['SRC'] . '" class="yandex-map__img" alt="">
+//                        </a>
+//                        ';
                     if ($arItem['DISPLAY_PROPERTIES']['ATT_ADDRESS']['VALUE']) {
-                        $balloon_content_body .= '
+                        $balloon_content_body = '
                             <div class="yandex-map__address">
                                 <i class="yandex-map__address-icon fa-solid fa-location-dot"></i>
                                 <div class="yandex-map__address-text">' . $arItem['DISPLAY_PROPERTIES']['ATT_ADDRESS']['VALUE'] . '</div>
