@@ -36,7 +36,6 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
                     ),
                     "OK_TEXT" => Loc::getMessage('MODAL_FORM_OK_TEXT'),
                     "REQUIRED_FIELDS" => array(
-                        0 => "NAME",
                         1 => "USER_PHONE",
                     ),
                     "USE_CAPTCHA" => "N",

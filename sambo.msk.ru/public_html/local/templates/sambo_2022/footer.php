@@ -13,6 +13,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
  * @var COption $siteparam_whatsapp_number_tel
  * @var COption $siteparam_whatsapp_text
  * @var COption $siteparam_whatsapp_text_converted
+ * @var COption $siteparam_telegram_chat
  * @var COption $siteparam_section_body_after
  */
 
@@ -116,6 +117,14 @@ use Bitrix\Main\Localization\Loc;
         <i class="fa-brands fa-whatsapp"></i>
     </a>
     <?php endif; ?>
+    <?php if ($siteparam_telegram_chat): ?>
+    <a class="telegram-btn" onclick="gtag('event', 'click', {'event_category': 'telegram', 'event_label': '', 'value': ''}); ym(56418265, 'reachGoal', 'telegram'); return true;"
+       href="<?= $siteparam_telegram_chat; ?>"
+       target="_blank"
+       title="<?= Loc::getMessage('HEADER_TELEGRAM_CHAT_TITLE'); ?>">
+        <i class="fa-brands fa-telegram-plane"></i>
+    </a>
+    <?php endif; ?>
 
     <a href="#body-area" class="to-top-btn" title="<?= Loc::getMessage('FOOTER_TO_TOP_BTN_TEXT'); ?>"><i class="fa-solid fa-angle-up"></i></a>
 
@@ -143,7 +152,6 @@ use Bitrix\Main\Localization\Loc;
                     ),
                     "OK_TEXT" => Loc::getMessage('MODAL_FORM_OK_TEXT'),
                     "REQUIRED_FIELDS" => array(
-                        0 => "NAME",
                         1 => "USER_PHONE",
                     ),
                     "USE_CAPTCHA" => "N",

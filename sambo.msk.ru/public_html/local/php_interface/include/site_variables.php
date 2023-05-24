@@ -18,6 +18,7 @@ $siteparam_whatsapp_text = \COption::GetOptionString( 'askaron.settings', 'UF_WH
 $siteparam_whatsapp_text_converted = convert_space_to_url_code($siteparam_whatsapp_text);
 $siteparam_main_email = \COption::GetOptionString( 'askaron.settings', 'UF_MAIN_EMAIL') ?? '';
 $siteparam_telegram = \COption::GetOptionString( 'askaron.settings', 'UF_TELEGRAM') ?? '';
+$siteparam_telegram_chat = \COption::GetOptionString( 'askaron.settings', 'UF_TELEGRAM_CHAT') ?? '';
 $siteparam_vk = \COption::GetOptionString( 'askaron.settings', 'UF_VK') ?? '';
 $siteparam_requisites = \COption::GetOptionString( 'askaron.settings', 'UF_REQUISITES') ?? '';
 

@@ -20,7 +20,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
  * @var COption $siteparam_whatsapp_text
  * @var COption $siteparam_whatsapp_text_converted
  * @var COption $siteparam_main_email
- * @var COption $siteparam_telegram
+ * @var COption $siteparam_telegram_chat
  * @var COption $siteparam_vk
  */
 
@@ -221,6 +221,14 @@ Loc::loadLanguageFile(__FILE__);
                                         <i class="fa-brands fa-whatsapp"></i>
                                     </a>
                                     <?php endif; ?>
+                                    <?php if ($siteparam_telegram_chat): ?>
+                                    <a href="<?= $siteparam_telegram_chat; ?>"
+                                       target="_blank"
+                                       title="<?= Loc::getMessage('HEADER_TELEGRAM_CHAT_TITLE'); ?>"
+                                       class="header-contacts__telegram">
+                                        <i class="fa-brands fa-telegram-plane"></i>
+                                    </a>
+                                    <?php endif; ?>
                                 </div>
                                 <?php endif; ?>
                             </div>
@@ -232,19 +240,8 @@ Loc::loadLanguageFile(__FILE__);
                                 <i class="fa-solid fa-envelope header-email__icon"></i>
                                 <span class="header-email__link"><?= $siteparam_main_email; ?></span>
                             </a>
-                            <?php if ($siteparam_telegram || $siteparam_vk): ?>
+                            <?php if ($siteparam_vk): ?>
                             <ul class="social-media header-social-media">
-                                <?php if ($siteparam_telegram): ?>
-                                <li class="social-media__item">
-                                    <a href="https://t.me/<?= $siteparam_telegram; ?>"
-                                       target="_blank"
-                                       title="<?= Loc::getMessage('HEADER_TELEGRAM_TITLE'); ?>"
-                                       class="social-media__link social-media__telegram">
-                                        <i class="fa-brands fa-telegram"></i>
-                                    </a>
-                                </li>
-                                <?php endif; ?>
-                                <?php if ($siteparam_vk): ?>
                                 <li class="social-media__item">
                                     <a href="<?= $siteparam_vk; ?>"
                                        target="_blank"
@@ -253,7 +250,6 @@ Loc::loadLanguageFile(__FILE__);
                                         <i class="fa-brands fa-vk"></i>
                                     </a>
                                 </li>
-                                <?php endif; ?>
                             </ul>
                             <?php endif; ?>
                         </div>

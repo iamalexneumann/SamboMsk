@@ -277,7 +277,7 @@ h5,
     color: #6f6f6f;
 }
 
-.header-contacts__whatsapp {
+.header-contacts__whatsapp, .header-contacts__telegram {
     width: 30px;
     height: 30px;
     font-size: 1rem;
@@ -291,7 +291,12 @@ h5,
     margin-left: 10px;
 }
 
-.header-contacts__whatsapp:hover {
+.header-contacts__telegram {
+    background-color: #0088cc;
+    border: 1px solid #0088cc;
+}
+
+.header-contacts__whatsapp:hover, .header-contacts__telegram:hover {
     color: #ffffff;
     opacity: 0.85;
 }
@@ -1653,6 +1658,12 @@ h5,
     padding: 10px 0;
 }
 
+@media (max-width: 575.98px) {
+    .header-contacts__phones-wrapper {
+        text-align: center;
+    }
+}
+
 .header-contacts__main-phone {
     font-size: 1.25rem;
     font-weight: 700;
@@ -2753,7 +2764,7 @@ h5,
     color: #424242;
 }
 
-.whatsapp-btn {
+.whatsapp-btn, .telegram-btn {
     position: fixed;
     z-index: 100;
     right: 20px;
@@ -2774,7 +2785,12 @@ h5,
     transition: all .25s ease-in-out;
 }
 
-.whatsapp-btn:hover {
+.telegram-btn {
+    background-color: #0088cc;
+    bottom: 20px;
+}
+
+.whatsapp-btn:hover, .telegram-btn:hover {
     color: #ffffff;
     opacity: 0.85;
 }
