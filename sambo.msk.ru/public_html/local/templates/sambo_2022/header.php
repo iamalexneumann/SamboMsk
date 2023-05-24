@@ -262,18 +262,25 @@ Loc::loadLanguageFile(__FILE__);
         <?php if (!($CurDir === '/')): ?>
         <header class="page-header">
             <div class="container">
-                <?php
-                $APPLICATION->IncludeComponent(
-                    "bitrix:breadcrumb",
-                    "breadcrumb",
-                    Array(
-                        "START_FROM" => "0",
-                        "PATH" => "",
-                        "SITE_ID" => SITE_ID,
-                    ),
-                    false
-                ); ?>
-                <h1 class="page-header__title"><?php $APPLICATION->ShowTitle(false); ?></h1>
+                <div class="page-header__wrapper">
+                    <?php
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:breadcrumb",
+                        "breadcrumb",
+                        Array(
+                            "START_FROM" => "0",
+                            "PATH" => "",
+                            "SITE_ID" => SITE_ID,
+                        ),
+                        false
+                    ); ?>
+                    <h1 class="page-header__title"><?php $APPLICATION->ShowTitle(false); ?></h1>
+                </div>
+                <div class="page-header__callback">
+                    <button type="button" class="btn btn-danger"
+                            data-bs-toggle="modal"
+                            data-bs-target="#callbackModal"><?= Loc::getMessage('HEADER_TELEGRAM_CALLBACK_BTN'); ?></button>
+                </div>
             </div>
         </header>
         <?php if (use_wide_template($CurDir) === false): ?>

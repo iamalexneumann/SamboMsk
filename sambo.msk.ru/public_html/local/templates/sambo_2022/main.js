@@ -34,4 +34,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', trackScroll);
     goTopBtn.addEventListener('click', backToTop);
+
+    window.addEventListener('scroll', function() {
+        const headerCallbackBtn = document.querySelector('.page-header__callback .btn');
+        if (window.scrollY >= 300) {
+            headerCallbackBtn.style.position = 'fixed';
+            headerCallbackBtn.style.transform = 'translateX(-50%)';
+        } else {
+            headerCallbackBtn.style.position = 'static';
+            headerCallbackBtn.style.transform = 'none';
+        }
+    });
 });
