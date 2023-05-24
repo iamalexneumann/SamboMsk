@@ -40,11 +40,7 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
                             ),
                             "OK_TEXT" => "Спасибо. Мы перезвоним Вам в течение дня!",
                             "REQUIRED_FIELDS" => array(
-                                0 => "NAME",
                                 1 => "USER_PHONE",
-                                2 => "HALLS_LIST",
-                                3 => "AGE",
-                                4 => "SPORT",
                             ),
                             "USE_CAPTCHA" => "N",
                             "COMPONENT_TEMPLATE" => "main_form",

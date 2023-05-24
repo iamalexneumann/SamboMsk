@@ -68,6 +68,14 @@
     padding: 5px 10px;
 }
 
+/*.main-form .main-form__form-select:active, .main-form .main-form__form-select:focus {*/
+/*    color: #424242;*/
+/*}*/
+
+.main-form .main-form__form-select option {
+    color: #424242;
+}
+
 .main-form .main-form__form-select:hover, .main-form .main-form__form-select:focus {
     opacity: 1;
 }

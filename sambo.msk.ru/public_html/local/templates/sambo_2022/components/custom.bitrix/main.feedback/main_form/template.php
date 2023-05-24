@@ -51,6 +51,7 @@ endif;
 ?>
 <form action="<?= POST_FORM_ACTION_URI; ?>" method="POST" class="main-form">
     <?= bitrix_sessid_post(); ?>
+    <?php /*
     <div class="main-form__item">
         <label for="user-name-<?= $six_digit_random_number; ?>" class="form-label main-form__label">
             <?= Loc::getMessage('MAIN_FORM_NAME'); ?>:
@@ -63,6 +64,7 @@ endif;
             <?php if ($arResult['AUTHOR_NAME']): ?> readonly<?php endif; ?>
             <?php if(empty($arParams['REQUIRED_FIELDS']) || in_array('NAME', $arParams['REQUIRED_FIELDS'])): ?> required<?php endif; ?>>
     </div>
+     */ ?>
 
     <div class="main-form__item">
         <label for="user-phone-<?= $six_digit_random_number; ?>" class="form-label main-form__label">
@@ -113,7 +115,7 @@ endif;
         </select>
     </div>
     <?php endif; ?>
-
+    <?php /*
     <div class="main-form__item">
         <label for="age-<?= $six_digit_random_number; ?>" class="form-label main-form__label">
             <?= Loc::getMessage('MAIN_FORM_AGE'); ?>:
@@ -137,6 +139,7 @@ endif;
                class="form-control main-form__form-control" id="sport-<?= $six_digit_random_number; ?>"
             <?php if(empty($arParams['REQUIRED_FIELDS']) || in_array('SPORT', $arParams['REQUIRED_FIELDS'])): ?> required<?php endif; ?>>
     </div>
+    */ ?>
 
     <div class="main-form__item">
         <div class="form-check main-form__form-check">
@@ -148,6 +151,6 @@ endif;
     </div>
 
     <input type="hidden" name="PARAMS_HASH" value="<?=$arResult['PARAMS_HASH']?>">
-    <input type="submit" name="submit" value="<?= Loc::getMessage('MAIN_FORM_SUBMIT_BTN_TEXT'); ?>" class="btn btn-light"
+    <input type="submit" name="submit" value="<?= Loc::getMessage('MAIN_FORM_SUBMIT_BTN_TEXT'); ?>" class="btn btn-danger"
            onclick="ym(56418265, 'reachGoal', 'form_submit'); return true;">
 </form>
