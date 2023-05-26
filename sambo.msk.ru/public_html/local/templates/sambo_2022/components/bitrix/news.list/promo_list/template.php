@@ -38,7 +38,11 @@ use Bitrix\Main\Localization\Loc;
             <li class="promo-list__item carousel-item<?php if ($key === 0): ?> active<?php endif; ?>"
                 id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                 <div class="promo-list__content">
+                <a href="#callbackModal" class="link-light"
+                        data-bs-toggle="modal"
+                        data-bs-target="#callbackModal">
                 <?= $arItem['DISPLAY_PROPERTIES']['ATT_PREVIEW_TEXT']['DISPLAY_VALUE']; ?>
+                </a>
                 <?php if ($arItem['DISPLAY_PROPERTIES']['ATT_BTN_LINK']['DISPLAY_VALUE']): ?>
                     <a href="<?= $arItem['DISPLAY_PROPERTIES']['ATT_BTN_LINK']['DISPLAY_VALUE']; ?>"
                        class="btn btn-sm btn-outline-light promo-list__btn">
