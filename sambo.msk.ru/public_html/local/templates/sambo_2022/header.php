@@ -201,15 +201,17 @@ Loc::loadLanguageFile(__FILE__);
                     <div class="header-contacts">
                         <div class="header-contacts__phones">
                             <div class="header-contacts__phones-wrapper">
+                                <?php if (use_comagic($CurDir) === false): ?>
                                 <a href="tel:+7<?= $siteparam_main_phone_tel; ?>"
                                    class="header-contacts__main-phone"
                                    onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
                                     +7 <?= substr($siteparam_main_phone, 1); ?>
                                 </a>
+                                <?php endif; ?>
                                 <?php if ($siteparam_second_phone_tel): ?>
                                 <div class="header-contacts__second-phone-wrapper">
                                     <a href="tel:+7<?= $siteparam_second_phone_tel; ?>"
-                                       class="header-contacts__second-phone"
+                                       class="header-contacts__<?= (use_comagic($CurDir) === false) ? 'second' : 'main'; ?>-phone mb-0"
                                        onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_second_phone_tel; ?>'); return true;">
                                         +7 <?= substr($siteparam_second_phone, 1); ?>
                                     </a>

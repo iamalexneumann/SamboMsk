@@ -22,14 +22,16 @@ use Bitrix\Main\Localization\Loc;
 <div class="footer-phones">
     <i class="fa-solid fa-phone footer-phones__icon"></i>
     <div class="footer-phones__wrapper">
+        <?php if (use_comagic($CurDir) === false): ?>
         <a href="tel:+7<?= $siteparam_main_phone_tel; ?>"
            class="footer-phones__main-phone"
            onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
             +7 <?= substr($siteparam_main_phone, 1); ?>
         </a>
+        <?php endif; ?>
         <?php if ($siteparam_second_phone_tel): ?>
         <a href="tel:+7<?= $siteparam_second_phone_tel; ?>"
-           class="footer-phones__second-phone"
+           class="footer-phones__<?= (use_comagic($CurDir) === false) ? 'second' : 'main'; ?>-phone"
            onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_second_phone_tel; ?>'); return true;">
             +7 <?= substr($siteparam_second_phone, 1); ?>
         </a>

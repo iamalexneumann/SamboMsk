@@ -52,6 +52,24 @@ function use_wide_template (string $url):bool
     return false;
 }
 
+function use_comagic (string $url):bool
+{
+    $patterns = [
+        '#^/nashi-zaly/sambo-i-dzyudo-v-grad-moskovskom/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-mitino/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-shcherbinke/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-moskovskom/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-fili-davydkovo/$#',
+    ];
+    for ($i = 0; $i < count($patterns); $i++) {
+        preg_match($patterns[$i], $url, $matches);
+        if (count($matches) > 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function get_telegram_discussion (string $url):string
 {
     return str_replace('https://t.me/', '', $url);
