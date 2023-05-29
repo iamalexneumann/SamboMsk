@@ -17,7 +17,7 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
         <div class="inner-form-section__text">
             <?= Loc::getMessage('SECTION_INNER_FORM_BEFORE_TEXT'); ?>
             <a href="tel:+7<?= $siteparam_main_phone_tel; ?>" class="inner-form-section__selected-link"
-               onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
+               onclick="ym(56418265,'reachGoal','all_phone_link'); return true;">
                 +7 <?= substr($siteparam_main_phone, 1); ?>
             </a>
             <?= Loc::getMessage('SECTION_INNER_FORM_AFTER_TEXT'); ?>.

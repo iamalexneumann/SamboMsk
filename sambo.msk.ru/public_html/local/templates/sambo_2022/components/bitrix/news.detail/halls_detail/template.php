@@ -106,7 +106,7 @@ $att_contacts_video = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO'] ?? '
                         <i class="screen-phones__icon fa-solid fa-phone"></i>
                         <a href="tel:+7<?= $arResult['DISPLAY_PROPERTIES']['ATT_PHONES']['PHONE_TEL'][$key]; ?>"
                            class="screen-phones__link"
-                           onclick="ym(56418265, 'reachGoal', '7<?= $arResult['DISPLAY_PROPERTIES']['ATT_PHONES']['PHONE_TEL'][$key]; ?>'); return true;"><?= $arResult['DISPLAY_PROPERTIES']['ATT_PHONES']['PHONE_FORMATTED'][$key]; ?></a>
+                           onclick="ym(56418265,'reachGoal','all_phone_link'); return true;"><?= $arResult['DISPLAY_PROPERTIES']['ATT_PHONES']['PHONE_FORMATTED'][$key]; ?></a>
                         <?php if ($att_phones['DESCRIPTION'][$key]): ?>
                         <div class="screen-phones__description">(<?= $att_phones['DESCRIPTION'][$key]; ?>)</div>
                         <?php endif; ?>

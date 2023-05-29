@@ -88,7 +88,7 @@ $param_tag_title = $arParams['TAG_TITLE'] ?? '2';
                                 <i class="hall__phone-icon fa-solid fa-phone"></i>
                                 <a href="tel:+7<?= $att_phones['PHONE_TEL'][$key]; ?>"
                                    class="hall__phone-link"
-                                   onclick="ym(56418265, 'reachGoal', '7<?= $att_phones['PHONE_TEL'][$key]; ?>'); return true;"><?= $att_phones['PHONE_FORMATTED'][$key]; ?></a>
+                                   onclick="ym(56418265,'reachGoal','all_phone_link'); return true;"><?= $att_phones['PHONE_FORMATTED'][$key]; ?></a>
                                 <?php if ($att_phones['DESCRIPTION'][$key]): ?>
                                 <div class="hall__phone-description">(<?= $att_phones['DESCRIPTION'][$key]; ?>)</div>
                                 <?php endif; ?>

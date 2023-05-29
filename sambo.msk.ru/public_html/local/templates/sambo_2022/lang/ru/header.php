@@ -7,4 +7,4 @@ $MESS['HEADER_TELEGRAM_TITLE'] = 'Наш канал в Telegram';
 $MESS['HEADER_TELEGRAM_CHAT_TITLE'] = 'Написать в Telegram';
 $MESS['HEADER_VK_TITLE'] = 'Наше сообщество в VK';
 $MESS['HEADER_WHATSAPP_TITLE'] = 'Написать в WhatsApp';
-$MESS['HEADER_TELEGRAM_CALLBACK_BTN'] = 'Заказать звонок';
+$MESS['HEADER_CALLBACK_BTN'] = 'Заказать звонок';

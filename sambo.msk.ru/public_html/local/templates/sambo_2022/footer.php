@@ -110,7 +110,7 @@ use Bitrix\Main\Localization\Loc;
     </footer>
 
     <?php if ($siteparam_whatsapp_number): ?>
-    <a class="whatsapp-btn" onclick="gtag('event', 'click', {'event_category': 'whatsapp', 'event_label': '', 'value': ''}); ym(56418265, 'reachGoal', 'whatsapp'); return true;"
+    <a class="whatsapp-btn" onclick="ym(56418265,'reachGoal','all_messengers'); return true;"
        href="https://wa.me/7<?= $siteparam_whatsapp_number_tel; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>"
        target="_blank"
        title="<?= Loc::getMessage('HEADER_WHATSAPP_TITLE'); ?>">
@@ -118,7 +118,7 @@ use Bitrix\Main\Localization\Loc;
     </a>
     <?php endif; ?>
     <?php if ($siteparam_telegram_chat): ?>
-    <a class="telegram-btn" onclick="gtag('event', 'click', {'event_category': 'telegram', 'event_label': '', 'value': ''}); ym(56418265, 'reachGoal', 'telegram'); return true;"
+    <a class="telegram-btn" onclick="ym(56418265,'reachGoal','all_messengers'); return true;"
        href="<?= $siteparam_telegram_chat; ?>"
        target="_blank"
        title="<?= Loc::getMessage('HEADER_TELEGRAM_CHAT_TITLE'); ?>">

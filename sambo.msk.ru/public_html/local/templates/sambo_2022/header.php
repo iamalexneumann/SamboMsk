@@ -204,7 +204,7 @@ Loc::loadLanguageFile(__FILE__);
                                 <?php if (use_comagic($CurDir) === false): ?>
                                 <a href="tel:+7<?= $siteparam_main_phone_tel; ?>"
                                    class="header-contacts__main-phone"
-                                   onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_main_phone_tel; ?>'); return true;">
+                                   onclick="ym(56418265,'reachGoal','all_phone_link'); return true;">
                                     +7 <?= substr($siteparam_main_phone, 1); ?>
                                 </a>
                                 <?php endif; ?>
@@ -212,14 +212,15 @@ Loc::loadLanguageFile(__FILE__);
                                 <div class="header-contacts__second-phone-wrapper">
                                     <a href="tel:+7<?= $siteparam_second_phone_tel; ?>"
                                        class="header-contacts__<?= (use_comagic($CurDir) === false) ? 'second' : 'main'; ?>-phone mb-0"
-                                       onclick="ym(56418265, 'reachGoal', '7<?= $siteparam_second_phone_tel; ?>'); return true;">
+                                       onclick="ym(56418265,'reachGoal','all_phone_link'); return true;">
                                         +7 <?= substr($siteparam_second_phone, 1); ?>
                                     </a>
                                     <?php if ($siteparam_whatsapp_number): ?>
                                     <a href="https://wa.me/7<?= $siteparam_whatsapp_number_tel; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>"
                                        target="_blank"
                                        title="<?= Loc::getMessage('HEADER_WHATSAPP_TITLE'); ?>"
-                                       class="header-contacts__whatsapp">
+                                       class="header-contacts__whatsapp"
+                                       onclick="ym(56418265,'reachGoal','all_messengers'); return true;">
                                         <i class="fa-brands fa-whatsapp"></i>
                                     </a>
                                     <?php endif; ?>
@@ -227,7 +228,8 @@ Loc::loadLanguageFile(__FILE__);
                                     <a href="<?= $siteparam_telegram_chat; ?>"
                                        target="_blank"
                                        title="<?= Loc::getMessage('HEADER_TELEGRAM_CHAT_TITLE'); ?>"
-                                       class="header-contacts__telegram">
+                                       class="header-contacts__telegram"
+                                       onclick="ym(56418265,'reachGoal','all_messengers'); return true;">
                                         <i class="fa-brands fa-telegram-plane"></i>
                                     </a>
                                     <?php endif; ?>
@@ -281,7 +283,7 @@ Loc::loadLanguageFile(__FILE__);
                 <div class="page-header__callback">
                     <button type="button" class="btn btn-danger"
                             data-bs-toggle="modal"
-                            data-bs-target="#callbackModal"><?= Loc::getMessage('HEADER_TELEGRAM_CALLBACK_BTN'); ?></button>
+                            data-bs-target="#callbackModal"><?= Loc::getMessage('HEADER_CALLBACK_BTN'); ?></button>
                 </div>
             </div>
         </header>
