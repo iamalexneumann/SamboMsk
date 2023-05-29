@@ -18,6 +18,14 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
  * @var CBitrixComponent $component
  */
 use Bitrix\Main\Localization\Loc;
+use Bitrix\Main\UI\Extension;
+
+Extension::load(
+    [
+        'ui.fancybox',
+    ]
+);
+echo '<script>Fancybox.bind("[data-fancybox]", {});</script>';
 ?>
 <?php if ($arResult['VIEW_COUNT']): ?>
 <div class="views-counter">
