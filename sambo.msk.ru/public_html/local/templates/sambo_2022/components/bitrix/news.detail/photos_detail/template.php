@@ -54,8 +54,8 @@ $att_photos = $arResult['DISPLAY_PROPERTIES']['ATT_PHOTOS'] ?? '';
                     <a href="<?= $att_photos['FILE_VALUE'][$key]['SRC'] ?: $att_photos['FILE_VALUE']['SRC']; ?>"
                        data-fancybox="photos-list" class="photos-list__link"
                         <?php if ($att_photo_description): ?>
-                            title="<?= $att_photo_description; ?>"
-                            data-caption="<?= $att_photo_description; ?>"
+                        title="<?= $att_photo_description; ?>"
+                        data-caption="<?= $att_photo_description; ?>"
                         <?php endif; ?>>
                         <img src="<?= $att_photos['PICTURE_LQIP'][$key]['SRC']; ?>"
                              data-src="<?= $att_photos['PICTURE'][$key]['SRC']; ?>"

@@ -33,7 +33,11 @@ if ($arResult['ATT_PHOTOS_COUNT'] > 1 || $arResult['ATT_CONTACTS_PHOTOS_COUNT'] 
             'ui.fancybox',
         ]
     );
-    echo '<script>Fancybox.bind("[data-fancybox]", {});</script>';
+    echo '<script>
+        Fancybox.bind("[data-fancybox]", {
+            l10n: Fancybox.l10n.ru
+        });
+    </script>';
 }
 
 $APPLICATION->AddViewContent(
