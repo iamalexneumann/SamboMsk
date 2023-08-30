@@ -61,6 +61,7 @@ function use_comagic (string $url):bool
         '#^/nashi-zaly/sambo-i-dzyudo-v-moskovskom/$#',
         '#^/nashi-zaly/sambo-i-dzyudo-v-fili-davydkovo/$#',
         '#^/nashi-zaly/sambo-i-dzyudo-v-moskovskom-3-y-mikrorayon/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-na-vereyskoy/$#',
     ];
     for ($i = 0; $i < count($patterns); $i++) {
         preg_match($patterns[$i], $url, $matches);
