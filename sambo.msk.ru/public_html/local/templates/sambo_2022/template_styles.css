@@ -1636,6 +1636,12 @@ h5,
     letter-spacing: 0.05em;
 }
 
+@media (max-width: 1399.98px) {
+    .navbar-light .navbar-nav .nav-link {
+        padding: 10px;
+    }
+}
+
 .navbar-light .navbar-nav .nav-link:hover {
     color: #0652DD;
 }

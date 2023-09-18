@@ -3,8 +3,8 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.bundle.min.js" />
+        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.bundle.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.esm.min.js" />
-        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.esm.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/fancybox.esm.min.js" />
@@ -49,8 +49,8 @@
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.bundle.min.js" />
+      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.bundle.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.esm.min.js" />
-      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.esm.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/fancybox.esm.min.js" />
