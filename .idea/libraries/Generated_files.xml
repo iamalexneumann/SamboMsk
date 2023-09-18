@@ -4,7 +4,9 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.bundle.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.esm.min.js" />
+        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.esm.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.min.js" />
+        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/fancybox.esm.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/fancybox.umd.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/l10n/cs.esm.min.js" />
@@ -28,19 +30,12 @@
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/l10n/zh_CN.esm.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/l10n/zh_CN.umd.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/all.min.js" />
-        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/all.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/brands.min.js" />
-        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/brands.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/conflict-detection.min.js" />
-        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/conflict-detection.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/fontawesome.min.js" />
-        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/fontawesome.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/regular.min.js" />
-        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/regular.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/solid.min.js" />
-        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/solid.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/v4-shims.min.js" />
-        <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/v4-shims.min.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/inputmask/inputmask.es6.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/inputmask/inputmask.min.js" />
         <item url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/inputmask/jquery.inputmask.min.js" />
@@ -55,7 +50,9 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.bundle.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.esm.min.js" />
+      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.esm.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.min.js" />
+      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/bootstrap5/js/bootstrap.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/fancybox.esm.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/fancybox.umd.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/l10n/cs.esm.min.js" />
@@ -79,19 +76,12 @@
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/l10n/zh_CN.esm.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fancybox/l10n/zh_CN.umd.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/all.min.js" />
-      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/all.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/brands.min.js" />
-      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/brands.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/conflict-detection.min.js" />
-      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/conflict-detection.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/fontawesome.min.js" />
-      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/fontawesome.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/regular.min.js" />
-      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/regular.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/solid.min.js" />
-      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/solid.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/v4-shims.min.js" />
-      <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/fonts/font-awesome/js/v4-shims.min.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/inputmask/inputmask.es6.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/inputmask/inputmask.min.js" />
       <root url="file://$PROJECT_DIR$/sambo.msk.ru/public_html/local/js/ui/inputmask/jquery.inputmask.min.js" />
