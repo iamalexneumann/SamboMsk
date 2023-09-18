@@ -1,50 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="sambomsk" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Sambo" autoUploadExternalChanges="true">
     <serverData>
-      <paths name="sambomsk">
+      <paths name="Sambo">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/sambo.msk.ru/public_html" local="$PROJECT_DIR$/sambo.msk.ru/public_html" web="/" />
           </mappings>
           <excludedPaths>
-            <excludedPath path="/.gem" />
-            <excludedPath path="/.service" />
-            <excludedPath path="/.cache" />
-            <excludedPath path="/table.sambo.msk.ru" />
-            <excludedPath path="/.ssh" />
-            <excludedPath path="/.composer" />
-            <excludedPath path="/.local" />
-            <excludedPath path="/.beget" />
-            <excludedPath path="/.beget_profiler_files" />
-            <excludedPath path="/.subversion" />
             <excludedPath path="/sambo.msk.ru/public_html/bitrix" />
             <excludedPath path="/sambo.msk.ru/public_html/upload" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.gem" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.service" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.cache" />
-            <excludedPath local="true" path="$PROJECT_DIR$/table.sambo.msk.ru" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.ssh" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.composer" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.local" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.beget" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.beget_profiler_files" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.subversion" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/bitrix" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/upload" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.gem" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.service" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.cache" />
-            <excludedPath local="true" path="$PROJECT_DIR$/table.sambo.msk.ru" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.ssh" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.composer" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.local" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.beget" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.beget_profiler_files" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.subversion" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/bitrix" />
-            <excludedPath local="true" path="$PROJECT_DIR$/sambo.msk.ru/public_html/upload" />
-            <excludedPath path="/sambomsk.beget.tech/" />
           </excludedPaths>
         </serverdata>
       </paths>
