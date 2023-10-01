@@ -167,8 +167,8 @@ use Bitrix\Main\Localization\Loc;
 </body>
 </html>
 <?php
-create_og_img(
-    $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/img/og-media-main-img.jpg',
-    htmlspecialchars_decode($APPLICATION->GetTitle(false)),
-    get_img_name_from_cur_dir($CurDir)
-); ?>
+//create_og_img(
+//    $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/img/og-media-main-img.jpg',
+//    htmlspecialchars_decode($APPLICATION->GetTitle(false)),
+//    get_img_name_from_cur_dir($CurDir)
+//); ?>

@@ -27,8 +27,8 @@ $APPLICATION->AddViewContent(
     '<meta property="article:published_time" content="' . FormatDate('Y-m-dТH:i:s+03:00', strtotime($arResult['DATE_CREATE'])) . '">'
 );
 
-create_og_img(
-    $_SERVER['DOCUMENT_ROOT'] . $arResult['OG_PICTURE_SRC'],
-    htmlspecialchars_decode($arResult['NAME']),
-    get_img_name_from_cur_dir($APPLICATION->GetCurDir())
-);
+//create_og_img(
+//    $_SERVER['DOCUMENT_ROOT'] . $arResult['OG_PICTURE_SRC'],
+//    htmlspecialchars_decode($arResult['NAME']),
+//    get_img_name_from_cur_dir($APPLICATION->GetCurDir())
+//);

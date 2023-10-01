@@ -66,8 +66,8 @@ $APPLICATION->AddViewContent(
     '<meta property="article:section" content="' . $arResult["SECTION"]["PATH"][0]["NAME"] . '">'
 );
 
-create_og_img(
-    $_SERVER['DOCUMENT_ROOT'] . $arResult['OG_PICTURE_SRC'],
-    htmlspecialchars_decode($arResult['NAME']),
-    get_img_name_from_cur_dir($APPLICATION->GetCurDir())
-);
+//create_og_img(
+//    $_SERVER['DOCUMENT_ROOT'] . $arResult['OG_PICTURE_SRC'],
+//    htmlspecialchars_decode($arResult['NAME']),
+//    get_img_name_from_cur_dir($APPLICATION->GetCurDir())
+//);
