@@ -2,6 +2,7 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+require($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/site_variables.php');
 /**
  * @var CMain $CurDir
  * @var COption $siteparam_main_phone_tel

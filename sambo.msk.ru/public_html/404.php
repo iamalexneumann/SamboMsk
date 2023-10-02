@@ -6,6 +6,7 @@ CHTTP::SetStatus("404 Not Found");
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Ошибка 404 - страница не найдена");
+require($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/site_variables.php');
 ?>
 
 <div class="main-section">

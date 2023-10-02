@@ -1,5 +1,4 @@
 <?php
-require_once ('functions.php');
 $siteparam_section_head = \COption::GetOptionString( 'askaron.settings', 'UF_SECTION_HEAD') ?? '';
 $siteparam_section_body_before = \COption::GetOptionString( 'askaron.settings', 'UF_SECTION_BODY_BEFORE') ?? '';
 $siteparam_section_body_after = \COption::GetOptionString( 'askaron.settings', 'UF_SECTION_BODY_AFTER') ?? '';
