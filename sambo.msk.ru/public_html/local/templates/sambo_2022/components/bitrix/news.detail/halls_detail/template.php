@@ -121,6 +121,25 @@ $att_contacts_video = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO'] ?? '
 
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/include/section_features.php'); ?>
 
+<?php if ($arResult['DISPLAY_PROPERTIES']['ATT_DETAIL_TEXT']['~VALUE']): ?>
+<div class="main-section pb-0">
+    <div class="container">
+        <?php
+        $APPLICATION->IncludeComponent(
+            "sprint.editor:blocks",
+            ".default",
+            Array(
+                "JSON" => $arResult['DISPLAY_PROPERTIES']['ATT_DETAIL_TEXT']['~VALUE'],
+            ),
+            $component,
+            Array(
+                "HIDE_ICONS" => "Y"
+            )
+        ); ?>
+    </div>
+</div>
+<?php endif; ?>
+
 <?php if ($arResult['DISPLAY_PROPERTIES']['ATT_PRICE']['~VALUE']): ?>
 <section class="main-section" id="price">
     <div class="container text-center">
