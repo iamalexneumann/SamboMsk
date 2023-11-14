@@ -22,6 +22,14 @@ use Bitrix\Main\Localization\Loc;
 
 $six_digit_random_number = rand(100000, 999999);
 $CurDir = $APPLICATION->GetCurDir();
+
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+}
 ?>
 <?php
 if (!empty($arResult['ERROR_MESSAGE'])):
@@ -85,6 +93,7 @@ endif;
     </div>
 
     <input type="hidden" name="PARAMS_HASH" value="<?=$arResult['PARAMS_HASH']?>">
+    <input type="hidden" name="MESSAGE" value="<?= $ip; ?>">
     <input type="submit" name="submit" value="<?= Loc::getMessage('MODAL_FORM_SUBMIT_BTN_TEXT'); ?>" class="btn btn-danger"
            onclick="ym(56418265,'reachGoal','all_form_submit'); return true;">
 </form>
