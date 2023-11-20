@@ -43,19 +43,11 @@ if (!empty($arResult['ERROR_MESSAGE'])):
 endif;
 ?>
 
-<?php
-if ($arResult['OK_MESSAGE'] <> ''):
-    if ($arParams['REDIRECT_URL']):
-        header('Location: ' . $arParams['REDIRECT_URL']);
-    else:
-?>
+<?php if ($arResult['OK_MESSAGE'] <> ''): ?>
 <div class="alert alert-success">
     <?= $arResult['OK_MESSAGE']; ?>
 </div>
-<?php
-    endif;
-endif;
-?>
+<?php endif; ?>
 <form action="<?= POST_FORM_ACTION_URI; ?>" method="POST" class="modal-form">
     <?= bitrix_sessid_post(); ?>
     <div class="modal-form__item mb-3">
@@ -94,6 +86,6 @@ endif;
 
     <input type="hidden" name="PARAMS_HASH" value="<?=$arResult['PARAMS_HASH']?>">
     <input type="hidden" name="MESSAGE" value="<?= $ip; ?>">
-    <input type="submit" name="submit" value="<?= Loc::getMessage('MODAL_FORM_SUBMIT_BTN_TEXT'); ?>" class="btn btn-danger"
+    <input type="submit" disabled name="submit" value="<?= Loc::getMessage('MODAL_FORM_SUBMIT_BTN_TEXT'); ?>" class="btn btn-danger"
            onclick="ym(56418265,'reachGoal','all_form_submit'); return true;">
 </form>

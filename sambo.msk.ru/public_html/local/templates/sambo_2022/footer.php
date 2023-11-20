@@ -145,6 +145,7 @@ use Bitrix\Main\Localization\Loc;
                 "custom.bitrix:main.feedback",
                 "modal_form",
                 array(
+                    "AJAX_MODE" => "Y",
                     "COMPOSITE_FRAME_MODE" => "A",
                     "COMPOSITE_FRAME_TYPE" => "AUTO",
                     "EMAIL_TO" => "sambo-msk@yandex.ru",

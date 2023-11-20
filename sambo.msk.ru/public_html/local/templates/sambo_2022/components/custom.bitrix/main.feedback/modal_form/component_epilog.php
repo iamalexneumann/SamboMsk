@@ -19,6 +19,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
  */
 use Bitrix\Main\UI\Extension;
 
+if (strlen($arResult['OK_MESSAGE']) > 0) {
+    LocalRedirect('/stranitsa-blagodarnosti.php');
+}
+
 Extension::load(
     [
         'ui.inputmask',

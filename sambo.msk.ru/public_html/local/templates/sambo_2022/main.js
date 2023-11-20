@@ -45,4 +45,35 @@ document.addEventListener('DOMContentLoaded', function () {
             headerCallbackBtn.style.transform = 'none';
         }
     });
+
+    const arrInputsTel = document.querySelectorAll('input[type=tel]');
+
+    arrInputsTel.forEach(input => {
+        Inputmask({
+            'mask': '9 (999) 999-99-99',
+        }).mask(input);
+    })
+
+    const forms = document.querySelectorAll('form');
+
+    forms.forEach(function(form) {
+        const requiredInputs = form.querySelectorAll('[required]');
+        const submitBtn = form.querySelector('.btn');
+
+        form.addEventListener('input', function() {
+            let formValid = true;
+
+            requiredInputs.forEach(function(input) {
+                if (!input.value) {
+                    formValid = false;
+                }
+            });
+
+            if (formValid) {
+                submitBtn.removeAttribute('disabled');
+            } else {
+                submitBtn.setAttribute('disabled', 'disabled');
+            }
+        });
+    });
 });
