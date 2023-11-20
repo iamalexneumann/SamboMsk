@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     forms.forEach(function(form) {
         const requiredInputs = form.querySelectorAll('[required]');
         const submitBtn = form.querySelector('.btn');
+        submitBtn.setAttribute('disabled', 'disabled');
 
         form.addEventListener('input', function() {
             let formValid = true;

@@ -86,6 +86,6 @@ endif;
 
     <input type="hidden" name="PARAMS_HASH" value="<?=$arResult['PARAMS_HASH']?>">
     <input type="hidden" name="MESSAGE" value="<?= $ip; ?>">
-    <input type="submit" disabled name="submit" value="<?= Loc::getMessage('MODAL_FORM_SUBMIT_BTN_TEXT'); ?>" class="btn btn-danger"
+    <input type="submit" name="submit" value="<?= Loc::getMessage('MODAL_FORM_SUBMIT_BTN_TEXT'); ?>" class="btn btn-danger"
            onclick="ym(56418265,'reachGoal','all_form_submit'); return true;">
 </form>

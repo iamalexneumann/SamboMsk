@@ -8,6 +8,11 @@ body {
     background: #ffffff;
 }
 
+*:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+
 img {
     max-width: 100%;
     height: auto;
