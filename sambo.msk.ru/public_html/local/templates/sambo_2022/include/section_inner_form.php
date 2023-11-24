@@ -27,7 +27,7 @@ $siteparam_main_phone_tel = substr(clear_symbols_in_phone_number($siteparam_main
                 "custom.bitrix:main.feedback",
                 "modal_form",
                 array(
-                    "AJAX_MODE" => "Y",
+                    "AJAX_MODE" => "N",
                     "COMPOSITE_FRAME_MODE" => "A",
                     "COMPOSITE_FRAME_TYPE" => "AUTO",
                     "EMAIL_TO" => "sambo-msk@yandex.ru",
