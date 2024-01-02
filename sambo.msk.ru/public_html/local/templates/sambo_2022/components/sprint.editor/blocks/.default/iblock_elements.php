@@ -15,7 +15,7 @@ $elements = Sprint\Editor\Blocks\IblockElements::getList(
 );
 ?>
 <div class="mt-5">
-    <div class="h2"><?= Loc::getMessage('IBLOCK_ELEMENTS_TITLE'); ?></div>
+    <div class="h6 mb-3"><?= Loc::getMessage('IBLOCK_ELEMENTS_TITLE'); ?></div>
     <ul class="custom-ul-list">
         <?php foreach ($elements as $aItem): ?>
         <li>
