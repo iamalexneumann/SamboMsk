@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="39f9b7ec-6dc7-4216-930b-d8855d4d6569" name="Sambo" url="https://sambo.msk.ru">
-        <fileTransfer rootFolder="/home/s/sambomsk" accessType="SFTP" host="sambomsk.beget.tech" port="22" sshConfigId="15d58ef6-96db-4d42-b84e-1a82d35087b2" sshConfig="sambomsk@sambomsk.beget.tech:22 password">
+        <fileTransfer rootFolder="/home/s/sambomsk/sambo.msk.ru/public_html" accessType="SFTP" host="sambomsk.beget.tech" port="22" sshConfigId="15d58ef6-96db-4d42-b84e-1a82d35087b2" sshConfig="sambomsk@sambomsk.beget.tech:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

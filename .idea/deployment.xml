@@ -5,11 +5,11 @@
       <paths name="Sambo">
         <serverdata>
           <mappings>
-            <mapping deploy="/sambo.msk.ru/public_html" local="$PROJECT_DIR$/sambo.msk.ru/public_html" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$/sambo.msk.ru/public_html" web="/" />
           </mappings>
           <excludedPaths>
-            <excludedPath path="/sambo.msk.ru/public_html/bitrix" />
-            <excludedPath path="/sambo.msk.ru/public_html/upload" />
+            <excludedPath path="/bitrix" />
+            <excludedPath path="/upload" />
           </excludedPaths>
         </serverdata>
       </paths>
