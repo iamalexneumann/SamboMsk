@@ -156,7 +156,7 @@ Loc::loadLanguageFile(__FILE__);
         ),
         false
     ); ?>
-    <header class="main-header sticky-top">
+    <header class="main-header">
         <nav class="navbar navbar-expand-xl navbar-light">
             <div class="container-fluid">
                 <a<?php if (!($CurDir === '/')): ?> href="/" title="<?= Loc::getMessage('HEADER_MAIN_LOGO_TITLE'); ?>"<?php endif; ?> class="logo header-logo">
