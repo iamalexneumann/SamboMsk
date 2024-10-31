@@ -73,6 +73,28 @@ function use_comagic (string $url):bool
     return false;
 }
 
+function use_ivans_phone_number (string $url):bool
+{
+    $patterns = [
+        '#^/nashi-zaly/sambo-i-dzyudo-v-kuzminkakh/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-vniissok/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-novogireevo/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-novogireevo-mkr-yuzhnoe-izmaylovo/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-troitske-mikrorayon-v/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-troitske/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-odintsovo/$#',
+        '#^/nashi-zaly/sambo-i-dzyudo-v-kommunarke/$#',
+        '#^/nashi-zaly/sambo-dzyudo-boevoe-sambo-i-boks-v-balashikhe/$#'
+    ];
+    for ($i = 0; $i < count($patterns); $i++) {
+        preg_match($patterns[$i], $url, $matches);
+        if (count($matches) > 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function get_telegram_discussion (string $url):string
 {
     return str_replace('https://t.me/', '', $url);

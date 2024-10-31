@@ -12,6 +12,8 @@ require($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/site_variables
  * @var COption $siteparam_main_logo_description
  * @var COption $siteparam_whatsapp_number
  * @var COption $siteparam_whatsapp_number_tel
+ * @var COption $siteparam_whatsapp_number__ivan
+ * @var COption $siteparam_whatsapp_number_tel__ivan
  * @var COption $siteparam_whatsapp_text
  * @var COption $siteparam_whatsapp_text_converted
  * @var COption $siteparam_telegram_chat
@@ -110,9 +112,9 @@ use Bitrix\Main\Localization\Loc;
         </div>
     </footer>
 
-    <?php if ($siteparam_whatsapp_number): ?>
+    <?php if ($siteparam_whatsapp_number || $siteparam_whatsapp_number_tel__ivan): ?>
     <a class="whatsapp-btn" onclick="ym(56418265,'reachGoal','all_messengers'); return true;"
-       href="https://wa.me/7<?= $siteparam_whatsapp_number_tel; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>"
+       href="https://wa.me/7<?= (use_ivans_phone_number($CurDir) === false) ? $siteparam_whatsapp_number_tel: $siteparam_whatsapp_number_tel__ivan; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>"
        target="_blank"
        title="<?= Loc::getMessage('HEADER_WHATSAPP_TITLE'); ?>">
         <i class="fa-brands fa-whatsapp"></i>

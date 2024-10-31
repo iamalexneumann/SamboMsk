@@ -18,6 +18,8 @@ require($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/site_variables
  * @var COption $siteparam_second_phone
  * @var COption $siteparam_whatsapp_number
  * @var COption $siteparam_whatsapp_number_tel
+ * @var COption $siteparam_whatsapp_number__ivan
+ * @var COption $siteparam_whatsapp_number_tel__ivan
  * @var COption $siteparam_whatsapp_text
  * @var COption $siteparam_whatsapp_text_converted
  * @var COption $siteparam_main_email
@@ -211,13 +213,13 @@ Loc::loadLanguageFile(__FILE__);
                                 <?php endif; ?>
                                 <?php if ($siteparam_second_phone_tel): ?>
                                 <div class="header-contacts__second-phone-wrapper">
-                                    <a href="tel:+7<?= $siteparam_second_phone_tel; ?>"
+                                    <a href="tel:+7<?= (use_ivans_phone_number($CurDir) === false) ? $siteparam_second_phone_tel: $siteparam_whatsapp_number_tel__ivan; ?>"
                                        class="header-contacts__<?= (use_comagic($CurDir) === false) ? 'second' : 'main'; ?>-phone mb-0"
                                        onclick="ym(56418265,'reachGoal','all_phone_link'); return true;">
-                                        +7 <?= substr($siteparam_second_phone, 1); ?>
+                                        +7 <?= (use_ivans_phone_number($CurDir) === false) ? substr($siteparam_second_phone, 1): substr($siteparam_whatsapp_number__ivan, 1); ?>
                                     </a>
-                                    <?php if ($siteparam_whatsapp_number): ?>
-                                    <a href="https://wa.me/7<?= $siteparam_whatsapp_number_tel; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>"
+                                    <?php if ($siteparam_whatsapp_number || $siteparam_whatsapp_number__ivan): ?>
+                                    <a href="https://wa.me/7<?= (use_ivans_phone_number($CurDir) === false) ? $siteparam_whatsapp_number_tel: $siteparam_whatsapp_number_tel__ivan; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>"
                                        target="_blank"
                                        title="<?= Loc::getMessage('HEADER_WHATSAPP_TITLE'); ?>"
                                        class="header-contacts__whatsapp"

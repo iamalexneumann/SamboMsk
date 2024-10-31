@@ -14,6 +14,8 @@ require($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/site_variables
  * @var COption $siteparam_vk
  * @var COption $siteparam_whatsapp_number
  * @var COption $siteparam_whatsapp_number_tel
+ * @var COption $siteparam_whatsapp_number__ivan
+ * @var COption $siteparam_whatsapp_number_tel__ivan
  * @var COption $siteparam_whatsapp_text
  * @var COption $siteparam_whatsapp_text_converted
  */
@@ -32,10 +34,10 @@ use Bitrix\Main\Localization\Loc;
         </a>
         <?php endif; ?>
         <?php if ($siteparam_second_phone_tel): ?>
-        <a href="tel:+7<?= $siteparam_second_phone_tel; ?>"
+        <a href="tel:+7<?= (use_ivans_phone_number($CurDir) === false) ? $siteparam_second_phone_tel: $siteparam_whatsapp_number_tel__ivan; ?>"
            class="footer-phones__<?= (use_comagic($CurDir) === false) ? 'second' : 'main'; ?>-phone mb-0"
            onclick="ym(56418265,'reachGoal','all_phone_link'); return true;">
-            +7 <?= substr($siteparam_second_phone, 1); ?>
+            +7 <?= (use_ivans_phone_number($CurDir) === false) ? substr($siteparam_second_phone, 1): substr($siteparam_whatsapp_number__ivan, 1); ?>
         </a>
         <?php endif; ?>
     </div>
@@ -49,7 +51,7 @@ use Bitrix\Main\Localization\Loc;
     <i class="fa-solid fa-envelope footer-email__icon"></i>
     <span class="footer-email__link"><?= $siteparam_main_email; ?></span>
 </a>
-<?php if ($siteparam_telegram || $siteparam_vk || $siteparam_whatsapp_number): ?>
+<?php if ($siteparam_telegram || $siteparam_vk || $siteparam_whatsapp_number || $siteparam_whatsapp_number__ivan): ?>
 <ul class="social-media footer-social-media">
     <?php if ($siteparam_telegram): ?>
     <li class="social-media__item">
@@ -68,9 +70,9 @@ use Bitrix\Main\Localization\Loc;
         </a>
     </li>
     <?php endif; ?>
-    <?php if ($siteparam_whatsapp_number): ?>
+    <?php if ($siteparam_whatsapp_number || $siteparam_whatsapp_number_tel__ivan): ?>
     <li class="social-media__item">
-        <a href="https://wa.me/7<?= $siteparam_whatsapp_number_tel; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>"
+        <a href="https://wa.me/7<?= (use_ivans_phone_number($CurDir) === false) ? $siteparam_whatsapp_number_tel: $siteparam_whatsapp_number_tel__ivan; ?><?php if ($siteparam_whatsapp_text): ?>?text=<?= $siteparam_whatsapp_text_converted; ?><?php endif; ?>"
            target="_blank" title="<?= Loc::getMessage('BLOCK_CONTACTS_MAIN_WHATSAPP_TITLE'); ?>"
            class="social-media__link social-media__whatsapp"
            onclick="ym(56418265,'reachGoal','all_messengers'); return true;">
