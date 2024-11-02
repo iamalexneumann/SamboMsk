@@ -16,6 +16,32 @@ function get_youtube_id (string $url):string
     return $mathes[1];
 }
 
+function get_vk_video_id($url): ?string {
+    $parsedUrl = parse_url($url);
+
+    if (!isset($parsedUrl['path'])) {
+        return null;
+    }
+
+    $pathParts = explode('-', $parsedUrl['path']);
+    if (count($pathParts) < 2) {
+        return null;
+    }
+
+    $groupPart = $pathParts[1];
+    $idPart = explode('_', $groupPart);
+
+    if (count($idPart) != 2) {
+        return null;
+    }
+
+    $groupId = '-' . $idPart[0];
+    $itemId = $idPart[1];
+
+    return $groupId . '&id=' . $itemId;
+}
+
+
 use Bitrix\Main\Grid\Declension;
 function get_age (int $year, string $one, string $four, string $five):string
 {

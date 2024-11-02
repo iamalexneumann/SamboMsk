@@ -51,7 +51,7 @@ foreach ($att_phones['VALUE'] as $key_phone => $phone_number) {
 $att_videos = $arResult['DISPLAY_PROPERTIES']['ATT_VIDEOS'];
 
 foreach ($att_videos['VALUE'] as $key => $att_video) {
-    $arResult['DISPLAY_PROPERTIES']['ATT_VIDEOS']['YOUTUBE_ID'][$key] = get_youtube_id($att_video);
+    $arResult['DISPLAY_PROPERTIES']['ATT_VIDEOS']['VK_VIDEO_ID'][$key] = get_vk_video_id($att_video);
 }
 
 $att_photos = $arResult['DISPLAY_PROPERTIES']['ATT_PHOTOS'];
@@ -136,7 +136,7 @@ foreach ($att_contacts_photos['VALUE'] as $key => $att_contacts_photo) {
 
 $att_contacts_video = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO'];
 if ($att_contacts_video) {
-    $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO']['YOUTUBE_ID'] = get_youtube_id($att_contacts_video['VALUE']);
+    $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO']['VK_VIDEO_ID'] = get_vk_video_id($att_contacts_video['VALUE']);
 }
 
 $ogPictureFileTmp = \CFile::ResizeImageGet(

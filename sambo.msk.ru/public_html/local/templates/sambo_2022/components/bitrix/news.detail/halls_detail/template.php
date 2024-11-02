@@ -252,8 +252,8 @@ $att_contacts_video = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO'] ?? '
                     <div class="col-lg-6<?php if ($arResult['ATT_CONTACTS_PHOTOS_COUNT'] < 1): ?> offset-lg-3<?php endif; ?> section-contacts__col">
                         <figure class="section-contacts__video contacts-video">
                             <div class="adaptive-video-container">
-                                <iframe data-src="https://www.youtube.com/embed/<?= $att_contacts_video['YOUTUBE_ID']; ?>" class="lazyload contacts-video__iframe"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                <iframe data-src="https://vk.com/video_ext.php?oid=<?= $att_contacts_video['VK_VIDEO_ID']; ?>&hd=2" class="lazyload contacts-video__iframe"
+                                        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
                                         title="<?= $att_contacts_video_description; ?>"
                                         allowfullscreen></iframe>
                             </div>
@@ -314,9 +314,9 @@ $att_contacts_video = $arResult['DISPLAY_PROPERTIES']['ATT_CONTACTS_VIDEO'] ?? '
             <div class="col-lg-6 videos-list__col">
                 <figure class="videos-list__item">
                     <div class="adaptive-video-container">
-                        <iframe data-src="https://www.youtube.com/embed/<?= $att_videos['YOUTUBE_ID'][$key]; ?>" class="lazyload"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            <?php if ($att_video_description): ?> title="<?= $att_video_description; ?>"<?php endif; ?>
+                        <iframe data-src="https://vk.com/video_ext.php?oid=<?= $att_videos['VK_VIDEO_ID'][$key]; ?>&hd=2" class="lazyload contacts-video__iframe"
+                                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                                <?php if ($att_video_description): ?> title="<?= $att_video_description; ?>"<?php endif; ?>
                                 allowfullscreen></iframe>
                     </div>
                     <?php if ($att_video_description): ?>
